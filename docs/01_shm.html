@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Oscillations and Waves - 1&nbsp; Simple Harmonic Motion</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02_damped_oscillations.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_shm.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Oscillations and Waves</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_shm.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_damped_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02a_forced_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_coupled_oscillators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_pendulums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_oscillators_to_wave_motion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_simple_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_harmonic_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_reflection_transmission.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reflection and Transmission at boundaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_sound_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sound waves and the Doppler effect</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_superpositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Superposition and Standing Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_math_toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-ch1-simpleshmexample" id="toc-sec-ch1-simpleshmexample" class="nav-link active" data-scroll-target="#sec-ch1-simpleshmexample"><span class="header-section-number">1.1</span> A simple example of SHM</a></li>
+  <li><a href="#sec-shm-position" id="toc-sec-shm-position" class="nav-link" data-scroll-target="#sec-shm-position"><span class="header-section-number">1.2</span> Positioning in SHM</a></li>
+  <li><a href="#sec-shm-velocity" id="toc-sec-shm-velocity" class="nav-link" data-scroll-target="#sec-shm-velocity"><span class="header-section-number">1.3</span> Velocity in SHM</a></li>
+  <li><a href="#sec-shm-acceleration" id="toc-sec-shm-acceleration" class="nav-link" data-scroll-target="#sec-shm-acceleration"><span class="header-section-number">1.4</span> Acceleration in SHM</a></li>
+  <li><a href="#sec-shm-comparing-xva" id="toc-sec-shm-comparing-xva" class="nav-link" data-scroll-target="#sec-shm-comparing-xva"><span class="header-section-number">1.5</span> Comparing displacement, velocity and acceleration</a></li>
+  <li><a href="#sec-shm-initialconditions" id="toc-sec-shm-initialconditions" class="nav-link" data-scroll-target="#sec-shm-initialconditions"><span class="header-section-number">1.6</span> Initial conditions</a></li>
+  <li><a href="#sec-shm-freq-angularfreq" id="toc-sec-shm-freq-angularfreq" class="nav-link" data-scroll-target="#sec-shm-freq-angularfreq"><span class="header-section-number">1.7</span> Frequency and angular frequency</a></li>
+  <li><a href="#sec-ch1-shmcircmotion1" id="toc-sec-ch1-shmcircmotion1" class="nav-link" data-scroll-target="#sec-ch1-shmcircmotion1"><span class="header-section-number">1.8</span> SHM and circular motion</a></li>
+  <li><a href="#sec-ch1-shm-energy1" id="toc-sec-ch1-shm-energy1" class="nav-link" data-scroll-target="#sec-ch1-shm-energy1"><span class="header-section-number">1.9</span> Energy in SHM</a></li>
+  <li><a href="#sec-shm-real" id="toc-sec-shm-real" class="nav-link" data-scroll-target="#sec-shm-real"><span class="header-section-number">1.10</span> SHM in Real Systems</a>
+  <ul class="collapse">
+  <li><a href="#general-motion-near-equilibrium" id="toc-general-motion-near-equilibrium" class="nav-link" data-scroll-target="#general-motion-near-equilibrium"><span class="header-section-number">1.10.1</span> General motion near equilibrium</a></li>
+  <li><a href="#sec-ch1-diatomicmolecule" id="toc-sec-ch1-diatomicmolecule" class="nav-link" data-scroll-target="#sec-ch1-diatomicmolecule"><span class="header-section-number">1.10.2</span> Example: a diatomic molecule</a></li>
+  <li><a href="#sec-ch1-massverticalspring" id="toc-sec-ch1-massverticalspring" class="nav-link" data-scroll-target="#sec-ch1-massverticalspring"><span class="header-section-number">1.10.3</span> Example: Mass on a vertical spring</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-shm" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- Topic areas -->
+<!-- * Introduction and SHM principles -->
+<!-- * Energy in SHM -->
+<p>Simple harmonic motion (SHM) is a simple and common type of oscillatory motion. It is a model which is widely used in modelling systems due to its simplicity.</p>
+<p>In general, an object will move under SHM where its acceleration is:</p>
+<ol type="1">
+<li>proportional to its displacement, but</li>
+<li>in the opposite direction.</li>
+</ol>
+<p>The force causing this acceleration is often termed a <em>restoring force</em> as it acts to push the object back to its starting point.</p>
+<section id="sec-ch1-simpleshmexample" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-ch1-simpleshmexample"><span class="header-section-number">1.1</span> A simple example of SHM</h2>
+<p>Consider a block on a spring (<a href="#fig-ch1-blockonspring1">Figure&nbsp;<span>1.1</span></a>)</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-blockonspring1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch1-blockonspring1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.1: A mass on a spring, stretched distance <span class="math inline">\(x\)</span> past its equilibrium length <span class="math inline">\(x_0\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>By Hooke’s law, the spring exerts a force on the block proportional to its displacement <span class="math inline">\(x\)</span>, but in the opposite direction, pushing the block back to its equilbrium position, shown mathematically in <a href="#eq-hookeslaw1">Equation&nbsp;<span>1.1</span></a>:</p>
+<!-- \begin{equation} -->
+<p><span id="eq-hookeslaw1"><span class="math display">\[F_x = -kx
+\tag{1.1}\]</span></span> <!-- \end{equation} --></p>
+<p>In this example, <span class="math inline">\(F_x\)</span> is considered a <strong>restoring force</strong>, while <span class="math inline">\(k\)</span> is the force constant of the spring.</p>
+<p>Applying Newton’s Second Law to this problem, we can obtain the mathematical description of the system (<a href="#eq-test1">Equation&nbsp;<span>1.2</span></a>):</p>
+<p><span id="eq-test1"><span class="math display">\[
+\begin{aligned}
+F_x = ma_x \\
+kx = m\frac{\textrm{d}^2 x}{\textrm{d} t^2}
+\end{aligned}
+\tag{1.2}\]</span></span></p>
+<p>… and through rearrangement and combination with <a href="#eq-hookeslaw1">Equation&nbsp;<span>1.1</span></a> we obtain the description of how this mass will move (<a href="#eq-shm-massonspring1">Equation&nbsp;<span>1.3</span></a>):</p>
+<p><span id="eq-shm-massonspring1"><span class="math display">\[
+\frac{\textrm{d}^2 x}{\textrm{d} t^2} = -\frac{k}{m}x
+\tag{1.3}\]</span></span></p>
+<p>The general form of this expression for any system can be considered as shown in <a href="#eq-shm-general-massonspring1">Equation&nbsp;<span>1.4</span></a>:</p>
+<p><span id="eq-shm-general-massonspring1"><span class="math display">\[
+\frac{\textrm{d}^2 x}{\textrm{d} t^2} = -Cx \quad\mathrm{or}\quad\ddot{x} = -Cx
+\tag{1.4}\]</span></span></p>
+<p>…where <span class="math inline">\(C\)</span> is a positive constant which depends on the system and represents a ratio of the elastic (<span class="math inline">\(k\)</span>) and inertial (<span class="math inline">\(m\)</span>) contributions within the system.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Terms
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Period</strong>: The time <span class="math inline">\(T\)</span> for one complete oscilation back and forth (units s)</li>
+<li><strong>Frequency</strong>: The reciprocal of the period; <span class="math inline">\(f = \frac{1}{T}\)</span>, units s<sup>-1</sup> or Hz.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="sec-shm-position" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-shm-position"><span class="header-section-number">1.2</span> Positioning in SHM</h2>
+<p>SHM can be described by a general equation of motion, defining the position (<span class="math inline">\(x\)</span>) of the oscillating mass using a cosine function (<a href="#eq-shm-general-positionx1">Equation&nbsp;<span>1.5</span></a>):</p>
+<p><span id="eq-shm-general-positionx1"><span class="math display">\[
+x = A \cos (\omega t + \delta)
+\tag{1.5}\]</span></span></p>
+<p>The parameters in this equation are:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: The amplitude of the oscillation</li>
+<li><span class="math inline">\(\omega t + \delta\)</span>: Phase of motion</li>
+<li><span class="math inline">\(\delta\)</span>: Phase constant</li>
+</ul>
+<p>For any single oscillator, the time origin can always be chosen so that <span class="math inline">\(\delta = 0\)</span>. For two or more oscillators there will generally be a phase difference between them <em>i.e.</em> they will not always be at the same ‘zero’ position at time zero in <a href="#fig-ch1-shmpos-1">Figure&nbsp;<span>1.2</span></a>:</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-shmpos-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch1-shmpos.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.2: The changing position of two oscillators with respect to time, with a relative phase shift of 2 radians.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-shm-velocity" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-shm-velocity"><span class="header-section-number">1.3</span> Velocity in SHM</h2>
+<p>To find the velocity of the oscillating mass, we can simply find the first derivative of its position with respect to time (<a href="#eq-shm-general-velocityx1">Equation&nbsp;<span>1.6</span></a>):</p>
+<p><span id="eq-shm-general-velocityx1"><span class="math display">\[
+\begin{array}{rcl}
+v &amp; = &amp; \frac{\textrm{d}x}{\textrm{d}t}\\
+&amp;=&amp; -A \omega \sin (\omega t + \delta)\\
+\end{array}
+\tag{1.6}\]</span></span></p>
+<p>A quick inspection of this shows that the velocity <span class="math inline">\(v\)</span> is maximised when <span class="math inline">\(x\)</span> is at a minimum; <em>i.e.</em> as the object passes through its equilibirum position.</p>
+</section>
+<section id="sec-shm-acceleration" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-shm-acceleration"><span class="header-section-number">1.4</span> Acceleration in SHM</h2>
+<p>Again, to find the acceleration, we find the second derivative of its position with respect to time (<a href="#eq-shm-general-accelerationx1">Equation&nbsp;<span>1.7</span></a>):</p>
+<p><span id="eq-shm-general-accelerationx1"><span class="math display">\[
+\begin{array}{rcl}
+a &amp; = &amp; \frac{\textrm{d}v}{\textrm{d}t} = \frac{\textrm{d}^2 x}{\textrm{d}t^2}\\
+&amp;=&amp; -A \omega^2 \cos (\omega t + \delta)\\
+\end{array}
+\tag{1.7}\]</span></span></p>
+<p>…or, to use the Newtonian “dot” notation (<a href="#eq-shm-general-accelerationx2">Equation&nbsp;<span>1.8</span></a>):</p>
+<p><span id="eq-shm-general-accelerationx2"><span class="math display">\[
+a = \ddot{x} = -\omega^2 x
+\tag{1.8}\]</span></span></p>
+<p>If we now compare this with <a href="#eq-shm-massonspring1">Equation&nbsp;<span>1.3</span></a> we can see that we have an expression for <span class="math inline">\(\omega\)</span> for the oscillating mass <span class="math inline">\(m\)</span> on a spring of force constant <span class="math inline">\(k\)</span> (<a href="#eq-shm-general-omega1">Equation&nbsp;<span>1.9</span></a>):</p>
+<p><span id="eq-shm-general-omega1"><span class="math display">\[
+\begin{array}{rcl}
+\omega^2 &amp;=&amp; \frac{k}{m}\\
+\omega &amp;=&amp; \sqrt{\frac{k}{m}}
+\end{array}
+\tag{1.9}\]</span></span></p>
+</section>
+<section id="sec-shm-comparing-xva" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="sec-shm-comparing-xva"><span class="header-section-number">1.5</span> Comparing displacement, velocity and acceleration</h2>
+<p>When we now compare the displacement, velocity and acceleration we make a number of observations. Firstly, they are all sinusoidal functions; variously sine and cosine functions. However, when we overlay these we have a better indication of how they interrelate (<a href="#fig-shm-general-comparison-xva">Figure&nbsp;<span>1.3</span></a>)</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-shm-general-comparison-xva" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch1-xvacomp.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.3: Comparing the changes of position, velocity and acceleration with time for a harmonic oscillator. Note that when <span class="math inline">\(x\)</span> is at zero, <span class="math inline">\(v\)</span> is maximised, while <span class="math inline">\(a\)</span> is at a maximum when <span class="math inline">\(v\)</span> is zero. The relative amplitudes of each of the waves is given.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Some key observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>When the displacement <span class="math inline">\(x\)</span> is at a maximum (<span class="math inline">\(x_\textrm{max}\)</span>), the velocity <span class="math inline">\(v\)</span> is zero while the acceleration is at its maximum <strong>but negative with respect to displacement</strong> (<span class="math inline">\(a= -a_\textrm{max}\)</span>)</li>
+<li>When the displacement <span class="math inline">\(x\)</span> is zero, the velocity <span class="math inline">\(v\)</span> is at its maximum value (<span class="math inline">\(v = \pm v_\textrm{max}\)</span>) and the acceleration is zero.</li>
+<li>The pattern repeats with each period; namely <span class="math inline">\(x_0\)</span> (displacement at time <span class="math inline">\(t = 0\)</span>) is equal to the displacement <span class="math inline">\(x_T\)</span> (displacement after one period of oscillation, <span class="math inline">\(T\)</span>), and the same for the acceleration and velocity.</li>
+<li>In general, <span class="math inline">\(x_t = x_{t+T}\)</span>; the displacement at time <span class="math inline">\(t\)</span> is equal to the displacement at the time <span class="math inline">\(t\)</span> plus one period of oscillation, <span class="math inline">\(T\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>We can directly compare the displacement, velocity and acceleration at four points in the oscillation (<a href="#tbl-ch1-xva-comparison1">Table&nbsp;<span>1.1</span></a>):</p>
+<div id="tbl-ch1-xva-comparison1" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1.1: Relating the displacement, velocity and acceleration at different times in the oscillation for a simple harmonic oscillator.</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Time</th>
+<th style="text-align: left;">Displacement, <span class="math inline">\(x\)</span></th>
+<th style="text-align: left;">Velocity, <span class="math inline">\(v\)</span></th>
+<th style="text-align: left;">Acceleration, <span class="math inline">\(a\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(t = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_0 = A\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(v_0 = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a_0 = -a_{\textrm{max}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(t = \frac{T}{4}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_{\frac{T}{4}} = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(v_{\frac{T}{4}} = -v_\textrm{max}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a_{\frac{T}{4}} = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(t = \frac{T}{2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_{\frac{T}{2}} = -A\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(v_{\frac{T}{2}} = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a_{\frac{T}{2}} = a_{\textrm{max}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(t = \frac{3T}{4}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_{\frac{3T}{4}} = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(v_{\frac{3T}{4}} = v_\textrm{max}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a_{\frac{3T}{4}} = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(t = T\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_T = x_0 = A\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(v_T = v_0 = 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a_T = a_0 = -a_{\textrm{max}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sec-shm-initialconditions" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="sec-shm-initialconditions"><span class="header-section-number">1.6</span> Initial conditions</h2>
+<p>We mentioned in <a href="#sec-shm-comparing-xva"><span>Section&nbsp;1.5</span></a> that the displacement, velocity and acceleration expressions were based on sinusoial functions, and each function had a scaling factor <span class="math inline">\(A\)</span> (the <strong>amplitude</strong> of the oscillation) and a <strong>phase</strong> component <span class="math inline">\(\delta\)</span>. In most problems, we wish to determine the value of these constants. In order to determine these, we establish the initial conditions of the oscillation.</p>
+<p>In <a href="#fig-shm-general-comparison-xva">Figure&nbsp;<span>1.3</span></a> we defined our displacement at <span class="math inline">\(+A\)</span> which set up the rest of the problem. However, we will not always be so fortunate. For a general case, we then need to be more discerning.</p>
+<p>We can establish expressions for both the amplitude and the phase component by setting <span class="math inline">\(t = 0\)</span> in our general expressions (<a href="#eq-ch1-shm-initconditions1">Equation&nbsp;<span>1.10</span></a>):</p>
+<p><span id="eq-ch1-shm-initconditions1"><span class="math display">\[
+\begin{array}{rclcrcl}
+x_t &amp;=&amp; A  \cos (\omega t + \delta)       &amp; \rightarrow &amp; x_0 &amp;=&amp; A  \cos (\delta)\\
+v_t &amp;=&amp; -A \omega \sin (\omega t + \delta)&amp; \rightarrow &amp; v_0 &amp;=&amp; -A \omega \sin ( \delta)
+\end{array}
+\tag{1.10}\]</span></span> We now treat these as simultaneous equations to find <span class="math inline">\(\delta\)</span> and <span class="math inline">\(A\)</span> (<a href="#eq-ch1-shm-initconditions2">Equation&nbsp;<span>1.11</span></a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p><span id="eq-ch1-shm-initconditions2"><span class="math display">\[
+\begin{array}{rcl}
+\tan \delta = \dfrac{\sin \delta}{\cos \delta} = -\dfrac{v_0}{\omega x_0} &amp; \textrm{and} &amp; A^2 = x_0^2 + \dfrac{v_0^2}{\omega^2}
+\end{array}
+\tag{1.11}\]</span></span></p>
+</section>
+<section id="sec-shm-freq-angularfreq" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="sec-shm-freq-angularfreq"><span class="header-section-number">1.7</span> Frequency and angular frequency</h2>
+<p>In <a href="#sec-shm-comparing-xva"><span>Section&nbsp;1.5</span></a> we stated that the nature of the oscillation meant that it repeats after every oscillation; mathematically <span class="math inline">\(x(t) = x(t + T)\)</span>; the position <span class="math inline">\(x\)</span> at time <span class="math inline">\(t\)</span> is equal to the position at time <span class="math inline">\((t+T)\)</span>.</p>
+<p>When we apply this to the velocity, we obtain the following expression:</p>
+<p><span class="math display">\[
+\begin{array}{rcl}
+v(t) &amp;=&amp; v(t+T) \\
+A \cos (\omega t + \delta) &amp;=&amp; A \cos (\omega (t+T) + \delta) \\
+&amp;=&amp; A \cos ([\omega t + \delta] + \omega T)
+\end{array}
+\]</span></p>
+<p>Due to the cyclic nature of a cosine function, <span class="math inline">\(\cos (\alpha) = \cos (\alpha + 2\pi)\)</span>, this must therefore mean (<a href="#eq-ch1-definingomega1">Equation&nbsp;<span>1.12</span></a>):</p>
+<p><span id="eq-ch1-definingomega1"><span class="math display">\[
+\omega T = 2\pi \hspace{10pt} \textrm{or} \hspace{10pt} \omega = \frac{2\pi}{T}
+\tag{1.12}\]</span></span></p>
+<p>This gives us a way to think about <span class="math inline">\(\omega\)</span>; its connection to circular motion (the clue is the <span class="math inline">\(2\pi\)</span>). It can be thought of as the <strong>angular frequency</strong>, with units radians s<sup>-1</sup>, and an oscillation of <span class="math inline">\(2\pi\)</span> radians corresponds to one period of oscillation.</p>
+<p>Additionally, since the frequency of the oscillation <span class="math inline">\(f\)</span> is the reciprocal of the period of oscillation (<span class="math inline">\(f = \frac{1}{T}\)</span>), the angular frequency can be rewritten as <span class="math inline">\(\omega = 2\pi f\)</span>, and <span class="math inline">\(f = \frac{\omega}{2\pi}\)</span>.</p>
+<p>For the spring system we discussed in <a href="#sec-ch1-simpleshmexample"><span>Section&nbsp;1.1</span></a>, we stated that the angular frequency <span class="math inline">\(\omega = \sqrt{\frac{k}{m}}\)</span>. Therefore we can obtain an expression for the frequency of our oscillator (<a href="#eq-ch1-freq-angfreq1">Equation&nbsp;<span>1.13</span></a>):</p>
+<p><span id="eq-ch1-freq-angfreq1"><span class="math display">\[
+f = \frac{1}{T} = \frac{1}{2\pi}\sqrt{\frac{k}{m}}
+\tag{1.13}\]</span></span> Inspection of this equation reveals the behaviour of our oscillator:</p>
+<ul>
+<li>If we have a stiffer spring (larger <span class="math inline">\(k\)</span>), we expect the frequency <span class="math inline">\(f\)</span> to increase,</li>
+<li>If we use an oscillator with larger mass (larger <span class="math inline">\(m\)</span>), we would expect the frequency (<span class="math inline">\(f\)</span>) to decrease.</li>
+<li>The frequency (and therefore period) of simple harmonic oscillation is independent of amplitude.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+</ul>
+</section>
+<section id="sec-ch1-shmcircmotion1" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="sec-ch1-shmcircmotion1"><span class="header-section-number">1.8</span> SHM and circular motion</h2>
+<p>We mentioned an “angular frequency” for SHM; this would appear to suggest behaviour akin to circular motion. It is therefore worth exploring our descriptions of circular motion.</p>
+<p>Imagine a point mass moving in a circle (<a href="#fig-ch1-circularmotion1">Figure&nbsp;<span>1.4</span></a>). For convenience, we imagine this using Cartesian <span class="math inline">\(x-y\)</span> axes, shown in <a href="#fig-ch1-circularmotion1">Figure&nbsp;<span>1.4</span></a>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-circularmotion1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch1-shmcircular.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.4: A particle moving in a circle of radius <span class="math inline">\(A\)</span> can be assumed to have an instantaneous linear velocity <span class="math inline">\(v\)</span>. The <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> components of the motion are found from trigonometry of the radius <span class="math inline">\(A\)</span> and the angle <span class="math inline">\(θ\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The particle of mass <span class="math inline">\(m\)</span> is moving in a circle of radius <span class="math inline">\(A\)</span> with instantaneous linear velocity <span class="math inline">\(v\)</span>; the radius makes an angle <span class="math inline">\(\theta\)</span> with the <span class="math inline">\(x\)</span>-axis. We now look at how its position maps onto each of the axes:</p>
+<ul>
+<li>The angular velocity of the particle is <span class="math inline">\(\omega\)</span>; found <em>via</em> <span class="math inline">\(\frac{v}{A}\)</span>
+<ul>
+<li>We can then describe <span class="math inline">\(\theta\)</span> in terms of <span class="math inline">\(\omega\)</span>:</li>
+<li><span class="math inline">\(\theta = \omega t + \delta\)</span> (<span class="math inline">\(\delta\)</span> is the angle at time <span class="math inline">\(t=0\)</span>)</li>
+</ul></li>
+<li>The particle’s position on the <span class="math inline">\(x\)</span>-axis is therefore found <em>via</em>:
+<ul>
+<li><span class="math inline">\(x = A \cos \theta = A \cos (\omega t + \delta)\)</span></li>
+<li>This corresponds with the expression for SHM for a particle moving in a linear fashion (<a href="#eq-shm-general-positionx1">Equation&nbsp;<span>1.5</span></a>).</li>
+</ul></li>
+</ul>
+<p>We can also consider how its position maps onto the <span class="math inline">\(y\)</span>-axis:</p>
+<ul>
+<li>The position on the <span class="math inline">\(y\)</span>-axis is found <em>via</em>:
+<ul>
+<li><span class="math inline">\(y = A \sin \theta = A \sin (\omega t + \delta) \equiv A \cos(\omega t + [\delta - \frac{\pi}{2}])\)</span></li>
+<li>This once again corresponds with the expression for SHM for a particle moving in a linear fashion.</li>
+<li>The <span class="math inline">\(y\)</span>-component of the motion is <span class="math inline">\(\frac{\pi}{2}\)</span> out of phase with the <span class="math inline">\(x\)</span>-component</li>
+</ul></li>
+</ul>
+<p>This illustrates that circular motion is a combination of two perpendicular SHM oscillations of the same frequency and amplitude, but a relative phase of <span class="math inline">\(\frac{\pi}{2}\)</span>.</p>
+</section>
+<section id="sec-ch1-shm-energy1" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="sec-ch1-shm-energy1"><span class="header-section-number">1.9</span> Energy in SHM</h2>
+<p>As with all isolated systems, the total energy <span class="math inline">\(E\)</span> of the simple harmonic oscillator is constant, however the contributions from potential energy (<span class="math inline">\(U\)</span>) and KE vary with time.</p>
+<p><span class="math display">\[
+E = KE + U = \textrm{constant}
+\]</span></p>
+<p>Let’s go back to the condition for SHM; there is a restoring force proportional to the displacement:</p>
+<p><span class="math display">\[
+F = -kx
+\]</span></p>
+<p>Knowing that the force is the first derivative of the potential energy, we can therefore integrate this force expression (with respect to <span class="math inline">\(x\)</span>) to get back to the energy statement:<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><span id="eq-ch1-potentialfromforce1"><span class="math display">\[
+\begin{array}{rcl}
+U &amp;=&amp; \int F \mathrm{d}x \\
+&amp; =&amp; \frac{1}{2}kx^2 \hspace{10pt} [+C]
+\end{array}
+\tag{1.14}\]</span></span></p>
+<p>However, we already have an expression for how the displacement, <span class="math inline">\(x\)</span>, varies with time (<a href="#eq-shm-general-positionx1">Equation&nbsp;<span>1.5</span></a>); let’s now substitute this into the result from <a href="#eq-ch1-potentialfromforce1">Equation&nbsp;<span>1.22</span></a>:</p>
+<p><span id="eq-ch1-potentialfromforce2"><span class="math display">\[
+U = \frac{1}{2}kA^2 \cos^2 (\omega t + \delta)
+\tag{1.15}\]</span></span></p>
+<p>We can also generate an expression for the kinetic energy; remember that kinetic energy can be found from <span class="math inline">\(\frac{1}{2}mv^2\)</span>; so we use the expression for <span class="math inline">\(v\)</span> given in <a href="#eq-shm-general-velocityx1">Equation&nbsp;<span>1.6</span></a>:</p>
+<p><span id="eq-ch1-potentialfromforce3"><span class="math display">\[
+\begin{array}{rcl}
+KE &amp;=&amp; \frac{1}{2} mv^2 \\
+&amp; =&amp; \frac{1}{2} m A^2 \omega^2 \sin^2 (\omega t + \delta)
+\end{array}
+\tag{1.16}\]</span></span></p>
+<p>We can simplify this using <a href="#eq-shm-general-accelerationx1">Equation&nbsp;<span>1.7</span></a> for a particle on a spring, where <span class="math inline">\(\omega^2 = \frac{k}{m}\)</span>:</p>
+<p><span id="eq-ch1-potentialfromforce4"><span class="math display">\[
+KE = \frac{1}{2}kA^2 \sin^2 (\omega t + \delta)
+\tag{1.17}\]</span></span></p>
+<p>Combining the result of <a href="#eq-ch1-potentialfromforce2">Equation&nbsp;<span>1.15</span></a> and <a href="#eq-ch1-potentialfromforce4">Equation&nbsp;<span>1.17</span></a> we find the result in <a href="#eq-ch1-potentialfromforce5">Equation&nbsp;<span>1.18</span></a>:</p>
+<p><span id="eq-ch1-potentialfromforce5"><span class="math display">\[
+\begin{array}{rcl}
+E_\textrm{total} &amp;=&amp; U + KE \\
+&amp; =&amp; \frac{1}{2}kA^2 \cos^2 (\omega t + \delta) + \frac{1}{2}kA^2 \sin^2 (\omega t + \delta)\\
+&amp; =&amp; \frac{1}{2}kA^2 \left[ \cos^2 (\omega t + \delta) + \sin^2 (\omega t + \delta)\right]\\
+&amp;=&amp; \frac{1}{2}kA^2
+\end{array}
+\tag{1.18}\]</span></span></p>
+<p>This result tells us that the total energy in a simple harmonic oscillation is <strong>proportional to the square of the amplitude</strong>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-energyinshm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch1-shmenergy.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.5: Variation of the kinetic energy (KE) and potential energy (U) of an harmonic oscillator with displacement <span class="math inline">\(x\)</span> about the equilibrium position.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Some points to bear in mind
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(U = U_\mathrm{max}\)</span> at <span class="math inline">\(x = ±x_\mathrm{max}\)</span></li>
+<li><span class="math inline">\(KE = KE_\mathrm{max}\)</span> at <span class="math inline">\(x = 0\)</span></li>
+<li><span class="math inline">\(U_\mathrm{average} = KE_\mathrm{average} = \frac{1}{2}E_\mathrm{total}\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="sec-shm-real" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="sec-shm-real"><span class="header-section-number">1.10</span> SHM in Real Systems</h2>
+<p><em>Textbook link: Tipler and Mosca: Ch 14.2 to 14.4</em></p>
+<p>We will now go on to look at some applications of SHM in real-world systems.</p>
+<section id="general-motion-near-equilibrium" class="level3" data-number="1.10.1">
+<h3 data-number="1.10.1" class="anchored" data-anchor-id="general-motion-near-equilibrium"><span class="header-section-number">1.10.1</span> General motion near equilibrium</h3>
+<p>A way of thinking about SHM is that it is a point mass oscillating within a potential energy field. As with any potential energy field, the force on this particle is given by the gradient of the potential energy and is directed down the potential energy slope. Mathematically, for a potential energy field, the force may be found as follows (<a href="#eq-ch1-forceenergyderiv1">Equation&nbsp;<span>1.19</span></a>):</p>
+<p><span id="eq-ch1-forceenergyderiv1"><span class="math display">\[
+F = - \frac{\mathrm{d}U}{\mathrm{d}r}
+\tag{1.19}\]</span></span></p>
+<p>In a one-dimensional system, this is expressed as follows (<a href="#eq-ch1-forceenergyderiv2">Equation&nbsp;<span>1.20</span></a>):</p>
+<p><span id="eq-ch1-forceenergyderiv2"><span class="math display">\[
+F_x = - \frac{\mathrm{d}U}{\mathrm{d}x}
+\tag{1.20}\]</span></span></p>
+<p>As mentioned in <a href="#sec-ch1-simpleshmexample"><span>Section&nbsp;1.1</span></a>, under SHM the force is proportional to the displacement from the equilibrium position and in the opposite direction; <em>i.e.</em>:</p>
+<p><span id="eq-ch1-hookeslaw1"><span class="math display">\[
+F_x = -kx
+\tag{1.21}\]</span></span></p>
+<p>Applying the principle from <a href="#eq-ch1-forceenergyderiv1">Equation&nbsp;<span>1.19</span></a> we can therefore integrate this experession with respect to <span class="math inline">\(x\)</span> to obtain the expression for our potential energy. We covered this in <a href="#sec-ch1-shm-energy1"><span>Section&nbsp;1.9</span></a>, and we found the result (<a href="#eq-ch1-potentialfromforce1">Equation&nbsp;<span>1.22</span></a>); remember that, due to initial conditions, the constant of integration reduces to zero).</p>
+<p><span id="eq-ch1-potentialfromforce1"><span class="math display">\[
+U  = \frac{1}{2}kx^2
+\tag{1.22}\]</span></span></p>
+<p>Simple inspection and recall of our mathematics knowledge tells us that this simple equation represents a parabola.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Some useful points on the harmonic oscillator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A parabolic potential energy function implies SHM and <em>vice versa</em>;</li>
+<li>For small amplitudes of oscillation, many potential energy functions may be <em>approximated</em> by a parabola (<em>e.g.</em> a pendulum, vibrating molecules)</li>
+<li>A system undergoing SHM is called a <strong>harmonic oscillator</strong>.</li>
+</ul>
+</div>
+</div>
+<p>The simplicity of the <strong>simple harmonic oscillator</strong> model is what makes it such a generally useful system to consider.</p>
+</section>
+<section id="sec-ch1-diatomicmolecule" class="level3" data-number="1.10.2">
+<h3 data-number="1.10.2" class="anchored" data-anchor-id="sec-ch1-diatomicmolecule"><span class="header-section-number">1.10.2</span> Example: a diatomic molecule</h3>
+<p>A diatomic molecule is a useful system to consider as an example because it can be approximated to a harmonic oscillator at small displacements about the equilibrium. The potential energy curve for a vibrating diatomic molecule (in this case the H<sub>2</sub> hydrogen molecule) is shown in <a href="#fig-ch1-diatomicmolecule1">Figure&nbsp;<span>1.6</span></a>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-diatomicmolecule1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch1-diatomicexamp.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.6: Comparing the Morse potential of the anharmonic oscillator with the harmonic approximation. Near equilibrium, the harmonic oscillator model approximates diatomic behaviour, however this rapidly deviates from reality.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The potential of a vibrating diatomic is known as the Morse potential; the form of this is outwith this discussion, however it is useful to think that, for small displacements around the equilibrium separation the potential energy curve approximates a parabola. We can therefore re-draw our potential energy curve as such, and show this in Figure <a href="#fig-ch1-diatomicmolecule2">Figure&nbsp;<span>1.7</span></a>).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-diatomicmolecule2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations//latex/ch1-diatomicmolecule2.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.7: The parabolic approximation of a diatomic molecule, showing the potential varying with compression or extension from equilibrium separation, <span class="math inline">\(r_0\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The equation of the parabola shown in <a href="#fig-ch1-diatomicmolecule2">Figure&nbsp;<span>1.7</span></a> takes the following form:</p>
+<p><span id="eq-ch1-diatomicmolecule1"><span class="math display">\[
+U(r) = A + B(r - r_0)^2
+\tag{1.23}\]</span></span> …where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are constants relating to the molecular system under consideration, and <span class="math inline">\(r_0\)</span> is the equilibrium bond length.</p>
+<p>The force on the bond can then be found from the first derivative of the bond potential described in <a href="#eq-ch1-diatomicmolecule1">Equation&nbsp;<span>1.23</span></a>:</p>
+<p><span id="eq-ch1-diatomicmolecule2"><span class="math display">\[
+\begin{array}{rcl}
+F_r &amp;=&amp; - \dfrac{\mathrm{d}U}{\mathrm{d}r} \\
+\\
+&amp;=&amp; -2B(r-r_0)\\
+\end{array}
+\tag{1.24}\]</span></span></p>
+<p>Since the term <span class="math inline">\((r-r_0)\)</span> is the displacement from the equilibrium position, we see that the force, <span class="math inline">\(F_r\)</span> is a <strong>restoring force</strong> and is proportional to the displacement (and in the opposite direction!), telling us that the motion is SHM. In this example however, the parabolic approximation fails at larger amplitudes.</p>
+</section>
+<section id="sec-ch1-massverticalspring" class="level3" data-number="1.10.3">
+<h3 data-number="1.10.3" class="anchored" data-anchor-id="sec-ch1-massverticalspring"><span class="header-section-number">1.10.3</span> Example: Mass on a vertical spring</h3>
+<p>In <a href="#sec-ch1-simpleshmexample"><span>Section&nbsp;1.1</span></a> we considered a mass on a horizontal spring; there was only a single force acting on the mass (the force from the spring), however we are now considering a vertical spring and must consider the effects of gravity (<a href="#fig-ch1-massverticalspring1">Figure&nbsp;<span>1.8</span></a>).</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch1-massverticalspring1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch1-blocksonvertspring1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.8: A particle oscillating on a vertical spring. There are two equilibrium positions corresponding to the equilibrium position of the unladen spring (a) and the equilibrium position of the mass loaded on spring (b), where the weight of the load is balanced by the force from the extended spring.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In this case we need to work through a slightly different process to find the equation of motion, chiefly because the equilibrium displacement of the mass (<span class="math inline">\(y_0\)</span>) is different from the equilibrium position of the spring.</p>
+<p>The equilibrium position of the mass <span class="math inline">\(y_0\)</span> is lower than the equilibrium extension of the spring (gravity on the mass causes the spring to stretch). This is found by relating the force from the spring and the force of gravity acting on the mass (<a href="#eq-ch1-massverticalspring1">Equation&nbsp;<span>1.25</span></a>):</p>
+<p><span id="eq-ch1-massverticalspring1"><span class="math display">\[
+\begin{array}{rcl}
+\mathrm{Force~due~to~spring~extension} &amp;=&amp; \mathrm{Gravity~acting~on~mass}\\
+k y_0 &amp;=&amp; mg\\
+y_0 &amp;=&amp; \dfrac{mg}{k}\\
+\end{array}
+\tag{1.25}\]</span></span></p>
+<p>We now apply the Second Law of motion to obtain an expression for the acceleration on the mass due to the forces acting on it (the spring force and gravity).</p>
+<p><span id="eq-ch1-massverticalspring2"><span class="math display">\[
+\begin{array}{rcl}
+m\ddot{y}&amp;=&amp;  \textrm{spring force} + \textrm{gravity} \\
+m\dfrac{\mathrm{d}^2 y}{\mathrm{d} t^2} &amp;=&amp; -ky + mg\\
+\end{array}
+\tag{1.26}\]</span></span> In this expression, <span class="math inline">\(y\)</span> is the total extension of the spring (the extension to the mass equilibrium point, <span class="math inline">\(y_0\)</span> plus the displacement from this point, <span class="math inline">\(y^\prime\)</span>).</p>
+<p>We now substitute a variable; since <span class="math inline">\(y = y_0 + y^\prime\)</span>, we substitute <span class="math inline">\(y\)</span> for <span class="math inline">\(y^\prime\)</span>:</p>
+<ul>
+<li><span class="math inline">\(y = y_0 + y^\prime\)</span></li>
+<li><span class="math inline">\(y^\prime = y - y_0\)</span></li>
+</ul>
+<p>Since <span class="math inline">\(y_0\)</span> is a constant:</p>
+<p><span class="math display">\[
+\dfrac{\mathrm{d} y^\prime}{\mathrm{d} t} = \dfrac{\mathrm{d} y}{\mathrm{d} t} \hspace{10pt} \textrm{and} \hspace{10pt} \dfrac{\mathrm{d}^2 y^\prime}{\mathrm{d} t^2} = \dfrac{\mathrm{d}^2 y}{\mathrm{d} t^2}
+\]</span> Replacing <span class="math inline">\(y\)</span> for <span class="math inline">\((y_0 + y^\prime)\)</span> in <a href="#eq-ch1-massverticalspring2">Equation&nbsp;<span>1.26</span></a>, we obtain <a href="#eq-ch1-massverticalspring3">Equation&nbsp;<span>1.27</span></a>:</p>
+<p><span id="eq-ch1-massverticalspring3"><span class="math display">\[
+m\dfrac{\mathrm{d}^2 y^\prime}{\mathrm{d} t^2} = -k(y_0 + y^\prime) + mg
+\tag{1.27}\]</span></span> Since <span class="math inline">\(ky_0 = mg\)</span> (<a href="#eq-ch1-massverticalspring1">Equation&nbsp;<span>1.25</span></a>), we can therefore eliminate these terms from <a href="#eq-ch1-massverticalspring3">Equation&nbsp;<span>1.27</span></a>, and rewrite as <a href="#eq-ch1-massverticalspring4">Equation&nbsp;<span>1.28</span></a>):</p>
+<p><span id="eq-ch1-massverticalspring4"><span class="math display">\[
+m\dfrac{\mathrm{d}^2 y^\prime}{\mathrm{d} t^2} = -k y^\prime
+\tag{1.28}\]</span></span></p>
+<p>This means that, in reference to <a href="#fig-ch1-massverticalspring1">Figure&nbsp;<span>1.8</span></a>, we still have SHM centered on the equilibrium position of the mass. This may seem like a self-evident result, however it is useful to recognise the role of gravity; its effect is to shift the equilibrium position of the oscillation from <span class="math inline">\(y = 0\)</span> (the equilibrium position of the spring) to <span class="math inline">\(y = y_0\)</span> (<span class="math inline">\(y^\prime = 0\)</span>).</p>
+<p>Let’s now consider the energy in this system. The system already contains some elastic energy as the spring is already stretched to <span class="math inline">\(y_0\)</span> by the gravity acting on the mass:</p>
+<p><span class="math display">\[
+\textrm{elastic potential energy} = \frac{1}{2}ky^2 - \frac{1}{2}ky_0^2
+\]</span> The gravitational potential energy (relative to the starting position <span class="math inline">\(y_0\)</span>) is given by:</p>
+<p><span class="math display">\[
+\textrm{gravitational potential energy} = mg(y-y_0)
+\]</span> The total potential energy is therefore given by <a href="#eq-ch1-massverticalspring5">Equation&nbsp;<span>1.29</span></a>:</p>
+<p><span id="eq-ch1-massverticalspring5"><span class="math display">\[
+U = \frac{1}{2}ky^2 - \frac{1}{2}ky_0^2 - mg(y-y_0)
+\tag{1.29}\]</span></span></p>
+<p>We can then show that the total potential energy expression in <a href="#eq-ch1-massverticalspring5">Equation&nbsp;<span>1.29</span></a> can be simplified to that shown in Equation <a href="#eq-ch1-massverticalspring6">Equation&nbsp;<span>1.30</span></a>:</p>
+<p><span id="eq-ch1-massverticalspring6"><span class="math display">\[
+U = \frac{1}{2} ky^{\prime 2}
+\tag{1.30}\]</span></span> <strong>You should ensure you understand how this simplification is done</strong>; this is left as an exercise.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>Overall, the expression for the total potential energy shown in <a href="#eq-ch1-massverticalspring6">Equation&nbsp;<span>1.30</span></a> will still yield a parabola and as such the oscillation is still a simple harmonic oscillation as before.</p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Note that we use the trigonometric identity <span class="math inline">\(\cos^2 \alpha + \sin^2 \alpha = 1\)</span> to find <span class="math inline">\(A\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A caveat to this is for large amplitudes where other factors start to affect the behaviour. But this is then no longer <em>simple</em> harmonic motion!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The constant of integration will evaluate to zero from the starting condition <span class="math inline">\(U = 0\)</span> at zero displacement.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Simplistically, the deviation is due to nuclear repulsion at high compression, while at large extension the bond eventually breaks - the “zero potential” point.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Yes; we know this sort of thing infuriates learners, however it is based in valid educational practice! Do give it a go. In this instance, remember that you will need to start with <a href="#eq-ch1-massverticalspring5">Equation&nbsp;<span>1.29</span></a>, recall the relation of <span class="math inline">\(y\)</span> and <span class="math inline">\(y^\prime\)</span>, substitute this into the equation, expand and cancel terms.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02_damped_oscillations.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

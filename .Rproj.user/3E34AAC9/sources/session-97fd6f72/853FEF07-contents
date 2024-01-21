@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Oscillations and Waves"
+  author: "Dr Andrew McKinley"
+  search: true
+  repo-url: https://github.com/awmckinley1/oscandwaves
+  downloads: [pdf,epub]
+  date: "01/04/2024"
+  chapters:
+    - index.qmd
+    - 01_shm.qmd
+    - 02_damped_oscillations.qmd
+    - 02a_forced_oscillations.qmd
+    - 03_coupled_oscillators.qmd
+    - 04_pendulums.qmd
+    - 05_oscillators_to_wave_motion.qmd
+    - 06_simple_waves.qmd
+    - 07_harmonic_waves.qmd
+    - 08_reflection_transmission.qmd
+    - 09_sound_waves.qmd
+    - 10_superpositions.qmd
+    - 11_math_toolkit.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: darkly
+  pdf:
+    documentclass: report
+    include-in-header:
+      text: |
+        \renewcommand{\familydefault}{\sfdefault}
+  epub: default
+  docx: default
+
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+    R.options:
+      knitr.graphics.auto_pdf: true
+
+editor: source
+

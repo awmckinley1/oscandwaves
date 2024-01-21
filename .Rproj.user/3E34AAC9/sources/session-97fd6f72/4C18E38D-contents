@@ -1,0 +1,47 @@
+# Preface {.unnumbered}
+
+Welcome to the course notes for the Oscillations and Waves component of PHYS10012, Core Physics I.
+
+The most recent version of these notes can be found at <https://awmckinley1.github.io/oscandwaves>. Please ensure you are always working from the most up-to-date version of these notes and compare the change-log with that on the live website.
+
+## About these notes {.unnumbered}
+
+These notes have been prepared in a format which maintains compatibility with screen-readers, while also allowing the facility for both PDF and EPUB downloads for those who wish to use them.
+
+The HTML also has themes to facilitate easier reading (font colours, serif/sans serif fonts etc.). Please explore the top bar of the web environment to explore this.
+
+The HTML notes allow for embedding of rich content (videos, animations, etc.), and for this reason I recommend accessing the course using the web-links provided, as these cannot be included in static PDF or EPUB documents. However, I will ensure links are included in these formats as far as possible.
+
+These notes are a "live document", and as such they can (and will) be updated should any erroneous explanations be found or additional explanations be needed. For this reason, please do email me if you have any questions or if anything is not clear.
+
+The most recent version can always be found at the link at the top of this section, and any changes are reflected in the change-log.
+
+Please note that as this is a "live document", a downloaded version can become obsolete. Please refer back regularly and refer to the changelog for any updates.
+
+## Error reporting {.unnumbered}
+
+As much as we try, sometimes errors creep in. At best, it is little more than a careless typo which makes the reader tut with disappointment, at worst it risks seriously misleading the learner. For this reason I have created a feedback form to report errors; this is accessible at the bottom of this page.
+
+## Course history {.unnumbered}
+
+This iteration of the course has been written by Andrew McKinley for 2024; this is extensively based on his delivery of the previous course from 2021-23, which in turn was adapted from previous course notes by Ben Maughan, Simon Hanna and Massimo Antognozzi.
+
+## Changelog {#sec-changelog}
+
+2023-01-11 Intitial creation of the Oscillations and Waves content for PHYS10012.
+
+## Report an error {.unnumbered}
+
+<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVGw1yScBaQcNOv7s3v-nTRHhUNTNKV0E2Wk9RTDQxMkdHOFBWUjdGRkxUUy4u" target="_blank">Direct link to error reporting form</a> (opens in new window)
+
+Embedded form:
+
+<!-- ```{r echo=FALSE, out.width='90%', out.height='1000px'} -->
+<!-- knitr::include_url("https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVGw1yScBaQcNOv7s3v-nTRHhUNTNKV0E2Wk9RTDQxMkdHOFBWUjdGRkxUUy4u") -->
+<!-- ``` -->
+
+```{=html}
+<iframe width="780" height="500" src="https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVGw1yScBaQcNOv7s3v-nTRHhUNTNKV0E2Wk9RTDQxMkdHOFBWUjdGRkxUUy4u" title="Report an error"></iframe>
+```
+
+

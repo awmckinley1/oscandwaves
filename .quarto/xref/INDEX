@@ -1,0 +1,65 @@
+{
+  "index.qmd": {
+    "index.html": "d7a8cee0"
+  },
+  "intro.qmd": {
+    "intro.html": "a2e52508"
+  },
+  "summary.qmd": {
+    "summary.html": "e7cbb56a"
+  },
+  "references.qmd": {
+    "references.html": "f4d91b7c"
+  },
+  "01_shm.qmd": {
+    "01_shm.html": "19dd1822"
+  },
+  "02_damped_oscillations.qmd": {
+    "02_damped_oscillations.html": "806142a4"
+  },
+  "03_coupled_oscillators.qmd": {
+    "03_coupled_oscillators.html": "7f78a35f"
+  },
+  "04_pendulums.qmd": {
+    "04_pendulums.html": "c9cb9e18"
+  },
+  "05_wave_motion.qmd": {
+    "05_wave_motion.html": "fa66508d"
+  },
+  "06_harmonic_waves.qmd": {
+    "06_harmonic_waves.html": "0c50b1a4"
+  },
+  "07_sound_waves.qmd": {
+    "07_sound_waves.html": "9e8c9567"
+  },
+  "08_superpositions.qmd": {
+    "08_superpositions.html": "ebf64d7c"
+  },
+  "09_math_toolkit.qmd": {
+    "09_math_toolkit.html": "65153391"
+  },
+  "05_oscillators_to_wave_motion.qmd": {
+    "05_oscillators_to_wave_motion.html": "dcb8ff2e"
+  },
+  "07_harmonic_waves.qmd": {
+    "07_harmonic_waves.html": "60b1479d"
+  },
+  "06_simple_waves.qmd": {
+    "06_simple_waves.html": "42bf1125"
+  },
+  "08_reflection_transmission.qmd": {
+    "08_reflection_transmission.html": "f6cacd0e"
+  },
+  "09_sound_waves.qmd": {
+    "09_sound_waves.html": "bc867e30"
+  },
+  "10_superpositions.qmd": {
+    "10_superpositions.html": "5534f033"
+  },
+  "11_math_toolkit.qmd": {
+    "11_math_toolkit.html": "1d84c0b6"
+  },
+  "02a_forced_oscillations.qmd": {
+    "02a_forced_oscillations.html": "1735f90d"
+  }
+}

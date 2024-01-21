@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Oscillations and Waves - 8&nbsp; Harmonic Waves</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08_reflection_transmission.html" rel="next">
+<link href="./06_simple_waves.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_harmonic_waves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Oscillations and Waves</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_shm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_damped_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02a_forced_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_coupled_oscillators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_pendulums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_oscillators_to_wave_motion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_simple_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_harmonic_waves.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_reflection_transmission.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reflection and Transmission at boundaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_sound_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sound waves and the Doppler effect</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_superpositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Superposition and Standing Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_math_toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-ch7-sinecosine" id="toc-sec-ch7-sinecosine" class="nav-link active" data-scroll-target="#sec-ch7-sinecosine"><span class="header-section-number">8.1</span> Transverse sine and cosine waves</a></li>
+  <li><a href="#sec-ch7-travellingwaves" id="toc-sec-ch7-travellingwaves" class="nav-link" data-scroll-target="#sec-ch7-travellingwaves"><span class="header-section-number">8.2</span> Travelling waves</a></li>
+  <li><a href="#sec-ch7-complexrep" id="toc-sec-ch7-complexrep" class="nav-link" data-scroll-target="#sec-ch7-complexrep"><span class="header-section-number">8.3</span> Complex representation of waves</a></li>
+  <li><a href="#sec-ch7-energywavesstring" id="toc-sec-ch7-energywavesstring" class="nav-link" data-scroll-target="#sec-ch7-energywavesstring"><span class="header-section-number">8.4</span> Energy carried by waves on a string</a>
+  <ul class="collapse">
+  <li><a href="#sec-ch7-peofstringsegment" id="toc-sec-ch7-peofstringsegment" class="nav-link" data-scroll-target="#sec-ch7-peofstringsegment"><span class="header-section-number">8.4.1</span> Potential energy of string segment</a></li>
+  <li><a href="#sec-ch7-keofstringsegment" id="toc-sec-ch7-keofstringsegment" class="nav-link" data-scroll-target="#sec-ch7-keofstringsegment"><span class="header-section-number">8.4.2</span> Kinetic energy of string segment</a></li>
+  <li><a href="#sec-ch7-totenergystringsegment" id="toc-sec-ch7-totenergystringsegment" class="nav-link" data-scroll-target="#sec-ch7-totenergystringsegment"><span class="header-section-number">8.4.3</span> Total energy of wave on a string</a></li>
+  <li><a href="#sec-ch7-transportenergypower" id="toc-sec-ch7-transportenergypower" class="nav-link" data-scroll-target="#sec-ch7-transportenergypower"><span class="header-section-number">8.4.4</span> Transport of energy and power</a></li>
+  </ul></li>
+  <li><a href="#sec-ch7-summary" id="toc-sec-ch7-summary" class="nav-link" data-scroll-target="#sec-ch7-summary"><span class="header-section-number">8.5</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-ch7-harmonicwaves" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><em>Textbook link: Tipler and Mosca, Section 15.2</em></p>
+<p>A <em>harmonic wave</em> is a general term for a wave which, at some instant of time, can be described by a sinusoidal function (<em>i.e.</em> it is a sine or a cosine function). They are the simplest of waves to consider, and we will devote this chapter to exploring their properties.</p>
+<section id="sec-ch7-sinecosine" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-ch7-sinecosine"><span class="header-section-number">8.1</span> Transverse sine and cosine waves</h2>
+<p>If we consider a string which is excited by a tuning fork or other object undergoing simple harmonic motion (SHM), we can imagine the shape of the save on the string at some instant of time appearing as a sine or a cosine wave (depending on our choice of origin) (<a href="#fig-ch7-transversesine1">Figure&nbsp;<span>8.1</span></a>):</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch7-transversesine1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch7-transversesine1.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.1: A sine wave in a string created by an oscillating particle. The wavelength <span class="math inline">\(\lambda\)</span> is shown for one complete cycle, while the amplitude <span class="math inline">\(A\)</span> is defined as the maximum deviation from the origin point.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This sinusoidal appearance is known as a <strong>harmonic wave</strong>. Each point on the string oscillates up and down with the same frequency as the driving frequency. During the period <span class="math inline">\(T\)</span>, the wave moves through distance <span class="math inline">\(\lambda\)</span>:</p>
+<p><span id="eq-ch7-tranversesine1"><span class="math display">\[
+v = \frac{\lambda}{T} = f\lambda
+\tag{8.1}\]</span></span></p>
+<p>…where <span class="math inline">\(v\)</span> is the phase velocity of the wave and <span class="math inline">\(f\)</span> is the frequency in hertz (Hz), and <span class="math inline">\(\lambda\)</span> defined as the <strong>wavelength</strong> <em>i.e.</em> the spacial repeat distance of the wave.</p>
+<p>A harmonic wave has a unique frequency and wavelength, and other waves (<em>e.g.</em> wave pulses) may be regarded as a superposition of many harmonic waves of different frequencies (we will discuss the Fourier analysis of this later).</p>
+<p>At any instant in time, the wave can be described by the relation in <a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a>:</p>
+<p><span id="eq-ch7-transversesine2"><span class="math display">\[
+y = A \sin(kx + \delta)
+\tag{8.2}\]</span></span></p>
+<p>…where <span class="math inline">\(A\)</span> is the amplitude of the wave and <span class="math inline">\(\delta\)</span> is the phase constant. Let’s now choose the origin so that <span class="math inline">\(\delta\)</span> is equal to zero (<em>i.e.</em> there is no phase constant). Now we can show the periodic condition in <a href="#eq-ch7-tranversesine3">Equation&nbsp;<span>8.3</span></a>:</p>
+<p><span id="eq-ch7-tranversesine3"><span class="math display">\[
+\sin kx = \sin k(x+\lambda)
+\tag{8.3}\]</span></span></p>
+<p>Here we specify the periodic condition; the amplitude (and phase!) at position <span class="math inline">\(x\)</span> is equal to the amplitude (and phase!) at position <span class="math inline">\(x\)</span> <strong>plus one wavelength</strong>. Because this is a sine function, we know that, in order to achieve this condition, the value <span class="math inline">\(k\lambda\)</span> must be equal to <span class="math inline">\(2\pi\)</span>:</p>
+<p><span id="eq-ch7-tranvsersesine3b"><span class="math display">\[
+\begin{array}{rcl}
+\sin \theta &amp;=&amp; \sin \left( \theta + 2\pi \right)\\
+\sin kx &amp;=&amp; \sin \left( kx + k\lambda\right) = \sin \left( kx + 2\pi \right) \\
+k\lambda &amp;=&amp; 2\pi
+\end{array}
+\tag{8.4}\]</span></span></p>
+<p>This allows us to give a value for <span class="math inline">\(k\)</span> (<a href="#eq-ch7-tranversesine4">Equation&nbsp;<span>8.5</span></a>):</p>
+<p><span id="eq-ch7-tranversesine4"><span class="math display">\[
+k = \frac{2\pi}{\lambda}
+\tag{8.5}\]</span></span></p>
+<p>The parameter <span class="math inline">\(k\)</span> is defined as the <strong>wave number</strong> of the wave, in units radians per metre (rad m<sup>-1</sup>).</p>
+</section>
+<section id="sec-ch7-travellingwaves" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-ch7-travellingwaves"><span class="header-section-number">8.2</span> Travelling waves</h2>
+<p>The wave we showed in <a href="#sec-ch7-sinecosine"><span>Section&nbsp;8.1</span></a> was a snapshot in time, so the wave was, in effect, static. We instead wish to consider a travelling wave. To do this, instead of writing <span class="math inline">\(x\)</span> as in <a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a> with a phase difference, we rewrite with <span class="math inline">\(x - vt\)</span> (see <a href="06_simple_waves.html#sec-ch6-wavepulses"><span>Section&nbsp;7.1</span></a>) to illustrate the time-dependent nature of the travelling wave. <a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a> then becomes <a href="#eq-ch7-transversesine5">Equation&nbsp;<span>8.6</span></a>:</p>
+<p><span id="eq-ch7-transversesine5"><span class="math display">\[
+y = A \sin k(x - vt) = A \sin (kx - kvt)
+\tag{8.6}\]</span></span></p>
+<p>As we have described, <span class="math inline">\(T\)</span> is the period of the wave, so any point on the wave will oscillate up and down also with period <span class="math inline">\(T\)</span>. This means that, for the wave position at time <span class="math inline">\(t\)</span>, it will return to the same state at time <span class="math inline">\((t+T)\)</span>. We can therefore write <a href="#eq-ch7-transversesine5">Equation&nbsp;<span>8.6</span></a> in terms of this period:</p>
+<p><span id="eq-ch7-travelling2"><span class="math display">\[
+\begin{array}{rcl}
+y = A \sin \left( kx - kvt \right) &amp;=&amp; A \sin \left( kx - kv(t+T) \right) \\
+&amp;=&amp; A \sin \left( kx - kvt - kvT \right)
+\end{array}
+\tag{8.7}\]</span></span></p>
+<p>Applying the same reasoning as shown in <a href="#eq-ch7-tranvsersesine3b">Equation&nbsp;<span>8.4</span></a>, we are led to the result:</p>
+<p><span class="math display">\[
+kvT = 2\pi
+\]</span></p>
+<p>If we revisit our discussions on SHM (<a href="01_shm.html#sec-shm-freq-angularfreq"><span>Section&nbsp;1.7</span></a>) we defined the relationship between <span class="math inline">\(T\)</span> and <span class="math inline">\(2\pi\)</span> (<a href="01_shm.html#eq-ch1-definingomega1">Equation&nbsp;<span>1.12</span></a>) as <span class="math inline">\(T = \frac{2\pi}{\omega}\)</span> (and also <span class="math inline">\(\omega = 2\pi f\)</span>). This allows us to define a number of factors as follows:</p>
+<ul>
+<li><strong>Phase velocity</strong>:</li>
+</ul>
+<p><span id="eq-ch7-phasevel1"><span class="math display">\[
+v = \frac{2\pi}{kT} = \frac{\omega}{k}
+\tag{8.8}\]</span></span></p>
+<ul>
+<li><strong>Travelling wave to the right</strong>:</li>
+</ul>
+<p><span id="eq-ch7-travellingtoright1"><span class="math display">\[
+y = A \sin \left( kx - kvt \right) = A \sin \left( kx - \omega t \right)
+\tag{8.9}\]</span></span></p>
+<ul>
+<li><strong>Travelling wave to the left</strong>:</li>
+</ul>
+<p><span id="eq-ch7-travellingtoleft1"><span class="math display">\[
+y = A \sin \left( kx + kvt \right) = A \sin \left( kx + \omega t \right)
+\tag{8.10}\]</span></span></p>
+<p>It is worth noting for each of these factors:</p>
+<ol type="1">
+<li>The sign of <span class="math inline">\(\omega\)</span>:
+<ul>
+<li>negative for waves travelling to right;</li>
+<li>positive for waves travelling to left</li>
+</ul></li>
+<li>The wave expressions can be shown to satisfy the wave equation by substitution.</li>
+</ol>
+</section>
+<section id="sec-ch7-complexrep" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="sec-ch7-complexrep"><span class="header-section-number">8.3</span> Complex representation of waves</h2>
+<p>We introduced complex numbers for descriptions of oscillations; we can use the same treatment for our wave equations. Just as <span class="math inline">\(\sin(kx - \omega t)\)</span> and <span class="math inline">\(\cos(kx-\omega t)\)</span> satisfy the wave equation, so too will <span class="math inline">\(\mathrm{e}^{\mathrm{i}(kx-\omega t)}\)</span>. It is often convenient to write the wave expression in a complex form as shown in <a href="#eq-ch7-wavecomplex1">Equation&nbsp;<span>8.11</span></a>:</p>
+<p><span id="eq-ch7-wavecomplex1"><span class="math display">\[
+y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
+\tag{8.11}\]</span></span></p>
+<p>In this expression, the sine wave is given by the ‘imaginary’ component of <span class="math inline">\(y\)</span>, while the cosine part is given by the ‘real’ component.</p>
+</section>
+<section id="sec-ch7-energywavesstring" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sec-ch7-energywavesstring"><span class="header-section-number">8.4</span> Energy carried by waves on a string</h2>
+<p>Suppose we now have a string attached to an oscillating driver at one end. As the driver oscillates, it imparts energy to the string at <span class="math inline">\(x=0\)</span> by:</p>
+<ol type="1">
+<li>Stretching the string to give it potential energy, and</li>
+<li>imparting transverse speed to the string to increase its kinetic energy.</li>
+</ol>
+<p>As the waves move along the string, so the energy is transported along the string.</p>
+<section id="sec-ch7-peofstringsegment" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="sec-ch7-peofstringsegment"><span class="header-section-number">8.4.1</span> Potential energy of string segment</h3>
+<p>We now consider the same string segment as we showed in <a href="06_simple_waves.html#fig-ch6-waveeqnderiv1">Figure&nbsp;<span>7.6</span></a>, but now we consider it stretched (<a href="#fig-ch7-stretchedsegment1">Figure&nbsp;<span>8.2</span></a>). We can picture this as the string is “relaxed” in its ‘horizontal’ orientation (length of segment is <span class="math inline">\(\Delta x\)</span>), but when a wave passes along it, the string elongates to accommodate the curve of the wave form. This means our segment now takes on a new length <span class="math inline">\(\Delta l\)</span>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch7-stretchedsegment1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch7-peofstringsegment.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.2: As the wave passes along a stretched string, we can consider it to be ‘stretched’; considering a string element of lencth <span class="math inline">\(\Delta x\)</span>, it is stretched to new length <span class="math inline">\(\Delta l\)</span> as the wave passes by.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The work done (U) in stretching the segment <span class="math inline">\(\Delta x\)</span> can be expressed as:</p>
+<p><span id="eq-ch7-workdonestring1"><span class="math display">\[
+\Delta u = F(\Delta l - \Delta x)
+\tag{8.12}\]</span></span></p>
+<p>…where <span class="math inline">\(F\)</span> is the tension in the string and the extension is given by <span class="math inline">\((\Delta l - \Delta x)\)</span>. We can apply Pythagoras to relate <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta l\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{rcl}
+\Delta l^2 &amp;=&amp; \Delta x^2 + \Delta y^2 \\
+&amp;=&amp; \Delta x^2 \left[ 1 + \left( \dfrac{\Delta y}{\Delta x}\right)^2 \right]
+\end{array}
+\]</span></p>
+<p>Therefore we can isolate <span class="math inline">\(\Delta l\)</span>:</p>
+<p><span class="math display">\[
+\Delta l = \Delta x \left[ 1 + \left( \dfrac{\Delta y}{\Delta x}\right)^2 \right]^{\frac{1}{2}}
+\]</span></p>
+<p>We can approximate this expression by using the Taylor series expansion for <span class="math inline">\(\sqrt{1+n}\)</span>, where <span class="math inline">\(n = \left( \dfrac{\Delta y}{\Delta x}\right)^2\)</span>; assuming that the fraction is significantly less than one we can write this as an approximation and disregard terms past the first two terms:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="math display">\[
+\Delta l \approx \Delta x \left[ 1 + \frac{1}{2}\left( \dfrac{\Delta y}{\Delta x}\right)^2 + \cdots \right]
+\]</span></p>
+<p>Rearranging this expression to obtain the expression for the extension of the string <span class="math inline">\(\Delta l - \Delta x\)</span>:</p>
+<p><span class="math display">\[
+\Delta l - \Delta x \approx   + \frac{\Delta x}{2} \left( \dfrac{\Delta y}{\Delta x}\right)^2 + \cdots
+\]</span></p>
+<p>This now allows us to obtain an expression for the work done in stretching the spring solely in terms of the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> displacement (from <a href="#eq-ch7-workdonestring1">Equation&nbsp;<span>8.12</span></a>)</p>
+<p><span class="math display">\[
+\Delta U = \frac{F\Delta x}{2} \left( \dfrac{\Delta y}{\Delta x}\right)^2
+\]</span></p>
+<p>As we have an expression for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> (<a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a>), we can differentiate this with respect to <span class="math inline">\(x\)</span> to approximate <span class="math inline">\(\frac{\Delta y}{\Delta x}\)</span>:</p>
+<p><span class="math display">\[
+\frac{\Delta y}{\Delta x} \simeq \frac{\mathrm{d} y}{\mathrm{d} x} = kA \cos (kx - \omega t)
+\]</span></p>
+<p>We also know that <span class="math inline">\(v^2 = \frac{F}{\mu}\)</span> (from the wave equation), and that <span class="math inline">\(v = \frac{\omega}{k}\)</span> (<a href="#eq-ch7-phasevel1">Equation&nbsp;<span>8.8</span></a>), therefore:</p>
+<p><span class="math display">\[
+\Delta U = \frac{1}{2} \left( \frac{\mu \omega^2}{k^2} \right) \Delta x \left( kA \cos (kx - \omega t) \right)^2
+\]</span></p>
+<p>Tidying up and cancelling, we obtain the expression for the potential energy stored in an element of string of length <span class="math inline">\(\Delta x\)</span> (<a href="#eq-ch7-pestoredstring1">Equation&nbsp;<span>8.13</span></a>):</p>
+<p><span id="eq-ch7-pestoredstring1"><span class="math display">\[
+\Delta U = \frac{1}{2} \mu \omega^2 A^2 \Delta x \cos^2(kx-\omega t)
+\tag{8.13}\]</span></span></p>
+</section>
+<section id="sec-ch7-keofstringsegment" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="sec-ch7-keofstringsegment"><span class="header-section-number">8.4.2</span> Kinetic energy of string segment</h3>
+<p>We will again consider the segment of string discussed in <a href="#sec-ch7-peofstringsegment"><span>Section&nbsp;8.4.1</span></a>; an element <span class="math inline">\(\Delta x\)</span> of the string, of mass <span class="math inline">\(\Delta m\)</span> (<a href="#fig-ch7-kestringsegment">Figure&nbsp;<span>8.3</span></a>).</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch7-kestringsegment" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch7-keofstringsegment.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.3: Similar to the situation shown above, the same string segment will have a kinetic energy associated with its velocity <span class="math inline">\(v_y\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- Figure \\@ref(ch7-stretchedsegment1) -->
+<p>As before, the segment is stretched to new length <span class="math inline">\(\Delta l\)</span>, but the mass is still given by:</p>
+<p><span class="math display">\[
+\Delta m = \mu \Delta x
+\]</span></p>
+<p>…where <span class="math inline">\(\mu\)</span> is the mass per unit length. We now use the <strong>transverse velocity</strong> of the segment (<em>i.e.</em> <strong>not</strong> the wave velocity) to determine the kinetic energy of the segment:</p>
+<p><span class="math display">\[
+\Delta KE = \frac{1}{2} \Delta m v_y^2 = \frac{1}{2} \mu \Delta x \left( \frac{\mathrm{d}y}{\mathrm{d}t} \right)^2
+\]</span></p>
+<p>Again, we know the expression for the vertical displacement <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> (<a href="#eq-ch7-transversesine5">Equation&nbsp;<span>8.6</span></a>), so we now differentiate with respect to <span class="math inline">\(t\)</span>:</p>
+<ul>
+<li><span class="math inline">\(y = A \sin(kx - \omega t)\)</span></li>
+<li><span class="math inline">\(v_y = \frac{\mathrm{d}y}{\mathrm{d}t} = -\omega A \cos(kx - \omega t)\)</span></li>
+</ul>
+<p>Therefore our expression for the kinetic energy becomes:</p>
+<p><span id="eq-ch7-kestoredstring1"><span class="math display">\[
+\Delta KE =  \frac{1}{2} \mu \omega^2  A^2 \Delta x  \cos^2(kx - \omega t)
+\tag{8.14}\]</span></span></p>
+<p>A quick comparison of <a href="#eq-ch7-pestoredstring1">Equation&nbsp;<span>8.13</span></a> and <a href="#eq-ch7-kestoredstring1">Equation&nbsp;<span>8.14</span></a> shows that these expressions are identical; <em>i.e.</em> the KE stored in the string is the <strong>same</strong> as the PE stored in the spring.</p>
+</section>
+<section id="sec-ch7-totenergystringsegment" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="sec-ch7-totenergystringsegment"><span class="header-section-number">8.4.3</span> Total energy of wave on a string</h3>
+<p>We can therefore find the total energy of the string segment carrying a harmonic wave as the total of the kinetic and potential energies:</p>
+<p><span class="math display">\[
+\Delta E = \Delta KE + \Delta U
+\]</span></p>
+<p><em>i.e.</em>:</p>
+<p><span id="eq-ch7-totalenergywavestring1"><span class="math display">\[
+\Delta E = \mu \omega^2  A^2 \Delta x  \cos^2(kx - \omega t)
+\tag{8.15}\]</span></span></p>
+<p>Note that the energy of the segment varies with time with twice the frequency of the wave (since <span class="math inline">\(\cos^2 \theta = \frac{1}{2}(1+ \cos 2\theta)\)</span>).</p>
+<p>We can also define the average energy at any point (<a href="#eq-ch7-averageenergystring1">Equation&nbsp;<span>8.16</span></a>) using the time-average definition <span class="math inline">\(\left&lt; \cos^2 \theta \right&gt; = \frac{1}{2}\)</span>:</p>
+<p><span id="eq-ch7-averageenergystring1"><span class="math display">\[
+\Delta E_{\mathrm{av}} = \frac{1}{2}\mu \omega^2 A^2 \Delta x
+\tag{8.16}\]</span></span></p>
+<p>…and we can define the average <em>energy density</em> (per unit length) as:</p>
+<p><span class="math display">\[
+\varepsilon = \frac{\Delta E_{\mathrm{av}}}{\Delta x} = \frac{1}{2} \mu \omega^2 A^2
+\]</span></p>
+<p>There are several things to note from this derivation:</p>
+<ul>
+<li>KE is at a maximum when displacement is zero</li>
+<li>At this point the string is most stretched, so PE is at a maximum also <!-- WHY??? Surely at zero displacement the string flat lines, so ∆l = ∆x, no stretching?? --> <!-- No - stretching is proportional to gradient; gradient steepest at zero displacement. --></li>
+<li>PE and KE are <strong>in phase</strong> (unlike in a pendulum)</li>
+</ul>
+<p>These points are illustrated in <a href="#fig-ch7-kepestringplot1">Figure&nbsp;<span>8.4</span></a>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch7-kepestringplot1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch7-kepestringplot1.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.4: The kinetic energy and potential energy of a displaced string element have maxima and minima at the same points in the oscillation; as the element passes through the origin (top plot), it is at its most stretched (PE maximum), and it is traveling at its fastest (KE maximum).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-ch7-transportenergypower" class="level3" data-number="8.4.4">
+<h3 data-number="8.4.4" class="anchored" data-anchor-id="sec-ch7-transportenergypower"><span class="header-section-number">8.4.4</span> Transport of energy and power</h3>
+<p>As the wave propagates along the string, energy is transported by the moving wavefront at speed <span class="math inline">\(v\)</span>. The average energy passing a point on the string in time <span class="math inline">\(\Delta t\)</span> is the average energy in the segment of length <span class="math inline">\(\Delta x = v\Delta t\)</span>. This means we can rewrite <a href="#eq-ch7-averageenergystring1">Equation&nbsp;<span>8.16</span></a>:</p>
+<p><span id="eq-ch7-averageenergystring2"><span class="math display">\[
+\Delta E_{\mathrm{av}} = \frac{1}{2}\mu \omega^2 A^2 v \Delta t
+\tag{8.17}\]</span></span></p>
+<p>Since the power transmitted is a <em>rate of change of energy</em>, <em>i.e.</em> <span class="math inline">\(\frac{\Delta E}{\Delta t}\)</span>, we can obtain an expression for the average power transmitted:</p>
+<p><span id="eq-ch7-averagepowerstring1"><span class="math display">\[
+\Delta P_{\mathrm{av}} = \frac{\mathrm{d} E_{\mathrm{av}}}{\mathrm{d}t} \approx \frac{\Delta E_{\mathrm{av}}}{\Delta t} = \frac{1}{2}\mu \omega^2 A^2 v
+\tag{8.18}\]</span></span></p>
+<p>From this result, we can see that both the average energy and average power transmitted are both proportional to <span class="math inline">\(A^2\)</span>; a similar observation as in SHM (<a href="01_shm.html"><span>Chapter&nbsp;1</span></a>).</p>
+</section>
+</section>
+<section id="sec-ch7-summary" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="sec-ch7-summary"><span class="header-section-number">8.5</span> Summary</h2>
+<p>We have covered a large amount of derivations in this chapter, however the take-home points are the following:</p>
+<p>When describing sine waves travelling through a medium, the following statements apply:</p>
+<ul>
+<li>For a wave travelling to the <strong>right</strong>: <span class="math inline">\(y = A\sin(kx-\omega t)\)</span></li>
+<li>For a wave travelling to the <strong>left</strong>: <span class="math inline">\(y = A\sin(kx+\omega t)\)</span></li>
+<li>The <strong>phase velocity</strong>: <span class="math inline">\(v = \frac{\omega}{k}\)</span> m s<sup>-1</sup></li>
+</ul>
+<p>…where:</p>
+<ul>
+<li><span class="math inline">\(k\)</span> = wavenumber = <span class="math inline">\(\frac{2\pi}{\lambda}\)</span></li>
+<li><span class="math inline">\(\lambda\)</span> = wavelength /m</li>
+<li><span class="math inline">\(\omega\)</span> = angular frequency = <span class="math inline">\(2\pi f\)</span> /rad m<sup>-1</sup></li>
+<li><span class="math inline">\(f\)</span> = frequency /Hz = <span class="math inline">\(\frac{1}{T}\)</span></li>
+<li><span class="math inline">\(T\)</span> = period /s</li>
+<li><span class="math inline">\(A\)</span> = amplitude /m</li>
+</ul>
+<p>The average energy carried by a wave (per unit length) is given by:</p>
+<p><span class="math display">\[
+\varepsilon = \frac{\Delta E_{\mathrm{av}}}{\Delta x} = \frac{1}{2} \mu \omega^2 A^2
+\]</span></p>
+<p>…and the average power transmitted by the wave is given by:</p>
+<p><span class="math display">\[
+\Delta P_{\mathrm{av}} = \frac{\Delta E_{\mathrm{av}}}{\Delta t} = \frac{1}{2}\mu \omega^2 A^2 v
+\]</span></p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The Taylor expansion for this expression is <span class="math inline">\(\sqrt{1+n} = 1+ \frac{n}{2} - \frac{n^2}{8} + \frac{n^3}{16} - \cdots\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06_simple_waves.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08_reflection_transmission.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reflection and Transmission at boundaries</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

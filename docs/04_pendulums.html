@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Oscillations and Waves - 5&nbsp; Pendulums</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05_oscillators_to_wave_motion.html" rel="next">
+<link href="./03_coupled_oscillators.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_pendulums.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Oscillations and Waves</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_shm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_damped_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02a_forced_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_coupled_oscillators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_pendulums.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_oscillators_to_wave_motion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_simple_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_harmonic_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_reflection_transmission.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reflection and Transmission at boundaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_sound_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sound waves and the Doppler effect</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_superpositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Superposition and Standing Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_math_toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-simple-pendulum" id="toc-the-simple-pendulum" class="nav-link active" data-scroll-target="#the-simple-pendulum"><span class="header-section-number">5.1</span> The simple pendulum</a></li>
+  <li><a href="#sec-ch4-physicalpendulum" id="toc-sec-ch4-physicalpendulum" class="nav-link" data-scroll-target="#sec-ch4-physicalpendulum"><span class="header-section-number">5.2</span> The Physical Pendulum</a></li>
+  <li><a href="#the-double-pendulum" id="toc-the-double-pendulum" class="nav-link" data-scroll-target="#the-double-pendulum"><span class="header-section-number">5.3</span> The Double Pendulum</a></li>
+  <li><a href="#chaos" id="toc-chaos" class="nav-link" data-scroll-target="#chaos"><span class="header-section-number">5.4</span> Chaos</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-ch4-simplependulum" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>A pendulum is a mechanically simple oscillating system; its oscillation can be considered SHM for small displacements. A simple pendulum is shown in <a href="#fig-ch4-simplependulum1">Figure&nbsp;<span>5.1</span></a>, and it is worth quickly revisiting this example as we will extend this in our further examples.</p>
+<p>At its core, a pendulum is an oscillator whose oscillation is based on a rotational, rather than a linear displacement. Consequently the dynamics governing pendulums is slightly different to a linear oscillator, however they are a good example to show that we can approximate small displacements as “simple harmonic oscillations”.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch4-simplependulum1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch4-simplependulum1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.1: A simple pendulum, consisting of a mass <span class="math inline">\(m\)</span> swinging on a string of length <span class="math inline">\(L\)</span>. At angle <span class="math inline">\(\phi\)</span>, the weight of the mass <span class="math inline">\(mg\)</span> can be resolved into components to determine the mechanics of the system.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We can loosely break down pendulums (pendula?) into a number of categories depending on their nature. Note this is not an exhaustive list!</p>
+<ul>
+<li>A simple pendulum. This is the simplest pendulum we can consider; a point mass attached to a light string, swinging under the influence of gravity alone. We approximate this in reality by using a thin string and a heavy mass such that the mass of the string is insignificant in the calculations.</li>
+<li>A physical pendulum. This is similar in setup to the simple pendulum, however we take into account the mass of the rod connecting the mass to the pivot (note a “rod” rather than a “string”) as well as the physical size of the mass. This requires determination of moments of inertia.</li>
+<li>A torsional pendulum. This is a pendulum whose oscillations are not driven by gravity - rather by the forces induced when a horizontally rotating mass twists a fixed vertical support. This is often used in portable mechanical clocks where there is not space for a physical pendulum.</li>
+<li>A double (or compound) pendulum. This is a system of two (or more!) pendula connected end to end, such that the end of one pendulum forms the pivot of the next. It results in motion which is described as <strong>chaotic</strong>.</li>
+</ul>
+<p>We will examine the case of the simple pendulum, the physical pendulum, and will take a brief look at the double pendulum.</p>
+<section id="the-simple-pendulum" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-simple-pendulum"><span class="header-section-number">5.1</span> The simple pendulum</h2>
+<p>The mass of the pendulum can be considered to oscillate along the arc <span class="math inline">\(s\)</span> (<a href="#fig-ch4-simplependulum1">Figure&nbsp;<span>5.1</span></a>), where the restoring force becomes <span class="math inline">\(mg \sin \phi\)</span>. This force then causes an acceleration along the arc, <span class="math inline">\(\frac{\mathrm{d}^2 s}{\mathrm{d} t^2}\)</span>, with the equation of motion becoming:</p>
+<p><span id="eq-ch4-simplependulum-a1"><span class="math display">\[
+mg \sin \phi = - m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2}
+\tag{5.1}\]</span></span></p>
+<p>This however relates the variable <span class="math inline">\(\phi\)</span> relative to the arc length <span class="math inline">\(s\)</span>; it is more useful to relate this to a single variable. We can derive an expression for this oscillation with respect to angle as follows:</p>
+<ul>
+<li>The arc length <span class="math inline">\(s\)</span> can be calculated as <span class="math inline">\(s = L \phi\)</span>.</li>
+<li>The second derivative of <span class="math inline">\(s\)</span> with respect to time can then be found:</li>
+</ul>
+<p><span id="eq-ch4-simplependulum-a2"><span class="math display">\[
+\frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = L \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2}
+\tag{5.2}\]</span></span></p>
+<p>We can then substitute this into <a href="#eq-ch4-simplependulum-a1">Equation&nbsp;<span>5.1</span></a>:</p>
+<p><span id="eq-ch4-simplependulum-a3"><span class="math display">\[
+m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = m L \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} =  -mg \sin \phi
+\tag{5.3}\]</span></span></p>
+<p>A quick rearrangement gives us the equation of motion for a simple pendulum.</p>
+<p><span id="eq-ch4-simplependulum-a3"><span class="math display">\[
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} =  -\frac{g}{L} \sin \phi
+\tag{5.4}\]</span></span></p>
+<p>For small displacements (small <span class="math inline">\(\phi\)</span>), the equation of motion can be considered as in <a href="#eq-ch4-simplependulum1">Equation&nbsp;<span>5.5</span></a>:</p>
+<p><span id="eq-ch4-simplependulum1"><span class="math display">\[
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} = -\frac{g}{L}\sin \phi \approx -\frac{g \phi}{L} \textrm{ for small } \phi
+\tag{5.5}\]</span></span></p>
+<p>This is SHM, with angular frequency <span class="math inline">\(\omega\)</span> and period <span class="math inline">\(T\)</span> found as in <a href="#eq-ch4-simplependulum2">Equation&nbsp;<span>5.6</span></a>:</p>
+<p><span id="eq-ch4-simplependulum2"><span class="math display">\[
+\omega^2 = \frac{g}{L} \hspace{15pt} and \hspace{15pt} T = 2\pi \sqrt{\frac{L}{g}}
+\tag{5.6}\]</span></span></p>
+<p>The solution for the equation of motion of this system then becomes <a href="#eq-ch4-simplependulum3">Equation&nbsp;<span>5.7</span></a>:</p>
+<p><span id="eq-ch4-simplependulum3"><span class="math display">\[
+\phi = \phi_0 \cos (\omega t + \delta)
+\tag{5.7}\]</span></span></p>
+<p>…where <span class="math inline">\(\phi_0\)</span> is the amplitude of the system and <span class="math inline">\(\delta\)</span> is the phase constant. Notice that, for the pendulum we express the amplitude in terms of the angle of the string rather than an absolute distance (shown as <span class="math inline">\(s\)</span> in <a href="#fig-ch4-simplependulum1">Figure&nbsp;<span>5.1</span></a>).</p>
+</section>
+<section id="sec-ch4-physicalpendulum" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-ch4-physicalpendulum"><span class="header-section-number">5.2</span> The Physical Pendulum</h2>
+<p>Many oscillating systems demonstrate rotational oscillations under gravity akin to the simple pendulum. In this case, the system rotates around a pivot, <span class="math inline">\(P\)</span>, and this can then be considered as a pendulum with the centre of mass acting as the ‘bob’. An example of a general system is shown in <a href="#fig-ch4-physicalpendulum1">Figure&nbsp;<span>5.2</span></a>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch4-physicalpendulum1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch4-physicalpendulum1.svg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.2: A physical pendulum, consisting of a physical object of mass <span class="math inline">\(M\)</span> swinging on a pivot through point <span class="math inline">\(P\)</span> of length <span class="math inline">\(L\)</span>. At angle <span class="math inline">\(\phi\)</span>, the weight of the mass <span class="math inline">\(Mg\)</span> can again be resolved into components to determine the mechanics of the system.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, as a restoring force, we consider the <strong>torque</strong> of the centre of mass around the pivot. Remember that the torque is defined as the product of the force and the <strong>perpendicular distance of the force’s line of action from the pivot</strong>. If using vectors, this is considered as the <strong>cross product</strong> of the force vector <span class="math inline">\(\mathbf{F}\)</span> with the position vector of the centre of mass from the pivot, <span class="math inline">\(\mathbf{D}\)</span> (<a href="#eq-ch4-physicalpendulum1">Equation&nbsp;<span>5.8</span></a>):</p>
+<p><span id="eq-ch4-physicalpendulum1"><span class="math display">\[
+\begin{array}{rcl}
+\textrm{Torque about pivot $P$} &amp;=&amp; \mathbf{D} \times \mathbf{F} \\
+&amp;=&amp; \mathbf{\hat{n}}~ |D| |F| \sin \phi \\
+&amp;=&amp; \mathbf{\hat{n}}~ D mg  \sin \phi = \tau \mathbf{\hat{n}}
+\end{array}
+\tag{5.8}\]</span></span></p>
+<p>In this case, the unit vector <span class="math inline">\(\mathbf{\hat{n}}\)</span> is perpendicular to the plane of rotation and is included for completeness’ sake. What we are interested in is the magnitude of this torque vector, <span class="math inline">\(\tau\)</span>.</p>
+<p>Recall from rotational motion that the angular acceleration <span class="math inline">\(\alpha\)</span> and the torque <span class="math inline">\(\tau\)</span> are connected via the moment of inertia <span class="math inline">\(I\)</span> (<a href="#eq-ch4-physicalpendulum2">Equation&nbsp;<span>5.9</span></a>):<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span id="eq-ch4-physicalpendulum2"><span class="math display">\[
+\begin{array}{rcl}
+I \dfrac{\mathrm{d}^2 \phi}{\mathrm{d} t^2}  &amp;=&amp; I\alpha =\tau \\
+&amp;=&amp; -mgD \sin \phi
+\end{array}
+\tag{5.9}\]</span></span></p>
+<p>We now approximate this for small <span class="math inline">\(\phi\)</span>:</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} = -\frac{mgD\phi}{I} = -\omega^2 \phi
+\]</span></p>
+<p>This allows us to identify expressions again for the angular frequency, <span class="math inline">\(\omega\)</span>, and the period <span class="math inline">\(T\)</span> (<a href="#eq-ch4-physicalpendulum3">Equation&nbsp;<span>5.10</span></a>):</p>
+<p><span id="eq-ch4-physicalpendulum3"><span class="math display">\[
+\omega^2 = \frac{mgD}{I} \hspace{15pt} and \hspace{15pt} T = 2\pi \sqrt{\frac{I}{mgD}}
+\tag{5.10}\]</span></span></p>
+<p>We can compare this result with that for the simple pendulum shown in <a href="#eq-ch4-simplependulum2">Equation&nbsp;<span>5.6</span></a>; if we remember that the moment of inertia <span class="math inline">\(I\)</span> is defined as <span class="math inline">\(I = mD^2\)</span>, we can substitute this into <a href="#eq-ch4-physicalpendulum3">Equation&nbsp;<span>5.10</span></a> and see that this is a general case for any rotating body:</p>
+<p><span class="math display">\[
+T_\textrm{simple pendulum} = 2\pi \sqrt{\frac{I_\textrm{simple pendulum}}{mgD}} = 2\pi \sqrt{\frac{mD^2}{mgD}} = 2\pi \sqrt{\frac{D}{g}}
+\]</span></p>
+<p>…giving us our expected result (where the general term <span class="math inline">\(D\)</span> can be replaced for the length of the simple pendulum, <span class="math inline">\(L\)</span>).</p>
+</section>
+<section id="the-double-pendulum" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-double-pendulum"><span class="header-section-number">5.3</span> The Double Pendulum</h2>
+<!-- https://math24.net/double-pendulum.html -->
+<!-- https://www.myphysicslab.com/pendulum/double-pendulum-en.html -->
+<!-- https://web.mit.edu/jorloff/www/chaosTalk/double-pendulum/double-pendulum-en.html -->
+<p>The double pendulum is a case study for a particular type of coupled oscillator; we take a simple pendulum (a light rod suspended from a pivot with a mass <span class="math inline">\(m_1\)</span> at the end), and couple to it a second simple pendulum with mass <span class="math inline">\(m_2\)</span>; the pivot of this second pendulum being <span class="math inline">\(m_1\)</span>. It is a deceptively complex problem, as it looks from the outset to be fairly simple. However, we rapidly find that while at small amplitudes, the oscillations are predictable, as the amplitude increases, tiny variations in the starting conditions for the pendulum can have wildly different effects, and solving the equations of motion is anything but trivial.</p>
+</section>
+<section id="chaos" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="chaos"><span class="header-section-number">5.4</span> Chaos</h2>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Note that the appearance of the negative sign indicates that the torque force is opposite to the direction of increasing <span class="math inline">\(\phi\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03_coupled_oscillators.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05_oscillators_to_wave_motion.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

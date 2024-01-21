@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Oscillations and Waves - 7&nbsp; Simple wave motion and the Wave Equation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./07_harmonic_waves.html" rel="next">
+<link href="./05_oscillators_to_wave_motion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_simple_waves.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Oscillations and Waves</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_shm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_damped_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02a_forced_oscillations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_coupled_oscillators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_pendulums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_oscillators_to_wave_motion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_simple_waves.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_harmonic_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_reflection_transmission.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reflection and Transmission at boundaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_sound_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sound waves and the Doppler effect</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_superpositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Superposition and Standing Waves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_math_toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-note-on-transverse-waves" id="toc-a-note-on-transverse-waves" class="nav-link active" data-scroll-target="#a-note-on-transverse-waves">A note on transverse waves</a></li>
+  <li><a href="#sec-ch6-wavepulses" id="toc-sec-ch6-wavepulses" class="nav-link" data-scroll-target="#sec-ch6-wavepulses"><span class="header-section-number">7.1</span> Wave pulses</a></li>
+  <li><a href="#sec-ch6-derivingwaveequation" id="toc-sec-ch6-derivingwaveequation" class="nav-link" data-scroll-target="#sec-ch6-derivingwaveequation"><span class="header-section-number">7.2</span> Deriving the wave equation</a></li>
+  <li><a href="#sec-ch6-waveequationproof2" id="toc-sec-ch6-waveequationproof2" class="nav-link" data-scroll-target="#sec-ch6-waveequationproof2"><span class="header-section-number">7.3</span> The wave equation - proof by substitution</a></li>
+  <li><a href="#sec-ch6-phasevelocity" id="toc-sec-ch6-phasevelocity" class="nav-link" data-scroll-target="#sec-ch6-phasevelocity"><span class="header-section-number">7.4</span> The Phase Velocity - the velocity of waves</a></li>
+  <li><a href="#sec-ch6-summary" id="toc-sec-ch6-summary" class="nav-link" data-scroll-target="#sec-ch6-summary"><span class="header-section-number">7.5</span> Simple wave summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-ch6-wavemotion" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><em>Textbook link: Tipler and Mosca, Section 15.1</em></p>
+<p>A wave is a means by which energy and momentum are carried through space, without transporting matter. When we consider a medium which carries a wave, the particles of that material oscillate about a mean position, but have an average displacement of zero; <em>i.e.</em> they always return to their starting position. A wave can be of any shape - there is no requirement for a wave to be sinusoidal, though this is the simplest shape which we can consider mathematically.</p>
+<p>We also consider waves to be either <strong>transverse</strong>; where the displacement of the medium is perpendicular to the direction of wave propagation (<em>e.g.</em> a wave travelling along a string), or they can be <strong>longitudinal</strong>; where the displacement of the medium is parallel to the direction of propagation (<em>e.g.</em> a sound wave passing through air).</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-transversewaveill1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch6-transversewave2.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.1: An animation to show the propagation of a wave through a material arising from an organised transverse oscillation of many particles. The two marked particles only move up and down, but the net effect of the organised motion is a propagation of energy to the right.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-longitudinalwaveill1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch6-longitudinalwave1.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.2: An animation to show the propagation of a wave through a material arising from an organised longitudinal oscillation of many particles. The marked particle now moves in the direction of propagation, but oscillates around a fixed point; the net effect of the organised motion is again a propagation of energy to the right.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="a-note-on-transverse-waves" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="a-note-on-transverse-waves">A note on transverse waves</h3>
+<p>In contrast with longitudinal waves, the medium carrying a transverse wave is displaced perpendicular to the direction of travel. This gives rise to the phenomenon of <strong>polarisation</strong>. A <em>plane of polarisation</em> is defined as a plane containing the displacement direction and the direction of propagation. For any given transverse wave, two orthogonal independent polarisations are possible. All other polarisations may be constructed from weighted combinations of these two basic polarisations. For electromagnetic waves, it is the <strong>electric field vector</strong> which defines the plane of polarisation in combination with the direction of propagation. We will revisit these properties of transverse waves as we go through our discussion.</p>
+</section>
+<section id="sec-ch6-wavepulses" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-ch6-wavepulses"><span class="header-section-number">7.1</span> Wave pulses</h2>
+<p>Where a wave is a sustained periodic disturbance which propagates energy through a medium, a <strong>wave pulse</strong> in contrast is any localised non-periodic disturbance propagating an energy pulse through the medium. A typical pulse is shown in <a href="#fig-ch6-wavepulse1">Figure&nbsp;<span>7.3</span></a>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-wavepulse1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch6-wavepulse1.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.3: A wave pulse propagating through a system at velocity <span class="math inline">\(v\)</span>; this causes a temporary transverse disturbance of molecules in the system from their origin.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We illustrate a pulse graphically as any function defined as <span class="math inline">\(y = f(x)\)</span>, where the <span class="math inline">\(+x\)</span> direction is the direction of propagation of the pulse. If the pulse propagates without changing shape, it becomes convenient to consider a moving reference frame within which the pulse is stationary; <em>i.e.</em> rather than imagining the pulse moving to the right along fixed axes, we keep the pulse stationary in our view and move the axes to the left.</p>
+<p>In the moving frame then, the pulse is described as <span class="math inline">\(y^\prime = f(x^\prime)\)</span> for all times, because the pulse does not change its shape.</p>
+<p>We can inter convert between the two frames of reference by the relation:</p>
+<p><span id="eq-ch6-refframeconvert1"><span class="math display">\[
+x = x^\prime + vt
+\tag{7.1}\]</span></span></p>
+<p>…where <span class="math inline">\(v\)</span> is the velocity of the pulse. This allows us to convert the position in the moving reference frame, <span class="math inline">\(x^\prime\)</span>, back to the position in the fixed reference frame by adding the distance <span class="math inline">\(vt\)</span>.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-referenceframes1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch6-wavepulse2.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.4: Rather than imagining a moving wave pulse, we can consider it from the reference frame of the wave pulse; in this example the wave pulse is stationary, but the space moves past it.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-referenceframes2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch6-wavepulse3.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.5: A wave pulse propagating through a system at velocity <span class="math inline">\(v\)</span>; this causes a temporary transverse disturbance of molecules in the system from their origin.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>If the shape of the pulse in the moving frame is defined as <span class="math inline">\(y^\prime = f(x^\prime)\)</span> we can use <a href="#eq-ch6-refframeconvert1">Equation&nbsp;<span>7.1</span></a> to find the shape of the pulse in the static frame, <span class="math inline">\(y\)</span>:</p>
+<p><span id="eq-ch6-refframeconvert2"><span class="math display">\[
+\begin{array}{rcl}
+y &amp;=&amp; f(x^\prime)\\
+&amp;=&amp; f(x - vt)
+\end{array}
+\tag{7.2}\]</span></span></p>
+<p>The relation described in <a href="#eq-ch6-refframeconvert2">Equation&nbsp;<span>7.2</span></a> describes a wave moving to the <strong>RIGHT</strong>; for a pulse moving to the <strong>left</strong>, <span class="math inline">\(v\)</span> becomes negative, and hence:</p>
+<p><span class="math display">\[
+y = f(x + vt)
+\]</span></p>
+<p>The function <span class="math inline">\(y = f(x \pm vt)\)</span> is known as the <strong>wave function</strong>; it describes the displacement of the medium, whether the transverse displacement of a string or the longitudinal displacement of air molecules in a sound wave.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>The <em>wave function</em> is a solution of the <strong>wave equation</strong> (<a href="#eq-ch6-waveequation1">Equation&nbsp;<span>7.3</span></a>):<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span id="eq-ch6-waveequation1"><span class="math display">\[
+\frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y}{\partial t^2}
+\tag{7.3}\]</span></span></p>
+<p><strong>Any</strong> function in the form <span class="math inline">\(y = f(x \pm vt)\)</span> is a solution of this wave equation; <em>i.e.</em> the wave equation describes the uniform propagation of <strong>any</strong> displacement, provided it does not change shape as it travels. There are numerous examples of such functions, including:</p>
+<ul>
+<li><span class="math inline">\(y = \exp(x-vt)^2\)</span></li>
+<li><span class="math inline">\(y = \frac{\sin(x-vt)}{x-vt}\)</span></li>
+<li><span class="math inline">\(y = \cos (x+vt)\)</span></li>
+</ul>
+</section>
+<section id="sec-ch6-derivingwaveequation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-ch6-derivingwaveequation"><span class="header-section-number">7.2</span> Deriving the wave equation</h2>
+<p>To better understand the wave equation, it is useful to know its derivation. To do this, we shall first consider a segment of string from a curved part of a wave pulse (<a href="#fig-ch6-waveeqnderiv1">Figure&nbsp;<span>7.6</span></a>):</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-waveeqnderiv1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch6-waveequationderiv1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.6: Here we consider a small portion of a string carrying a wave pulse; the tension in the string <span class="math inline">\(F\)</span> is constant throughout, but resolving the forces via the angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> allows us to determine the equation of motion on this segment.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The length of this segment is <span class="math inline">\(\approx \Delta x\)</span> (for small angles), and the mass of this segment of string <span class="math inline">\(m = \mu \Delta x\)</span> (where <span class="math inline">\(\mu\)</span> is the mass per unit length). As we are considering a transverse wave, this segment of string will move vertically, and all forces acting on the segment arise from the tension force within the string. We can determine these forces by resolving the horizontal and vertical components of this force <span class="math inline">\(F\)</span> using the parameters laid out in <a href="#fig-ch6-waveeqnderiv1">Figure&nbsp;<span>7.6</span></a>.</p>
+<p>By considering the net vertical force acting on this segment:</p>
+<p><span id="eq-ch6-waveeqnderiv1"><span class="math display">\[
+\begin{array}{rcll}
+\sum F &amp;=&amp; F \sin \theta_2 - F \sin \theta_1 &amp;\\
+&amp;=&amp; F \left( \tan \theta_2 - \tan \theta_1 \right) &amp; \textsf{for small angles}
+\end{array}
+\tag{7.4}\]</span></span></p>
+<p>We can also determine an expression for the slope, <span class="math inline">\(S\)</span>, of the segment of string at a given point:</p>
+<p><span id="eq-ch6-waveeqnderiv2"><span class="math display">\[
+S = \tan \theta = \frac{\partial y}{\partial x}
+\tag{7.5}\]</span></span></p>
+<p>This means we can now express the overall force acting on the segment in terms of the slope of the segment at its start and end points (assuming small angles!) by combining <a href="#eq-ch6-waveeqnderiv1">Equation&nbsp;<span>7.4</span></a> and <a href="#eq-ch6-waveeqnderiv2">Equation&nbsp;<span>7.5</span></a> :</p>
+<p><span id="eq-ch6-waveeqnderiv3"><span class="math display">\[
+\sum F = F(S_2 - S_1) = F \Delta S
+\tag{7.6}\]</span></span></p>
+<p>The quantity <span class="math inline">\(F\Delta S\)</span> in <a href="#eq-ch6-waveeqnderiv3">Equation&nbsp;<span>7.6</span></a> is the net force acting on the segment; so we can now apply Newton’s second law:</p>
+<p><span id="eq-ch6-waveeqnderiv4"><span class="math display">\[
+F\Delta S = m a = \mu \Delta x \frac{\partial^2 y}{\partial t^2}
+\tag{7.7}\]</span></span></p>
+<p>…or, to rearrange:</p>
+<p><span id="eq-ch6-waveeqnderiv5"><span class="math display">\[
+\frac{\Delta S}{\Delta x} = \frac{\mu}{F} \frac{\partial^2 y}{\partial t^2}
+\tag{7.8}\]</span></span></p>
+<p>Since the slope <span class="math inline">\(\Delta S\)</span> of the segment is the ‘rate of change of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span>’ (<a href="#eq-ch6-waveeqnderiv2">Equation&nbsp;<span>7.5</span></a>), we can redefine the term in <a href="#eq-ch6-waveeqnderiv4">Equation&nbsp;<span>7.7</span></a>; in the limit, as <span class="math inline">\(\Delta x \rightarrow 0\)</span>:</p>
+<p><span id="eq-ch6-waveeqnderiv6"><span class="math display">\[
+\frac{\Delta S}{\Delta x} \approx \frac{\partial S}{\partial x} = \frac{\partial}{\partial x} \left( \frac{\partial y}{\partial x} \right) = \frac{\partial^2 y}{\partial x^2}
+\tag{7.9}\]</span></span></p>
+<p>Finally, by combining this result in <a href="#eq-ch6-waveeqnderiv6">Equation&nbsp;<span>7.9</span></a> with the result in <a href="#eq-ch6-waveeqnderiv5">Equation&nbsp;<span>7.8</span></a>), we obtain the wave equation for a stretched string (<a href="#eq-ch6-waveeqnderiv7">Equation&nbsp;<span>7.10</span></a>):</p>
+<p><span id="eq-ch6-waveeqnderiv7"><span class="math display">\[
+\frac{\partial^2 y}{\partial x^2} = \frac{\mu}{F} \frac{\partial^2 y}{\partial t^2}
+\tag{7.10}\]</span></span></p>
+<p>As we mentioned in <a href="#sec-ch6-wavepulses"><span>Section&nbsp;7.1</span></a>, any function of the form <span class="math inline">\(y = f(x \pm vt)\)</span> will be a solution to the wave <a href="#eq-ch6-waveeqnderiv7">Equation&nbsp;<span>7.10</span></a>. In the case of the string, the solution will solve the wave equation provided that <span class="math inline">\(v^2 = \frac{F}{\mu}\)</span>.</p>
+</section>
+<section id="sec-ch6-waveequationproof2" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-ch6-waveequationproof2"><span class="header-section-number">7.3</span> The wave equation - proof by substitution</h2>
+<p>In this section, we will show the proof of the wave equation which we determined graphically in <a href="#sec-ch6-derivingwaveequation"><span>Section&nbsp;7.2</span></a>. Here we will use <em>partial differentiation</em>, explaining the <span class="math inline">\(\partial\)</span> notation we have already seen in this work.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Let’s work through this step by step:</p>
+<ol type="1">
+<li>Consider the general function <span class="math inline">\(y = \cos(x - vt)\)</span>. Differentiate this first with respect to <span class="math inline">\(x\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\frac{\partial y}{\partial x} = -\sin(x - vt)
+\]</span></p>
+<p>The second derivative therefore becomes:</p>
+<p><span id="eq-ch6-wavederivsubs1"><span class="math display">\[
+\frac{\partial^2 y}{\partial x^2} = -\cos(x - vt)
+\tag{7.11}\]</span></span></p>
+<ol start="2" type="1">
+<li>Now we differentiate with respect to time <span class="math inline">\(t\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\frac{\partial y}{\partial t} = v\sin(x - vt)
+\]</span></p>
+<p>… and find the second derivative:</p>
+<p><span id="eq-ch6-wavederivsubs2"><span class="math display">\[
+\frac{\partial^2 y}{\partial t^2} = -v^2 \cos(x - vt)
+\tag{7.12}\]</span></span></p>
+<ol start="3" type="1">
+<li>We can now combine <a href="#eq-ch6-wavederivsubs1">Equation&nbsp;<span>7.11</span></a> and <a href="#eq-ch6-wavederivsubs2">Equation&nbsp;<span>7.12</span></a> to eliminate the term <span class="math inline">\(\cos(x - vt)\)</span>, we obtain the wave equation as required:</li>
+</ol>
+<p><span id="eq-ch6-wavederivsubs3"><span class="math display">\[
+\frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y}{\partial t^2}
+\tag{7.13}\]</span></span></p>
+<p>Through unpacking of <a href="#eq-ch6-wavederivsubs3">Equation&nbsp;<span>7.13</span></a> we can uncover how it might be adapted to obtain wave equations for other systems. The term <span class="math inline">\(x\)</span> represents the direction of propagation of the wave, while <span class="math inline">\(y\)</span> represents the disturbance of the particle carrying the wave (in the case of a transverse wave, this is perpendicular to the direction of propagation).</p>
+<p>For longitudinal sound waves, <a href="#eq-ch6-wavederivsubs3">Equation&nbsp;<span>7.13</span></a> becomes:</p>
+<p><span id="eq-ch6-wavederivsubs4"><span class="math display">\[
+\frac{\partial^2 s}{\partial x^2} = \frac{1}{v_s^2} \frac{\partial^2 s}{\partial t^2}
+\tag{7.14}\]</span></span></p>
+<p>In this example, <span class="math inline">\(s\)</span> is the displacement of molecules of the medium parallel to the direction of the propagation, while <span class="math inline">\(v_s\)</span> is the velocity of sound in the medium.</p>
+<p>For electromagnetic waves, <a href="#eq-ch6-wavederivsubs3">Equation&nbsp;<span>7.13</span></a> becomes either:</p>
+<p><span class="math display">\[
+\frac{\partial^2 E_z}{\partial x^2} = \frac{1}{c^2} \frac{\partial^2 E_z}{\partial t^2}
+(\#eq-ch6-wavederivsubs5)
+\]</span>{#eq-}</p>
+<p>…or</p>
+<p><span id="eq-ch6-wavederivsubs5b"><span class="math display">\[
+\frac{\partial^2 B_y}{\partial x^2} = \frac{1}{c^2} \frac{\partial^2 B_y}{\partial t^2}
+\tag{7.15}\]</span></span></p>
+<p>…where <span class="math inline">\(E_z\)</span> and <span class="math inline">\(B_y\)</span> are the transverse components of the electric and magnetic field vectors (we will discuss this further later), and <span class="math inline">\(c\)</span> is the speed of light.</p>
+<p><strong>Note</strong>: The speed of propagation cannot be deduced from the wave equation, instead it must be obtained from a model of the system concerned.</p>
+</section>
+<section id="sec-ch6-phasevelocity" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-ch6-phasevelocity"><span class="header-section-number">7.4</span> The Phase Velocity - the velocity of waves</h2>
+<p>We define the phase velocity as the speed of propagation of any particular point on a wave. Since the wave propagates without changing shape, it does not matter which point we pick.</p>
+<p>The phase velocity will depend on a combination of the elastic and inertial terms.</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch6-phasevelocity1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/ch6-phasevelocity1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.7: A reminder that every point in a wave pulse here moves at the same velocity <span class="math inline">\(v\)</span>, such that the shape of the pulse is not changed.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For waves travelling on a string the phase velocity can be found from the tension in the string (<span class="math inline">\(F\)</span>) and the linear mass density (mass per unit length) of the string (<span class="math inline">\(\mu\)</span>):</p>
+<p><span class="math display">\[
+v = \sqrt{\frac{F}{\mu}}
+\]</span></p>
+<p>This has parallels for sound waves in a fluid, with phase velocity found from the bulk modulus <span class="math inline">\(B\)</span> (a factor describing the fluid’s resistance to compression) and the equilibrium density <span class="math inline">\(\rho\)</span> of the fluid:</p>
+<p><span class="math display">\[
+v_s = \sqrt{\frac{B}{\rho}}
+\]</span></p>
+<p>We can go further to look at the propagation of sound waves in an isotropic solid (solid of constant composition) - however we can only use this to consider a thin section, not a bulk solid (this is an acceptable model for considering earth tremors in the Earth’s crust). This time the phase velocity depends on the density of the solid <span class="math inline">\(\rho\)</span> and either the Young’s modulus (<span class="math inline">\(Y\)</span>, for longitudinal P waves) or the shear modulus (<span class="math inline">\(G\)</span>, for transverse S waves):</p>
+<p><span class="math display">\[
+v_s = \sqrt{\frac{Y}{\rho}} \textrm{or} \sqrt{\frac{G}{\rho}}
+\]</span></p>
+<p>These equations describe how wave phase velocities can be determined in solids and liquids; in a gas, we need to use other parameters, however the core relationship is still familiar:</p>
+<p><span class="math display">\[
+v_s = \sqrt{\frac{\gamma RT}{M}} =  \sqrt{\frac{\gamma k_{\mathrm{B}}T}{m}}
+\]</span></p>
+<p>Here, the terms <span class="math inline">\(R\)</span>, <span class="math inline">\(T\)</span> and <span class="math inline">\(M\)</span> refer to the gas constant (units J K<sup>-1</sup> mol<sup>-1</sup>), absolute temperature (units K) and the molar mass of the gas (units kg mol<sup>-1</sup>) respectively<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, while <span class="math inline">\(k_{\textrm{B}}\)</span> and <span class="math inline">\(m\)</span> refer to the Boltzmann constant (units J K<sup>-1</sup>) and the mass of an individual gas molecule (units kg).</p>
+<p>Finally, we can obtain a similar expression for the phase velocity of light waves:</p>
+<p><span class="math display">\[
+c = \sqrt{\frac{1}{\mu_0 \epsilon_0}}
+\]</span></p>
+<p>…where <span class="math inline">\(\mu_0\)</span> and <span class="math inline">\(\epsilon_0\)</span> are the permeability of free space and the permittivity of free space respectively.</p>
+</section>
+<section id="sec-ch6-summary" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-ch6-summary"><span class="header-section-number">7.5</span> Simple wave summary</h2>
+<p>In this chapter, we have introduced the principle of waves and the wave equation. Waves carry energy and momentum through space by localised organised oscillations without net transport of matter. They can be transverse (oscillation perpendicular to direction of propagation) or longitudinal (oscillation parallel to direction of propagation), or can have a more complex displacement pattern. Waves do not have to be sinusoidal, and can have any shape.</p>
+<p>Any travelling wave can be described by the function in the form of <span class="math inline">\(y = f(x \pm vt)\)</span> which satisfies the wave equation, relating the displacement of the medium (<span class="math inline">\(y\)</span>) to the position of the wave (<span class="math inline">\(x\)</span>) and the phase velocity (<span class="math inline">\(v\)</span>).</p>
+<p><span class="math display">\[
+\frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y}{\partial t^2}
+\]</span></p>
+<p>Remember that the phase velocity cannot be predicted from the wave equation, but depends on the physics of the system. It generally results from a consideration of the elastic and inertial properties of the system. For waves on a string, <span class="math inline">\(v = \sqrt{\frac{F}{\mu}}\)</span>, where <span class="math inline">\(F\)</span> is the tension in the string and <span class="math inline">\(\mu\)</span> is the mass per unit length (linear mass density).</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>It may seem counter intuitive that, for a wave moving with positive <span class="math inline">\(v\)</span>in the <span class="math inline">\(+x\)</span> direction, we subtract <span class="math inline">\(vt\)</span>; but try thinking this way: after time <span class="math inline">\(t\)</span>, the wave will have advanced further to the right. If, after one second, the shape of the wave has its peak at <span class="math inline">\(x_a\)</span>, after three seconds, the peak will have advanced to <span class="math inline">\(x_b = x_a + vt\)</span>; <strong>however</strong>, the value of the wavefunction at <span class="math inline">\(x_a\)</span> at this new time (<span class="math inline">\(x_a^\prime\)</span>) will have come from the value of the wavefunction three seconds earlier, to the <strong>left</strong> of the point; i.e.&nbsp;<span class="math inline">\(x_a^\prime = x_a - vt\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The <span class="math inline">\(\partial\)</span> symbol refers to <em>partial differentiation</em>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Partial differentiation is needed when we have multivariate expressions. We can only differentiate one variable at a time, so <em>partial</em> differentiation indicates that we are holding all other variables constant. In our wave equations, we have position and time variables, so when differentiating <span class="math inline">\(x\)</span> with respect to <span class="math inline">\(y\)</span>, we are holding the time <span class="math inline">\(t\)</span> constant.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Note that the molar mass is expressed in kg mol<sup>-1</sup> here, rather than the more common g mol<sup>-1</sup> ; the reason for this is to ensure continuity and present everything in SI units.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05_oscillators_to_wave_motion.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./07_harmonic_waves.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

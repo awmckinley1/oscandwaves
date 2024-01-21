@@ -1,0 +1,20 @@
+{
+  "hash": "f744044687a4a5fd4451c7d6aa3aaaaf",
+  "result": {
+    "markdown": "# Preface {.unnumbered}\n\nWelcome to the course notes for the Oscillations and Waves component of PHYS10012, Core Physics I.\n\nThe most recent version of these notes can be found at <https://awmckinley1.github.io/oscandwaves>. Please ensure you are always working from the most up-to-date version of these notes and compare the change-log with that on the live website.\n\n## About these notes {.unnumbered}\n\nThese notes have been prepared in a format which maintains compatibility with screen-readers, while also allowing the facility for both PDF and EPUB downloads for those who wish to use them.\n\nThe HTML also has themes to facilitate easier reading (font colours, serif/sans serif fonts etc.). Please explore the top bar of the web environment to explore this.\n\nThe HTML notes allow for embedding of rich content (videos, animations, etc.), and for this reason I recommend accessing the course using the web-links provided, as these cannot be included in static PDF or EPUB documents. However, I will ensure links are included in these formats as far as possible.\n\nThese notes are a \"live document\", and as such they can (and will) be updated should any erroneous explanations be found or additional explanations be needed. For this reason, please do email me if you have any questions or if anything is not clear.\n\nThe most recent version can always be found at the link at the top of this section, and any changes are reflected in the change-log (@sec-changelog)\n\nPlease note that as this is a \"live document\", a downloaded version can become obsolete. Please refer back regularly and refer to the changelog for any updates.\n\n## Error reporting {.unnumbered}\n\nAs much as we try, sometimes errors creep in. At best, it is little more than a careless typo which makes the reader tut with disappointment, at worst it risks seriously misleading the learner. For this reason I have created a feedback form to report errors; this is accessible at the bottom of this page.\n\n## Course history {.unnumbered}\n\nThis iteration of the course has been written by Andrew McKinley for 2024; this is extensively based on his delivery of the previous course from 2021-23, which in turn was adapted from previous course notes by Ben Maughan, Simon Hanna and Massimo Antognozzi.\n\n## Changelog {#sec-changelog}\n\n2023-01-11 Intitial creation of the Oscillations and Waves content for PHYS10012.\n\n## Report an error {.unnumbered}\n\n<a href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVGw1yScBaQcNOv7s3v-nTRHhUNTNKV0E2Wk9RTDQxMkdHOFBWUjdGRkxUUy4u\" target=\"_blank\">Direct link to error reporting form</a> (opens in new window)\n\nEmbedded form:\n\n\n\n::: {.cell}\n<iframe src=\"https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVGw1yScBaQcNOv7s3v-nTRHhUNTNKV0E2Wk9RTDQxMkdHOFBWUjdGRkxUUy4u\" width=\"0.9\\linewidth\" height=\"400px\" data-external=\"1\"></iframe>\n:::\n\n\n\n<!--  ```{r} -->\n\n<!--  1 + 1 -->\n\n<!--  ``` -->\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}
