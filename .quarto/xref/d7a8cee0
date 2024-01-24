@@ -1,1 +1,1 @@
-{"headings":["preface","about-these-notes","error-reporting","course-history","sec-changelog","report-an-error"],"entries":[{"order":{"number":1,"section":[0,1,0,0,0,0,0]},"caption":"Changelog","key":"sec-changelog"}],"options":{"chapters":true}}
+{"options":{"chapters":true},"entries":[{"key":"sec-changelog","caption":"Changelog","order":{"number":1,"section":[0,1,0,0,0,0,0]}}],"headings":["preface","about-these-notes","error-reporting","course-history","sec-changelog","report-an-error"]}
