@@ -366,11 +366,9 @@ $$ {#eq-ch3-coupledsolution-3a}
 We said that at the start, our initial conditions would be that one oscillator is displaced to amplitude $A$ while the other is held at its equilibrium.  Therefore our starting conditions become:
 
 $$
-\begin{array}{rcl rcl}
-x_1 (0) &=& A &
-\dot{x}_1 (0) &=& 0 \\
-x_2 (0) &=& 0 &
-\dot{x}_2 (0) &=& 0
+\begin{array}{rclrcl}
+x_1 (0) &=& A & \dot{x}_1 (0) &=& 0 \\
+x_2 (0) &=& 0 & \dot{x}_2 (0) &=& 0
 \end{array}
 $$
 The result of this is that our phase constant $\phi$ evaluates to zero, while the amplitude component $B_1 = B_2 = A$.  We can apply these to @eq-ch3-coupledsolution-3a to obtain a particular solution:

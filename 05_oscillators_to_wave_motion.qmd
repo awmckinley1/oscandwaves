@@ -57,7 +57,7 @@ $${#eq-ch5-tensionangles1c}
 Now that we have identified the vertical force acting on our mass (@eq-ch5-tensionangles1c) we can now write our equation of motion.  We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the $n$th mass as:
 
 $$
-m \frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} = T \left(\frac{(y_{n-1} - y_n)}{a} + \frac{(y_{n+1} - y_n)}{a} \right) \\
+m \frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} = T \left(\frac{(y_{n-1} - y_n)}{a} + \frac{(y_{n+1} - y_n)}{a} \right)
 $$ {#eq-ch5-stringeqmotion1a}
 
 ...or...
