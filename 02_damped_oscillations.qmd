@@ -204,7 +204,7 @@ If we are considering finite changes, we can adapt our calculus to allow $\Delta
 
 $$
 \frac{|\Delta E|}{E} = \frac{T}{\tau} = \frac{2 \pi}{\omega_0 \tau} = \frac{2 \pi}{Q}
-$${#eq-}
+$$
 
 This gives us the result for $Q$ shown in @eq-ch2-qualityfactor3:
 

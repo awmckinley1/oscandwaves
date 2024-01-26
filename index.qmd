@@ -28,7 +28,9 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
-2024-01-24 Fixing PDF and image 1.7
+2024-01-26 Removing blank section <FH>
+
+2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)
 
 2024-01-11 Intitial creation of the Oscillations and Waves content for PHYS10012.
 

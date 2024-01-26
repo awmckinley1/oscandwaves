@@ -384,7 +384,7 @@ The potential of a vibrating diatomic is known as the Morse potential; the form 
 ```{r echo=FALSE, ch1-diatomicmolecule2, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="The parabolic approximation of a diatomic molecule, showing the potential varying with compression or extension from equilibrium separation, $r_0$. "}
 #| label: fig-ch1-diatomicmolecule2
 #| fig-cap: "The parabolic approximation of a diatomic molecule, showing the potential varying with compression or extension from equilibrium separation, $r_0$. "
-knitr::include_graphics("visualisations/latex/ch1-diatomicmolecule2.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE))
+knitr::include_graphics("visualisations/LaTeX/ch1-diatomicmolecule2.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE))
 
 ```
 

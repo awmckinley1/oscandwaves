@@ -127,4 +127,4 @@ $$
 
 The double pendulum is a case study for a particular type of coupled oscillator; we take a simple pendulum (a light rod suspended from a pivot with a mass $m_1$ at the end), and couple to it a second simple pendulum with mass $m_2$;  the pivot of this second pendulum being $m_1$. It is a deceptively complex problem, as it looks from the outset to be fairly simple. However, we rapidly find that while at small amplitudes, the oscillations are predictable, as the amplitude increases, tiny variations in the starting conditions for the pendulum can have wildly different effects, and solving the equations of motion is anything but trivial.
 
-## Chaos
+<!-- ## Chaos -->
