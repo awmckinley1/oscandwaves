@@ -38,7 +38,7 @@ Applying Newton's Second Law to this problem, we can obtain the mathematical des
 $$
 \begin{aligned}
 F_x = ma_x \\
-kx = m\frac{\textrm{d}^2 x}{\textrm{d} t^2}
+-kx = m\frac{\textrm{d}^2 x}{\textrm{d} t^2}
 \end{aligned}
 $$ {#eq-test1}
 
@@ -184,11 +184,11 @@ $$ {#eq-ch1-shm-initconditions2}
 
 In @sec-shm-comparing-xva we stated that the nature of the oscillation meant that it repeats after every oscillation; mathematically $x(t) = x(t + T)$; the position $x$ at time $t$ is equal to the position at time $(t+T)$.
 
-When we apply this to the velocity, we obtain the following expression:
+When we apply this to the position, we obtain the following expression:
 
 $$
 \begin{array}{rcl}
-v(t) &=& v(t+T) \\
+x(t) &=& x(t+T) \\
 A \cos (\omega t + \delta) &=& A \cos (\omega (t+T) + \delta) \\
 &=& A \cos ([\omega t + \delta] + \omega T)
 \end{array}

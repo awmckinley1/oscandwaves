@@ -28,6 +28,8 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
+2024-02-07 Fixing: Errors in @eq-test1 (OD), @sec-shm-freq-angularfreq (OD); @sec-ch5-steadystatebehaviour (LK); Homogenising nomenclature in @sec-ch5-massesonstring.
+
 2024-01-26 Removing blank section <FH>
 
 2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)

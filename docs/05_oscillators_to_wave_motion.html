@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#coupled-masses-on-a-string-under-tension" id="toc-coupled-masses-on-a-string-under-tension" class="nav-link active" data-scroll-target="#coupled-masses-on-a-string-under-tension"><span class="header-section-number">6.1</span> Coupled masses on a string under tension</a>
+  <li><a href="#sec-ch5-massesonstring" id="toc-sec-ch5-massesonstring" class="nav-link active" data-scroll-target="#sec-ch5-massesonstring"><span class="header-section-number">6.1</span> Coupled masses on a string under tension</a>
   <ul class="collapse">
   <li><a href="#consolidating-the-forces" id="toc-consolidating-the-forces" class="nav-link" data-scroll-target="#consolidating-the-forces"><span class="header-section-number">6.1.1</span> Consolidating the forces</a></li>
   <li><a href="#the-equations-of-motion" id="toc-the-equations-of-motion" class="nav-link" data-scroll-target="#the-equations-of-motion"><span class="header-section-number">6.1.2</span> The equations of motion</a></li>
@@ -248,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></h1>
+<h1 class="title"><span id="sec-ch5-osc-to-waves" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span></h1>
 </div>
 
 
@@ -264,8 +264,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>We started our explorations of oscillations and waves by acknowledging the inherent connection between the two. We have seen that harmonic oscillations can be described by sinusoidal functions (sine ansd cosine functions), and we know that sinusoidal functions take the form of a wave. However it may not be immediately clear how we get from the oscillation of a single particle to an organised group oscillation creating a wave which is capable of transmitting energy across space. We will now examine this process.</p>
-<section id="coupled-masses-on-a-string-under-tension" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="coupled-masses-on-a-string-under-tension"><span class="header-section-number">6.1</span> Coupled masses on a string under tension</h2>
+<section id="sec-ch5-massesonstring" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-ch5-massesonstring"><span class="header-section-number">6.1</span> Coupled masses on a string under tension</h2>
 <p>In this example we will consider a system consisting of a number of equally spaced masses on a light string; these behave as coupled oscillators perpendicular to the axis of the string. We consider the string to be fixed at both ends and the masses to be separated by a fixed horizontal distance <span class="math inline">\(a\)</span> (<a href="#fig-ch5-mass_on_string3">Figure&nbsp;<span>6.1</span></a>)</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
@@ -286,13 +286,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Let’s take each step in turn</p>
 <section id="consolidating-the-forces" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="consolidating-the-forces"><span class="header-section-number">6.1.1</span> Consolidating the forces</h3>
-<p>Let’s consider the mass in the middle of <a href="#fig-ch5-mass_on_string3">Figure&nbsp;<span>6.1</span></a>. We will label this arbitrary <span class="math inline">\(n\)</span>th mass <span class="math inline">\(n\)</span>. We consider the forces on it along the string towards the <span class="math inline">\((n-1)\)</span>th and <span class="math inline">\((n+1)\)</span>th mass. To do this, we identify a few lengths and the angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> (<a href="#fig-ch5-mass_on_string4">Figure&nbsp;<span>6.2</span></a>):</p>
+<p>Let’s consider the mass in the middle of <a href="#fig-ch5-mass_on_string3">Figure&nbsp;<span>6.1</span></a>. We will label this arbitrary <span class="math inline">\(j\)</span>th mass <span class="math inline">\(j\)</span>. We consider the forces on it along the string towards the <span class="math inline">\((j-1)\)</span>th and <span class="math inline">\((j+1)\)</span>th mass. To do this, we identify a few lengths and the angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> (<a href="#fig-ch5-mass_on_string4">Figure&nbsp;<span>6.2</span></a>):</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
 <div id="fig-ch5-mass_on_string4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisations/LaTeX/ch5-mass_on_string4.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: Consolidating the forces on the middle mass, mass <span class="math inline">\(n\)</span>. We consider everythign relative to the <span class="math inline">\(y\)</span> position of this oscillator and the effect of the masses to either side. The angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> indicate the angles the forces make to the horizontal.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.2: Consolidating the forces on the middle mass, mass <span class="math inline">\(j\)</span>. We consider everythign relative to the <span class="math inline">\(y\)</span> position of this oscillator and the effect of the masses to either side. The angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> indicate the angles the forces make to the horizontal.</figcaption>
 </figure>
 </div>
 </div>
@@ -300,27 +300,27 @@ ul.task-list li input[type="checkbox"] {
 <p>The vertical component of the tension to the left will be given by <span class="math inline">\(T\sin \theta_1\)</span>, while the vertical component of the tension to the right will be given by <span class="math inline">\(T \sin \theta_2\)</span>.</p>
 <p>Through the small-angle approximation, we can say:</p>
 <p><span id="eq-ch5-tensionangles1a"><span class="math display">\[
-\tan \theta_1 = \frac{(y_{n-1} - y_n)}{a} \approx \sin \theta_1
+\tan \theta_1 = \frac{(y_{j-1} - y_j)}{a} \approx \sin \theta_1
 \tag{6.1}\]</span></span></p>
 <p><span id="eq-ch5-tensionangles1b"><span class="math display">\[
-\tan \theta_2 = \frac{(y_{n+1} - y_n)}{a} \approx \sin \theta_2
+\tan \theta_2 = \frac{(y_{j+1} - y_j)}{a} \approx \sin \theta_2
 \tag{6.2}\]</span></span></p>
 <p>The total force acting on the mass therefore becomes</p>
 <p><span id="eq-ch5-tensionangles1c"><span class="math display">\[
 \begin{array}{rcl}
 F_{\mathsf{total}} &amp;=&amp; T(\sin \theta_1 + \sin \theta_2) \\
-&amp;=&amp; T \left(\frac{(y_{n-1} - y_n)}{a} + \frac{(y_{n+1} - y_n)}{a} \right) \\
+&amp;=&amp; T \left(\frac{(y_{j-1} - y_j)}{a} + \frac{(y_{j+1} - y_j)}{a} \right) \\
 \end{array}
 \tag{6.3}\]</span></span></p>
 </section>
 <section id="the-equations-of-motion" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="the-equations-of-motion"><span class="header-section-number">6.1.2</span> The equations of motion</h3>
-<p>Now that we have identified the vertical force acting on our mass (<a href="#eq-ch5-tensionangles1c">Equation&nbsp;<span>6.3</span></a>) we can now write our equation of motion. We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the <span class="math inline">\(n\)</span>th mass as:</p>
+<p>Now that we have identified the vertical force acting on our mass (<a href="#eq-ch5-tensionangles1c">Equation&nbsp;<span>6.3</span></a>) we can now write our equation of motion. We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the <span class="math inline">\(j\)</span>th mass as:</p>
 <p><span id="eq-ch5-stringeqmotion1a"><span class="math display">\[
-m \frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} = T \left(\frac{(y_{n-1} - y_n)}{a} + \frac{(y_{n+1} - y_n)}{a} \right)
+m \frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = T \left(\frac{(y_{j-1} - y_j)}{a} + \frac{(y_{j+1} - y_j)}{a} \right)
 \tag{6.4}\]</span></span></p>
 <p>…or… <span id="eq-ch5-stringeqmotion1b"><span class="math display">\[
-\frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} = \frac{T}{ma}(y_{n-1} - 2y_n + y_{n+1})
+\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1})
 \tag{6.5}\]</span></span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -332,7 +332,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have not placed a negative sign in <a href="#eq-ch5-stringeqmotion1a">Equation&nbsp;<span>6.4</span></a> in front of the force to indicate a restoring force. However, remember that we find our force using the parameters <span class="math inline">\((y_{n-1} - y_n)\)</span> or <span class="math inline">\((y_{n+1} - y_n)\)</span>. In the example shown in <a href="#fig-ch5-mass_on_string4">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(y_n &lt; y_{n-1}\)</span> and <span class="math inline">\(y_n &lt; y_{n+1}\)</span>, so we expect a positive value, so a positive force. If the situation is reversed, and <span class="math inline">\(y_n &gt; y_{n-1}\)</span> and <span class="math inline">\(y_n &gt; y_{n+1}\)</span>, we would expect a negative value to arise, giving a negative value for the force.</p>
+<p>We have not placed a negative sign in <a href="#eq-ch5-stringeqmotion1a">Equation&nbsp;<span>6.4</span></a> in front of the force to indicate a restoring force. However, remember that we find our force using the parameters <span class="math inline">\((y_{j-1} - y_j)\)</span> or <span class="math inline">\((y_{j+1} - y_j)\)</span>. In the example shown in <a href="#fig-ch5-mass_on_string4">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(y_j &lt; y_{j-1}\)</span> and <span class="math inline">\(y_j &lt; y_{j+1}\)</span>, so we expect a positive value, so a positive force. If the situation is reversed, and <span class="math inline">\(y_j &gt; y_{j-1}\)</span> and <span class="math inline">\(y_j &gt; y_{j+1}\)</span>, we would expect a negative value to arise, giving a negative value for the force.</p>
 <p>(While the sinusoidal functions are periodic, we are only concerned for values of <span class="math inline">\(\theta\)</span> in the range <span class="math inline">\(-\frac{\pi}{2} &lt; \theta &lt; \frac{\pi}{2}\)</span>).</p>
 </div>
 </div>
@@ -349,18 +349,18 @@ Warning
 <p>Note: remember that the <span class="math inline">\(a\)</span> in <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a> is the separation between the masses on the tensioned string, <strong>not</strong> the acceleration!</p>
 </div>
 </div>
-<p>Let’s now use the approach used previously; insert a trial function into the equation of motion. Assuming simple harmonic motion again, we use the trial function <span class="math inline">\(y_n = A_n \cos (\omega t + \delta)\)</span>, where <span class="math inline">\(A_n\)</span> is the maximum amplitude of vibration. We can also use the trial functions <span class="math inline">\(y_{n-1} = A_{n-1} \cos (\omega t + \delta)\)</span> and <span class="math inline">\(y_{n+1} = A_{n+1} \cos (\omega t + \delta)\)</span>.</p>
+<p>Let’s now use the approach used previously; insert a trial function into the equation of motion. Assuming simple harmonic motion again, we use the trial function <span class="math inline">\(y_j = A_j \cos (\omega t + \delta)\)</span>, where <span class="math inline">\(A_j\)</span> is the maximum amplitude of vibration. We can also use the trial functions <span class="math inline">\(y_{j-1} = A_{j-1} \cos (\omega t + \delta)\)</span> and <span class="math inline">\(y_{j+1} = A_{j+1} \cos (\omega t + \delta)\)</span>.</p>
 <p>We can place these into <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a> as follows:</p>
 <p><span id="eq-ch5-stringeqmotion1c"><span class="math display">\[
 \begin{array}{rcl}
-\frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} &amp;=&amp; \frac{T}{ma}(y_{n-1} - 2y_n + y_{n+1}) \\
--\omega^2 A_n \cos (\omega t + \delta) &amp;=&amp; \frac{T}{ma}(A_{n-1} - 2A_n + A_{n+1})\cos (\omega t + \delta) \\
--\omega^2 A_n  &amp;=&amp; \frac{T}{ma}(A_{n-1} - 2A_n + A_{n+1})
+\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} &amp;=&amp; \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1}) \\
+-\omega^2 A_j \cos (\omega t + \delta) &amp;=&amp; \frac{T}{ma}(A_{j-1} - 2A_j + A_{j+1})\cos (\omega t + \delta) \\
+-\omega^2 A_j  &amp;=&amp; \frac{T}{ma}(A_{j-1} - 2A_j + A_{j+1})
 \end{array}
 \tag{6.6}\]</span></span></p>
 <p>This can then be reformulated into our key result:</p>
 <p><span id="eq-ch5-stringeqmotion1d"><span class="math display">\[
--A_{n-1} + \left(2-\frac{ma\omega^2}{T}\right)A_n - A_{n+1} = 0
+-A_{j-1} + \left(2-\frac{ma\omega^2}{T}\right)A_j - A_{j+1} = 0
 \tag{6.7}\]</span></span></p>
 </section>
 </section>
@@ -369,7 +369,7 @@ Warning
 <p>In considering the case for each of <span class="math inline">\(n\)</span> oscillating masses connected by a tensioned string, it is all very much looking like a coupled oscillator system, akin to that introduced in <a href="03_coupled_oscillators.html#sec-ch3-generalsolution-matrix"><span>Section&nbsp;4.8</span></a>. We would therefore expect to have a set of <span class="math inline">\(n\)</span> coupled equations, which in turn will give <span class="math inline">\(n\)</span> different values of <span class="math inline">\(\omega^2\)</span>. We can apply the matrix methods we introduced in <a href="03_coupled_oscillators.html#sec-ch3-generalsolution-matrix"><span>Section&nbsp;4.8</span></a>, however let’s just look at the first two cases (one mass and two masses).</p>
 <section id="a-single-mass-on-a-tensioned-string-n-1" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="a-single-mass-on-a-tensioned-string-n-1"><span class="header-section-number">6.2.1</span> A single mass on a tensioned string (<span class="math inline">\(n = 1\)</span>)</h3>
-<p>This is a fairly straightforward analysis. Adapting <a href="#eq-ch5-stringeqmotion1d">Equation&nbsp;<span>6.7</span></a>, <span class="math inline">\(A_{n-1}\)</span> and <span class="math inline">\(A_{n+1}\)</span> reduce to zero as these represent the fixed ends of the string. Our fundamental equation therefore becomes:</p>
+<p>This is a fairly straightforward analysis. Adapting <a href="#eq-ch5-stringeqmotion1d">Equation&nbsp;<span>6.7</span></a>, <span class="math inline">\(A_{j-1}\)</span> and <span class="math inline">\(A_{j+1}\)</span> reduce to zero as these represent the fixed ends of the string. Our fundamental equation therefore becomes:</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 -A_{0} + \left(2-\frac{ma\omega^2}{T}\right)A_1 - A_{2} &amp;=&amp; 0 \\
@@ -383,13 +383,13 @@ Warning
 </section>
 <section id="two-masses-on-a-tensioned-string-n-2" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="two-masses-on-a-tensioned-string-n-2"><span class="header-section-number">6.2.2</span> Two masses on a tensioned string, <span class="math inline">\(n = 2\)</span>:</h3>
-<p>If we have two masses on the string, we now need to consider the respective equations for the first (<span class="math inline">\(n = 1\)</span>) and the second (<span class="math inline">\(n = 2\)</span>) masses.</p>
+<p>If we have two masses on the string, we now need to consider the respective equations for the first (<span class="math inline">\(j = 1\)</span>) and the second (<span class="math inline">\(j = 2\)</span>) masses.</p>
 <ul>
-<li>For <span class="math inline">\(n = 1\)</span>:
+<li>For <span class="math inline">\(j = 1\)</span>:
 <ul>
 <li><span class="math inline">\(A_0 = 0\)</span></li>
 </ul></li>
-<li>For <span class="math inline">\(n = 2\)</span>:
+<li>For <span class="math inline">\(j = 2\)</span>:
 <ul>
 <li><span class="math inline">\(A_{3} = 0\)</span></li>
 </ul></li>
@@ -428,12 +428,12 @@ A_1 \left[\left(2-\dfrac{ma\omega^2}{T}\right)^2 - 1 \right] &amp;=&amp; 0 \\
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="the-general-case-n-masses-on-a-tensioned-string"><span class="header-section-number">6.2.3</span> The general case, <span class="math inline">\(n\)</span> masses on a tensioned string:</h3>
 <p>Let’s return to our fundamental equation (<a href="#eq-ch5-stringeqmotion1d">Equation&nbsp;<span>6.7</span></a>):</p>
 <p><span class="math display">\[
--A_{n-1} + \left(2-\frac{ma\omega^2}{T}\right)A_n - A_{n+1} = 0
+-A_{j-1} + \left(2-\frac{ma\omega^2}{T}\right)A_j - A_{j+1} = 0
 \]</span> From <a href="#eq-ch5-onemassstring1a">Equation&nbsp;<span>6.8</span></a> for a single mass on a string we note that <span class="math inline">\(\omega_1^2 = \frac{2T}{ma}\)</span>; therefore the term <span class="math inline">\(\frac{T}{ma}\)</span> is intrinsically linked to a frequency. Let’s therefore define this as a fundamental frequency, <span class="math inline">\(\omega_0\)</span>. We now use this reformulate our fundamental equation to isolate the <span class="math inline">\(A\)</span> terms</p>
 <p><span id="eq-ch5-generalcase1"><span class="math display">\[
-\frac{A_{n-1} + A_{n+1}}{A_n} = 2-\frac{ma \omega^2}{T} = \frac{2\omega_0^2 - \omega^2}{\omega_0^2}
+\frac{A_{j-1} + A_{j+1}}{A_j} = 2-\frac{ma \omega^2}{T} = \frac{2\omega_0^2 - \omega^2}{\omega_0^2}
 \tag{6.11}\]</span></span></p>
-<p>In <a href="#eq-ch5-generalcase1">Equation&nbsp;<span>6.11</span></a>, the frequency <span class="math inline">\(\omega\)</span> represents any normal mode frequency; therefore for any fixed value of this the right-hand side of the equation is a constant regardless of which oscillating mass we are considering. So; can we solve the equation to find a value for the amplitude of the oscillation of the <span class="math inline">\(n\)</span>th mass, <span class="math inline">\(A_n\)</span>?</p>
+<p>In <a href="#eq-ch5-generalcase1">Equation&nbsp;<span>6.11</span></a>, the frequency <span class="math inline">\(\omega\)</span> represents any normal mode frequency; therefore for any fixed value of this the right-hand side of the equation is a constant regardless of which oscillating mass we are considering. So; can we solve the equation to find a value for the amplitude of the oscillation of the <span class="math inline">\(j\)</span>th mass, <span class="math inline">\(A_j\)</span>?</p>
 <p>From our coupled oscillator case in <a href="03_coupled_oscillators.html"><span>Chapter&nbsp;4</span></a>, we saw that for two oscillating masses in a coupled system, the <strong>amplitude</strong> varied sinusoidally (<a href="03_coupled_oscillators.html#eq-ch3-coupledsolution-4b">Equation&nbsp;<span>4.25</span></a>, graphed in <a href="03_coupled_oscillators.html#fig-ch3-coupled-osc-chart1">Figure&nbsp;<span>4.7</span></a>). Let’s therefore assume that there is a general solution for the amplitude of the <span class="math inline">\(j\)</span>th mass, <span class="math inline">\(A_j\)</span>.</p>
 <!-- $$ -->
 <!-- A_j = B \mathrm{e}^{\mathrm{i}j\phi} -->
@@ -489,7 +489,7 @@ B \sin(n+1)\phi &amp;=&amp; 0 \\
 <p><span id="eq-ch5-amplitudegensoln7"><span class="math display">\[
 \phi_r = \frac{r\pi}{n+1}
 \tag{6.18}\]</span></span></p>
-<p>Putting this back into the trial function we proposed (<span class="math inline">\(A_j = B \sin (j\phi)\)</span>), we find that the amplitude of the <span class="math inline">\(j\)</span>th mass at the <strong>fixed normal mode frequency</strong> <span class="math inline">\(\omega_r\)</span> to be:</p>
+<p>Putting this back into the trial function we proposed (<span class="math inline">\(A_j = B \sin (j\phi)\)</span>), we find that the amplitude of the <span class="math inline">\(j\)</span>th mass at a <strong>fixed normal mode frequency</strong> <span class="math inline">\(\omega_r\)</span> to be:</p>
 <p><span id="eq-ch5-amplitudegensoln8"><span class="math display">\[
 A_j = B \sin \frac{jr\pi}{n+1}
 \tag{6.19}\]</span></span></p>

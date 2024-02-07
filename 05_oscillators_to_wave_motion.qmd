@@ -1,8 +1,8 @@
-# From Coupled Oscillators to Wave Motion
+# From Coupled Oscillators to Wave Motion {#sec-ch5-osc-to-waves}
 
 We started our explorations of oscillations and waves by acknowledging the inherent connection between the two.  We have seen that harmonic oscillations can be described by sinusoidal functions (sine ansd cosine functions), and we know that sinusoidal functions take the form of a wave.  However it may not be immediately clear how we get from the oscillation of a single particle to an organised group oscillation creating a wave which is capable of transmitting energy across space.  We will now examine this process.
 
-## Coupled masses on a string under tension
+## Coupled masses on a string under tension {#sec-ch5-massesonstring}
 
 In this example we will consider a system consisting of a number of equally spaced masses on a light string; these behave as coupled oscillators perpendicular to the axis of the string.  We consider the string to be fixed at both ends and the masses to be separated by a fixed horizontal distance $a$ (@fig-ch5-mass_on_string3)
 
@@ -22,11 +22,11 @@ Let's take each step in turn
 
 ### Consolidating the forces
 
-Let's consider the mass in the middle of @fig-ch5-mass_on_string3. We will label this arbitrary $n$th mass $n$.  We consider the forces on it along the string towards the $(n-1)$th and $(n+1)$th mass.  To do this, we identify a few lengths and the angles $\theta_1$ and $\theta_2$ (@fig-ch5-mass_on_string4):
+Let's consider the mass in the middle of @fig-ch5-mass_on_string3. We will label this arbitrary $j$th mass $j$.  We consider the forces on it along the string towards the $(j-1)$th and $(j+1)$th mass.  To do this, we identify a few lengths and the angles $\theta_1$ and $\theta_2$ (@fig-ch5-mass_on_string4):
 
-```{r echo=FALSE, ch5-mass_on_string4, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Consolidating the forces on the middle mass, mass $n$. We consider everythign relative to the $y$ position of this oscillator and the effect of the masses to either side. The angles $\\theta_1$ and $\\theta_2$ indicate the angles the forces make to the horizontal."}
+```{r echo=FALSE, ch5-mass_on_string4, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Consolidating the forces on the middle mass, mass $j$. We consider everythign relative to the $y$ position of this oscillator and the effect of the masses to either side. The angles $\\theta_1$ and $\\theta_2$ indicate the angles the forces make to the horizontal."}
 #| label: fig-ch5-mass_on_string4
-#| fig-cap: "Consolidating the forces on the middle mass, mass $n$. We consider everythign relative to the $y$ position of this oscillator and the effect of the masses to either side. The angles $\\theta_1$ and $\\theta_2$ indicate the angles the forces make to the horizontal."
+#| fig-cap: "Consolidating the forces on the middle mass, mass $j$. We consider everythign relative to the $y$ position of this oscillator and the effect of the masses to either side. The angles $\\theta_1$ and $\\theta_2$ indicate the angles the forces make to the horizontal."
 knitr::include_graphics("visualisations/LaTeX/ch5-mass_on_string4.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE))
 ```
 
@@ -35,11 +35,11 @@ The vertical component of the tension to the left will be given by $T\sin \theta
 Through the small-angle approximation, we can say:
 
 $$
-\tan \theta_1 = \frac{(y_{n-1} - y_n)}{a} \approx \sin \theta_1
+\tan \theta_1 = \frac{(y_{j-1} - y_j)}{a} \approx \sin \theta_1
 $$ {#eq-ch5-tensionangles1a}
 
 $$
-\tan \theta_2 = \frac{(y_{n+1} - y_n)}{a} \approx \sin \theta_2
+\tan \theta_2 = \frac{(y_{j+1} - y_j)}{a} \approx \sin \theta_2
 $$ {#eq-ch5-tensionangles1b}
 
 
@@ -48,25 +48,25 @@ The total force acting on the mass therefore becomes
 $$
 \begin{array}{rcl}
 F_{\mathsf{total}} &=& T(\sin \theta_1 + \sin \theta_2) \\
-&=& T \left(\frac{(y_{n-1} - y_n)}{a} + \frac{(y_{n+1} - y_n)}{a} \right) \\
+&=& T \left(\frac{(y_{j-1} - y_j)}{a} + \frac{(y_{j+1} - y_j)}{a} \right) \\
 \end{array}
 $${#eq-ch5-tensionangles1c}
 
 ### The equations of motion
 
-Now that we have identified the vertical force acting on our mass (@eq-ch5-tensionangles1c) we can now write our equation of motion.  We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the $n$th mass as:
+Now that we have identified the vertical force acting on our mass (@eq-ch5-tensionangles1c) we can now write our equation of motion.  We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the $j$th mass as:
 
 $$
-m \frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} = T \left(\frac{(y_{n-1} - y_n)}{a} + \frac{(y_{n+1} - y_n)}{a} \right)
+m \frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = T \left(\frac{(y_{j-1} - y_j)}{a} + \frac{(y_{j+1} - y_j)}{a} \right)
 $$ {#eq-ch5-stringeqmotion1a}
 
 ...or...
 $$
-\frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} = \frac{T}{ma}(y_{n-1} - 2y_n + y_{n+1})
+\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1})
 $$ {#eq-ch5-stringeqmotion1b}
 
 ::: callout-note
-We have not placed a negative sign in @eq-ch5-stringeqmotion1a in front of the force to indicate a restoring force.  However, remember that we find our force using the parameters $(y_{n-1} - y_n)$ or $(y_{n+1} - y_n)$. In the example shown in @fig-ch5-mass_on_string4, $y_n < y_{n-1}$ and $y_n < y_{n+1}$, so we expect a positive value, so a positive force.  If the situation is reversed, and $y_n > y_{n-1}$ and $y_n > y_{n+1}$, we would expect a negative value to arise, giving a negative value for the force.
+We have not placed a negative sign in @eq-ch5-stringeqmotion1a in front of the force to indicate a restoring force.  However, remember that we find our force using the parameters $(y_{j-1} - y_j)$ or $(y_{j+1} - y_j)$. In the example shown in @fig-ch5-mass_on_string4, $y_j < y_{j-1}$ and $y_j < y_{j+1}$, so we expect a positive value, so a positive force.  If the situation is reversed, and $y_j > y_{j-1}$ and $y_j > y_{j+1}$, we would expect a negative value to arise, giving a negative value for the force.
 
 (While the sinusoidal functions are periodic, we are only concerned for values of $\theta$ in the range $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$).
 :::
@@ -75,22 +75,22 @@ We have not placed a negative sign in @eq-ch5-stringeqmotion1a in front of the f
 Note: remember that the $a$ in @eq-ch5-stringeqmotion1b is the separation between the masses on the tensioned string, **not** the acceleration!
 :::
 
-Let's now use the approach used previously; insert a trial function into the equation of motion.  Assuming simple harmonic motion again, we use the trial function $y_n = A_n \cos (\omega t + \delta)$, where $A_n$ is the maximum amplitude of vibration. We can also use the trial functions $y_{n-1} = A_{n-1} \cos (\omega t + \delta)$ and $y_{n+1} = A_{n+1} \cos (\omega t + \delta)$.
+Let's now use the approach used previously; insert a trial function into the equation of motion.  Assuming simple harmonic motion again, we use the trial function $y_j = A_j \cos (\omega t + \delta)$, where $A_j$ is the maximum amplitude of vibration. We can also use the trial functions $y_{j-1} = A_{j-1} \cos (\omega t + \delta)$ and $y_{j+1} = A_{j+1} \cos (\omega t + \delta)$.
 
 We can place these into @eq-ch5-stringeqmotion1b as follows:
 
 $$
 \begin{array}{rcl}
-\frac{\mathrm{d}^2 y_n}{\mathrm{d}t^2} &=& \frac{T}{ma}(y_{n-1} - 2y_n + y_{n+1}) \\
--\omega^2 A_n \cos (\omega t + \delta) &=& \frac{T}{ma}(A_{n-1} - 2A_n + A_{n+1})\cos (\omega t + \delta) \\
--\omega^2 A_n  &=& \frac{T}{ma}(A_{n-1} - 2A_n + A_{n+1})
+\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} &=& \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1}) \\
+-\omega^2 A_j \cos (\omega t + \delta) &=& \frac{T}{ma}(A_{j-1} - 2A_j + A_{j+1})\cos (\omega t + \delta) \\
+-\omega^2 A_j  &=& \frac{T}{ma}(A_{j-1} - 2A_j + A_{j+1})
 \end{array}
 $${#eq-ch5-stringeqmotion1c}
 
 This can then be reformulated into our key result:
 
 $$
--A_{n-1} + \left(2-\frac{ma\omega^2}{T}\right)A_n - A_{n+1} = 0
+-A_{j-1} + \left(2-\frac{ma\omega^2}{T}\right)A_j - A_{j+1} = 0
 $$ {#eq-ch5-stringeqmotion1d}
 
 ## The overview
@@ -99,7 +99,7 @@ In considering the case for each of $n$ oscillating masses connected by a tensio
 
 ### A single mass on a tensioned string ($n = 1$)
 
-This is a fairly straightforward analysis. Adapting @eq-ch5-stringeqmotion1d, $A_{n-1}$ and $A_{n+1}$ reduce to zero as these represent the fixed ends of the string. Our fundamental equation therefore becomes:
+This is a fairly straightforward analysis. Adapting @eq-ch5-stringeqmotion1d, $A_{j-1}$ and $A_{j+1}$ reduce to zero as these represent the fixed ends of the string. Our fundamental equation therefore becomes:
 
 $$
 \begin{array}{rcl}
@@ -117,11 +117,11 @@ We therefore have a single vibrational frequency, $\omega$ when we have a single
 
 ### Two masses on a tensioned string, $n = 2$:
 
-If we have two masses on the string, we now need to consider the respective equations for the first ($n = 1$) and the second ($n = 2$) masses.
+If we have two masses on the string, we now need to consider the respective equations for the first ($j = 1$) and the second ($j = 2$) masses.
 
-* For $n = 1$:
+* For $j = 1$:
   * $A_0 = 0$
-* For $n = 2$:
+* For $j = 2$:
   * $A_{3} = 0$
  
 @eq-ch5-stringeqmotion1d then becomes:
@@ -170,15 +170,15 @@ These are the frequencies corresponding to the normal modes of vibration on the 
 Let's return to our fundamental equation (@eq-ch5-stringeqmotion1d):
 
 $$
--A_{n-1} + \left(2-\frac{ma\omega^2}{T}\right)A_n - A_{n+1} = 0
+-A_{j-1} + \left(2-\frac{ma\omega^2}{T}\right)A_j - A_{j+1} = 0
 $$
 From @eq-ch5-onemassstring1a for a single mass on a string we note that $\omega_1^2 = \frac{2T}{ma}$; therefore the term $\frac{T}{ma}$ is intrinsically linked to a frequency.  Let's therefore define this as a fundamental frequency, $\omega_0$.  We now use this reformulate our fundamental equation to isolate the $A$ terms
 
 $$
-\frac{A_{n-1} + A_{n+1}}{A_n} = 2-\frac{ma \omega^2}{T} = \frac{2\omega_0^2 - \omega^2}{\omega_0^2}
+\frac{A_{j-1} + A_{j+1}}{A_j} = 2-\frac{ma \omega^2}{T} = \frac{2\omega_0^2 - \omega^2}{\omega_0^2}
 $$ {#eq-ch5-generalcase1}
 
-In @eq-ch5-generalcase1, the frequency $\omega$ represents any normal mode frequency; therefore for any fixed value of this the right-hand side of the equation is a constant regardless of which oscillating mass we are considering. So; can we solve the equation to find a value for the amplitude of the oscillation of the $n$th mass, $A_n$?
+In @eq-ch5-generalcase1, the frequency $\omega$ represents any normal mode frequency; therefore for any fixed value of this the right-hand side of the equation is a constant regardless of which oscillating mass we are considering. So; can we solve the equation to find a value for the amplitude of the oscillation of the $j$th mass, $A_j$?
 
 From our coupled oscillator case in @sec-ch3-coupled-oscillator, we saw that for two oscillating masses in a coupled system, the **amplitude** varied sinusoidally (@eq-ch3-coupledsolution-4b, graphed in @fig-ch3-coupled-osc-chart1).  Let's therefore assume that there is a general solution for the amplitude of the $j$th mass, $A_j$. 
 
@@ -253,7 +253,7 @@ $$
 \phi_r = \frac{r\pi}{n+1}
 $$ {#eq-ch5-amplitudegensoln7}
 
-Putting this back into the trial function we proposed ($A_j = B \sin (j\phi)$), we find that the amplitude of the $j$th mass at the **fixed normal mode frequency** $\omega_r$ to be:
+Putting this back into the trial function we proposed ($A_j = B \sin (j\phi)$), we find that the amplitude of the $j$th mass at a **fixed normal mode frequency** $\omega_r$ to be:
 
 $$
 A_j = B \sin \frac{jr\pi}{n+1}

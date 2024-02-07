@@ -1,6 +1,6 @@
 # Coupled Oscillators {#sec-ch3-coupled-oscillator}
 
-The next stage in our exploration of oscillators is to examine the principles behind coupling one oscillator to another.  This is known as a 'coupled oscillator'.  Two typical examples of a coupled oscillator are shown in Figure XX below; either two pendulums which are linked by a spring, or a pair of oscillating masses on springs which are linked by a further spring.  In either case, the mathematics is similar.
+The next stage in our exploration of oscillators is to examine the principles behind coupling one oscillator to another.  This is known as a 'coupled oscillator'.  A typical example of a coupled oscillator is shown in @fig-ch3-blocksonspring3 below; a pair of oscillating masses on springs which are linked by a further spring. An alternative model uses two simple pendulums, connected by a coupling spring. In either case, the mathematics is similar.
 
 
 For the purposes of discussion here, we will consider the example of two linked masses. This ostensibly keeps the mathematics simpler, however through a simple substitution it is readily adapted for the case of the linked pendulums.
@@ -16,7 +16,7 @@ knitr::include_graphics("visualisations/LaTeX/ch3-blocksonspring1.svg",auto_pdf 
 
 ```
 
-This is a situation we have seen before, and we can set up the equations of motion in a straightforward manner by considering the forces on the masses ()
+This is a situation we have seen before, and we can set up the equations of motion in a straightforward manner by considering the forces on the masses.
 
 ```{r echo=FALSE, ch3-blocksonspring2, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="The forces on the oscillating masses due to the springs can be determined from the spring extension. For the purposes of setting up the equations, we arbitrarily set the positive direction to the right, however we will get the same result whichever way we consider this."}
 #| label: fig-ch3-blocksonspring2
