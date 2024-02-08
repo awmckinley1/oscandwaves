@@ -586,24 +586,24 @@ y(x,t) = \sin (kx + \omega t)
 <p>We now need to consider the meaning of <span class="math inline">\(y_{j-1}\)</span>, <span class="math inline">\(y_j\)</span> and <span class="math inline">\(y_{j+1}\)</span> in the context of a continuously variable <span class="math inline">\(x\)</span>. In <a href="#sec-ch5-reducing-spacing"><span>Section&nbsp;6.3.2</span></a> we said that the spacing <span class="math inline">\(a\)</span> reduced to <span class="math inline">\(\partial x\)</span>; we can therefore say:</p>
 <ul>
 <li><span class="math inline">\(y_j\)</span> becomes <span class="math inline">\(y(x,t)\)</span></li>
-<li><span class="math inline">\(y_{j-1}\)</span> becomes <span class="math inline">\(y(x-\partial x, t)\)</span></li>
-<li><span class="math inline">\(y_{j+1}\)</span> becomes <span class="math inline">\(y(x+\partial x, t)\)</span></li>
+<li><span class="math inline">\(y_{j-1}\)</span> becomes <span class="math inline">\(y(x-\delta x, t)\)</span></li>
+<li><span class="math inline">\(y_{j+1}\)</span> becomes <span class="math inline">\(y(x+\delta x, t)\)</span></li>
 </ul>
 <p>We now use a Taylor series expansion on the function <span class="math inline">\(y(x\pm \partial x , t)\)</span>, and we obtain:</p>
 <p><span class="math display">\[
-y(x\pm \partial x , t) = y(x) \pm \partial x \frac{\partial y}{\partial x} + \frac{1}{2} (\pm \partial x)^2 \frac{\partial^2 y}{\partial x^2}
+y(x\pm \delta x , t) = y(x) \pm \delta x \frac{\partial y}{\partial x} + \frac{1}{2} (\pm \delta x)^2 \frac{\partial^2 y}{\partial x^2}
 \]</span></p>
 <p>This is when we say “so what?” Well, if we remember the <em>initial</em> form of <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a>, it was actually derived from:</p>
 <p><span class="math display">\[
-\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{m}\left( \frac{y_{j+1} - y_j}{a} - \frac{y_r - y_{j-1}}{a}\right)
+\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{m}\left( \frac{y_{j+1} - y_j}{a} - \frac{y_j - y_{j-1}}{a}\right)
 \]</span></p>
 <p>This immediately gives us an equation we can use our Taylor series expansion on:</p>
 <p><span id="eq-ch5-waveequationderiv1"><span class="math display">\[
 \begin{array}{rcl}
-\dfrac{\partial^2 y}{\partial t^2} &amp;=&amp; \dfrac{T}{m}\left( \dfrac{y(x+\partial x, t) - y(x,t)}{a} - \dfrac{y(x,t) - y(x-\partial x, t)}{a}\right)\\
-&amp;=&amp; \dfrac{T}{m}\left( \dfrac{\partial x \frac{\partial y}{\partial x} + \frac{1}{2} (\partial x)^2 \frac{\partial^2 y}{\partial x^2}}{\partial x} - \dfrac{\partial x \frac{\partial y}{\partial x} - \frac{1}{2} (\partial x)^2 \frac{\partial^2 y}{\partial x^2}}{\partial x}\right)\\
-&amp;=&amp; \dfrac{T}{m} \dfrac{(\partial x)^2}{\partial x} \dfrac{\partial^2 y}{\partial x^2} \\
-&amp;=&amp; \dfrac{T}{m} (\partial x) \dfrac{\partial^2 y}{\partial x^2}
+\dfrac{\partial^2 y}{\partial t^2} &amp;=&amp; \dfrac{T}{m}\left( \dfrac{y(x+\delta x, t) - y(x,t)}{a} - \dfrac{y(x,t) - y(x-\delta x, t)}{a}\right)\\
+&amp;=&amp; \dfrac{T}{m}\left( \dfrac{\delta x \frac{\partial y}{\partial x} + \frac{1}{2} (\delta x)^2 \frac{\partial^2 y}{\partial x^2}}{\delta x} - \dfrac{\delta x \frac{\partial y}{\partial x} - \frac{1}{2} (\delta x)^2 \frac{\partial^2 y}{\partial x^2}}{\delta x}\right)\\
+&amp;=&amp; \dfrac{T}{m} \dfrac{(\delta x)^2}{\delta x} \dfrac{\partial^2 y}{\partial x^2} \\
+&amp;=&amp; \dfrac{T}{m} (\delta x) \dfrac{\partial^2 y}{\partial x^2}
 \end{array}
 \tag{6.26}\]</span></span></p>
 <p>You may find it helpful to ensure you can follow through the cancellation steps in this arrangement and verify your own understanding.</p>

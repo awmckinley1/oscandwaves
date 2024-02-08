@@ -365,20 +365,20 @@ $$ {#eq-ch5-waveeq-partialeq1}
 We now need to consider the meaning of $y_{j-1}$, $y_j$ and $y_{j+1}$ in the context of a continuously variable $x$.  In @sec-ch5-reducing-spacing we said that the spacing $a$ reduced to $\partial x$; we can therefore say:
 
 * $y_j$ becomes $y(x,t)$
-* $y_{j-1}$ becomes $y(x-\partial x, t)$
-* $y_{j+1}$ becomes $y(x+\partial x, t)$
+* $y_{j-1}$ becomes $y(x-\delta x, t)$
+* $y_{j+1}$ becomes $y(x+\delta x, t)$
 
 We now use a Taylor series expansion on the function $y(x\pm \partial x , t)$, and we obtain:
 
 $$
-y(x\pm \partial x , t) = y(x) \pm \partial x \frac{\partial y}{\partial x} + \frac{1}{2} (\pm \partial x)^2 \frac{\partial^2 y}{\partial x^2}
+y(x\pm \delta x , t) = y(x) \pm \delta x \frac{\partial y}{\partial x} + \frac{1}{2} (\pm \delta x)^2 \frac{\partial^2 y}{\partial x^2}
 $$
 
 
 This is when we say "so what?"  Well, if we remember the *initial* form of @eq-ch5-stringeqmotion1b, it was actually derived from:
 
 $$
-\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{m}\left( \frac{y_{j+1} - y_j}{a} - \frac{y_r - y_{j-1}}{a}\right)
+\frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{m}\left( \frac{y_{j+1} - y_j}{a} - \frac{y_j - y_{j-1}}{a}\right)
 $$
 
 
@@ -388,10 +388,10 @@ This immediately gives us an equation we can use our Taylor series expansion on:
 
 $$
 \begin{array}{rcl}
-\dfrac{\partial^2 y}{\partial t^2} &=& \dfrac{T}{m}\left( \dfrac{y(x+\partial x, t) - y(x,t)}{a} - \dfrac{y(x,t) - y(x-\partial x, t)}{a}\right)\\
-&=& \dfrac{T}{m}\left( \dfrac{\partial x \frac{\partial y}{\partial x} + \frac{1}{2} (\partial x)^2 \frac{\partial^2 y}{\partial x^2}}{\partial x} - \dfrac{\partial x \frac{\partial y}{\partial x} - \frac{1}{2} (\partial x)^2 \frac{\partial^2 y}{\partial x^2}}{\partial x}\right)\\
-&=& \dfrac{T}{m} \dfrac{(\partial x)^2}{\partial x} \dfrac{\partial^2 y}{\partial x^2} \\
-&=& \dfrac{T}{m} (\partial x) \dfrac{\partial^2 y}{\partial x^2}
+\dfrac{\partial^2 y}{\partial t^2} &=& \dfrac{T}{m}\left( \dfrac{y(x+\delta x, t) - y(x,t)}{a} - \dfrac{y(x,t) - y(x-\delta x, t)}{a}\right)\\
+&=& \dfrac{T}{m}\left( \dfrac{\delta x \frac{\partial y}{\partial x} + \frac{1}{2} (\delta x)^2 \frac{\partial^2 y}{\partial x^2}}{\delta x} - \dfrac{\delta x \frac{\partial y}{\partial x} - \frac{1}{2} (\delta x)^2 \frac{\partial^2 y}{\partial x^2}}{\delta x}\right)\\
+&=& \dfrac{T}{m} \dfrac{(\delta x)^2}{\delta x} \dfrac{\partial^2 y}{\partial x^2} \\
+&=& \dfrac{T}{m} (\delta x) \dfrac{\partial^2 y}{\partial x^2}
 \end{array}
 $$ {#eq-ch5-waveequationderiv1}
 

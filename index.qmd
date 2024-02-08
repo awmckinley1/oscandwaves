@@ -27,6 +27,7 @@ As much as we try, sometimes errors creep in. At best, it is little more than a 
 This iteration of the course has been written by Andrew McKinley for 2024; this is extensively based on his delivery of the previous course from 2021-23, which in turn was adapted from previous course notes by Ben Maughan, Simon Hanna and Massimo Antognozzi.
 
 ## Changelog {#sec-changelog}
+2024-02-07 Fixing subscript typo in @sec-ch5-reducing-spacing
 
 2024-02-07 Fixing: Errors in @eq-test1 (OD), @sec-shm-freq-angularfreq (OD); @sec-ch5-steadystatebehaviour (LK); Homogenising nomenclature in @sec-ch5-massesonstring.
 
