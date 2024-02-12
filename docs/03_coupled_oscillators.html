@@ -233,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-ch3-generalsolution-matrix" id="toc-sec-ch3-generalsolution-matrix" class="nav-link" data-scroll-target="#sec-ch3-generalsolution-matrix"><span class="header-section-number">4.8</span> The general solution: a matrix approach</a>
   <ul class="collapse">
   <li><a href="#a-trial-solution" id="toc-a-trial-solution" class="nav-link" data-scroll-target="#a-trial-solution"><span class="header-section-number">4.8.1</span> A trial solution</a></li>
-  <li><a href="#the-general-case" id="toc-the-general-case" class="nav-link" data-scroll-target="#the-general-case"><span class="header-section-number">4.8.2</span> The general case</a></li>
+  <li><a href="#sec-ch3-generalcase" id="toc-sec-ch3-generalcase" class="nav-link" data-scroll-target="#sec-ch3-generalcase"><span class="header-section-number">4.8.2</span> The general case</a></li>
   </ul></li>
   <li><a href="#why-use-matrices" id="toc-why-use-matrices" class="nav-link" data-scroll-target="#why-use-matrices"><span class="header-section-number">4.9</span> Why use matrices?</a></li>
   </ul>
@@ -805,8 +805,8 @@ D \bar{A} &amp;=&amp; \omega^2 \bar{A}
 \tag{4.36}\]</span></span></p>
 <p><a href="#eq-ch3-trialsolution-1d">Equation&nbsp;<span>4.36</span></a> is the <strong>main result</strong> of this process; that being that the amplitude vector of a vibrational mode is an eigenvector of the dynamics matrix <span class="math inline">\(D\)</span> with the eigenvalue being the square of the frequency of that mode.</p>
 </section>
-<section id="the-general-case" class="level3" data-number="4.8.2">
-<h3 data-number="4.8.2" class="anchored" data-anchor-id="the-general-case"><span class="header-section-number">4.8.2</span> The general case</h3>
+<section id="sec-ch3-generalcase" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="sec-ch3-generalcase"><span class="header-section-number">4.8.2</span> The general case</h3>
 <p>We have said <a href="#eq-ch3-trialsolution-1d">Equation&nbsp;<span>4.36</span></a> as an <strong>eigenvalue equation</strong>; this is one of the most important tools in physics, and it is essential to understand how they work. In this case, we will apply this to determine the frequencies for a coupled oscillator and check with our results above.</p>
 <p>We already seen the end result, that <span class="math inline">\(D \bar{A} = \omega^2 \bar{A}\)</span>, having constructed this assuming a single oscillation frequency. But how does this scale, particularly as we said earlier that we expect <em>two</em> frequencies, one from each vibrational mode?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -863,7 +863,7 @@ D = M^{-1}K &amp;= &amp;
 \left(
 \begin{array}{cc}
 \frac{k_A + k_{AB}}{m_A} &amp; -\frac{k_{AB}}{m_A} \\
--\frac{k_{AB}}{m_B} &amp; \frac{k_A + k_{AB}}{m_B}
+-\frac{k_{AB}}{m_B} &amp; \frac{k_B + k_{AB}}{m_B}
 \end{array}
 \right)
 \end{array}
@@ -874,7 +874,7 @@ D = M^{-1}K &amp;= &amp;
 (D - \omega^2 \mathbf{I}) \bar{A} &amp;=&amp; 0 \\
 \mathrm{det}\left[ \left(\begin{array}{cc}
 \frac{k_A + k_{AB}}{m_A} &amp; -\frac{k_{AB}}{m_A} \\
--\frac{k_{AB}}{m_B} &amp; \frac{k_A + k_{AB}}{m_B}
+-\frac{k_{AB}}{m_B} &amp; \frac{k_B + k_{AB}}{m_B}
 \end{array}\right)
 - \omega^2
 \left(
@@ -886,7 +886,7 @@ D = M^{-1}K &amp;= &amp;
 \left[
 \begin{array}{cc}
 \left(\frac{ k_A + k_{AB}}{m_A} \right)-\omega^2 &amp; -\frac{k_{AB}}{m_A} \\
--\frac{k_{AB}}{m_B} &amp; \left(\frac{k_A + k_{AB}}{m_B}\right)-\omega^2
+-\frac{k_{AB}}{m_B} &amp; \left(\frac{k_B + k_{AB}}{m_B}\right)-\omega^2
 \end{array}
 \right] &amp;=&amp; 0
 \end{array}

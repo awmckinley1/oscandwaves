@@ -600,7 +600,7 @@ $${#eq-ch3-trialsolution-1d}
 
 @eq-ch3-trialsolution-1d is the **main result** of this process; that being that the amplitude vector of a vibrational mode is an eigenvector of the dynamics matrix $D$ with the eigenvalue being the square of the frequency of that mode.
 
-### The general case
+### The general case {#sec-ch3-generalcase}
 
 We have said @eq-ch3-trialsolution-1d as an **eigenvalue equation**; this is one of the most important tools in physics, and it is essential to understand how they work.  In this case, we will apply this to determine the frequencies for a coupled oscillator and check with our results above.
 
@@ -662,7 +662,7 @@ D = M^{-1}K &= &
 \left(
 \begin{array}{cc}
 \frac{k_A + k_{AB}}{m_A} & -\frac{k_{AB}}{m_A} \\
--\frac{k_{AB}}{m_B} & \frac{k_A + k_{AB}}{m_B}
+-\frac{k_{AB}}{m_B} & \frac{k_B + k_{AB}}{m_B}
 \end{array}
 \right)
 \end{array}
@@ -676,7 +676,7 @@ $$
 (D - \omega^2 \mathbf{I}) \bar{A} &=& 0 \\
 \mathrm{det}\left[ \left(\begin{array}{cc}
 \frac{k_A + k_{AB}}{m_A} & -\frac{k_{AB}}{m_A} \\
--\frac{k_{AB}}{m_B} & \frac{k_A + k_{AB}}{m_B}
+-\frac{k_{AB}}{m_B} & \frac{k_B + k_{AB}}{m_B}
 \end{array}\right)
 - \omega^2
 \left(
@@ -688,7 +688,7 @@ $$
 \left[ 
 \begin{array}{cc}
 \left(\frac{ k_A + k_{AB}}{m_A} \right)-\omega^2 & -\frac{k_{AB}}{m_A} \\
--\frac{k_{AB}}{m_B} & \left(\frac{k_A + k_{AB}}{m_B}\right)-\omega^2
+-\frac{k_{AB}}{m_B} & \left(\frac{k_B + k_{AB}}{m_B}\right)-\omega^2
 \end{array}
 \right] &=& 0
 \end{array}

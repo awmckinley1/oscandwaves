@@ -199,8 +199,7 @@ For electromagnetic waves, @eq-ch6-wavederivsubs3 becomes either:
 
 $$
 \frac{\partial^2 E_z}{\partial x^2} = \frac{1}{c^2} \frac{\partial^2 E_z}{\partial t^2}
-(\#eq-ch6-wavederivsubs5)
-$${#eq-}
+$${#eq-ch6-wavederivsubs5}
 
 ...or
 
