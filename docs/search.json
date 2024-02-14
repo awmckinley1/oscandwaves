@@ -32,7 +32,7 @@
     "href": "index.html#sec-changelog",
     "title": "Oscillations and Waves",
     "section": "Changelog",
-    "text": "Changelog\n2024-02-12 Fixing equation number error on Equation 7.15\n2024-02-09 Fixing subscript typos in matrices in Section 4.8.2\n2024-02-07 Fixing subscript typo in Section 6.3.2\n2024-02-07 Fixing: Errors in Equation 1.2 (OD), Section 1.7 (OD); Section 3.3 (LK); Homogenising nomenclature in Section 6.1.\n2024-01-26 Removing blank section \n2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)\n2024-01-11 Intitial creation of the Oscillations and Waves content for PHYS10012."
+    "text": "Changelog\n2024-02-14 Fixing bug withi Figure 8.4\n2024-02-12 Fixing equation number error on Equation 7.15\n2024-02-09 Fixing subscript typos in matrices in Section 4.8.2\n2024-02-07 Fixing subscript typo in Section 6.3.2\n2024-02-07 Fixing: Errors in Equation 1.2 (OD), Section 1.7 (OD); Section 3.3 (LK); Homogenising nomenclature in Section 6.1.\n2024-01-26 Removing blank section \n2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)\n2024-01-11 Initial creation of the Oscillations and Waves content for PHYS10012."
   },
   {
     "objectID": "index.html#report-an-error",

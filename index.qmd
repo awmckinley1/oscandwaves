@@ -28,6 +28,8 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
+2024-02-14 Fixing bug withi @fig-ch7-kepestringplot1
+
 2024-02-12 Fixing equation number error on @eq-ch6-wavederivsubs5
 
 2024-02-09 Fixing subscript typos in matrices in @sec-ch3-generalcase
@@ -40,7 +42,7 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)
 
-2024-01-11 Intitial creation of the Oscillations and Waves content for PHYS10012.
+2024-01-11 Initial creation of the Oscillations and Waves content for PHYS10012.
 
 ## Report an error {.unnumbered}
 
