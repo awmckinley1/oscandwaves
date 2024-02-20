@@ -219,7 +219,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sec-ch10-superposharmonic1" id="toc-sec-ch10-superposharmonic1" class="nav-link active" data-scroll-target="#sec-ch10-superposharmonic1"><span class="header-section-number">11.1</span> Superposition of harmonic waves</a></li>
-  <li><a href="#sec-ch10-identicalwaves1" id="toc-sec-ch10-identicalwaves1" class="nav-link" data-scroll-target="#sec-ch10-identicalwaves1"><span class="header-section-number">11.2</span> Two waves with same amplitude and frequency</a></li>
+  <li><a href="#sec-ch10-identicalwaves1" id="toc-sec-ch10-identicalwaves1" class="nav-link" data-scroll-target="#sec-ch10-identicalwaves1"><span class="header-section-number">11.2</span> Two waves with same amplitude and frequency</a>
+  <ul class="collapse">
+  <li><a href="#sec-ch10-phasors1" id="toc-sec-ch10-phasors1" class="nav-link" data-scroll-target="#sec-ch10-phasors1"><span class="header-section-number">11.2.1</span> Phasors</a></li>
+  </ul></li>
   <li><a href="#sec-ch10-standingwaves1" id="toc-sec-ch10-standingwaves1" class="nav-link" data-scroll-target="#sec-ch10-standingwaves1"><span class="header-section-number">11.3</span> Standing waves</a></li>
   <li><a href="#sec-ch10-standingwaves2" id="toc-sec-ch10-standingwaves2" class="nav-link" data-scroll-target="#sec-ch10-standingwaves2"><span class="header-section-number">11.4</span> Wave function for a standing wave</a></li>
   <li><a href="#sec-ch10-fixedstring1" id="toc-sec-ch10-fixedstring1" class="nav-link" data-scroll-target="#sec-ch10-fixedstring1"><span class="header-section-number">11.5</span> Waves on strings fixed at both ends</a></li>
@@ -330,6 +333,39 @@ A_{\textsf{new}} = 2 y_0 \cos \left( \frac{\delta}{2} \right)
 <li>If <span class="math inline">\(\delta = \frac{2\pi}{3}\)</span>, the resultant wave has exactly the same amplitude as the input waves.</li>
 </ol>
 <p>All three of these cases can be derived by substituting the relevant value of <span class="math inline">\(\delta\)</span> into <a href="#eq-ch10-superposition5c">Equation&nbsp;<span>11.7</span></a>).</p>
+<section id="sec-ch10-phasors1" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="sec-ch10-phasors1"><span class="header-section-number">11.2.1</span> Phasors</h3>
+<p>The process we have shown above is a specific case of using <em>phasors</em> to determine an amplitude of a superposition of waves. The general method for determining the superposition of a number of waves of the same frequency - regardless of amplitude or relative phase - is shown as follows.</p>
+<p>For a series of waves (<a href="#eq-ch10-generalwaves1">Equation&nbsp;<span>11.8</span></a>), each with its own amplitude <span class="math inline">\(A_n\)</span> and relative phase <span class="math inline">\(\delta_n\)</span>, we can determine a superposition by summing them together.</p>
+<p><span id="eq-ch10-generalwaves1"><span class="math display">\[
+\begin{cases}
+y_1 = A_1 e^{i(kx - \omega t + \delta_1)} \\
+y_2 = A_2 e^{i(kx - \omega t + \delta_2)} \\
+y_3 = A_3 e^{i(kx - \omega t + \delta_3)} \\
+\end{cases}
+\tag{11.8}\]</span></span></p>
+<p>The summation is straightforward:</p>
+<p><span id="eq-ch10-generalwaves2"><span class="math display">\[
+\begin{array}{rcl}
+y_{\mathrm{total}} &amp;=&amp;  y_1 + y_2 + y_3 \\
+&amp;=&amp; A_1 e^{i(kx - \omega t + \delta_1)} + A_2 e^{i(kx - \omega t + \delta_2)} + A_3 e^{i(kx - \omega t + \delta_3)}\\
+&amp;=&amp; \left(A_1 e^{i\delta_1} + A_2 e^{i\delta_2} + A_3 e^{i\delta_3} \right) e^{i(kx - \omega t)}
+\end{array}
+\tag{11.9}\]</span></span></p>
+<p>By taking out a common factor of <span class="math inline">\(e^{i(kx - \omega t)}\)</span> from the superposition, we have isolated the variable “wave component” (<span class="math inline">\(e^{i(kx - \omega t)}\)</span>) from the invariant (constant) component, (<span class="math inline">\(\left(A_1 e^{i\delta_1} + A_2 e^{i\delta_2} + A_3 e^{i\delta_3} \right)\)</span>). This ‘invariant’ component is the amplitude of the new superposition, and thus we have expressed our superposition as the original wave - with a ‘zero phase’ offset - and an amplitude.</p>
+<p>As the new amplitude is a sum of complex numbers, we can visualise these on an Argand diagram (<a href="#fig-ch10-argand-phasors">Figure&nbsp;<span>11.2</span></a>)</p>
+<div class="cell" data-layout-align="center" data-auto_pdf="true">
+<div class="cell-output-display">
+<div id="fig-ch10-argand-phasors" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisations/LaTeX/ch10-argand-phasors.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;11.2: The amplitude component of a wave superposition can be represented on an Argand diagram, where the total amplitude can be determined as the resultant of the sum of the complex amplitudes.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This method will work for any values of <span class="math inline">\(\delta\)</span> and any amplitudes <span class="math inline">\(A\)</span>, provided the frequency <span class="math inline">\(\omega\)</span> and wavenumber <span class="math inline">\(k\)</span> of the superposed waves is constant.</p>
+</section>
 </section>
 <section id="sec-ch10-standingwaves1" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="sec-ch10-standingwaves1"><span class="header-section-number">11.3</span> Standing waves</h2>
@@ -337,20 +373,20 @@ A_{\textsf{new}} = 2 y_0 \cos \left( \frac{\delta}{2} \right)
 </section>
 <section id="sec-ch10-standingwaves2" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="sec-ch10-standingwaves2"><span class="header-section-number">11.4</span> Wave function for a standing wave</h2>
-<p>In order to fully consider a standing wave, we need to derive the form of its wavefunction. To do this, we consider two waves travelling in opposite directions along a string (<a href="#eq-ch10-standingwaves1">Equation&nbsp;<span>11.8</span></a>). Because one is a reflection of the other (they each reflect from the boundaries), they will have the same frequency and phase.</p>
+<p>In order to fully consider a standing wave, we need to derive the form of its wavefunction. To do this, we consider two waves travelling in opposite directions along a string (<a href="#eq-ch10-standingwaves1">Equation&nbsp;<span>11.10</span></a>). Because one is a reflection of the other (they each reflect from the boundaries), they will have the same frequency and phase.</p>
 <p><span id="eq-ch10-standingwaves1"><span class="math display">\[
 \begin{array}{rcl}
 y_1 &amp;=&amp; y_0 \sin (kx - \omega t) \\
 y_2 &amp;=&amp; y_0 \sin (kx + \omega t) \\
 \end{array}
-\tag{11.8}\]</span></span></p>
-<p>The resultant vertical displacement of the string is then the sum of these two waves (<a href="#eq-ch10-standingwaves2">Equation&nbsp;<span>11.9</span></a>):</p>
+\tag{11.10}\]</span></span></p>
+<p>The resultant vertical displacement of the string is then the sum of these two waves (<a href="#eq-ch10-standingwaves2">Equation&nbsp;<span>11.11</span></a>):</p>
 <p><span id="eq-ch10-standingwaves2"><span class="math display">\[
 \begin{array}{rcl}
 y &amp;=&amp; y_1 + y_2 \\
 y &amp;=&amp; y_0 \sin (kx - \omega t) + y_0 \sin (kx + \omega t) \\
 \end{array}
-\tag{11.9}\]</span></span></p>
+\tag{11.11}\]</span></span></p>
 <p>We can add these directly using a trigonometric identify or we can work in the complex notation:</p>
 <p><span id="eq-ch10-standingwaves3"><span class="math display">\[
 \begin{array}{rcl}
@@ -358,27 +394,27 @@ y &amp;=&amp; y_0 \sin (kx - \omega t) + y_0 \sin (kx + \omega t) \\
 &amp;=&amp; y_0 \mathrm{e}^{\mathrm{i}(kx - \omega t)} + y_0 \mathrm{e}^{\mathrm{i}(kx + \omega t)} \\
 &amp;=&amp; y_0 \mathrm{e}^{\mathrm{i}kx} \left( \mathrm{e}^{-\mathrm{i}\omega t} + \mathrm{e}^{\mathrm{i}\omega t} \right)
 \end{array}
-\tag{11.10}\]</span></span></p>
+\tag{11.12}\]</span></span></p>
 <p>We can use either an Argand diagram or De Moivre’s theorem to show that the term <span class="math inline">\(\left( \mathrm{e}^{-\mathrm{i}\omega t}+ \mathrm{e}^{\mathrm{i}\omega t} \right) = 2 \cos \omega t\)</span>, and hence:</p>
 <p><span class="math display">\[
 y = 2 y_0 \cos \omega t \mathrm{e}^{\mathrm{i}kx}
 \]</span></p>
-<p>We can now expand the complex exponent using De Moivre’s theorem again and, remembering we are interested in the ‘imaginary’ component (as this contains the desired sine function), and we obtain the result in <a href="#eq-ch10-standingwaves4">Equation&nbsp;<span>11.11</span></a>:</p>
+<p>We can now expand the complex exponent using De Moivre’s theorem again and, remembering we are interested in the ‘imaginary’ component (as this contains the desired sine function), and we obtain the result in <a href="#eq-ch10-standingwaves4">Equation&nbsp;<span>11.13</span></a>:</p>
 <p><span id="eq-ch10-standingwaves4"><span class="math display">\[
 y = \underbrace{2 y_0 \cos \omega t}_{\textsf{time-dependent amplitude}} \underbrace{\sin kx}_{\textsf{static wave}}
-\tag{11.11}\]</span></span></p>
+\tag{11.13}\]</span></span></p>
 <p>This result describes a static wave, <span class="math inline">\(y = \sin kx\)</span> whose amplitude varies in time as <span class="math inline">\(A = 2 y_0 \cos \omega t\)</span>. Note that it is possible to obtain this result via a trigonometric identity also.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
 <div id="fig-ch10-standingwave1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisations/ch10-standingwave-n5.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.2: A standing wave is the result of two waves equal in frequency and amplitude moving past each other. This forms a static wave whose amplitude varies in time, and has nodes (N) and antinodes (A) present in the waveform. Here we show the fifth harmonic; 5 antinodes and a wavelength <span class="math inline">\(\lambda = 2/5 = 0.8\)</span>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;11.3: A standing wave is the result of two waves equal in frequency and amplitude moving past each other. This forms a static wave whose amplitude varies in time, and has nodes (N) and antinodes (A) present in the waveform. Here we show the fifth harmonic; 5 antinodes and a wavelength <span class="math inline">\(\lambda = 2/5 = 0.8\)</span>.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>This standing wave is illustrated in <a href="#fig-ch10-standingwave1">Figure&nbsp;<span>11.2</span></a>; but we notice that there are boundary conditions enforced; namely that the ends of the string are fixed at a constant, zero displacement; <em>i.e.</em>:</p>
+<p>This standing wave is illustrated in <a href="#fig-ch10-standingwave1">Figure&nbsp;<span>11.3</span></a>; but we notice that there are boundary conditions enforced; namely that the ends of the string are fixed at a constant, zero displacement; <em>i.e.</em>:</p>
 <ul>
 <li><span class="math inline">\(y = 0\)</span> at <span class="math inline">\(x = 0\)</span>, and:</li>
 <li><span class="math inline">\(y = 0\)</span> at <span class="math inline">\(x = L\)</span> at all times <span class="math inline">\(t\)</span></li>
@@ -392,18 +428,18 @@ y = \underbrace{2 y_0 \cos \omega t}_{\textsf{time-dependent amplitude}} \underb
 </section>
 <section id="sec-ch10-fixedstring1" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="sec-ch10-fixedstring1"><span class="header-section-number">11.5</span> Waves on strings fixed at both ends</h2>
-<p>We have described the mathematics of standing waves; let’s now apply this to a wave travelling on a string which is fixed at both ends. <a href="#fig-ch10-stringfundamental1">Figure&nbsp;<span>11.3</span></a> illustrates the fundamental wavelength of the string, which corresponds to twice the length of the string.</p>
+<p>We have described the mathematics of standing waves; let’s now apply this to a wave travelling on a string which is fixed at both ends. <a href="#fig-ch10-stringfundamental1">Figure&nbsp;<span>11.4</span></a> illustrates the fundamental wavelength of the string, which corresponds to twice the length of the string.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
 <div id="fig-ch10-stringfundamental1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisations/ch10-standingwave_stages-n1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.3: The fundamental frequency, or first harmonic. This is one half-wavelength enclosed in the boundaries and has a single antinode.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;11.4: The fundamental frequency, or first harmonic. This is one half-wavelength enclosed in the boundaries and has a single antinode.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>We can then visualise the harmonics within the standing wave on this fixed string in <a href="#fig-ch10-stringharmonics1">Figure&nbsp;<span>11.4</span></a>:</p>
+<p>We can then visualise the harmonics within the standing wave on this fixed string in <a href="#fig-ch10-stringharmonics1">Figure&nbsp;<span>11.5</span></a>:</p>
 <div id="fig-ch10-stringharmonics1" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -411,7 +447,7 @@ y = \underbrace{2 y_0 \cos \omega t}_{\textsf{time-dependent amplitude}} \underb
 <p><embed src="visualisations/ch10-standingwave_stages-n2.pdf" class="img-fluid"> <embed src="visualisations/ch10-standingwave_stages-n3.pdf" class="img-fluid"> <embed src="visualisations/ch10-standingwave_stages-n4.pdf" class="img-fluid"> <embed src="visualisations/ch10-standingwave_stages-n5.pdf" class="img-fluid"></p>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11.4: The second, third, fourth and fifth harmonics of a standing wave on a string. Notice that the <span class="math inline">\(n\)</span>th harmonic has <span class="math inline">\(\frac{n}{2}\)</span> wavelengths contained in the space.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;11.5: The second, third, fourth and fifth harmonics of a standing wave on a string. Notice that the <span class="math inline">\(n\)</span>th harmonic has <span class="math inline">\(\frac{n}{2}\)</span> wavelengths contained in the space.</figcaption><p></p>
 </figure>
 </div>
 <!-- ```{r echo=FALSE, fig-ch10-stringharmonics1, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="The second, third, fourth and fifth harmonics of a standing wave on a string. Notice that the $n$th harmonic has $\\frac{n}{2}$ wavelengths contained in the space."} -->
@@ -427,8 +463,8 @@ y = \underbrace{2 y_0 \cos \omega t}_{\textsf{time-dependent amplitude}} \underb
 <!-- knitr::include_graphics("visualisations/ch10-standingwave_stages-n4.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE)) -->
 <!-- knitr::include_graphics("visualisations/ch10-standingwave_stages-n5.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE)) -->
 <!-- ``` -->
-<p>The modes of vibration (resonances) shown in <a href="#fig-ch10-stringharmonics1">Figure&nbsp;<span>11.4</span></a> illustrate the occurrence of <strong>nodes</strong> (points which do not move) and <strong>antinodes</strong> (points with the maximum vibration amplitudes). Note also that the end-points of the string must be nodes as well, as these points are fixed.</p>
-<p>In general, the <span class="math inline">\(n\)</span>th harmonic will have <span class="math inline">\(\frac{1}{n} \times\)</span> wavelength and <span class="math inline">\(n \times\)</span> the frequency of the fundamental vibration shown in <a href="#fig-ch10-stringfundamental1">Figure&nbsp;<span>11.3</span></a>.</p>
+<p>The modes of vibration (resonances) shown in <a href="#fig-ch10-stringharmonics1">Figure&nbsp;<span>11.5</span></a> illustrate the occurrence of <strong>nodes</strong> (points which do not move) and <strong>antinodes</strong> (points with the maximum vibration amplitudes). Note also that the end-points of the string must be nodes as well, as these points are fixed.</p>
+<p>In general, the <span class="math inline">\(n\)</span>th harmonic will have <span class="math inline">\(\frac{1}{n} \times\)</span> wavelength and <span class="math inline">\(n \times\)</span> the frequency of the fundamental vibration shown in <a href="#fig-ch10-stringfundamental1">Figure&nbsp;<span>11.4</span></a>.</p>
 <div id="tbl-ch10-standingfrequencies" class="anchored">
 <table class="table">
 <caption>Table&nbsp;11.1: Showing the variation of wavelength and frequency of each harmonic with respect to the first (fundamental) wave.</caption>
@@ -493,7 +529,7 @@ y = \underbrace{2 y_0 \cos \omega t}_{\textsf{time-dependent amplitude}} \underb
 <div id="fig-ch10-waves-closedtube" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisations/ch10-longitudinal-standingwave-n6closed.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.5: This image shows the node/antinode structure of a standing wave in a <strong>closed tube</strong>. Note the presence of a displacement node at either end where molecules are compressed against the end of the tube.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;11.6: This image shows the node/antinode structure of a standing wave in a <strong>closed tube</strong>. Note the presence of a displacement node at either end where molecules are compressed against the end of the tube.</figcaption>
 </figure>
 </div>
 </div>
@@ -517,7 +553,7 @@ y = \underbrace{2 y_0 \cos \omega t}_{\textsf{time-dependent amplitude}} \underb
 <div id="fig-ch10-waves-opentube" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisations/ch10-longitudinal-standingwave-n6open.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.6: For a tube open at one end, the standing waves now have a node at the closed end, and an antinode at the open end. This changes the available harmonics within the tube.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;11.7: For a tube open at one end, the standing waves now have a node at the closed end, and an antinode at the open end. This changes the available harmonics within the tube.</figcaption>
 </figure>
 </div>
 </div>

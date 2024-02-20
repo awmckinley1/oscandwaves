@@ -103,6 +103,44 @@ There are three special cases to be aware of:
 
 All three of these cases can be derived by substituting the relevant value of $\delta$ into @eq-ch10-superposition5c).
 
+### Phasors {#sec-ch10-phasors1}
+
+The process we have shown above is a specific case of using *phasors* to determine an amplitude of a superposition of waves.  The general method for determining the superposition of a number of waves of the same frequency - regardless of amplitude or relative phase - is shown as follows.
+
+For a series of waves (@eq-ch10-generalwaves1), each with its own amplitude $A_n$ and relative phase $\delta_n$, we can determine a superposition by summing them together.
+
+$$
+\begin{cases}
+y_1 = A_1 e^{i(kx - \omega t + \delta_1)} \\
+y_2 = A_2 e^{i(kx - \omega t + \delta_2)} \\
+y_3 = A_3 e^{i(kx - \omega t + \delta_3)} \\
+\end{cases}
+$${#eq-ch10-generalwaves1}
+
+
+The summation is straightforward:
+
+$$
+\begin{array}{rcl}
+y_{\mathrm{total}} &=&  y_1 + y_2 + y_3 \\
+&=& A_1 e^{i(kx - \omega t + \delta_1)} + A_2 e^{i(kx - \omega t + \delta_2)} + A_3 e^{i(kx - \omega t + \delta_3)}\\
+&=& \left(A_1 e^{i\delta_1} + A_2 e^{i\delta_2} + A_3 e^{i\delta_3} \right) e^{i(kx - \omega t)}
+\end{array}
+$${#eq-ch10-generalwaves2}
+
+By taking out a common factor of $e^{i(kx - \omega t)}$ from the superposition, we have isolated the variable "wave component" ($e^{i(kx - \omega t)}$) from the invariant (constant) component, ($\left(A_1 e^{i\delta_1} + A_2 e^{i\delta_2} + A_3 e^{i\delta_3} \right)$).  This 'invariant' component is the amplitude of the new superposition, and thus we have expressed our superposition as the original wave - with a 'zero phase' offset - and an amplitude.
+
+As the new amplitude is a sum of complex numbers, we can visualise these on an Argand diagram (@fig-ch10-argand-phasors)
+
+```{r echo=FALSE, ch10-argand-phasors, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="The amplitude component of a wave superposition can be represented on an Argand diagram, where the total amplitude can be determined as the resultant of the sum of the complex amplitudes."}
+#| label: fig-ch10-argand-phasors
+#| fig-cap: "The amplitude component of a wave superposition can be represented on an Argand diagram, where the total amplitude can be determined as the resultant of the sum of the complex amplitudes."
+knitr::include_graphics("visualisations/LaTeX/ch10-argand-phasors.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE))
+```
+
+This method will work for any values of $\delta$ and any amplitudes $A$, provided the frequency $\omega$ and wavenumber $k$ of the superposed waves is constant.
+
+
 ## Standing waves {#sec-ch10-standingwaves1}
 
 A standing wave is a specific outcome which occurs when a wave is confined to space (for example on a piano string) and it reflects at the boundaries and travels back along its original path. This leads to waves travelling in both directions which combine by superposition.  Only certain frequencies can exist in a standing wave, as the superposition leads to a stationary pattern called a **standing wave**.
