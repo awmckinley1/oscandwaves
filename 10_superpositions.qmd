@@ -140,6 +140,99 @@ knitr::include_graphics("visualisations/LaTeX/ch10-argand-phasors.svg",auto_pdf 
 
 This method will work for any values of $\delta$ and any amplitudes $A$, provided the frequency $\omega$ and wavenumber $k$ of the superposed waves is constant.
 
+## Two waves, same amplitude, different frequency (Beats) {#sec-ch10-differentwaves1}
+
+Let's consider two waves with the same amplitude but differing in frequency (*i.e.* amplitude $y_0$ is common to both, each has independent frequency $\omega_1$ and $\omega 2$). For convenience we will assume that the phase difference between the two is zero at time $t=0$, and we will then consider their displacements at an arbitrary $x$ coordinate (*e.g.* $x=0$).
+
+Firstly, let's lay out the mathematical description of each wave:
+
+$$
+y_{1} = y_{0} \sin \omega_{1} t \quad \textsf{and} \quad y_{2} = y_{0} \sin \omega_{2} t
+$${#eq-ch12-addtwowavebeats1}
+
+We can now obtain an expression for the overall observed amplitude, $y = y_1 + y_2$, and use the standard trigonometric identities^[Here we use the sum-to-product identity $\sin A + \sin B = 2\cos \left(\frac{A-B}{2}\right) \sin\left(\frac{A+B}{2}\right)$] to combine the two equations:
+
+$$
+\begin{array}{rcl}
+y &=& y_1 + y_2 \\
+ &=& y_{0} \sin \omega_{1} t +  y_{0} \sin \omega_{2} t \\
+ &=& 2y_{0}\cos\left(\dfrac{\omega_{1}-\omega_{2}}{2}t\right)\sin\left(\dfrac{\omega_{1}+\omega_{2}}{2}t\right)
+\end{array}
+$${#eq-ch12-addtwowavebeats2}
+
+As an aside, we can achieve the same result by using complex exponentials where the sum of the two waves is given in @eq-ch12-addtwowavebeats1, where we are interested in the imaginary component since we started with sine waves:
+
+$$
+y = y_0 \mathrm{e}^{\mathrm{i}\omega_1 t} + y_0\mathrm{e}^{\mathrm{i}\omega_2 t}
+$${#eq-ch12-addtwowavebeats3}
+
+These can be added on an Argand diagram to show the result in @eq-ch12-addtwowavebeats4:
+
+$$
+y = y_0 r\mathrm{e}^{\mathrm{i}\theta}
+$${#eq-ch12-addtwowavebeats4}
+
+...where:
+
+$$
+r = 2 \cos\left(\frac{\omega_1t - \omega_2t}{2}\right) \quad \textsf{and} \quad \theta = \frac{\omega_1 t + \omega_2 t}{2}
+$$
+
+Our end result if we expand this complex representation is:
+
+$$
+y = 2 y_0 \cos \left( \frac{\omega_1t - \omega_2t}{2} \right) \mathrm{e}^{\mathrm{i}\left(\frac{\omega_1 t + \omega_2t}{2} \right)}
+$$
+
+As we said above, we are interested in the 'imaginary' (sine) component, and we end up with the same result as shown in @eq-ch12-addtwowavebeats2.  We can simplify the expression as in @eq-ch12-addtwowavebeats5.
+
+$$
+y = \underbrace{ 2y_{0} \cos \left( \frac{\Delta \omega}{2}t \right)}_{\textsf{slowly varying amplitude}} \underbrace{ \sin \omega_{av}t}_{\textsf{wave with average frequency}}
+$${#eq-ch12-addtwowavebeats5}
+
+...where $\Delta \omega = \omega_1 - \omega_2$.
+
+The frequency fo the resulting wave is the average of the two input waves, while the amplitude oscillates with frequency $\frac{\Delta \omega}{2}$. This is known as **beating**.  The actual frequency of the beats themselves is twice this, as shown in @fig-ch12-oscillationbeats1.
+
+
+```{r echo=FALSE,  ch12-oscillationbeats1, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="As two waves interfere with each other ($f_1 = 3.0$ Hz; $f_2 = 3.2$ Hz), we see the interference structure as a waveform of frequency 3.1 Hz with a slowly varying amplitude at frequency 0.1 Hz (the 'envelope'). This visualises the 'beats' in the interference structure."}
+#| label: fig-ch12-oscillationbeats1
+#| fig-cap: "As two waves interfere with each other ($f_1 = 3.0$ Hz; $f_2 = 3.2$ Hz), we see the interference structure as a waveform of frequency 3.1 Hz with a slowly varying amplitude at frequency 0.1 Hz (the 'envelope'). This visualises the 'beats' in the interference structure."
+knitr::include_graphics("visualisations/ch12-beats1.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE))
+```
+
+Therefore, if the frequency of the slowly varying amplitude is $\frac{\Delta \omega}{2}$, the observed frequency of the 'beats' will be twice this; *i.e.* the difference in frequency between the two sources.
+
+Repeating the analysis above but with the full expressions for the two sine waves (*i.e.* $y_n = y_0 \sin(kx - \omega t)$), we obtain the expression in @eq-ch12-addtwowavessine1:
+
+
+$$
+y= 2 y_{0} \cos \left (\frac{\Delta kx - \Delta\omega t}{2}\right) \cdot \sin(k_\textsf{av}x - \omega_\textsf{av}t )
+$${#eq-ch12-addtwowavessine1}
+
+From @eq-ch12-addtwowavessine1 we find there are two velocities to consider; the phase velocity of the "average" wave, and the phase velocity of the "envelope" (the waveform which describes the amplitude; see @fig-ch12-oscillationbeats1).  These are laid out below:
+
+The phase velocity of the "average" wave:
+
+$$
+v_{av} = \frac{\omega_{av}}{k_{av}}
+$$
+
+The phase velocity of the envelope:
+
+$$
+v_{env} = \frac{\Delta\omega}{\Delta k}
+$$
+
+In a *non-dispersive* medium (*i.e.* all frequencies travel with the same phase velocity), it can be shown that $v_{\textsf{av}} = v_{\textsf{env}} = \frac{\omega_1}{k_1} = \frac{\omega_2}{k_2} =$ the phase velocity of the medium.
+
+However, in a dispersive medium, the velocities are not equal, *i.e.* $v_{av} \neq v_{env}$, and the "envelope" propagates at a different speed to the individual components.  We associate $v_{env}$ with the group velocity $v_g$ and in this case would be represented as:
+
+$$
+v_{g} = \frac{\Delta\omega}{\Delta k}
+$$
+
+
 
 ## Standing waves {#sec-ch10-standingwaves1}
 

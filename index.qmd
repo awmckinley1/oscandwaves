@@ -28,6 +28,8 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
+2024-02-20 Updated @sec-ch7-dispersion (Dispersion) and @sec-ch10-differentwaves1 (Superposition and Beats) ; verifying and fixing problem with @fig-ch7-kepestringplot1 (RA)
+
 2024-02-19 Updated @sec-ch10-superposition to include further detail on using phasors (@#sec-ch10-phasors1)
 
 2024-02-14 Fixing bug withi @fig-ch7-kepestringplot1

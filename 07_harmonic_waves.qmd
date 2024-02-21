@@ -288,6 +288,66 @@ $${#eq-ch7-averagepowerstring1}
 
 From this result, we can see that both the average energy and average power transmitted are both proportional to $A^2$; a similar observation as in SHM (@sec-shm).
 
+## Dispersion {#sec-ch7-dispersion}
+
+We have introduced a number of "velocities" in the context of waves, so it is helpful to briefly summarise each term.
+
+* Phase velocity, $v_p$: This is the velocity of a wave of specific frequency through a medium, and is the speed at which energy is propagated from one point to another.
+* Particle velocity, $v_{particle}$: This is the velocity of a particle of the medium during its oscillation as it propagates the wave. In a transverse wave, this is perpendicular to the direction of wave propagation. It is this velocity which is used to define the impedance (see @sec-ch8-stringimpedeance)
+* Group velocity, $v_g$: A wave pulse of the type shown in @fig-ch6-wavepulse1 is typically composed of a sum of harmonic waves of differing frequencies. The velocity of this "group" of waves is known as the "group velocity", however is not necessarily the same as the phase velocities of the waves within the group.  It is this difference which gives rise to the phenomenon of **dispersion**.
+
+Any wave pulse (example in @fig-ch6-wavepulse1) is comprised of an infinite sum of different frequencies^[This is a Fourier series; further discussion of this is outwith the scope of this lecture series. For now, it is sufficient to know that **any wave, or wave pulse, can be reconstructed from a weighted sum of harmonic waves**.]. While the pulse itself will have a velocity associated with it (the "group frequency), the frequencies which make up the wave pulse will not always travel at the same phase velocity. Indeed it is far more common for them to have slightly different phase velocities in a given medium; a medium in which this occurs is known as a **dispersive** medium.
+
+In a **dispersive** medium, $v_p$ is different for every frequency component, and the group velocity is not equal to the initial phase velocity $v_p$; *i.e.* $v_g \neq v_p$.  For any dispersive medium, we can write a relationship between $\omega$ and $k$ so that $\omega$ varies as a function of $k$; *i.e.* $\omega = \omega(k)$.  This is called the **dispersion relation** and depends on the physics of the particular wave phenomena being observed.
+
+In the general case, the group velocity is given by the derivative of the dispersion relation (@eq-ch12-dispersion1).  The proof of this relation is available in some advanced textbooks, but it is not necessary for this course.
+
+$$
+v_g \equiv \frac{\partial w(k)}{\partial k}
+$${#eq-ch12-dispersion1}
+
+
+For a non-dispersive medium, $\omega$ is directly proportional to $k$ (@eq-ch12-dispersion2))
+
+$$
+w(k) = v_p k \quad \textsf{with} \quad v_p = \textsf{constant}
+$${#eq-ch12-dispersion2}
+
+The consequence of this is that, when the function is differentiated according to the principle in @eq-ch12-dispersion1, we find that $v_g = v_p$ (@eq-ch12-dispersion2b) as has been mentioned previously.
+
+$$
+v_g \equiv \frac{\partial w(k)}{\partial k} = \frac{\mathrm{d} (v_p k)}{\mathrm{d}k} = v_p
+$${#eq-ch12-dispersion2b}
+
+For a dispersive medium however, $v_p$ becomes a function of $k$.  If we consider a simple case where $\omega$ has a linear dependence on k (@eq-ch12-dispersion3) with constant terms $a$ and $b$:
+
+$$
+\omega = ak + b
+$${#eq-ch12-dispersion3}
+
+As before, the phase velocity is still defined as $v_p = \frac{\omega}{k} = a + \frac{b}{k}$, while the group velocity is found by differentiation (@eq-ch12-dispersion4):
+
+$$
+v_g = \frac{\partial w(k)}{\partial k} = a
+$${#eq-ch12-dispersion4}
+
+We see that these expressions for the phase velocity $v_p = a + \frac{b}{k}$ and the group velocity $v_g = a$ are different; therefore the envelope of the wave packet will move at a different speed from the phase velocity of the wave.  However, the group velocity is still the same for all wavenumbers $k$.
+
+When $\omega$ is a more general function of $k$, the group and phase velocities will each depend differently on $k$.  The dependence of the group velocity on $k$ means that envelope doesn't move at a single velocity and its components of different wavenumber (or wavelength) have different velocities, distorting the envelope.
+
+So-called *normal dispersion* occurs when the group velocity is lower than the phase velocity ($v_g < v_p$); this is the most common situation, however it is possible to have *anomalous dispersion* in which the group velocity, and hence the energy, travels faster than the individual waves.
+
+Examples of dispersion include:
+
+* Splitting of light by prism
+* Formation of a rainbow
+* Phonons propagating through a crystalline solid
+* Spreading of light pulses in fibre-optic cables. The dispersion limits the maximum length of cable before signal reconditioning is needed.
+
+
+
+
+
 ## Summary {#sec-ch7-summary}
 
 We have covered a large amount of derivations in this chapter, however the take-home points are the following:

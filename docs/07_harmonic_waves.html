@@ -228,7 +228,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-ch7-totenergystringsegment" id="toc-sec-ch7-totenergystringsegment" class="nav-link" data-scroll-target="#sec-ch7-totenergystringsegment"><span class="header-section-number">8.4.3</span> Total energy of wave on a string</a></li>
   <li><a href="#sec-ch7-transportenergypower" id="toc-sec-ch7-transportenergypower" class="nav-link" data-scroll-target="#sec-ch7-transportenergypower"><span class="header-section-number">8.4.4</span> Transport of energy and power</a></li>
   </ul></li>
-  <li><a href="#sec-ch7-summary" id="toc-sec-ch7-summary" class="nav-link" data-scroll-target="#sec-ch7-summary"><span class="header-section-number">8.5</span> Summary</a></li>
+  <li><a href="#sec-ch7-dispersion" id="toc-sec-ch7-dispersion" class="nav-link" data-scroll-target="#sec-ch7-dispersion"><span class="header-section-number">8.5</span> Dispersion</a></li>
+  <li><a href="#sec-ch7-summary" id="toc-sec-ch7-summary" class="nav-link" data-scroll-target="#sec-ch7-summary"><span class="header-section-number">8.6</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -493,8 +494,49 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p>From this result, we can see that both the average energy and average power transmitted are both proportional to <span class="math inline">\(A^2\)</span>; a similar observation as in SHM (<a href="01_shm.html"><span>Chapter&nbsp;1</span></a>).</p>
 </section>
 </section>
-<section id="sec-ch7-summary" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="sec-ch7-summary"><span class="header-section-number">8.5</span> Summary</h2>
+<section id="sec-ch7-dispersion" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="sec-ch7-dispersion"><span class="header-section-number">8.5</span> Dispersion</h2>
+<p>We have introduced a number of “velocities” in the context of waves, so it is helpful to briefly summarise each term.</p>
+<ul>
+<li>Phase velocity, <span class="math inline">\(v_p\)</span>: This is the velocity of a wave of specific frequency through a medium, and is the speed at which energy is propagated from one point to another.</li>
+<li>Particle velocity, <span class="math inline">\(v_{particle}\)</span>: This is the velocity of a particle of the medium during its oscillation as it propagates the wave. In a transverse wave, this is perpendicular to the direction of wave propagation. It is this velocity which is used to define the impedance (see <a href="08_reflection_transmission.html#sec-ch8-stringimpedeance"><span>Section&nbsp;9.3</span></a>)</li>
+<li>Group velocity, <span class="math inline">\(v_g\)</span>: A wave pulse of the type shown in <a href="06_simple_waves.html#fig-ch6-wavepulse1">Figure&nbsp;<span>7.3</span></a> is typically composed of a sum of harmonic waves of differing frequencies. The velocity of this “group” of waves is known as the “group velocity”, however is not necessarily the same as the phase velocities of the waves within the group. It is this difference which gives rise to the phenomenon of <strong>dispersion</strong>.</li>
+</ul>
+<p>Any wave pulse (example in <a href="06_simple_waves.html#fig-ch6-wavepulse1">Figure&nbsp;<span>7.3</span></a>) is comprised of an infinite sum of different frequencies<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. While the pulse itself will have a velocity associated with it (the “group frequency), the frequencies which make up the wave pulse will not always travel at the same phase velocity. Indeed it is far more common for them to have slightly different phase velocities in a given medium; a medium in which this occurs is known as a <strong>dispersive</strong> medium.</p>
+<p>In a <strong>dispersive</strong> medium, <span class="math inline">\(v_p\)</span> is different for every frequency component, and the group velocity is not equal to the initial phase velocity <span class="math inline">\(v_p\)</span>; <em>i.e.</em> <span class="math inline">\(v_g \neq v_p\)</span>. For any dispersive medium, we can write a relationship between <span class="math inline">\(\omega\)</span> and <span class="math inline">\(k\)</span> so that <span class="math inline">\(\omega\)</span> varies as a function of <span class="math inline">\(k\)</span>; <em>i.e.</em> <span class="math inline">\(\omega = \omega(k)\)</span>. This is called the <strong>dispersion relation</strong> and depends on the physics of the particular wave phenomena being observed.</p>
+<p>In the general case, the group velocity is given by the derivative of the dispersion relation (<a href="#eq-ch12-dispersion1">Equation&nbsp;<span>8.19</span></a>). The proof of this relation is available in some advanced textbooks, but it is not necessary for this course.</p>
+<p><span id="eq-ch12-dispersion1"><span class="math display">\[
+v_g \equiv \frac{\partial w(k)}{\partial k}
+\tag{8.19}\]</span></span></p>
+<p>For a non-dispersive medium, <span class="math inline">\(\omega\)</span> is directly proportional to <span class="math inline">\(k\)</span> (<a href="#eq-ch12-dispersion2">Equation&nbsp;<span>8.20</span></a>))</p>
+<p><span id="eq-ch12-dispersion2"><span class="math display">\[
+w(k) = v_p k \quad \textsf{with} \quad v_p = \textsf{constant}
+\tag{8.20}\]</span></span></p>
+<p>The consequence of this is that, when the function is differentiated according to the principle in <a href="#eq-ch12-dispersion1">Equation&nbsp;<span>8.19</span></a>, we find that <span class="math inline">\(v_g = v_p\)</span> (<a href="#eq-ch12-dispersion2b">Equation&nbsp;<span>8.21</span></a>) as has been mentioned previously.</p>
+<p><span id="eq-ch12-dispersion2b"><span class="math display">\[
+v_g \equiv \frac{\partial w(k)}{\partial k} = \frac{\mathrm{d} (v_p k)}{\mathrm{d}k} = v_p
+\tag{8.21}\]</span></span></p>
+<p>For a dispersive medium however, <span class="math inline">\(v_p\)</span> becomes a function of <span class="math inline">\(k\)</span>. If we consider a simple case where <span class="math inline">\(\omega\)</span> has a linear dependence on k (<a href="#eq-ch12-dispersion3">Equation&nbsp;<span>8.22</span></a>) with constant terms <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
+<p><span id="eq-ch12-dispersion3"><span class="math display">\[
+\omega = ak + b
+\tag{8.22}\]</span></span></p>
+<p>As before, the phase velocity is still defined as <span class="math inline">\(v_p = \frac{\omega}{k} = a + \frac{b}{k}\)</span>, while the group velocity is found by differentiation (<a href="#eq-ch12-dispersion4">Equation&nbsp;<span>8.23</span></a>):</p>
+<p><span id="eq-ch12-dispersion4"><span class="math display">\[
+v_g = \frac{\partial w(k)}{\partial k} = a
+\tag{8.23}\]</span></span></p>
+<p>We see that these expressions for the phase velocity <span class="math inline">\(v_p = a + \frac{b}{k}\)</span> and the group velocity <span class="math inline">\(v_g = a\)</span> are different; therefore the envelope of the wave packet will move at a different speed from the phase velocity of the wave. However, the group velocity is still the same for all wavenumbers <span class="math inline">\(k\)</span>.</p>
+<p>When <span class="math inline">\(\omega\)</span> is a more general function of <span class="math inline">\(k\)</span>, the group and phase velocities will each depend differently on <span class="math inline">\(k\)</span>. The dependence of the group velocity on <span class="math inline">\(k\)</span> means that envelope doesn’t move at a single velocity and its components of different wavenumber (or wavelength) have different velocities, distorting the envelope.</p>
+<p>So-called <em>normal dispersion</em> occurs when the group velocity is lower than the phase velocity (<span class="math inline">\(v_g &lt; v_p\)</span>); this is the most common situation, however it is possible to have <em>anomalous dispersion</em> in which the group velocity, and hence the energy, travels faster than the individual waves.</p>
+<p>Examples of dispersion include:</p>
+<ul>
+<li>Splitting of light by prism</li>
+<li>Formation of a rainbow</li>
+<li>Phonons propagating through a crystalline solid</li>
+<li>Spreading of light pulses in fibre-optic cables. The dispersion limits the maximum length of cable before signal reconditioning is needed.</li>
+</ul>
+</section>
+<section id="sec-ch7-summary" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="sec-ch7-summary"><span class="header-section-number">8.6</span> Summary</h2>
 <p>We have covered a large amount of derivations in this chapter, however the take-home points are the following:</p>
 <p>When describing sine waves travelling through a medium, the following statements apply:</p>
 <ul>
@@ -526,6 +568,7 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <hr>
 <ol>
 <li id="fn1"><p>The Taylor expansion for this expression is <span class="math inline">\(\sqrt{1+n} = 1+ \frac{n}{2} - \frac{n^2}{8} + \frac{n^3}{16} - \cdots\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This is a Fourier series; further discussion of this is outwith the scope of this lecture series. For now, it is sufficient to know that <strong>any wave, or wave pulse, can be reconstructed from a weighted sum of harmonic waves</strong>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
