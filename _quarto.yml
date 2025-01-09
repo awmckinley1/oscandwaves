@@ -7,8 +7,8 @@ book:
   author: "Dr Andrew McKinley"
   search: true
   repo-url: https://github.com/awmckinley1/oscandwaves
-  downloads: [pdf,epub]
-  date: "01/04/2024"
+  downloads: [pdf,epub,docx]
+  date: "10/21/2024"
   chapters:
     - index.qmd
     - 01_shm.qmd
@@ -23,20 +23,18 @@ book:
     - 09_sound_waves.qmd
     - 10_superpositions.qmd
     - 11_math_toolkit.qmd
-    - references.qmd
+#    - references.qmd
+ 
 
 bibliography: references.bib
 
 format:
   html:
-    theme: 
+    theme:
       light: cosmo
       dark: darkly
   pdf:
-    documentclass: report
-    include-in-header:
-      text: |
-        \renewcommand{\familydefault}{\sfdefault}
+    documentclass: scrreprt
   epub: default
   docx: default
 

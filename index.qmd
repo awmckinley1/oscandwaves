@@ -28,11 +28,17 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
+2025-01-08 Added textbook link to @sec-ch2-dampedoscillations (MJ)
+
+2025-01-06 Fixed error in applying De Moivre's theorem in @eq-ch5-forcedoscillfullsoln3. This does not affect further workings. (ZZ)
+
+2024-05-13 Fixed missing "squared" term in @sec-ch5-normal-frequencies-vibration (RG) ; Updated @sec-ch3-trial-solution to resolve errant 'minus' sign in @eq-ch3-trialsolution-1c and @eq-ch3-trialsolution-1c (GP); Updated @sec-ch6-derivingwaveequation to fix "slope" terminology (AR)
+
 2024-02-20 Updated @sec-ch7-dispersion (Dispersion) and @sec-ch10-differentwaves1 (Superposition and Beats) ; verifying and fixing problem with @fig-ch7-kepestringplot1 (RA)
 
-2024-02-19 Updated @sec-ch10-superposition to include further detail on using phasors (@#sec-ch10-phasors1)
+2024-02-19 Updated @sec-ch10-superposition to include further detail on using phasors (@sec-ch10-phasors1)
 
-2024-02-14 Fixing bug withi @fig-ch7-kepestringplot1
+2024-02-14 Fixing bug with @fig-ch7-kepestringplot1
 
 2024-02-12 Fixing equation number error on @eq-ch6-wavederivsubs5
 

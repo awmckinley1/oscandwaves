@@ -74,7 +74,7 @@ F_{\mathrm{Total, }A} &=& F_A + F_{AB} \\
 \end{array}
 $$ {#eq-ch3-coupledosc1a}
 
-We can reason the direction of the force $F_AB$ from a sketch; if the coupling spring is stretched (positive $\delta$), the force will be in the positive direction. If the coupling spring is compressed (negative $\delta$) the force will be in the negative direction.
+We can reason the direction of the force $F_{AB}$ from a sketch; if the coupling spring is stretched (positive $\delta$), the force will be in the positive direction. If the coupling spring is compressed (negative $\delta$) the force will be in the negative direction.
 
 This situation changes slightly for mass $B$:
 
@@ -178,6 +178,14 @@ Now we have two equations, @eq-ch3-coupledoscillator-4a and @eq-ch3-coupledoscil
 * $y_2$ represents a second oscillator of mass $m$ and a spring constant $(k+2k_{AB})$
 
 :::
+
+::: callout-important
+## Potential source of confusion!
+
+We have used the term $y_n$ to describe variables associated with the system, each of which is derived from the positions of **all** elements in the system.  It is **not** a description of perpendicular displacement! 
+
+:::
+
 
 ## Getting back to displacement {#sec-ch3-backtodisplacement1}
 
@@ -552,7 +560,7 @@ $${#eq-ch3-coupled-diff-eq-1f}
 
 We can immediately see the connection between the matrix equation shown in @eq-ch3-coupled-diff-eq-1e and the equation of motion for a harmonic oscillator. Let's now develop this.
 
-### A trial solution
+### A trial solution {#sec-ch3-trial-solution}
 
 Let's now assume a simple case, with a single oscillation frequency.  We will use a trial solution for all vibrational modes, in the form $A \cos (\omega t + \phi)$.  Let's define each solution of $x_n$ in this manner:
 
@@ -586,14 +594,14 @@ $$ {#eq-ch3-trialsolution-1b}
 This matrix form is now using $\bar{A}$; the **mode amplitude vector**.  We can now find the second derivative of this to be:
 
 $$
-\frac{\mathrm{d}^2\bar{x}_{\mathrm{trial}}}{\mathrm{d}t^2} = -\omega^2 \bar{A}\cos(\omega t + \phi)
+\frac{\mathrm{d}^2\bar{x}_{\mathrm{trial}}}{\mathrm{d}t^2} = -\omega^2 \bar{A}\cos(\omega t + \phi) = -D \bar{A} \cos(\omega t + \phi)
 $${#eq-ch3-trialsolution-1c}
 
 ...which, when we know from @eq-ch3-coupled-diff-eq-1f that the second derivative should give us $-D \bar{A} \cos(\omega t + \phi)$, we obtain the result:
 
 $$
 \begin{array}{rcl}
-\omega^2 \bar{A}\cos(\omega t + \phi) &=& -D \bar{A} \cos(\omega t + \phi) \\
+\omega^2 \bar{A}\cos(\omega t + \phi) &=& D \bar{A} \cos(\omega t + \phi) \\
 D \bar{A} &=& \omega^2 \bar{A}
 \end{array}
 $${#eq-ch3-trialsolution-1d}

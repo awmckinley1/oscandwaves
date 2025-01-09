@@ -1,7 +1,9 @@
 # Simple Harmonic Motion {#sec-shm}
 
 <!-- Topic areas -->
+
 <!-- * Introduction and SHM principles -->
+
 <!-- * Energy in SHM -->
 
 Simple harmonic motion (SHM) is a simple and common type of oscillatory motion. It is a model which is widely used in modelling systems due to its simplicity.
@@ -147,13 +149,13 @@ knitr::include_graphics("visualisations/ch1-xvacomp.svg",auto_pdf = getOption("k
 
 We can directly compare the displacement, velocity and acceleration at four points in the oscillation (@tbl-ch1-xva-comparison1):
 
-| Time               | Displacement, $x$      | Velocity, $v$                       | Acceleration, $a$                    |
+| Time | Displacement, $x$ | Velocity, $v$ | Acceleration, $a$ |
 |:-----------------|:-----------------|:-----------------|:-----------------|
-| $t = 0$            | $x_0 = A$              | $v_0 = 0$                           | $a_0 = -a_{\textrm{max}}$            |
-| $t = \frac{T}{4}$  | $x_{\frac{T}{4}} = 0$  | $v_{\frac{T}{4}} = -v_\textrm{max}$ | $a_{\frac{T}{4}} = 0$                |
-| $t = \frac{T}{2}$  | $x_{\frac{T}{2}} = -A$ | $v_{\frac{T}{2}} = 0$               | $a_{\frac{T}{2}} = a_{\textrm{max}}$ |
-| $t = \frac{3T}{4}$ | $x_{\frac{3T}{4}} = 0$ | $v_{\frac{3T}{4}} = v_\textrm{max}$ | $a_{\frac{3T}{4}} = 0$               |
-| $t = T$            | $x_T = x_0 = A$        | $v_T = v_0 = 0$                     | $a_T = a_0 = -a_{\textrm{max}}$      |
+| $t = 0$ | $x_0 = A$ | $v_0 = 0$ | $a_0 = -a_{\textrm{max}}$ |
+| $t = \frac{T}{4}$ | $x_{\frac{T}{4}} = 0$ | $v_{\frac{T}{4}} = -v_\textrm{max}$ | $a_{\frac{T}{4}} = 0$ |
+| $t = \frac{T}{2}$ | $x_{\frac{T}{2}} = -A$ | $v_{\frac{T}{2}} = 0$ | $a_{\frac{T}{2}} = a_{\textrm{max}}$ |
+| $t = \frac{3T}{4}$ | $x_{\frac{3T}{4}} = 0$ | $v_{\frac{3T}{4}} = v_\textrm{max}$ | $a_{\frac{3T}{4}} = 0$ |
+| $t = T$ | $x_T = x_0 = A$ | $v_T = v_0 = 0$ | $a_T = a_0 = -a_{\textrm{max}}$ |
 
 : Relating the displacement, velocity and acceleration at different times in the oscillation for a simple harmonic oscillator. {#tbl-ch1-xva-comparison1}
 
@@ -334,34 +336,34 @@ A way of thinking about SHM is that it is a point mass oscillating within a pote
 
 $$
 F = - \frac{\mathrm{d}U}{\mathrm{d}r}
-$${#eq-ch1-forceenergyderiv1}
+$$ {#eq-ch1-forceenergyderiv1}
 
 In a one-dimensional system, this is expressed as follows (@eq-ch1-forceenergyderiv2):
 
 $$
 F_x = - \frac{\mathrm{d}U}{\mathrm{d}x}
-$${#eq-ch1-forceenergyderiv2}
+$$ {#eq-ch1-forceenergyderiv2}
 
 As mentioned in @sec-ch1-simpleshmexample, under SHM the force is proportional to the displacement from the equilibrium position and in the opposite direction; *i.e.*:
 
 $$
 F_x = -kx
-$${#eq-ch1-hookeslaw1}
+$$ {#eq-ch1-hookeslaw1}
 
 Applying the principle from @eq-ch1-forceenergyderiv1 we can therefore integrate this experession with respect to $x$ to obtain the expression for our potential energy. We covered this in @sec-ch1-shm-energy1, and we found the result (@eq-ch1-potentialfromforce1); remember that, due to initial conditions, the constant of integration reduces to zero).
 
 $$
 U  = \frac{1}{2}kx^2 
-$${#eq-ch1-potentialfromforce1}
+$$
 
-Simple inspection and recall of our mathematics knowledge tells us that this simple equation represents a parabola. 
+Simple inspection and recall of our mathematics knowledge tells us that this simple equation represents a parabola.
 
-::: {.callout-note}
+::: callout-note
 ## Some useful points on the harmonic oscillator
+
 -   A parabolic potential energy function implies SHM and *vice versa*;
 -   For small amplitudes of oscillation, many potential energy functions may be *approximated* by a parabola (*e.g.* a pendulum, vibrating molecules)
 -   A system undergoing SHM is called a **harmonic oscillator**.
-
 :::
 
 The simplicity of the **simple harmonic oscillator** model is what makes it such a generally useful system to consider.
@@ -375,7 +377,6 @@ A diatomic molecule is a useful system to consider as an example because it can 
 #| fig-cap: "Comparing the Morse potential of the anharmonic oscillator with the harmonic approximation. Near equilibrium, the harmonic oscillator model approximates diatomic behaviour, however this rapidly deviates from reality."
 knitr::include_graphics("visualisations/ch1-diatomicexamp.svg",auto_pdf = getOption("knitr.graphics.auto_pdf", TRUE))
 ```
-
 
 The potential of a vibrating diatomic is known as the Morse potential; the form of this is outwith this discussion, however it is useful to think that, for small displacements around the equilibrium separation the potential energy curve approximates a parabola. We can therefore re-draw our potential energy curve as such, and show this in Figure @fig-ch1-diatomicmolecule2).[^01_shm-4]
 
@@ -392,10 +393,9 @@ The equation of the parabola shown in @fig-ch1-diatomicmolecule2 takes the follo
 
 $$
 U(r) = A + B(r - r_0)^2
-$${#eq-ch1-diatomicmolecule1}
-...where $A$ and $B$ are constants relating to the molecular system under consideration, and $r_0$ is the equilibrium bond length.
+$$ {#eq-ch1-diatomicmolecule1} ...where $A$ and $B$ are constants relating to the molecular system under consideration, and $r_0$ is the equilibrium bond length.
 
-The force on the bond can then be found from the first derivative of the bond potential described in  @eq-ch1-diatomicmolecule1:
+The force on the bond can then be found from the first derivative of the bond potential described in @eq-ch1-diatomicmolecule1:
 
 $$
 \begin{array}{rcl}
@@ -403,7 +403,7 @@ F_r &=& - \dfrac{\mathrm{d}U}{\mathrm{d}r} \\
 \\
 &=& -2B(r-r_0)\\
 \end{array}
-$${#eq-ch1-diatomicmolecule2}
+$$ {#eq-ch1-diatomicmolecule2}
 
 Since the term $(r-r_0)$ is the displacement from the equilibrium position, we see that the force, $F_r$ is a **restoring force** and is proportional to the displacement (and in the opposite direction!), telling us that the motion is SHM. In this example however, the parabolic approximation fails at larger amplitudes.
 
@@ -428,7 +428,7 @@ $$
 k y_0 &=& mg\\
 y_0 &=& \dfrac{mg}{k}\\
 \end{array}
-$${#eq-ch1-massverticalspring1}
+$$ {#eq-ch1-massverticalspring1}
 
 We now apply the Second Law of motion to obtain an expression for the acceleration on the mass due to the forces acting on it (the spring force and gravity).
 
@@ -437,8 +437,7 @@ $$
 m\ddot{y}&=&  \textrm{spring force} + \textrm{gravity} \\
 m\dfrac{\mathrm{d}^2 y}{\mathrm{d} t^2} &=& -ky + mg\\
 \end{array}
-$${#eq-ch1-massverticalspring2}
-In this expression, $y$ is the total extension of the spring (the extension to the mass equilibrium point, $y_0$ plus the displacement from this point, $y^\prime$).
+$$ {#eq-ch1-massverticalspring2} In this expression, $y$ is the total extension of the spring (the extension to the mass equilibrium point, $y_0$ plus the displacement from this point, $y^\prime$).
 
 We now substitute a variable; since $y = y_0 + y^\prime$, we substitute $y$ for $y^\prime$:
 
@@ -449,17 +448,15 @@ Since $y_0$ is a constant:
 
 $$
 \dfrac{\mathrm{d} y^\prime}{\mathrm{d} t} = \dfrac{\mathrm{d} y}{\mathrm{d} t} \hspace{10pt} \textrm{and} \hspace{10pt} \dfrac{\mathrm{d}^2 y^\prime}{\mathrm{d} t^2} = \dfrac{\mathrm{d}^2 y}{\mathrm{d} t^2}
-$$
-Replacing $y$ for $(y_0 + y^\prime)$ in @eq-ch1-massverticalspring2, we obtain @eq-ch1-massverticalspring3:
+$$ Replacing $y$ for $(y_0 + y^\prime)$ in @eq-ch1-massverticalspring2, we obtain @eq-ch1-massverticalspring3:
 
 $$
 m\dfrac{\mathrm{d}^2 y^\prime}{\mathrm{d} t^2} = -k(y_0 + y^\prime) + mg
-$${#eq-ch1-massverticalspring3}
-Since $ky_0 = mg$ (@eq-ch1-massverticalspring1), we can therefore eliminate these terms from @eq-ch1-massverticalspring3, and rewrite as @eq-ch1-massverticalspring4):
+$$ {#eq-ch1-massverticalspring3} Since $ky_0 = mg$ (@eq-ch1-massverticalspring1), we can therefore eliminate these terms from @eq-ch1-massverticalspring3, and rewrite as @eq-ch1-massverticalspring4):
 
 $$
 m\dfrac{\mathrm{d}^2 y^\prime}{\mathrm{d} t^2} = -k y^\prime
-$${#eq-ch1-massverticalspring4}
+$$ {#eq-ch1-massverticalspring4}
 
 This means that, in reference to @fig-ch1-massverticalspring1, we still have SHM centered on the equilibrium position of the mass. This may seem like a self-evident result, however it is useful to recognise the role of gravity; its effect is to shift the equilibrium position of the oscillation from $y = 0$ (the equilibrium position of the spring) to $y = y_0$ ($y^\prime = 0$).
 
@@ -467,24 +464,21 @@ Let's now consider the energy in this system. The system already contains some e
 
 $$
 \textrm{elastic potential energy} = \frac{1}{2}ky^2 - \frac{1}{2}ky_0^2
-$$
-The gravitational potential energy (relative to the starting position $y_0$) is given by:
+$$ The gravitational potential energy (relative to the starting position $y_0$) is given by:
 
 $$
 \textrm{gravitational potential energy} = mg(y-y_0)
-$$
-The total potential energy is therefore given by @eq-ch1-massverticalspring5:
+$$ The total potential energy is therefore given by @eq-ch1-massverticalspring5:
 
 $$
 U = \frac{1}{2}ky^2 - \frac{1}{2}ky_0^2 - mg(y-y_0)
-$${#eq-ch1-massverticalspring5}
+$$ {#eq-ch1-massverticalspring5}
 
 We can then show that the total potential energy expression in @eq-ch1-massverticalspring5 can be simplified to that shown in Equation @eq-ch1-massverticalspring6:
 
 $$
 U = \frac{1}{2} ky^{\prime 2}
-$${#eq-ch1-massverticalspring6}
-**You should ensure you understand how this simplification is done**; this is left as an exercise.[^01_shm-5]
+$$ {#eq-ch1-massverticalspring6} **You should ensure you understand how this simplification is done**; this is left as an exercise.[^01_shm-5]
 
 [^01_shm-5]: Yes; we know this sort of thing infuriates learners, however it is based in valid educational practice! Do give it a go. In this instance, remember that you will need to start with @eq-ch1-massverticalspring5, recall the relation of $y$ and $y^\prime$, substitute this into the equation, expand and cancel terms.
 

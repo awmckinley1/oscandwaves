@@ -308,8 +308,8 @@ $$ {#eq-ch5-cutofffrequency1}
 
 This frequency is called a cutoff frequency and is a feature of many lattice vibrations.
 
-#### The frequencies of normal modes of oscillation
-From @eq-ch5-frequencyidentification1 and the value of $\omega_0 = \frac{T}{ma}$, we can identify the frequency of any normal mode of oscillation within the system:
+#### The frequencies of normal modes of oscillation {#sec-ch5-normal-frequencies-vibration}
+From @eq-ch5-frequencyidentification1 and the value of $\omega_0^2 = \frac{T}{ma}$, we can identify the frequency of any normal mode of oscillation within the system:
 
 $$
 \begin{array}{rcl}

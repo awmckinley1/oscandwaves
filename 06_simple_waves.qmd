@@ -133,7 +133,7 @@ $$
 \frac{\Delta S}{\Delta x} = \frac{\mu}{F} \frac{\partial^2 y}{\partial t^2}
 $${#eq-ch6-waveeqnderiv5}
 
-Since the slope $\Delta S$ of the segment is the 'rate of change of $y$ with respect to $x$' (@eq-ch6-waveeqnderiv2), we can redefine the term in @eq-ch6-waveeqnderiv4; in the limit, as $\Delta x \rightarrow 0$:
+Since the slope $S$ of the segment is the 'rate of change of $y$ with respect to $x$' (@eq-ch6-waveeqnderiv2), we can redefine the term in @eq-ch6-waveeqnderiv4; in the limit, as $\Delta x \rightarrow 0$:
 
 $$
 \frac{\Delta S}{\Delta x} \approx \frac{\partial S}{\partial x} = \frac{\partial}{\partial x} \left( \frac{\partial y}{\partial x} \right) = \frac{\partial^2 y}{\partial x^2}

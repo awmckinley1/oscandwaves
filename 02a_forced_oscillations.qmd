@@ -2,7 +2,7 @@
 
 *Textbook link: Tipler and Mosca 14.5*
 
-In @sec-ch2-dampedoscillations) we explored the effect of damping on a system and we said that every system in the real world is, to a greater or lesser extent, a damped system in which energy is lost (dissipated) to the surroundings.  In order to maintain the amplitude of any oscillation we must supply energy to the system at the same rate as it is lost to the surroundings; for example, pushing a child on a swing.
+In @sec-ch2-dampedoscillations we explored the effect of damping on a system and we said that every system in the real world is, to a greater or lesser extent, a damped system in which energy is lost (dissipated) to the surroundings.  In order to maintain the amplitude of any oscillation we must supply energy to the system at the same rate as it is lost to the surroundings; for example, pushing a child on a swing.
 
 The equation for forced SHM is given in @eq-ch5-forcedshm1:
 
@@ -117,13 +117,13 @@ $${#eq-ch5-forcedoscillfullsoln2}
 As with any complex representation, we now compare the **real** and **imaginary** parts of the solution.  Remember that @eq-ch5-forcedoscillfullsoln2 expands *via* De Moivre's theorem to:
 
 $$
-A_0 = -A \left( \cos \left( \delta + \delta^\prime \right) + \mathrm{i} \sin \left( \delta + \delta^\prime \right)  \right)
+A_0 = -A \left( \cos \left( \delta + \delta^\prime \right) - \mathrm{i} \sin \left( \delta + \delta^\prime \right)  \right)
 $${#eq-ch5-forcedoscillfullsoln3}
 
 The imaginary component of @eq-ch5-forcedoscillfullsoln3 reduces to zero (the solution, $A_0$ is fully real):
 
 $$
-0 = -A \sin \left( \delta + \delta^\prime \right)
+0 = A \sin \left( \delta + \delta^\prime \right)
 $$
 
 We can therefore relate $\delta$ and $\delta^\prime$ as follows:

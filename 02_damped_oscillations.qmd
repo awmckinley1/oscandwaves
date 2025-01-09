@@ -5,7 +5,7 @@
 <!-- * Forced Oscillations -->
 <!-- * Steady State Behaviour -->
 
-*Textbook link*
+*Textbook link: Tipler and Mosca 14.4*
 
 The oscillations we have looked at so far make the assumption that the oscillation will continue indefinitely and that no energy is gained or lost by the system.  Such perpetually oscillating systems are extremely unusual, and almost every oscillation you encounter in the real world will lose energy to its surroundings, either requiring constant input of energy to maintain the oscillation or it will eventually dissipate all of its energy and the oscillation will stop. The energy is dissipated through a process known as 'damping'.
 
