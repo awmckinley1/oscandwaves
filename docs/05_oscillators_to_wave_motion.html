@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oscillations and Waves - 6&nbsp; From Coupled Oscillators to Wave Motion</title>
+<title>6&nbsp; From Coupled Oscillators to Wave Motion – Oscillations and Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,14 +64,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -75,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_oscillators_to_wave_motion.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_oscillators_to_wave_motion.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -90,25 +124,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Oscillations and Waves</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/awmckinley1/oscandwaves" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
             </a>
           </li>
       </ul>
@@ -202,16 +242,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -261,18 +295,24 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>We started our explorations of oscillations and waves by acknowledging the inherent connection between the two. We have seen that harmonic oscillations can be described by sinusoidal functions (sine ansd cosine functions), and we know that sinusoidal functions take the form of a wave. However it may not be immediately clear how we get from the oscillation of a single particle to an organised group oscillation creating a wave which is capable of transmitting energy across space. We will now examine this process.</p>
 <section id="sec-ch5-massesonstring" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="sec-ch5-massesonstring"><span class="header-section-number">6.1</span> Coupled masses on a string under tension</h2>
-<p>In this example we will consider a system consisting of a number of equally spaced masses on a light string; these behave as coupled oscillators perpendicular to the axis of the string. We consider the string to be fixed at both ends and the masses to be separated by a fixed horizontal distance <span class="math inline">\(a\)</span> (<a href="#fig-ch5-mass_on_string3">Figure&nbsp;<span>6.1</span></a>)</p>
+<p>In this example we will consider a system consisting of a number of equally spaced masses on a light string; these behave as coupled oscillators perpendicular to the axis of the string. We consider the string to be fixed at both ends and the masses to be separated by a fixed horizontal distance <span class="math inline">\(a\)</span> (<a href="#fig-ch5-mass_on_string3" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>)</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-mass_on_string3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/LaTeX/ch5-mass_on_string3.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.1: A system of equally spaced masses on a tensioned string. The masses are equally spaced, and undergo oscillations perpendicular to the axis of the string.</figcaption>
+<div id="fig-ch5-mass_on_string3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-mass_on_string3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/LaTeX/ch5-mass_on_string3.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-mass_on_string3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: A system of equally spaced masses on a tensioned string. The masses are equally spaced, and undergo oscillations perpendicular to the axis of the string.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -286,13 +326,17 @@ ul.task-list li input[type="checkbox"] {
 <p>Let’s take each step in turn</p>
 <section id="consolidating-the-forces" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="consolidating-the-forces"><span class="header-section-number">6.1.1</span> Consolidating the forces</h3>
-<p>Let’s consider the mass in the middle of <a href="#fig-ch5-mass_on_string3">Figure&nbsp;<span>6.1</span></a>. We will label this arbitrary <span class="math inline">\(j\)</span>th mass <span class="math inline">\(j\)</span>. We consider the forces on it along the string towards the <span class="math inline">\((j-1)\)</span>th and <span class="math inline">\((j+1)\)</span>th mass. To do this, we identify a few lengths and the angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> (<a href="#fig-ch5-mass_on_string4">Figure&nbsp;<span>6.2</span></a>):</p>
+<p>Let’s consider the mass in the middle of <a href="#fig-ch5-mass_on_string3" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>. We will label this arbitrary <span class="math inline">\(j\)</span>th mass <span class="math inline">\(j\)</span>. We consider the forces on it along the string towards the <span class="math inline">\((j-1)\)</span>th and <span class="math inline">\((j+1)\)</span>th mass. To do this, we identify a few lengths and the angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> (<a href="#fig-ch5-mass_on_string4" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>):</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-mass_on_string4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/LaTeX/ch5-mass_on_string4.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: Consolidating the forces on the middle mass, mass <span class="math inline">\(j\)</span>. We consider everythign relative to the <span class="math inline">\(y\)</span> position of this oscillator and the effect of the masses to either side. The angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> indicate the angles the forces make to the horizontal.</figcaption>
+<div id="fig-ch5-mass_on_string4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-mass_on_string4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/LaTeX/ch5-mass_on_string4.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-mass_on_string4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Consolidating the forces on the middle mass, mass <span class="math inline">\(j\)</span>. We consider everythign relative to the <span class="math inline">\(y\)</span> position of this oscillator and the effect of the masses to either side. The angles <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> indicate the angles the forces make to the horizontal.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -315,7 +359,7 @@ F_{\mathsf{total}} &amp;=&amp; T(\sin \theta_1 + \sin \theta_2) \\
 </section>
 <section id="the-equations-of-motion" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="the-equations-of-motion"><span class="header-section-number">6.1.2</span> The equations of motion</h3>
-<p>Now that we have identified the vertical force acting on our mass (<a href="#eq-ch5-tensionangles1c">Equation&nbsp;<span>6.3</span></a>) we can now write our equation of motion. We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the <span class="math inline">\(j\)</span>th mass as:</p>
+<p>Now that we have identified the vertical force acting on our mass (<a href="#eq-ch5-tensionangles1c" class="quarto-xref">Equation&nbsp;<span>6.3</span></a>) we can now write our equation of motion. We assume that this will be simple harmonic motion, therefore we can write our equation of motion for the <span class="math inline">\(j\)</span>th mass as:</p>
 <p><span id="eq-ch5-stringeqmotion1a"><span class="math display">\[
 m \frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = T \left(\frac{(y_{j-1} - y_j)}{a} + \frac{(y_{j+1} - y_j)}{a} \right)
 \tag{6.4}\]</span></span></p>
@@ -332,7 +376,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have not placed a negative sign in <a href="#eq-ch5-stringeqmotion1a">Equation&nbsp;<span>6.4</span></a> in front of the force to indicate a restoring force. However, remember that we find our force using the parameters <span class="math inline">\((y_{j-1} - y_j)\)</span> or <span class="math inline">\((y_{j+1} - y_j)\)</span>. In the example shown in <a href="#fig-ch5-mass_on_string4">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(y_j &lt; y_{j-1}\)</span> and <span class="math inline">\(y_j &lt; y_{j+1}\)</span>, so we expect a positive value, so a positive force. If the situation is reversed, and <span class="math inline">\(y_j &gt; y_{j-1}\)</span> and <span class="math inline">\(y_j &gt; y_{j+1}\)</span>, we would expect a negative value to arise, giving a negative value for the force.</p>
+<p>We have not placed a negative sign in <a href="#eq-ch5-stringeqmotion1a" class="quarto-xref">Equation&nbsp;<span>6.4</span></a> in front of the force to indicate a restoring force. However, remember that we find our force using the parameters <span class="math inline">\((y_{j-1} - y_j)\)</span> or <span class="math inline">\((y_{j+1} - y_j)\)</span>. In the example shown in <a href="#fig-ch5-mass_on_string4" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>, <span class="math inline">\(y_j &lt; y_{j-1}\)</span> and <span class="math inline">\(y_j &lt; y_{j+1}\)</span>, so we expect a positive value, so a positive force. If the situation is reversed, and <span class="math inline">\(y_j &gt; y_{j-1}\)</span> and <span class="math inline">\(y_j &gt; y_{j+1}\)</span>, we would expect a negative value to arise, giving a negative value for the force.</p>
 <p>(While the sinusoidal functions are periodic, we are only concerned for values of <span class="math inline">\(\theta\)</span> in the range <span class="math inline">\(-\frac{\pi}{2} &lt; \theta &lt; \frac{\pi}{2}\)</span>).</p>
 </div>
 </div>
@@ -346,11 +390,11 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note: remember that the <span class="math inline">\(a\)</span> in <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a> is the separation between the masses on the tensioned string, <strong>not</strong> the acceleration!</p>
+<p>Note: remember that the <span class="math inline">\(a\)</span> in <a href="#eq-ch5-stringeqmotion1b" class="quarto-xref">Equation&nbsp;<span>6.23</span></a> is the separation between the masses on the tensioned string, <strong>not</strong> the acceleration!</p>
 </div>
 </div>
 <p>Let’s now use the approach used previously; insert a trial function into the equation of motion. Assuming simple harmonic motion again, we use the trial function <span class="math inline">\(y_j = A_j \cos (\omega t + \delta)\)</span>, where <span class="math inline">\(A_j\)</span> is the maximum amplitude of vibration. We can also use the trial functions <span class="math inline">\(y_{j-1} = A_{j-1} \cos (\omega t + \delta)\)</span> and <span class="math inline">\(y_{j+1} = A_{j+1} \cos (\omega t + \delta)\)</span>.</p>
-<p>We can place these into <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a> as follows:</p>
+<p>We can place these into <a href="#eq-ch5-stringeqmotion1b" class="quarto-xref">Equation&nbsp;<span>6.23</span></a> as follows:</p>
 <p><span id="eq-ch5-stringeqmotion1c"><span class="math display">\[
 \begin{array}{rcl}
 \frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} &amp;=&amp; \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1}) \\
@@ -366,10 +410,10 @@ Warning
 </section>
 <section id="the-overview" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="the-overview"><span class="header-section-number">6.2</span> The overview</h2>
-<p>In considering the case for each of <span class="math inline">\(n\)</span> oscillating masses connected by a tensioned string, it is all very much looking like a coupled oscillator system, akin to that introduced in <a href="03_coupled_oscillators.html#sec-ch3-generalsolution-matrix"><span>Section&nbsp;4.8</span></a>. We would therefore expect to have a set of <span class="math inline">\(n\)</span> coupled equations, which in turn will give <span class="math inline">\(n\)</span> different values of <span class="math inline">\(\omega^2\)</span>. We can apply the matrix methods we introduced in <a href="03_coupled_oscillators.html#sec-ch3-generalsolution-matrix"><span>Section&nbsp;4.8</span></a>, however let’s just look at the first two cases (one mass and two masses).</p>
+<p>In considering the case for each of <span class="math inline">\(n\)</span> oscillating masses connected by a tensioned string, it is all very much looking like a coupled oscillator system, akin to that introduced in <a href="03_coupled_oscillators.html#sec-ch3-generalsolution-matrix" class="quarto-xref"><span>Section 4.8</span></a>. We would therefore expect to have a set of <span class="math inline">\(n\)</span> coupled equations, which in turn will give <span class="math inline">\(n\)</span> different values of <span class="math inline">\(\omega^2\)</span>. We can apply the matrix methods we introduced in <a href="03_coupled_oscillators.html#sec-ch3-generalsolution-matrix" class="quarto-xref"><span>Section 4.8</span></a>, however let’s just look at the first two cases (one mass and two masses).</p>
 <section id="a-single-mass-on-a-tensioned-string-n-1" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="a-single-mass-on-a-tensioned-string-n-1"><span class="header-section-number">6.2.1</span> A single mass on a tensioned string (<span class="math inline">\(n = 1\)</span>)</h3>
-<p>This is a fairly straightforward analysis. Adapting <a href="#eq-ch5-stringeqmotion1d">Equation&nbsp;<span>6.7</span></a>, <span class="math inline">\(A_{j-1}\)</span> and <span class="math inline">\(A_{j+1}\)</span> reduce to zero as these represent the fixed ends of the string. Our fundamental equation therefore becomes:</p>
+<p>This is a fairly straightforward analysis. Adapting <a href="#eq-ch5-stringeqmotion1d" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>, <span class="math inline">\(A_{j-1}\)</span> and <span class="math inline">\(A_{j+1}\)</span> reduce to zero as these represent the fixed ends of the string. Our fundamental equation therefore becomes:</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 -A_{0} + \left(2-\frac{ma\omega^2}{T}\right)A_1 - A_{2} &amp;=&amp; 0 \\
@@ -394,7 +438,7 @@ Warning
 <li><span class="math inline">\(A_{3} = 0\)</span></li>
 </ul></li>
 </ul>
-<p><a href="#eq-ch5-stringeqmotion1d">Equation&nbsp;<span>6.7</span></a> then becomes:</p>
+<p><a href="#eq-ch5-stringeqmotion1d" class="quarto-xref">Equation&nbsp;<span>6.7</span></a> then becomes:</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 -A_{0} + \left(2-\frac{ma\omega^2}{T}\right)A_1 - A_{2} &amp;=&amp; 0 \\
@@ -422,26 +466,26 @@ A_1 \left[\left(2-\dfrac{ma\omega^2}{T}\right)^2 - 1 \right] &amp;=&amp; 0 \\
 <p><span id="eq-ch5-twomassesonstring2"><span class="math display">\[
 \omega_1^2 = \frac{T}{ma} \quad \mathsf{and} \quad \omega_2^2 = \frac{3T}{ma}
 \tag{6.10}\]</span></span></p>
-<p>These are the frequencies corresponding to the normal modes of vibration on the string; note that while the <em>values</em> are different to the coupled oscillator model in <a href="03_coupled_oscillators.html"><span>Chapter&nbsp;4</span></a>, the principle is the same - where two oscillating masses give two characteristic frequencies, each corresponding to a specific <strong>normal mode</strong>.</p>
+<p>These are the frequencies corresponding to the normal modes of vibration on the string; note that while the <em>values</em> are different to the coupled oscillator model in <a href="03_coupled_oscillators.html" class="quarto-xref"><span>Chapter 4</span></a>, the principle is the same - where two oscillating masses give two characteristic frequencies, each corresponding to a specific <strong>normal mode</strong>.</p>
 </section>
 <section id="the-general-case-n-masses-on-a-tensioned-string" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="the-general-case-n-masses-on-a-tensioned-string"><span class="header-section-number">6.2.3</span> The general case, <span class="math inline">\(n\)</span> masses on a tensioned string:</h3>
-<p>Let’s return to our fundamental equation (<a href="#eq-ch5-stringeqmotion1d">Equation&nbsp;<span>6.7</span></a>):</p>
+<p>Let’s return to our fundamental equation (<a href="#eq-ch5-stringeqmotion1d" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>):</p>
 <p><span class="math display">\[
 -A_{j-1} + \left(2-\frac{ma\omega^2}{T}\right)A_j - A_{j+1} = 0
-\]</span> From <a href="#eq-ch5-onemassstring1a">Equation&nbsp;<span>6.8</span></a> for a single mass on a string we note that <span class="math inline">\(\omega_1^2 = \frac{2T}{ma}\)</span>; therefore the term <span class="math inline">\(\frac{T}{ma}\)</span> is intrinsically linked to a frequency. Let’s therefore define this as a fundamental frequency, <span class="math inline">\(\omega_0\)</span>. We now use this reformulate our fundamental equation to isolate the <span class="math inline">\(A\)</span> terms</p>
+\]</span> From <a href="#eq-ch5-onemassstring1a" class="quarto-xref">Equation&nbsp;<span>6.8</span></a> for a single mass on a string we note that <span class="math inline">\(\omega_1^2 = \frac{2T}{ma}\)</span>; therefore the term <span class="math inline">\(\frac{T}{ma}\)</span> is intrinsically linked to a frequency. Let’s therefore define this as a fundamental frequency, <span class="math inline">\(\omega_0\)</span>. We now use this reformulate our fundamental equation to isolate the <span class="math inline">\(A\)</span> terms</p>
 <p><span id="eq-ch5-generalcase1"><span class="math display">\[
 \frac{A_{j-1} + A_{j+1}}{A_j} = 2-\frac{ma \omega^2}{T} = \frac{2\omega_0^2 - \omega^2}{\omega_0^2}
 \tag{6.11}\]</span></span></p>
-<p>In <a href="#eq-ch5-generalcase1">Equation&nbsp;<span>6.11</span></a>, the frequency <span class="math inline">\(\omega\)</span> represents any normal mode frequency; therefore for any fixed value of this the right-hand side of the equation is a constant regardless of which oscillating mass we are considering. So; can we solve the equation to find a value for the amplitude of the oscillation of the <span class="math inline">\(j\)</span>th mass, <span class="math inline">\(A_j\)</span>?</p>
-<p>From our coupled oscillator case in <a href="03_coupled_oscillators.html"><span>Chapter&nbsp;4</span></a>, we saw that for two oscillating masses in a coupled system, the <strong>amplitude</strong> varied sinusoidally (<a href="03_coupled_oscillators.html#eq-ch3-coupledsolution-4b">Equation&nbsp;<span>4.25</span></a>, graphed in <a href="03_coupled_oscillators.html#fig-ch3-coupled-osc-chart1">Figure&nbsp;<span>4.7</span></a>). Let’s therefore assume that there is a general solution for the amplitude of the <span class="math inline">\(j\)</span>th mass, <span class="math inline">\(A_j\)</span>.</p>
+<p>In <a href="#eq-ch5-generalcase1" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>, the frequency <span class="math inline">\(\omega\)</span> represents any normal mode frequency; therefore for any fixed value of this the right-hand side of the equation is a constant regardless of which oscillating mass we are considering. So; can we solve the equation to find a value for the amplitude of the oscillation of the <span class="math inline">\(j\)</span>th mass, <span class="math inline">\(A_j\)</span>?</p>
+<p>From our coupled oscillator case in <a href="03_coupled_oscillators.html" class="quarto-xref"><span>Chapter 4</span></a>, we saw that for two oscillating masses in a coupled system, the <strong>amplitude</strong> varied sinusoidally (<a href="03_coupled_oscillators.html#eq-ch3-coupledsolution-4b" class="quarto-xref">Equation&nbsp;<span>4.25</span></a>, graphed in <a href="03_coupled_oscillators.html#fig-ch3-coupled-osc-chart1" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>). Let’s therefore assume that there is a general solution for the amplitude of the <span class="math inline">\(j\)</span>th mass, <span class="math inline">\(A_j\)</span>.</p>
 <!-- $$ -->
 <!-- A_j = B \mathrm{e}^{\mathrm{i}j\phi} -->
 <!-- $$ {#eq-ch5-amplitudegensoln1} -->
 <p><span id="eq-ch5-amplitudegensoln1"><span class="math display">\[
 A_j = B \sin (j\phi)
 \tag{6.12}\]</span></span></p>
-<p>In this, <span class="math inline">\(B\)</span> is a constant and <span class="math inline">\(\phi\)</span> is some constant value for a value of <span class="math inline">\(\omega_j\)</span>. Let’s now place this into <a href="#eq-ch5-generalcase1">Equation&nbsp;<span>6.11</span></a>:</p>
+<p>In this, <span class="math inline">\(B\)</span> is a constant and <span class="math inline">\(\phi\)</span> is some constant value for a value of <span class="math inline">\(\omega_j\)</span>. Let’s now place this into <a href="#eq-ch5-generalcase1" class="quarto-xref">Equation&nbsp;<span>6.11</span></a>:</p>
 <!-- $$ -->
 <!-- \begin{array}{rcl} -->
 <!-- \dfrac{A_{j-1} + A_{j+1}}{A_j} &=& \dfrac{B\left(\mathrm{e}^{\mathrm{i}(j-1)\phi} + \mathrm{e}^{\mathrm{i}(j+1)\phi} \right)}{B \mathrm{e}^{\mathrm{i}j\phi}}\\ -->
@@ -462,7 +506,7 @@ A_j = B \sin (j\phi)
 </section>
 <section id="finding-the-amplitude-of-the-jth-element" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="finding-the-amplitude-of-the-jth-element"><span class="header-section-number">6.2.4</span> Finding the amplitude of the <span class="math inline">\(j\)</span>th element</h3>
-<p>In <a href="#eq-ch5-amplitudegensoln2">Equation&nbsp;<span>6.13</span></a> we have presented the general solution for the amplitude ratios of the <span class="math inline">\(j\)</span>th element of an oscillating system:</p>
+<p>In <a href="#eq-ch5-amplitudegensoln2" class="quarto-xref">Equation&nbsp;<span>6.13</span></a> we have presented the general solution for the amplitude ratios of the <span class="math inline">\(j\)</span>th element of an oscillating system:</p>
 <p><span id="eq-ch5-amplitudegensoln3"><span class="math display">\[
 \frac{A_{j-1} + A_{j+1}}{A_j} = 2 \cos \phi_j
 \tag{6.14}\]</span></span></p>
@@ -496,7 +540,7 @@ A_j = B \sin \frac{jr\pi}{n+1}
 </section>
 <section id="identifying-the-allowed-frequencies" class="level3" data-number="6.2.5">
 <h3 data-number="6.2.5" class="anchored" data-anchor-id="identifying-the-allowed-frequencies"><span class="header-section-number">6.2.5</span> Identifying the allowed frequencies</h3>
-<p>We can now use the expression for <span class="math inline">\(\phi_r\)</span> presented in <a href="#eq-ch5-amplitudegensoln7">Equation&nbsp;<span>6.18</span></a> and place this into <a href="#eq-ch5-amplitudegensoln2">Equation&nbsp;<span>6.13</span></a> and <a href="#eq-ch5-generalcase1">Equation&nbsp;<span>6.11</span></a></p>
+<p>We can now use the expression for <span class="math inline">\(\phi_r\)</span> presented in <a href="#eq-ch5-amplitudegensoln7" class="quarto-xref">Equation&nbsp;<span>6.18</span></a> and place this into <a href="#eq-ch5-amplitudegensoln2" class="quarto-xref">Equation&nbsp;<span>6.13</span></a> and <a href="#eq-ch5-generalcase1" class="quarto-xref">Equation&nbsp;<span>6.11</span></a></p>
 <p><span class="math display">\[
 \frac{A_{j-1} + A_{j+1}}{A_j} = \frac{2\omega_0^2 - \omega_r^2}{\omega_0^2} = 2\cos\phi_r = 2 \cos \frac{r\pi}{n+1}
 \]</span></p>
@@ -532,7 +576,7 @@ Alphabet soup!
 <p>We’ve done a lot of derivation here, but what are the take-away points?</p>
 <section id="there-is-a-maximum-frequency-of-oscillation" class="level4" data-number="6.2.6.1">
 <h4 data-number="6.2.6.1" class="anchored" data-anchor-id="there-is-a-maximum-frequency-of-oscillation"><span class="header-section-number">6.2.6.1</span> There is a maximum frequency of oscillation</h4>
-<p>Looking at <a href="#eq-ch5-frequencyidentification1">Equation&nbsp;<span>6.20</span></a>, there is a maximum frequency of oscillation available. The cosine function can only vary between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>; when the cosine function is equal to <span class="math inline">\(-1\)</span>, then: <span id="eq-ch5-cutofffrequency1"><span class="math display">\[
+<p>Looking at <a href="#eq-ch5-frequencyidentification1" class="quarto-xref">Equation&nbsp;<span>6.20</span></a>, there is a maximum frequency of oscillation available. The cosine function can only vary between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>; when the cosine function is equal to <span class="math inline">\(-1\)</span>, then: <span id="eq-ch5-cutofffrequency1"><span class="math display">\[
 \begin{array}{rcl}
 \omega_{r,\mathsf{max}}^2 &amp;=&amp; 2\omega_0^2 [1 - (-1)] = 4\omega_0^2 \\
 \\
@@ -541,9 +585,9 @@ Alphabet soup!
 \tag{6.21}\]</span></span></p>
 <p>This frequency is called a cutoff frequency and is a feature of many lattice vibrations.</p>
 </section>
-<section id="the-frequencies-of-normal-modes-of-oscillation" class="level4" data-number="6.2.6.2">
-<h4 data-number="6.2.6.2" class="anchored" data-anchor-id="the-frequencies-of-normal-modes-of-oscillation"><span class="header-section-number">6.2.6.2</span> The frequencies of normal modes of oscillation</h4>
-<p>From <a href="#eq-ch5-frequencyidentification1">Equation&nbsp;<span>6.20</span></a> and the value of <span class="math inline">\(\omega_0 = \frac{T}{ma}\)</span>, we can identify the frequency of any normal mode of oscillation within the system:</p>
+<section id="sec-ch5-normal-frequencies-vibration" class="level4" data-number="6.2.6.2">
+<h4 data-number="6.2.6.2" class="anchored" data-anchor-id="sec-ch5-normal-frequencies-vibration"><span class="header-section-number">6.2.6.2</span> The frequencies of normal modes of oscillation</h4>
+<p>From <a href="#eq-ch5-frequencyidentification1" class="quarto-xref">Equation&nbsp;<span>6.20</span></a> and the value of <span class="math inline">\(\omega_0^2 = \frac{T}{ma}\)</span>, we can identify the frequency of any normal mode of oscillation within the system:</p>
 <p><span id="eq-ch5-normalmodefrequency1"><span class="math display">\[
 \begin{array}{rcl}
 \omega_r^2 &amp;=&amp; 2\omega_0^2 \left[ 1 - \cos \dfrac{r\pi}{n+1} \right] \\
@@ -559,7 +603,7 @@ Alphabet soup!
 <p>The final destination in considering such systems of coupled oscillators is to consider “what happens when the coupled oscillators on a tensioned string are so close together they can be considered continuous?”. Intuition (and indeed the title of this course!) tells us that these should “of course” form a wave. But it can be helpful to work through this and validate it appropriately. After all, what <em>is</em> a wave anyway?</p>
 <section id="getting-started" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">6.3.1</span> Getting started</h3>
-<p>We need to firstly identify what we know about a given system. From <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a> we identified the equations of motion of the <span class="math inline">\(j\)</span>th mass in an <span class="math inline">\(n\)</span>-oscillator system:</p>
+<p>We need to firstly identify what we know about a given system. From <a href="#eq-ch5-stringeqmotion1b" class="quarto-xref">Equation&nbsp;<span>6.23</span></a> we identified the equations of motion of the <span class="math inline">\(j\)</span>th mass in an <span class="math inline">\(n\)</span>-oscillator system:</p>
 <p><span id="eq-ch5-stringeqmotion1b"><span class="math display">\[
 \frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1})
 \tag{6.23}\]</span></span></p>
@@ -579,11 +623,11 @@ Alphabet soup!
 y(x,t) = \sin (kx + \omega t)
 \tag{6.24}\]</span></span></p>
 <p>For now, we will say that the term <span class="math inline">\(k\)</span> is there to keep the units of <span class="math inline">\(kx\)</span> congruent with the units of <span class="math inline">\(\omega t\)</span>; if the frequency <span class="math inline">\(\omega\)</span> is a “per second” (s<span class="math inline">\(^{-1}\)</span>) unit to cancel the time unit of <span class="math inline">\(t\)</span>, then <span class="math inline">\(k\)</span> must be a “per metre” unit (m<span class="math inline">\(^{-1}\)</span>) to cancel the length unit of <span class="math inline">\(x\)</span>. It has deeper meaning which we will come to later.</p>
-<p>As <span class="math inline">\(x\)</span> is now a continuous variable, we can now return to <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a>, and rewrite this as:</p>
+<p>As <span class="math inline">\(x\)</span> is now a continuous variable, we can now return to <a href="#eq-ch5-stringeqmotion1b" class="quarto-xref">Equation&nbsp;<span>6.23</span></a>, and rewrite this as:</p>
 <p><span id="eq-ch5-waveeq-partialeq1"><span class="math display">\[
 \frac{\partial^2 y}{\partial t^2} = \frac{T}{ma}(y_{j-1} - 2y_j + y_{j+1})
 \tag{6.25}\]</span></span></p>
-<p>We now need to consider the meaning of <span class="math inline">\(y_{j-1}\)</span>, <span class="math inline">\(y_j\)</span> and <span class="math inline">\(y_{j+1}\)</span> in the context of a continuously variable <span class="math inline">\(x\)</span>. In <a href="#sec-ch5-reducing-spacing"><span>Section&nbsp;6.3.2</span></a> we said that the spacing <span class="math inline">\(a\)</span> reduced to <span class="math inline">\(\partial x\)</span>; we can therefore say:</p>
+<p>We now need to consider the meaning of <span class="math inline">\(y_{j-1}\)</span>, <span class="math inline">\(y_j\)</span> and <span class="math inline">\(y_{j+1}\)</span> in the context of a continuously variable <span class="math inline">\(x\)</span>. In <a href="#sec-ch5-reducing-spacing" class="quarto-xref"><span>Section 6.3.2</span></a> we said that the spacing <span class="math inline">\(a\)</span> reduced to <span class="math inline">\(\partial x\)</span>; we can therefore say:</p>
 <ul>
 <li><span class="math inline">\(y_j\)</span> becomes <span class="math inline">\(y(x,t)\)</span></li>
 <li><span class="math inline">\(y_{j-1}\)</span> becomes <span class="math inline">\(y(x-\delta x, t)\)</span></li>
@@ -593,7 +637,7 @@ y(x,t) = \sin (kx + \omega t)
 <p><span class="math display">\[
 y(x\pm \delta x , t) = y(x) \pm \delta x \frac{\partial y}{\partial x} + \frac{1}{2} (\pm \delta x)^2 \frac{\partial^2 y}{\partial x^2}
 \]</span></p>
-<p>This is when we say “so what?” Well, if we remember the <em>initial</em> form of <a href="#eq-ch5-stringeqmotion1b">Equation&nbsp;<span>6.23</span></a>, it was actually derived from:</p>
+<p>This is when we say “so what?” Well, if we remember the <em>initial</em> form of <a href="#eq-ch5-stringeqmotion1b" class="quarto-xref">Equation&nbsp;<span>6.23</span></a>, it was actually derived from:</p>
 <p><span class="math display">\[
 \frac{\mathrm{d}^2 y_j}{\mathrm{d}t^2} = \frac{T}{m}\left( \frac{y_{j+1} - y_j}{a} - \frac{y_j - y_{j-1}}{a}\right)
 \]</span></p>
@@ -610,11 +654,11 @@ y(x\pm \delta x , t) = y(x) \pm \delta x \frac{\partial y}{\partial x} + \frac{1
 </section>
 <section id="the-wave-equation" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="the-wave-equation"><span class="header-section-number">6.3.4</span> The Wave Equation</h3>
-<p>Our final step is to consider what the terms are in the final step in <a href="#eq-ch5-waveequationderiv1">Equation&nbsp;<span>6.26</span></a>, in particular the <span class="math inline">\(\partial x / m\)</span> term. If we invert it to obtain <span class="math inline">\(m/\partial x\)</span>, we have a “mass per unit length”. This is often known as a ‘linear mass density’, and is usually assigned the symbol <span class="math inline">\(\rho\)</span>. When we place this into <a href="#eq-ch5-waveequationderiv1">Equation&nbsp;<span>6.26</span></a>, we obtain:</p>
+<p>Our final step is to consider what the terms are in the final step in <a href="#eq-ch5-waveequationderiv1" class="quarto-xref">Equation&nbsp;<span>6.26</span></a>, in particular the <span class="math inline">\(\partial x / m\)</span> term. If we invert it to obtain <span class="math inline">\(m/\partial x\)</span>, we have a “mass per unit length”. This is often known as a ‘linear mass density’, and is usually assigned the symbol <span class="math inline">\(\rho\)</span>. When we place this into <a href="#eq-ch5-waveequationderiv1" class="quarto-xref">Equation&nbsp;<span>6.26</span></a>, we obtain:</p>
 <p><span id="eq-ch5-waveequationfinal1"><span class="math display">\[
 \frac{\partial^2 y}{\partial t^2} = \frac{T}{\rho}  \frac{\partial^2 y}{\partial x^2}
 \tag{6.27}\]</span></span></p>
-<p><a href="#eq-ch5-waveequationfinal1">Equation&nbsp;<span>6.27</span></a> is the <strong>wave equation</strong>, and it is a tool we can use to verify the validity of a <strong>wave function</strong> - if, when differentiated appropriately, a function can fit this relation, then it is a valid wavefunction and can be used to describe a propagating wave.</p>
+<p><a href="#eq-ch5-waveequationfinal1" class="quarto-xref">Equation&nbsp;<span>6.27</span></a> is the <strong>wave equation</strong>, and it is a tool we can use to verify the validity of a <strong>wave function</strong> - if, when differentiated appropriately, a function can fit this relation, then it is a valid wavefunction and can be used to describe a propagating wave.</p>
 <p>A useful observation in the wave equation is that the <span class="math inline">\(T/\rho\)</span> term has units m<span class="math inline">\(^{2}\)</span> s<span class="math inline">\(^{-2}\)</span>; a speed squared. We may sometimes see this term replaced in the wave equation with a <span class="math inline">\(v^2\)</span> term, corresponding with the speed of propagation of the wave.</p>
 <p>We will revisit the wave equation again in the future.</p>
 </section>
@@ -623,7 +667,7 @@ y(x\pm \delta x , t) = y(x) \pm \delta x \frac{\partial y}{\partial x} + \frac{1
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-ch5-summary"><span class="header-section-number">6.4</span> Summary of key points</h2>
 <p>We’ve covered a lot in this section, and it can be difficult to see the thread of the discussion, so it is helpful to revisit the key points.</p>
 <ul>
-<li>The coupled oscillator model from <a href="03_coupled_oscillators.html"><span>Chapter&nbsp;4</span></a> showed us that for two oscillators coupled together, we would expect to see <strong>two normal modes</strong> of vibration, each with a distinct frequency.</li>
+<li>The coupled oscillator model from <a href="03_coupled_oscillators.html" class="quarto-xref"><span>Chapter 4</span></a> showed us that for two oscillators coupled together, we would expect to see <strong>two normal modes</strong> of vibration, each with a distinct frequency.</li>
 <li>We extended this to many masses on a tensioned string behaving as coupled oscillators. The tension in the string is constant, however the angle of the force on each mass varies as the string moves, inducing the transverse oscillation of each mass.</li>
 <li>By considering the transverse component of the tension on each mass, we could create the equations of motion. Solving these for the case of one mass on a string, then two masses on a string, we verified that for <span class="math inline">\(n\)</span> masses, we would expect to see <span class="math inline">\(n\)</span> characteristic frequencies.</li>
 <li>We determined an expression for the allowed frequencies and found that, while we would obtain <span class="math inline">\(n\)</span> frequencies for an <span class="math inline">\(n\)</span>-component system, there is an upper limit to the frequency for any normal mode - this is the <strong>cut-off frequency</strong></li>
@@ -675,6 +719,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -743,13 +814,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -784,18 +857,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -827,11 +889,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -841,8 +942,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -854,7 +964,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -898,6 +1131,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -923,6 +1157,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -984,17 +1244,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04_pendulums.html" class="pagination-link">
+      <a href="./04_pendulums.html" class="pagination-link" aria-label="Pendulums">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06_simple_waves.html" class="pagination-link">
+      <a href="./06_simple_waves.html" class="pagination-link" aria-label="Simple wave motion and the Wave Equation">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oscillations and Waves - 2&nbsp; Damped oscillations</title>
+<title>2&nbsp; Damped oscillations – Oscillations and Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,14 +64,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -75,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_damped_oscillations.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_damped_oscillations.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -90,25 +124,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Oscillations and Waves</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/awmckinley1/oscandwaves" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
             </a>
           </li>
       </ul>
@@ -202,16 +242,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -244,39 +278,45 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <!-- Topic Areas -->
 <!-- * Damped Oscillations -->
 <!-- * Forced Oscillations -->
 <!-- * Steady State Behaviour -->
-<p><em>Textbook link</em></p>
+<p><em>Textbook link: Tipler and Mosca 14.4</em></p>
 <p>The oscillations we have looked at so far make the assumption that the oscillation will continue indefinitely and that no energy is gained or lost by the system. Such perpetually oscillating systems are extremely unusual, and almost every oscillation you encounter in the real world will lose energy to its surroundings, either requiring constant input of energy to maintain the oscillation or it will eventually dissipate all of its energy and the oscillation will stop. The energy is dissipated through a process known as ‘damping’.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch2-dampedoscillation1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch2-dampedoscill1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.1: The amplitude of a damped oscillation decays exponentially with time. The observed position of the oscillation is shown in blue, while the maximum possible amplitude (related to energy stored in the system) is illustrated by the orange dotted line. The undamped oscillation is shown in grey for comparison.</figcaption>
+<div id="fig-ch2-dampedoscillation1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch2-dampedoscillation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch2-dampedoscill1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-dampedoscillation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: The amplitude of a damped oscillation decays exponentially with time. The observed position of the oscillation is shown in blue, while the maximum possible amplitude (related to energy stored in the system) is illustrated by the orange dotted line. The undamped oscillation is shown in grey for comparison.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The change in amplitude of a damped oscillation is illustrated in <a href="#fig-ch2-dampedoscillation1">Figure&nbsp;<span>2.1</span></a>. Both amplitude and energy decrease by a <strong>constant percentage</strong> in each cycle; this is an <strong>exponential decrease</strong>.</p>
+<p>The change in amplitude of a damped oscillation is illustrated in <a href="#fig-ch2-dampedoscillation1" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>. Both amplitude and energy decrease by a <strong>constant percentage</strong> in each cycle; this is an <strong>exponential decrease</strong>.</p>
 <section id="sec-ch2-generalcasedamping" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-ch2-generalcasedamping"><span class="header-section-number">2.1</span> The general case of damping</h2>
-<p>For a simply damped system, the damping force is proportional to the velocity of the oscillating mass and <strong>opposes</strong> the direction of motion (<a href="#eq-ch2-velocitydamp1">Equation&nbsp;<span>2.1</span></a>):</p>
+<p>For a simply damped system, the damping force is proportional to the velocity of the oscillating mass and <strong>opposes</strong> the direction of motion (<a href="#eq-ch2-velocitydamp1" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>):</p>
 <p><span id="eq-ch2-velocitydamp1"><span class="math display">\[
 F = -bv \equiv -b \frac{\mathrm{d}x}{\mathrm{d} t}
 \tag{2.1}\]</span></span></p>
-<p>This expression for the damping force can then be included with the equation for the force from the spring (<a href="01_shm.html#eq-hookeslaw1">Equation&nbsp;<span>1.1</span></a>) to consider the overall acceleration of a mass undergoing damped harmonic motion. (<a href="#eq-ch2-velocitydamp2">Equation&nbsp;<span>2.2</span></a>).</p>
+<p>This expression for the damping force can then be included with the equation for the force from the spring (<a href="01_shm.html#eq-hookeslaw1" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>) to consider the overall acceleration of a mass undergoing damped harmonic motion. (<a href="#eq-ch2-velocitydamp2" class="quarto-xref">Equation&nbsp;<span>2.2</span></a>).</p>
 <p><span id="eq-ch2-velocitydamp2"><span class="math display">\[
 \begin{array}{rcl}
 F = -kx - bv &amp;=&amp; -kx -b \dfrac{\mathrm{d}x}{\mathrm{d}t} = ma \\
 m \dfrac{\mathrm{d}^2 x}{\mathrm{d}t^2} &amp;=&amp; -kx -b \dfrac{\mathrm{d}x}{\mathrm{d}t}
 \end{array}
 \tag{2.2}\]</span></span></p>
-<p>This can be written as a differential equation for <strong>damped SHM</strong> as shown in <a href="#eq-ch2-velocitydamp3">Equation&nbsp;<span>2.3</span></a>:</p>
+<p>This can be written as a differential equation for <strong>damped SHM</strong> as shown in <a href="#eq-ch2-velocitydamp3" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>:</p>
 <p><span id="eq-ch2-velocitydamp3"><span class="math display">\[
 m \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t}+ kx =0
 \tag{2.3}\]</span></span></p>
@@ -285,18 +325,18 @@ m \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t}+ kx =
 <li>The amplitude of the damped oscillation is subject to an exponential decay over a timescale of <span class="math inline">\(2\tau\)</span> (don’t worry about the factor of 2 for now), and</li>
 <li>The damped oscillation has a frequency <span class="math inline">\(\omega^\prime\)</span> which may be different from the natural frequency of the undamped oscillator, <span class="math inline">\(\omega_0\)</span>.</li>
 </ol>
-<p>Our exponential decay factor then becomes <span class="math inline">\(\mathrm{e}^{-\frac{t}{2\tau}}\)</span>, and the exponential form of the wave equation becomes <span class="math inline">\(\mathrm{e}^{\mathrm{i}(\omega^\prime t + \delta)}\)</span> (combination of <a href="01_shm.html#eq-shm-general-positionx1">Equation&nbsp;<span>1.5</span></a> and <a href="11_math_toolkit.html#eq-ch9-demoivreoscillation1">Equation&nbsp;<span>12.11</span></a>). When these are combined we obtain a form of the solution shown in <a href="#eq-ch2-velocitydamp4">Equation&nbsp;<span>2.4</span></a></p>
+<p>Our exponential decay factor then becomes <span class="math inline">\(\mathrm{e}^{-\frac{t}{2\tau}}\)</span>, and the exponential form of the wave equation becomes <span class="math inline">\(\mathrm{e}^{\mathrm{i}(\omega^\prime t + \delta)}\)</span> (combination of <a href="01_shm.html#eq-shm-general-positionx1" class="quarto-xref">Equation&nbsp;<span>1.5</span></a> and <a href="11_math_toolkit.html#eq-ch9-demoivreoscillation1" class="quarto-xref">Equation&nbsp;<span>12.11</span></a>). When these are combined we obtain a form of the solution shown in <a href="#eq-ch2-velocitydamp4" class="quarto-xref">Equation&nbsp;<span>2.4</span></a></p>
 <p><span id="eq-ch2-velocitydamp4"><span class="math display">\[
 x = A_0 \mathrm{e}^{-\frac{t}{2\tau}} \mathrm{e}^{\mathrm{i}(\omega^\prime t + \delta)}
 \tag{2.4}\]</span></span></p>
-<p>We can now find the first and second derivatives (make sure you are able to do this; you will need the product rule for differentiation) of this expression to substitute into the differential equation (<a href="#eq-ch2-velocitydamp3">Equation&nbsp;<span>2.3</span></a>):</p>
+<p>We can now find the first and second derivatives (make sure you are able to do this; you will need the product rule for differentiation) of this expression to substitute into the differential equation (<a href="#eq-ch2-velocitydamp3" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>):</p>
 <p><span id="eq-ch2-velocitydamp5"><span class="math display">\[
 \begin{array}{rcl}
 \dfrac{\mathrm{d}x}{\mathrm{d}t} &amp;=&amp; \left( -\dfrac{1}{2\tau} + \mathrm{i}\omega^\prime \right) x\\
 \dfrac{\mathrm{d}^2x}{\mathrm{d}t^2} &amp;=&amp; \left( -\dfrac{1}{2\tau} + \mathrm{i}\omega^\prime \right)^2 x
 \end{array}
 \tag{2.5}\]</span></span></p>
-<p>We can now take our derivatives shown in <a href="#eq-ch2-velocitydamp5">Equation&nbsp;<span>2.5</span></a>) and substitute into the differential equation (<a href="#eq-ch2-velocitydamp3">Equation&nbsp;<span>2.3</span></a>)):</p>
+<p>We can now take our derivatives shown in <a href="#eq-ch2-velocitydamp5" class="quarto-xref">Equation&nbsp;<span>2.5</span></a>) and substitute into the differential equation (<a href="#eq-ch2-velocitydamp3" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>)):</p>
 <p><span id="eq-ch2-velocitydamp6"><span class="math display">\[
 \begin{array}{rcl}
 m \dfrac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \dfrac{\mathrm{d}x}{\mathrm{d}t}+ kx &amp;=&amp;0\\
@@ -323,15 +363,15 @@ m \left( \frac{1}{4\tau^2} - \frac{\mathrm{i}\omega^\prime}{\tau} - \omega ^{\pr
 <p><span class="math display">\[
 \left( \frac{1}{4 \tau^2} - \omega^{\prime 2} \right) m - \frac{b}{2\tau} + k = 0
 \]</span></p>
-<p>Therefore (using result from <a href="#eq-ch2-velocitydampimagin1">Equation&nbsp;<span>2.7</span></a>):</p>
+<p>Therefore (using result from <a href="#eq-ch2-velocitydampimagin1" class="quarto-xref">Equation&nbsp;<span>2.7</span></a>):</p>
 <p><span class="math display">\[
 \omega^{\prime 2} = \frac{k}{m} - \left( \frac{b}{2m} \right)^2
 \]</span></p>
-<p>However, we already know that <span class="math inline">\(\frac{k}{m} = \omega_0^2\)</span> (<a href="01_shm.html#eq-shm-general-omega1">Equation&nbsp;<span>1.9</span></a>), so:</p>
+<p>However, we already know that <span class="math inline">\(\frac{k}{m} = \omega_0^2\)</span> (<a href="01_shm.html#eq-shm-general-omega1" class="quarto-xref">Equation&nbsp;<span>1.9</span></a>), so:</p>
 <p><span id="eq-ch2-veolocitydampreal1"><span class="math display">\[
 \omega^{\prime 2} = \omega_0^2 - \left( \frac{b}{2m} \right)^2
 \tag{2.8}\]</span></span></p>
-<p>Having found this result, we can now say that a general solution to damped SHM is as shown in <a href="#eq-ch2-velocitydamp4">Equation&nbsp;<span>2.4</span></a>, or in trigonometric notation as shown in <a href="#eq-ch2-velocitydamp7">Equation&nbsp;<span>2.9</span></a>:</p>
+<p>Having found this result, we can now say that a general solution to damped SHM is as shown in <a href="#eq-ch2-velocitydamp4" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>, or in trigonometric notation as shown in <a href="#eq-ch2-velocitydamp7" class="quarto-xref">Equation&nbsp;<span>2.9</span></a>:</p>
 <p><span id="eq-ch2-velocitydamp7"><span class="math display">\[
 x = A_0 \mathrm{e}^{-\frac{t}{2\tau}} \cos(\omega^\prime t + \delta)
 \tag{2.9}\]</span></span></p>
@@ -350,15 +390,15 @@ x = A_0 \mathrm{e}^{-\frac{t}{2\tau}} \cos(\omega^\prime t + \delta)
 <li>That the frequency of the damped oscillator (<span class="math inline">\(\omega ^\prime\)</span>) is approximately equal to that of the undamped oscillator; <span class="math inline">\(\omega ^\prime \approx \omega_0\)</span></li>
 <li>That the damping factor, <span class="math inline">\(\frac{b}{2m\omega_0}\)</span> is significantly less than one; <em>i.e.</em> <span class="math inline">\(\frac{b}{2m\omega_0} \ll 1\)</span></li>
 </ol>
-<p>When we apply these assumptions to <a href="#eq-ch2-velocitydamp4">Equation&nbsp;<span>2.4</span></a> we obtain the “standard” SHM oscillation (tending towards <span class="math inline">\(\mathrm{e}^{\mathrm{i}(\omega^\prime t + \delta)}\)</span> as <span class="math inline">\(\omega ^\prime\)</span> tends to <span class="math inline">\(\omega_0\)</span>) with an exponential decay on its amplitude (<a href="#eq-ch2-ampexpdecay1">Equation&nbsp;<span>2.10</span></a>):</p>
+<p>When we apply these assumptions to <a href="#eq-ch2-velocitydamp4" class="quarto-xref">Equation&nbsp;<span>2.4</span></a> we obtain the “standard” SHM oscillation (tending towards <span class="math inline">\(\mathrm{e}^{\mathrm{i}(\omega^\prime t + \delta)}\)</span> as <span class="math inline">\(\omega ^\prime\)</span> tends to <span class="math inline">\(\omega_0\)</span>) with an exponential decay on its amplitude (<a href="#eq-ch2-ampexpdecay1" class="quarto-xref">Equation&nbsp;<span>2.10</span></a>):</p>
 <p><span id="eq-ch2-ampexpdecay1"><span class="math display">\[
 A = A_0 \mathrm{e}^{-\frac{t}{2\tau}}
 \tag{2.10}\]</span></span></p>
-<p>The effect of this light damping is that if <span class="math inline">\(b\)</span> (the damping coefficient on the velocity, <a href="#eq-ch2-velocitydamp1">Equation&nbsp;<span>2.1</span></a> increases, the damped frequency <span class="math inline">\(\omega^\prime\)</span> will decrease, and the characteristic decay time, <span class="math inline">\(\tau\)</span> will also decrease.</p>
+<p>The effect of this light damping is that if <span class="math inline">\(b\)</span> (the damping coefficient on the velocity, <a href="#eq-ch2-velocitydamp1" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> increases, the damped frequency <span class="math inline">\(\omega^\prime\)</span> will decrease, and the characteristic decay time, <span class="math inline">\(\tau\)</span> will also decrease.</p>
 </section>
 <section id="sec-ch2-criticaldamping" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-ch2-criticaldamping"><span class="header-section-number">2.3</span> Critical damping</h2>
-<p>In a critically damped system, the <strong>system does not oscillate</strong>; rather, it returns to equilibrium in the shortest possible time. This can be imagined as the damping required to <strong>exactly stop</strong> the vibration and no more. The damped oscillation frequency <span class="math inline">\(\omega^\prime\)</span> then, by definition, is equal to zero (<span class="math inline">\(\omega^\prime = 0\)</span>) and, by placing this condition into <a href="#eq-ch2-dampfrequency1">Equation&nbsp;<span>2.11</span></a>, we obtain the result for the damping coefficient, <span class="math inline">\(b\)</span> (<a href="#eq-ch2-criticaldamp1">Equation&nbsp;<span>2.12</span></a>):</p>
+<p>In a critically damped system, the <strong>system does not oscillate</strong>; rather, it returns to equilibrium in the shortest possible time. This can be imagined as the damping required to <strong>exactly stop</strong> the vibration and no more. The damped oscillation frequency <span class="math inline">\(\omega^\prime\)</span> then, by definition, is equal to zero (<span class="math inline">\(\omega^\prime = 0\)</span>) and, by placing this condition into <a href="#eq-ch2-dampfrequency1" class="quarto-xref">Equation&nbsp;<span>2.11</span></a>, we obtain the result for the damping coefficient, <span class="math inline">\(b\)</span> (<a href="#eq-ch2-criticaldamp1" class="quarto-xref">Equation&nbsp;<span>2.12</span></a>):</p>
 <p><span id="eq-ch2-dampfrequency1"><span class="math display">\[
 \omega^\prime = \sqrt{\omega_0^2 - \left(\frac{b}{2m}\right)^2}
 \tag{2.11}\]</span></span></p>
@@ -368,13 +408,17 @@ b = b_c = 2m\omega_0
 </section>
 <section id="sec-ch2-overdamping" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-ch2-overdamping"><span class="header-section-number">2.4</span> Overdamping</h2>
-<p>An overdamped system is one which has so much damping applied that the system returns to equilibrium <em>even more slowly</em> than in the critically damped case (<a href="#sec-ch2-criticaldamping"><span>Section&nbsp;2.3</span></a>). This could be imagined as a mass on a spring which is allowed to return to equilibrium within an extremely viscous medium (honey, or treacle!) and takes a considerable time to slowly return to equilibrium. A comparison of the displacement/time curve between a critically damped system and an overdamped system is shown in <a href="#fig-ch2-critvsoverdamped1">Figure&nbsp;<span>2.2</span></a>.</p>
+<p>An overdamped system is one which has so much damping applied that the system returns to equilibrium <em>even more slowly</em> than in the critically damped case (<a href="#sec-ch2-criticaldamping" class="quarto-xref"><span>Section 2.3</span></a>). This could be imagined as a mass on a spring which is allowed to return to equilibrium within an extremely viscous medium (honey, or treacle!) and takes a considerable time to slowly return to equilibrium. A comparison of the displacement/time curve between a critically damped system and an overdamped system is shown in <a href="#fig-ch2-critvsoverdamped1" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch2-critvsoverdamped1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch2-critoverdamp1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.2: A critically damped system returns to its equilbrium position in the shortest possible time, while an overdamped system works against an overbearing damping force slowly returning it to its equilibrium position.</figcaption>
+<div id="fig-ch2-critvsoverdamped1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch2-critvsoverdamped1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch2-critoverdamp1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-critvsoverdamped1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: A critically damped system returns to its equilbrium position in the shortest possible time, while an overdamped system works against an overbearing damping force slowly returning it to its equilibrium position.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -386,19 +430,19 @@ b &gt; b_c
 </section>
 <section id="sec-ch2-qualityfactor" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="sec-ch2-qualityfactor"><span class="header-section-number">2.5</span> Quality factor and energy in damped SHM</h2>
-<p>Recall that we determined energies within SHM in <a href="01_shm.html#eq-ch1-potentialfromforce4">Equation&nbsp;<span>1.17</span></a> and <a href="01_shm.html#eq-ch1-potentialfromforce5">Equation&nbsp;<span>1.18</span></a>; remembering that <span class="math inline">\(\omega^2 = \frac{k}{m}\)</span>, we can write the overall energy of the system as in <a href="#eq-ch2-qualityfactorenergy1">Equation&nbsp;<span>2.13</span></a>:</p>
+<p>Recall that we determined energies within SHM in <a href="01_shm.html#eq-ch1-potentialfromforce4" class="quarto-xref">Equation&nbsp;<span>1.17</span></a> and <a href="01_shm.html#eq-ch1-potentialfromforce5" class="quarto-xref">Equation&nbsp;<span>1.18</span></a>; remembering that <span class="math inline">\(\omega^2 = \frac{k}{m}\)</span>, we can write the overall energy of the system as in <a href="#eq-ch2-qualityfactorenergy1" class="quarto-xref">Equation&nbsp;<span>2.13</span></a>:</p>
 <p><span id="eq-ch2-qualityfactorenergy1"><span class="math display">\[
 E = \frac{1}{2}m\omega^2 A^2
 \tag{2.13}\]</span></span></p>
-<p>Within the damped regimes we have established the equations for damping, in particular how to calculate the damped amplitude at a given time, <span class="math inline">\(A\)</span> (<a href="#eq-ch2-ampexpdecay1">Equation&nbsp;<span>2.10</span></a>). By combining this with <a href="#eq-ch2-qualityfactorenergy1">Equation&nbsp;<span>2.13</span></a> we can obtain an expression for the damped energy, <span class="math inline">\(E\)</span>, as a proportion of the initial energy of the system, <span class="math inline">\(E_0\)</span> (<a href="#eq-ch2-qualityfactorenergy2">Equation&nbsp;<span>2.14</span></a>):</p>
+<p>Within the damped regimes we have established the equations for damping, in particular how to calculate the damped amplitude at a given time, <span class="math inline">\(A\)</span> (<a href="#eq-ch2-ampexpdecay1" class="quarto-xref">Equation&nbsp;<span>2.10</span></a>). By combining this with <a href="#eq-ch2-qualityfactorenergy1" class="quarto-xref">Equation&nbsp;<span>2.13</span></a> we can obtain an expression for the damped energy, <span class="math inline">\(E\)</span>, as a proportion of the initial energy of the system, <span class="math inline">\(E_0\)</span> (<a href="#eq-ch2-qualityfactorenergy2" class="quarto-xref">Equation&nbsp;<span>2.14</span></a>):</p>
 <p><span id="eq-ch2-qualityfactorenergy2"><span class="math display">\[
 \begin{array}{rcl}
 E &amp;=&amp; \frac{1}{2}m\omega^2 \left( A_0 \mathrm{e}^{-\frac{t}{2\tau}} \right)^2\\
 &amp;=&amp; E_0 \mathrm{e}^{-\frac{t}{\tau}}
 \end{array}
 \tag{2.14}\]</span></span></p>
-<p>The decay time <span class="math inline">\(\tau\)</span> can now be considered the time taken for the energy to decrease to <span class="math inline">\(\frac{1}{\mathrm{e}}\)</span> of its original value (see? There was a reason we considered the timescale <span class="math inline">\(2\tau\)</span> in <a href="#sec-ch2-generalcasedamping"><span>Section&nbsp;2.1</span></a>!).</p>
-<p>A useful measure of the <strong>persistence</strong> of an oscillation is the <strong>quality factor</strong>, <span class="math inline">\(Q\)</span>. This is defined as shown in <a href="#eq-ch2-qualityfactor1">Equation&nbsp;<span>2.15</span></a>:</p>
+<p>The decay time <span class="math inline">\(\tau\)</span> can now be considered the time taken for the energy to decrease to <span class="math inline">\(\frac{1}{\mathrm{e}}\)</span> of its original value (see? There was a reason we considered the timescale <span class="math inline">\(2\tau\)</span> in <a href="#sec-ch2-generalcasedamping" class="quarto-xref"><span>Section 2.1</span></a>!).</p>
+<p>A useful measure of the <strong>persistence</strong> of an oscillation is the <strong>quality factor</strong>, <span class="math inline">\(Q\)</span>. This is defined as shown in <a href="#eq-ch2-qualityfactor1" class="quarto-xref">Equation&nbsp;<span>2.15</span></a>:</p>
 <p><span id="eq-ch2-qualityfactor1"><span class="math display">\[
 Q = \omega_0 \tau = \frac{\omega_0 m}{b}
 \tag{2.15}\]</span></span></p>
@@ -407,15 +451,15 @@ Q = \omega_0 \tau = \frac{\omega_0 m}{b}
 <li>Large <span class="math inline">\(Q\)</span> represents lighter damping, persistent oscillation. (think <strong>high quality oscillation</strong>)</li>
 <li>Small <span class="math inline">\(Q\)</span> represents heavier damping, oscillation stops rapidly. (think <strong>low quality oscillation</strong>)</li>
 </ul>
-<p><span class="math inline">\(Q\)</span> can relate to the energy loss per cycle of oscillation; firstly define the rate of change of energy (<a href="#eq-ch2-qualityfactor2">Equation&nbsp;<span>2.16</span></a>, from <a href="#eq-ch2-qualityfactorenergy1">Equation&nbsp;<span>2.13</span></a>):</p>
+<p><span class="math inline">\(Q\)</span> can relate to the energy loss per cycle of oscillation; firstly define the rate of change of energy (<a href="#eq-ch2-qualityfactor2" class="quarto-xref">Equation&nbsp;<span>2.16</span></a>, from <a href="#eq-ch2-qualityfactorenergy1" class="quarto-xref">Equation&nbsp;<span>2.13</span></a>):</p>
 <p><span id="eq-ch2-qualityfactor2"><span class="math display">\[
 \frac{\mathrm{d}E}{\mathrm{d} t} = -\frac{E_0}{\tau} \mathrm{e}^{-\frac{t}{\tau}} = -\frac{E}{\tau}
 \tag{2.16}\]</span></span></p>
-<p>If we are considering finite changes, we can adapt our calculus to allow <span class="math inline">\(\Delta E \approx \mathrm{d}E\)</span> and <span class="math inline">\(\Delta t \approx \mathrm{d}t = T\)</span>. Applying this to <a href="#eq-ch2-qualityfactor2">Equation&nbsp;<span>2.16</span></a> and rearranging gives:</p>
+<p>If we are considering finite changes, we can adapt our calculus to allow <span class="math inline">\(\Delta E \approx \mathrm{d}E\)</span> and <span class="math inline">\(\Delta t \approx \mathrm{d}t = T\)</span>. Applying this to <a href="#eq-ch2-qualityfactor2" class="quarto-xref">Equation&nbsp;<span>2.16</span></a> and rearranging gives:</p>
 <p><span class="math display">\[
 \frac{|\Delta E|}{E} = \frac{T}{\tau} = \frac{2 \pi}{\omega_0 \tau} = \frac{2 \pi}{Q}
 \]</span></p>
-<p>This gives us the result for <span class="math inline">\(Q\)</span> shown in <a href="#eq-ch2-qualityfactor3">Equation&nbsp;<span>2.17</span></a>:</p>
+<p>This gives us the result for <span class="math inline">\(Q\)</span> shown in <a href="#eq-ch2-qualityfactor3" class="quarto-xref">Equation&nbsp;<span>2.17</span></a>:</p>
 <p><span id="eq-ch2-qualityfactor3"><span class="math display">\[
 Q = \frac{2 \pi}{\left( \frac{|\Delta E|}{E} \right)_{\mathrm{cycle}}}
 \tag{2.17}\]</span></span></p>
@@ -466,6 +510,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -534,13 +605,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -575,18 +648,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -618,11 +680,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -632,8 +733,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -645,7 +755,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -689,6 +922,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -714,6 +948,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -775,17 +1035,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01_shm.html" class="pagination-link">
+      <a href="./01_shm.html" class="pagination-link" aria-label="Simple Harmonic Motion">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Simple Harmonic Motion</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02a_forced_oscillations.html" class="pagination-link">
+      <a href="./02a_forced_oscillations.html" class="pagination-link" aria-label="Forced oscillations">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

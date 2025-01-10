@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oscillations and Waves - 12&nbsp; Mathematical Toolkit</title>
+<title>12&nbsp; Mathematical Toolkit – Oscillations and Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
 <link href="./10_superpositions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -49,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,14 +63,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -75,13 +108,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_math_toolkit.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_math_toolkit.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -90,25 +123,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Oscillations and Waves</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/awmckinley1/oscandwaves" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
             </a>
           </li>
       </ul>
@@ -202,16 +241,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -248,7 +281,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Through the course of the material we have covered, there are a number of mathematical tools we have used in order to explore the physics. It is not the intention of this course to rigourously teach the mathematics, however it is helpful to see the maths that we are using and the manner in which we use it, distinct from any abstract “pure mathematical” setting.</p>
 <section id="sec-ch9-complexnumbers" class="level2" data-number="12.1">
@@ -256,11 +291,11 @@ ul.task-list li input[type="checkbox"] {
 <p>We can greatly simplify the mathematics by using <strong>complex numbers</strong> in our derivations. While the idea of a “complex number” sounds … <em>complex</em>, the use of these numbers becomes straightforward as we apply our familiar mathematical techniques. In the context of mathematics, the term <strong>complex</strong> simply means ‘more than one part’; therefore, a <strong>complex number</strong> is a number with more than one part. It is this two-component nature of a complex number which makes them so useful in many aspects of Physics, and particularly when describing wave behaviour.</p>
 <section id="sec-ch9-complexoverview" class="level3" data-number="12.1.1">
 <h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-ch9-complexoverview"><span class="header-section-number">12.1.1</span> Overview of complex numbers</h3>
-<p>The general form of a complex number <span class="math inline">\(z\)</span> is shown in <a href="#eq-ch9-complexnumber1">Equation&nbsp;<span>12.1</span></a>:</p>
+<p>The general form of a complex number <span class="math inline">\(z\)</span> is shown in <a href="#eq-ch9-complexnumber1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a>:</p>
 <p><span id="eq-ch9-complexnumber1"><span class="math display">\[
 z = a + \mathrm{i}b
 \tag{12.1}\]</span></span></p>
-<p>The symbol <span class="math inline">\(z\)</span> is a general term for a complex number, and has two components, a “real” component <span class="math inline">\(a\)</span> and an “imaginary” component, <span class="math inline">\(b\)</span>. The imaginary number, <span class="math inline">\(\mathrm{i}\)</span>, is defined using the process shown in <a href="#eq-ch9-complexnumber2">Equation&nbsp;<span>12.2</span></a>:</p>
+<p>The symbol <span class="math inline">\(z\)</span> is a general term for a complex number, and has two components, a “real” component <span class="math inline">\(a\)</span> and an “imaginary” component, <span class="math inline">\(b\)</span>. The imaginary number, <span class="math inline">\(\mathrm{i}\)</span>, is defined using the process shown in <a href="#eq-ch9-complexnumber2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a>:</p>
 <p><span id="eq-ch9-complexnumber2"><span class="math display">\[
 \begin{array}{rcl}
 x^2 &amp;=&amp; -1 \\
@@ -269,7 +304,7 @@ i^2 &amp;=&amp; -1
 \end{array}
 \tag{12.2}\]</span></span></p>
 <p>The terms ‘real’ and ‘imaginary’ are nothing more than labels. Neither is any more or less “realistic” than the other nor is it any less valid. Some may claim that the number <span class="math inline">\(\mathrm{i}\)</span> is a ‘pretend’ number; however were this to be true, it would not be as useful as it is!<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>The next useful concept to recall is the <strong>complex conjugate</strong>, <span class="math inline">\(z^*\)</span>. This is defined as in <a href="#eq-ch9-complexnumber3">Equation&nbsp;<span>12.3</span></a>:</p>
+<p>The next useful concept to recall is the <strong>complex conjugate</strong>, <span class="math inline">\(z^*\)</span>. This is defined as in <a href="#eq-ch9-complexnumber3" class="quarto-xref">Equation&nbsp;<span>12.3</span></a>:</p>
 <p><span id="eq-ch9-complexnumber3"><span class="math display">\[
 \begin{array}{rcl}
 z &amp;=&amp; a + \mathrm{i}b \\
@@ -359,18 +394,22 @@ b = \mathrm{Im}(z) &amp;=&amp; \dfrac{1}{2}(z - z^* )
 </section>
 <section id="sec-ch9-arganddiagram" class="level3" data-number="12.1.2">
 <h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-ch9-arganddiagram"><span class="header-section-number">12.1.2</span> The Argand Diagram</h3>
-<p>Since a complex number consists of two independent components, we have another way to describe these numbers. Complex numbers can be plotted on a graph, with the ‘<strong>real</strong>’ component plotted on one axis (the <span class="math inline">\(x\)</span>-axis) and the ‘<strong>imaginary</strong>’ component plotted on the other axis (the <span class="math inline">\(y\)</span>-axis). This is the basis of the Argand diagram (<a href="#fig-ch9-argand1">Figure&nbsp;<span>12.1</span></a>).</p>
+<p>Since a complex number consists of two independent components, we have another way to describe these numbers. Complex numbers can be plotted on a graph, with the ‘<strong>real</strong>’ component plotted on one axis (the <span class="math inline">\(x\)</span>-axis) and the ‘<strong>imaginary</strong>’ component plotted on the other axis (the <span class="math inline">\(y\)</span>-axis). This is the basis of the Argand diagram (<a href="#fig-ch9-argand1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a>).</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch9-argand1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch9-complexnumbers1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;12.1: A typical Argand diagram, showing the Real (‘Re’) axis and the Imaginary (‘Im’) axis. The point <span class="math inline">\(P\)</span> can be defined in ‘<span class="math inline">\(x,y\)</span>’ terms (the ‘complex number’), or can be defined as polar ‘<span class="math inline">\(r,\theta\)</span>’ terms (termed ‘modulus’ and ‘argument’)</figcaption>
+<div id="fig-ch9-argand1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch9-argand1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch9-complexnumbers1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9-argand1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: A typical Argand diagram, showing the Real (‘Re’) axis and the Imaginary (‘Im’) axis. The point <span class="math inline">\(P\)</span> can be defined in ‘<span class="math inline">\(x,y\)</span>’ terms (the ‘complex number’), or can be defined as polar ‘<span class="math inline">\(r,\theta\)</span>’ terms (termed ‘modulus’ and ‘argument’)
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>This allows us to define a complex number in terms of a <strong>modulus</strong> (radial distance from the origin) and an <strong>argument</strong> (angle from the ‘real’ axis). Useful properties of the modulus are listed in <a href="#eq-ch9-complexnumber6">Equation&nbsp;<span>12.6</span></a>:</p>
+<p>This allows us to define a complex number in terms of a <strong>modulus</strong> (radial distance from the origin) and an <strong>argument</strong> (angle from the ‘real’ axis). Useful properties of the modulus are listed in <a href="#eq-ch9-complexnumber6" class="quarto-xref">Equation&nbsp;<span>12.6</span></a>:</p>
 <p><span id="eq-ch9-complexnumber6"><span class="math display">\[
 \begin{array}{rcl}
 |z^* | &amp;=&amp; |z| \\
@@ -381,13 +420,17 @@ zz^* &amp;=&amp; |z^2| \\
 |z_1 + z_2| &amp;\neq&amp; |z_1 | + |z_2|
 \end{array}
 \tag{12.6}\]</span></span></p>
-<p>The Argand diagram is a representation of the <strong>complex plane</strong>, through which it becomes possible to visualise properties of complex numbers. One example of this is the addition of complex numbers; these can be considered to behave as vectors (<a href="#fig-ch9-argandcomplexaddition1">Figure&nbsp;<span>12.2</span></a>)</p>
+<p>The Argand diagram is a representation of the <strong>complex plane</strong>, through which it becomes possible to visualise properties of complex numbers. One example of this is the addition of complex numbers; these can be considered to behave as vectors (<a href="#fig-ch9-argandcomplexaddition1" class="quarto-xref">Figure&nbsp;<span>12.2</span></a>)</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch9-argandcomplexaddition1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch9-complexnumbers2.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;12.2: Addition of complex numbers <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span> can be shown grapically on an Argand diagram; the separate consideration of the ‘real’ and ‘imaginary’ components is analogous to the separate consideration of vector components.</figcaption>
+<div id="fig-ch9-argandcomplexaddition1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch9-argandcomplexaddition1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch9-complexnumbers2.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9-argandcomplexaddition1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Addition of complex numbers <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span> can be shown grapically on an Argand diagram; the separate consideration of the ‘real’ and ‘imaginary’ components is analogous to the separate consideration of vector components.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -395,7 +438,7 @@ zz^* &amp;=&amp; |z^2| \\
 </section>
 <section id="sec-ch9-polarcomplexnumbers" class="level3" data-number="12.1.3">
 <h3 data-number="12.1.3" class="anchored" data-anchor-id="sec-ch9-polarcomplexnumbers"><span class="header-section-number">12.1.3</span> Polar representation of complex numbers</h3>
-<p>As well as the <strong>Cartesian interpretation</strong> of the Argand diagram, we can also consider a <strong>polar representation</strong> of a complex number; where instead of “real” and “imaginary” components acting as <span class="math inline">\((x,y)\)</span> coordinates, we define the position of the complex number on the complex plane as a radius and an angle, <span class="math inline">\(\theta\)</span>. We have already illustrated this in <a href="#fig-ch9-argand1">Figure&nbsp;<span>12.1</span></a></p>
+<p>As well as the <strong>Cartesian interpretation</strong> of the Argand diagram, we can also consider a <strong>polar representation</strong> of a complex number; where instead of “real” and “imaginary” components acting as <span class="math inline">\((x,y)\)</span> coordinates, we define the position of the complex number on the complex plane as a radius and an angle, <span class="math inline">\(\theta\)</span>. We have already illustrated this in <a href="#fig-ch9-argand1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a></p>
 <p>In this representation, the complex number can be expressed a different way:</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
@@ -405,7 +448,7 @@ a = r\cos \theta &amp; b = r \sin \theta &amp; \theta = \mathrm{arg} (z) = \arct
 &amp; z = r \cos \theta + \mathrm{i}|z| \sin \theta &amp;
 \end{array}
 \]</span></p>
-<p>Normally, <span class="math inline">\(\theta\)</span> will lie in the range such that <span class="math inline">\(-\pi &lt; \theta \leq \pi\)</span>, meaning that our complex number representation is now shown in <a href="#eq-ch9-complexnumber7">Equation&nbsp;<span>12.7</span></a>:</p>
+<p>Normally, <span class="math inline">\(\theta\)</span> will lie in the range such that <span class="math inline">\(-\pi &lt; \theta \leq \pi\)</span>, meaning that our complex number representation is now shown in <a href="#eq-ch9-complexnumber7" class="quarto-xref">Equation&nbsp;<span>12.7</span></a>:</p>
 <p><span id="eq-ch9-complexnumber7"><span class="math display">\[
 \begin{array}{c}
 z = a + \mathrm{i}b = r \cos \theta + \mathrm{i} r \sin \theta \\
@@ -415,7 +458,7 @@ z = r \left( \cos \theta + \mathrm{i} \sin \theta \right)
 </section>
 <section id="sec-ch9-exponentialrepresentationcomplex" class="level3" data-number="12.1.4">
 <h3 data-number="12.1.4" class="anchored" data-anchor-id="sec-ch9-exponentialrepresentationcomplex"><span class="header-section-number">12.1.4</span> Exponential representation of complex numbers</h3>
-<p>The exponential representation of a complex number takes the general form of <span class="math inline">\(z = Ae^{\mathrm{i}\theta}\)</span>. This is based on series expansions of <span class="math inline">\(\cos \theta\)</span> and <span class="math inline">\(\mathrm{i}\sin \theta\)</span>, which shows <em>De Moivre’s theorem</em>. Key results from this are shown in <a href="#eq-ch9-demoivre1">Equation&nbsp;<span>12.8</span></a>:</p>
+<p>The exponential representation of a complex number takes the general form of <span class="math inline">\(z = Ae^{\mathrm{i}\theta}\)</span>. This is based on series expansions of <span class="math inline">\(\cos \theta\)</span> and <span class="math inline">\(\mathrm{i}\sin \theta\)</span>, which shows <em>De Moivre’s theorem</em>. Key results from this are shown in <a href="#eq-ch9-demoivre1" class="quarto-xref">Equation&nbsp;<span>12.8</span></a>:</p>
 <p><span id="eq-ch9-demoivre1"><span class="math display">\[
 \begin{array}{rcl}
 \mathrm{e}^{\mathrm{i}\theta} &amp;= &amp;\cos \theta + \mathrm{i}\sin \theta\\
@@ -431,7 +474,7 @@ z^* = r \left( \cos \theta - \mathrm{i}\sin \theta \right) = r\mathrm{e}^{-\math
 \textrm{where:} \hspace{15pt} r = |z| \hspace{20pt} \theta = \textrm{arg}(z)
 \end{array}
 \]</span></p>
-<p>Combining these with <a href="#eq-ch9-complexnumber5">Equation&nbsp;<span>12.5</span></a> we also note the following useful results (<a href="#eq-ch9-complexnumber8">Equation&nbsp;<span>12.9</span></a>)</p>
+<p>Combining these with <a href="#eq-ch9-complexnumber5" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> we also note the following useful results (<a href="#eq-ch9-complexnumber8" class="quarto-xref">Equation&nbsp;<span>12.9</span></a>)</p>
 <p><span id="eq-ch9-complexnumber8"><span class="math display">\[
 \begin{array}{rcl}
 \cos \theta &amp;=&amp; \frac{1}{2} \left( \mathrm{e}^{\mathrm{i}\theta} + \mathrm{e}^{-\mathrm{i}\theta} \right)\\
@@ -442,7 +485,7 @@ z^* = r \left( \cos \theta - \mathrm{i}\sin \theta \right) = r\mathrm{e}^{-\math
 <section id="sec-ch9-complexreposcillation" class="level3" data-number="12.1.5">
 <h3 data-number="12.1.5" class="anchored" data-anchor-id="sec-ch9-complexreposcillation"><span class="header-section-number">12.1.5</span> Complex representation of oscillations</h3>
 <p>Having quickly readdressed our understanding of complex numbers, we now turn our attention to the application of these in the context of oscillations and waves.</p>
-<p>Consider the general equation of SHM (<a href="#eq-ch9-complexoscill1">Equation&nbsp;<span>12.10</span></a>), derived from <a href="01_shm.html#eq-shm-general-accelerationx2">Equation&nbsp;<span>1.8</span></a>)</p>
+<p>Consider the general equation of SHM (<a href="#eq-ch9-complexoscill1" class="quarto-xref">Equation&nbsp;<span>12.10</span></a>), derived from <a href="01_shm.html#eq-shm-general-accelerationx2" class="quarto-xref">Equation&nbsp;<span>1.8</span></a>)</p>
 <p><span id="eq-ch9-complexoscill1"><span class="math display">\[
 \frac{\mathrm{d}^2 u}{\mathrm{d} t^2 } + \omega^2 u = 0
 \tag{12.10}\]</span></span></p>
@@ -450,7 +493,7 @@ z^* = r \left( \cos \theta - \mathrm{i}\sin \theta \right) = r\mathrm{e}^{-\math
 <p><span class="math display">\[
 u = c_1 \cos \omega t + c_2 \sin \omega t
 \]</span></p>
-<p>… will also satisfy <a href="#eq-ch9-complexoscill1">Equation&nbsp;<span>12.10</span></a>. This can be extended using De Moivre’s theorem (<a href="#eq-ch9-demoivre1">Equation&nbsp;<span>12.8</span></a>) allowing an exponential representation of an oscillation as shown in <a href="#eq-ch9-demoivreoscillation1">Equation&nbsp;<span>12.11</span></a>:</p>
+<p>… will also satisfy <a href="#eq-ch9-complexoscill1" class="quarto-xref">Equation&nbsp;<span>12.10</span></a>. This can be extended using De Moivre’s theorem (<a href="#eq-ch9-demoivre1" class="quarto-xref">Equation&nbsp;<span>12.8</span></a>) allowing an exponential representation of an oscillation as shown in <a href="#eq-ch9-demoivreoscillation1" class="quarto-xref">Equation&nbsp;<span>12.11</span></a>:</p>
 <p><span id="eq-ch9-demoivreoscillation1"><span class="math display">\[
 u = A (\cos \omega t + \mathrm{i} \sin \omega t) \equiv A \mathrm{e}^{\mathrm{i}\omega t}
 \tag{12.11}\]</span></span></p>
@@ -525,6 +568,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -591,13 +661,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -632,18 +704,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -675,11 +736,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -689,8 +789,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -702,7 +811,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -746,6 +978,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -771,6 +1004,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -832,17 +1091,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10_superpositions.html" class="pagination-link">
+      <a href="./10_superpositions.html" class="pagination-link" aria-label="Superposition and Standing Waves">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Superposition and Standing Waves</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oscillations and Waves - 8&nbsp; Harmonic Waves</title>
+<title>8&nbsp; Harmonic Waves – Oscillations and Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,14 +64,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -75,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_harmonic_waves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_harmonic_waves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Harmonic Waves</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -90,25 +124,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Oscillations and Waves</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/awmckinley1/oscandwaves" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
             </a>
           </li>
       </ul>
@@ -202,16 +242,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -251,19 +285,25 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p><em>Textbook link: Tipler and Mosca, Section 15.2</em></p>
 <p>A <em>harmonic wave</em> is a general term for a wave which, at some instant of time, can be described by a sinusoidal function (<em>i.e.</em> it is a sine or a cosine function). They are the simplest of waves to consider, and we will devote this chapter to exploring their properties.</p>
 <section id="sec-ch7-sinecosine" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-ch7-sinecosine"><span class="header-section-number">8.1</span> Transverse sine and cosine waves</h2>
-<p>If we consider a string which is excited by a tuning fork or other object undergoing simple harmonic motion (SHM), we can imagine the shape of the save on the string at some instant of time appearing as a sine or a cosine wave (depending on our choice of origin) (<a href="#fig-ch7-transversesine1">Figure&nbsp;<span>8.1</span></a>):</p>
+<p>If we consider a string which is excited by a tuning fork or other object undergoing simple harmonic motion (SHM), we can imagine the shape of the save on the string at some instant of time appearing as a sine or a cosine wave (depending on our choice of origin) (<a href="#fig-ch7-transversesine1" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>):</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch7-transversesine1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch7-transversesine1.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.1: A sine wave in a string created by an oscillating particle. The wavelength <span class="math inline">\(\lambda\)</span> is shown for one complete cycle, while the amplitude <span class="math inline">\(A\)</span> is defined as the maximum deviation from the origin point.</figcaption>
+<div id="fig-ch7-transversesine1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-transversesine1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch7-transversesine1.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-transversesine1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: A sine wave in a string created by an oscillating particle. The wavelength <span class="math inline">\(\lambda\)</span> is shown for one complete cycle, while the amplitude <span class="math inline">\(A\)</span> is defined as the maximum deviation from the origin point.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -274,11 +314,11 @@ v = \frac{\lambda}{T} = f\lambda
 \tag{8.1}\]</span></span></p>
 <p>…where <span class="math inline">\(v\)</span> is the phase velocity of the wave and <span class="math inline">\(f\)</span> is the frequency in hertz (Hz), and <span class="math inline">\(\lambda\)</span> defined as the <strong>wavelength</strong> <em>i.e.</em> the spacial repeat distance of the wave.</p>
 <p>A harmonic wave has a unique frequency and wavelength, and other waves (<em>e.g.</em> wave pulses) may be regarded as a superposition of many harmonic waves of different frequencies (we will discuss the Fourier analysis of this later).</p>
-<p>At any instant in time, the wave can be described by the relation in <a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a>:</p>
+<p>At any instant in time, the wave can be described by the relation in <a href="#eq-ch7-transversesine2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a>:</p>
 <p><span id="eq-ch7-transversesine2"><span class="math display">\[
 y = A \sin(kx + \delta)
 \tag{8.2}\]</span></span></p>
-<p>…where <span class="math inline">\(A\)</span> is the amplitude of the wave and <span class="math inline">\(\delta\)</span> is the phase constant. Let’s now choose the origin so that <span class="math inline">\(\delta\)</span> is equal to zero (<em>i.e.</em> there is no phase constant). Now we can show the periodic condition in <a href="#eq-ch7-tranversesine3">Equation&nbsp;<span>8.3</span></a>:</p>
+<p>…where <span class="math inline">\(A\)</span> is the amplitude of the wave and <span class="math inline">\(\delta\)</span> is the phase constant. Let’s now choose the origin so that <span class="math inline">\(\delta\)</span> is equal to zero (<em>i.e.</em> there is no phase constant). Now we can show the periodic condition in <a href="#eq-ch7-tranversesine3" class="quarto-xref">Equation&nbsp;<span>8.3</span></a>:</p>
 <p><span id="eq-ch7-tranversesine3"><span class="math display">\[
 \sin kx = \sin k(x+\lambda)
 \tag{8.3}\]</span></span></p>
@@ -290,7 +330,7 @@ y = A \sin(kx + \delta)
 k\lambda &amp;=&amp; 2\pi
 \end{array}
 \tag{8.4}\]</span></span></p>
-<p>This allows us to give a value for <span class="math inline">\(k\)</span> (<a href="#eq-ch7-tranversesine4">Equation&nbsp;<span>8.5</span></a>):</p>
+<p>This allows us to give a value for <span class="math inline">\(k\)</span> (<a href="#eq-ch7-tranversesine4" class="quarto-xref">Equation&nbsp;<span>8.5</span></a>):</p>
 <p><span id="eq-ch7-tranversesine4"><span class="math display">\[
 k = \frac{2\pi}{\lambda}
 \tag{8.5}\]</span></span></p>
@@ -298,22 +338,22 @@ k = \frac{2\pi}{\lambda}
 </section>
 <section id="sec-ch7-travellingwaves" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-ch7-travellingwaves"><span class="header-section-number">8.2</span> Travelling waves</h2>
-<p>The wave we showed in <a href="#sec-ch7-sinecosine"><span>Section&nbsp;8.1</span></a> was a snapshot in time, so the wave was, in effect, static. We instead wish to consider a travelling wave. To do this, instead of writing <span class="math inline">\(x\)</span> as in <a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a> with a phase difference, we rewrite with <span class="math inline">\(x - vt\)</span> (see <a href="06_simple_waves.html#sec-ch6-wavepulses"><span>Section&nbsp;7.1</span></a>) to illustrate the time-dependent nature of the travelling wave. <a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a> then becomes <a href="#eq-ch7-transversesine5">Equation&nbsp;<span>8.6</span></a>:</p>
+<p>The wave we showed in <a href="#sec-ch7-sinecosine" class="quarto-xref"><span>Section 8.1</span></a> was a snapshot in time, so the wave was, in effect, static. We instead wish to consider a travelling wave. To do this, instead of writing <span class="math inline">\(x\)</span> as in <a href="#eq-ch7-transversesine2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a> with a phase difference, we rewrite with <span class="math inline">\(x - vt\)</span> (see <a href="06_simple_waves.html#sec-ch6-wavepulses" class="quarto-xref"><span>Section 7.1</span></a>) to illustrate the time-dependent nature of the travelling wave. <a href="#eq-ch7-transversesine2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a> then becomes <a href="#eq-ch7-transversesine5" class="quarto-xref">Equation&nbsp;<span>8.6</span></a>:</p>
 <p><span id="eq-ch7-transversesine5"><span class="math display">\[
 y = A \sin k(x - vt) = A \sin (kx - kvt)
 \tag{8.6}\]</span></span></p>
-<p>As we have described, <span class="math inline">\(T\)</span> is the period of the wave, so any point on the wave will oscillate up and down also with period <span class="math inline">\(T\)</span>. This means that, for the wave position at time <span class="math inline">\(t\)</span>, it will return to the same state at time <span class="math inline">\((t+T)\)</span>. We can therefore write <a href="#eq-ch7-transversesine5">Equation&nbsp;<span>8.6</span></a> in terms of this period:</p>
+<p>As we have described, <span class="math inline">\(T\)</span> is the period of the wave, so any point on the wave will oscillate up and down also with period <span class="math inline">\(T\)</span>. This means that, for the wave position at time <span class="math inline">\(t\)</span>, it will return to the same state at time <span class="math inline">\((t+T)\)</span>. We can therefore write <a href="#eq-ch7-transversesine5" class="quarto-xref">Equation&nbsp;<span>8.6</span></a> in terms of this period:</p>
 <p><span id="eq-ch7-travelling2"><span class="math display">\[
 \begin{array}{rcl}
 y = A \sin \left( kx - kvt \right) &amp;=&amp; A \sin \left( kx - kv(t+T) \right) \\
 &amp;=&amp; A \sin \left( kx - kvt - kvT \right)
 \end{array}
 \tag{8.7}\]</span></span></p>
-<p>Applying the same reasoning as shown in <a href="#eq-ch7-tranvsersesine3b">Equation&nbsp;<span>8.4</span></a>, we are led to the result:</p>
+<p>Applying the same reasoning as shown in <a href="#eq-ch7-tranvsersesine3b" class="quarto-xref">Equation&nbsp;<span>8.4</span></a>, we are led to the result:</p>
 <p><span class="math display">\[
 kvT = 2\pi
 \]</span></p>
-<p>If we revisit our discussions on SHM (<a href="01_shm.html#sec-shm-freq-angularfreq"><span>Section&nbsp;1.7</span></a>) we defined the relationship between <span class="math inline">\(T\)</span> and <span class="math inline">\(2\pi\)</span> (<a href="01_shm.html#eq-ch1-definingomega1">Equation&nbsp;<span>1.12</span></a>) as <span class="math inline">\(T = \frac{2\pi}{\omega}\)</span> (and also <span class="math inline">\(\omega = 2\pi f\)</span>). This allows us to define a number of factors as follows:</p>
+<p>If we revisit our discussions on SHM (<a href="01_shm.html#sec-shm-freq-angularfreq" class="quarto-xref"><span>Section 1.7</span></a>) we defined the relationship between <span class="math inline">\(T\)</span> and <span class="math inline">\(2\pi\)</span> (<a href="01_shm.html#eq-ch1-definingomega1" class="quarto-xref">Equation&nbsp;<span>1.12</span></a>) as <span class="math inline">\(T = \frac{2\pi}{\omega}\)</span> (and also <span class="math inline">\(\omega = 2\pi f\)</span>). This allows us to define a number of factors as follows:</p>
 <ul>
 <li><strong>Phase velocity</strong>:</li>
 </ul>
@@ -344,7 +384,7 @@ y = A \sin \left( kx + kvt \right) = A \sin \left( kx + \omega t \right)
 </section>
 <section id="sec-ch7-complexrep" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-ch7-complexrep"><span class="header-section-number">8.3</span> Complex representation of waves</h2>
-<p>We introduced complex numbers for descriptions of oscillations; we can use the same treatment for our wave equations. Just as <span class="math inline">\(\sin(kx - \omega t)\)</span> and <span class="math inline">\(\cos(kx-\omega t)\)</span> satisfy the wave equation, so too will <span class="math inline">\(\mathrm{e}^{\mathrm{i}(kx-\omega t)}\)</span>. It is often convenient to write the wave expression in a complex form as shown in <a href="#eq-ch7-wavecomplex1">Equation&nbsp;<span>8.11</span></a>:</p>
+<p>We introduced complex numbers for descriptions of oscillations; we can use the same treatment for our wave equations. Just as <span class="math inline">\(\sin(kx - \omega t)\)</span> and <span class="math inline">\(\cos(kx-\omega t)\)</span> satisfy the wave equation, so too will <span class="math inline">\(\mathrm{e}^{\mathrm{i}(kx-\omega t)}\)</span>. It is often convenient to write the wave expression in a complex form as shown in <a href="#eq-ch7-wavecomplex1" class="quarto-xref">Equation&nbsp;<span>8.11</span></a>:</p>
 <p><span id="eq-ch7-wavecomplex1"><span class="math display">\[
 y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 \tag{8.11}\]</span></span></p>
@@ -360,13 +400,17 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p>As the waves move along the string, so the energy is transported along the string.</p>
 <section id="sec-ch7-peofstringsegment" class="level3" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="sec-ch7-peofstringsegment"><span class="header-section-number">8.4.1</span> Potential energy of string segment</h3>
-<p>We now consider the same string segment as we showed in <a href="06_simple_waves.html#fig-ch6-waveeqnderiv1">Figure&nbsp;<span>7.6</span></a>, but now we consider it stretched (<a href="#fig-ch7-stretchedsegment1">Figure&nbsp;<span>8.2</span></a>). We can picture this as the string is “relaxed” in its ‘horizontal’ orientation (length of segment is <span class="math inline">\(\Delta x\)</span>), but when a wave passes along it, the string elongates to accommodate the curve of the wave form. This means our segment now takes on a new length <span class="math inline">\(\Delta l\)</span>.</p>
+<p>We now consider the same string segment as we showed in <a href="06_simple_waves.html#fig-ch6-waveeqnderiv1" class="quarto-xref">Figure&nbsp;<span>7.6</span></a>, but now we consider it stretched (<a href="#fig-ch7-stretchedsegment1" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>). We can picture this as the string is “relaxed” in its ‘horizontal’ orientation (length of segment is <span class="math inline">\(\Delta x\)</span>), but when a wave passes along it, the string elongates to accommodate the curve of the wave form. This means our segment now takes on a new length <span class="math inline">\(\Delta l\)</span>.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch7-stretchedsegment1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/LaTeX/ch7-peofstringsegment.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.2: As the wave passes along a stretched string, we can consider it to be ‘stretched’; considering a string element of lencth <span class="math inline">\(\Delta x\)</span>, it is stretched to new length <span class="math inline">\(\Delta l\)</span> as the wave passes by.</figcaption>
+<div id="fig-ch7-stretchedsegment1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-stretchedsegment1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/LaTeX/ch7-peofstringsegment.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-stretchedsegment1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: As the wave passes along a stretched string, we can consider it to be ‘stretched’; considering a string element of lencth <span class="math inline">\(\Delta x\)</span>, it is stretched to new length <span class="math inline">\(\Delta l\)</span> as the wave passes by.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -394,32 +438,36 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p><span class="math display">\[
 \Delta l - \Delta x \approx   + \frac{\Delta x}{2} \left( \dfrac{\Delta y}{\Delta x}\right)^2 + \cdots
 \]</span></p>
-<p>This now allows us to obtain an expression for the work done in stretching the spring solely in terms of the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> displacement (from <a href="#eq-ch7-workdonestring1">Equation&nbsp;<span>8.12</span></a>)</p>
+<p>This now allows us to obtain an expression for the work done in stretching the spring solely in terms of the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> displacement (from <a href="#eq-ch7-workdonestring1" class="quarto-xref">Equation&nbsp;<span>8.12</span></a>)</p>
 <p><span class="math display">\[
 \Delta U = \frac{F\Delta x}{2} \left( \dfrac{\Delta y}{\Delta x}\right)^2
 \]</span></p>
-<p>As we have an expression for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> (<a href="#eq-ch7-transversesine2">Equation&nbsp;<span>8.2</span></a>), we can differentiate this with respect to <span class="math inline">\(x\)</span> to approximate <span class="math inline">\(\frac{\Delta y}{\Delta x}\)</span>:</p>
+<p>As we have an expression for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> (<a href="#eq-ch7-transversesine2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a>), we can differentiate this with respect to <span class="math inline">\(x\)</span> to approximate <span class="math inline">\(\frac{\Delta y}{\Delta x}\)</span>:</p>
 <p><span class="math display">\[
 \frac{\Delta y}{\Delta x} \simeq \frac{\mathrm{d} y}{\mathrm{d} x} = kA \cos (kx - \omega t)
 \]</span></p>
-<p>We also know that <span class="math inline">\(v^2 = \frac{F}{\mu}\)</span> (from the wave equation), and that <span class="math inline">\(v = \frac{\omega}{k}\)</span> (<a href="#eq-ch7-phasevel1">Equation&nbsp;<span>8.8</span></a>), therefore:</p>
+<p>We also know that <span class="math inline">\(v^2 = \frac{F}{\mu}\)</span> (from the wave equation), and that <span class="math inline">\(v = \frac{\omega}{k}\)</span> (<a href="#eq-ch7-phasevel1" class="quarto-xref">Equation&nbsp;<span>8.8</span></a>), therefore:</p>
 <p><span class="math display">\[
 \Delta U = \frac{1}{2} \left( \frac{\mu \omega^2}{k^2} \right) \Delta x \left( kA \cos (kx - \omega t) \right)^2
 \]</span></p>
-<p>Tidying up and cancelling, we obtain the expression for the potential energy stored in an element of string of length <span class="math inline">\(\Delta x\)</span> (<a href="#eq-ch7-pestoredstring1">Equation&nbsp;<span>8.13</span></a>):</p>
+<p>Tidying up and cancelling, we obtain the expression for the potential energy stored in an element of string of length <span class="math inline">\(\Delta x\)</span> (<a href="#eq-ch7-pestoredstring1" class="quarto-xref">Equation&nbsp;<span>8.13</span></a>):</p>
 <p><span id="eq-ch7-pestoredstring1"><span class="math display">\[
 \Delta U = \frac{1}{2} \mu \omega^2 A^2 \Delta x \cos^2(kx-\omega t)
 \tag{8.13}\]</span></span></p>
 </section>
 <section id="sec-ch7-keofstringsegment" class="level3" data-number="8.4.2">
 <h3 data-number="8.4.2" class="anchored" data-anchor-id="sec-ch7-keofstringsegment"><span class="header-section-number">8.4.2</span> Kinetic energy of string segment</h3>
-<p>We will again consider the segment of string discussed in <a href="#sec-ch7-peofstringsegment"><span>Section&nbsp;8.4.1</span></a>; an element <span class="math inline">\(\Delta x\)</span> of the string, of mass <span class="math inline">\(\Delta m\)</span> (<a href="#fig-ch7-kestringsegment">Figure&nbsp;<span>8.3</span></a>).</p>
+<p>We will again consider the segment of string discussed in <a href="#sec-ch7-peofstringsegment" class="quarto-xref"><span>Section 8.4.1</span></a>; an element <span class="math inline">\(\Delta x\)</span> of the string, of mass <span class="math inline">\(\Delta m\)</span> (<a href="#fig-ch7-kestringsegment" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>).</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch7-kestringsegment" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/LaTeX/ch7-keofstringsegment.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.3: Similar to the situation shown above, the same string segment will have a kinetic energy associated with its velocity <span class="math inline">\(v_y\)</span>.</figcaption>
+<div id="fig-ch7-kestringsegment" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-kestringsegment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/LaTeX/ch7-keofstringsegment.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-kestringsegment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Similar to the situation shown above, the same string segment will have a kinetic energy associated with its velocity <span class="math inline">\(v_y\)</span>.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -433,7 +481,7 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p><span class="math display">\[
 \Delta KE = \frac{1}{2} \Delta m v_y^2 = \frac{1}{2} \mu \Delta x \left( \frac{\mathrm{d}y}{\mathrm{d}t} \right)^2
 \]</span></p>
-<p>Again, we know the expression for the vertical displacement <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> (<a href="#eq-ch7-transversesine5">Equation&nbsp;<span>8.6</span></a>), so we now differentiate with respect to <span class="math inline">\(t\)</span>:</p>
+<p>Again, we know the expression for the vertical displacement <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> (<a href="#eq-ch7-transversesine5" class="quarto-xref">Equation&nbsp;<span>8.6</span></a>), so we now differentiate with respect to <span class="math inline">\(t\)</span>:</p>
 <ul>
 <li><span class="math inline">\(y = A \sin(kx - \omega t)\)</span></li>
 <li><span class="math inline">\(v_y = \frac{\mathrm{d}y}{\mathrm{d}t} = -\omega A \cos(kx - \omega t)\)</span></li>
@@ -442,7 +490,7 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p><span id="eq-ch7-kestoredstring1"><span class="math display">\[
 \Delta KE =  \frac{1}{2} \mu \omega^2  A^2 \Delta x  \cos^2(kx - \omega t)
 \tag{8.14}\]</span></span></p>
-<p>A quick comparison of <a href="#eq-ch7-pestoredstring1">Equation&nbsp;<span>8.13</span></a> and <a href="#eq-ch7-kestoredstring1">Equation&nbsp;<span>8.14</span></a> shows that these expressions are identical; <em>i.e.</em> the KE stored in the string is the <strong>same</strong> as the PE stored in the spring.</p>
+<p>A quick comparison of <a href="#eq-ch7-pestoredstring1" class="quarto-xref">Equation&nbsp;<span>8.13</span></a> and <a href="#eq-ch7-kestoredstring1" class="quarto-xref">Equation&nbsp;<span>8.14</span></a> shows that these expressions are identical; <em>i.e.</em> the KE stored in the string is the <strong>same</strong> as the PE stored in the spring.</p>
 </section>
 <section id="sec-ch7-totenergystringsegment" class="level3" data-number="8.4.3">
 <h3 data-number="8.4.3" class="anchored" data-anchor-id="sec-ch7-totenergystringsegment"><span class="header-section-number">8.4.3</span> Total energy of wave on a string</h3>
@@ -455,7 +503,7 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 \Delta E = \mu \omega^2  A^2 \Delta x  \cos^2(kx - \omega t)
 \tag{8.15}\]</span></span></p>
 <p>Note that the energy of the segment varies with time with twice the frequency of the wave (since <span class="math inline">\(\cos^2 \theta = \frac{1}{2}(1+ \cos 2\theta)\)</span>).</p>
-<p>We can also define the average energy at any point (<a href="#eq-ch7-averageenergystring1">Equation&nbsp;<span>8.16</span></a>) using the time-average definition <span class="math inline">\(\left&lt; \cos^2 \theta \right&gt; = \frac{1}{2}\)</span>:</p>
+<p>We can also define the average energy at any point (<a href="#eq-ch7-averageenergystring1" class="quarto-xref">Equation&nbsp;<span>8.16</span></a>) using the time-average definition <span class="math inline">\(\left&lt; \cos^2 \theta \right&gt; = \frac{1}{2}\)</span>:</p>
 <p><span id="eq-ch7-averageenergystring1"><span class="math display">\[
 \Delta E_{\mathrm{av}} = \frac{1}{2}\mu \omega^2 A^2 \Delta x
 \tag{8.16}\]</span></span></p>
@@ -469,13 +517,17 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <li>At this point the string is most stretched, so PE is at a maximum also <!-- WHY??? Surely at zero displacement the string flat lines, so ∆l = ∆x, no stretching?? --> <!-- No - stretching is proportional to gradient; gradient steepest at zero displacement. --></li>
 <li>PE and KE are <strong>in phase</strong> (unlike in a pendulum)</li>
 </ul>
-<p>These points are illustrated in <a href="#fig-ch7-kepestringplot1">Figure&nbsp;<span>8.4</span></a>.</p>
+<p>These points are illustrated in <a href="#fig-ch7-kepestringplot1" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch7-kepestringplot1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch7-kepestringplot1.gif" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;8.4: The kinetic energy and potential energy of a displaced string element have maxima and minima at the same points in the oscillation; as the element passes through the origin (top plot), it is at its most stretched (PE maximum), and it is traveling at its fastest (KE maximum).</figcaption>
+<div id="fig-ch7-kepestringplot1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-kepestringplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch7-kepestringplot1.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-kepestringplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.4: The kinetic energy and potential energy of a displaced string element have maxima and minima at the same points in the oscillation; as the element passes through the origin (top plot), it is at its most stretched (PE maximum), and it is traveling at its fastest (KE maximum).
+</figcaption>
 </figure>
 </div>
 </div>
@@ -483,7 +535,7 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 </section>
 <section id="sec-ch7-transportenergypower" class="level3" data-number="8.4.4">
 <h3 data-number="8.4.4" class="anchored" data-anchor-id="sec-ch7-transportenergypower"><span class="header-section-number">8.4.4</span> Transport of energy and power</h3>
-<p>As the wave propagates along the string, energy is transported by the moving wavefront at speed <span class="math inline">\(v\)</span>. The average energy passing a point on the string in time <span class="math inline">\(\Delta t\)</span> is the average energy in the segment of length <span class="math inline">\(\Delta x = v\Delta t\)</span>. This means we can rewrite <a href="#eq-ch7-averageenergystring1">Equation&nbsp;<span>8.16</span></a>:</p>
+<p>As the wave propagates along the string, energy is transported by the moving wavefront at speed <span class="math inline">\(v\)</span>. The average energy passing a point on the string in time <span class="math inline">\(\Delta t\)</span> is the average energy in the segment of length <span class="math inline">\(\Delta x = v\Delta t\)</span>. This means we can rewrite <a href="#eq-ch7-averageenergystring1" class="quarto-xref">Equation&nbsp;<span>8.16</span></a>:</p>
 <p><span id="eq-ch7-averageenergystring2"><span class="math display">\[
 \Delta E_{\mathrm{av}} = \frac{1}{2}\mu \omega^2 A^2 v \Delta t
 \tag{8.17}\]</span></span></p>
@@ -491,7 +543,7 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p><span id="eq-ch7-averagepowerstring1"><span class="math display">\[
 \Delta P_{\mathrm{av}} = \frac{\mathrm{d} E_{\mathrm{av}}}{\mathrm{d}t} \approx \frac{\Delta E_{\mathrm{av}}}{\Delta t} = \frac{1}{2}\mu \omega^2 A^2 v
 \tag{8.18}\]</span></span></p>
-<p>From this result, we can see that both the average energy and average power transmitted are both proportional to <span class="math inline">\(A^2\)</span>; a similar observation as in SHM (<a href="01_shm.html"><span>Chapter&nbsp;1</span></a>).</p>
+<p>From this result, we can see that both the average energy and average power transmitted are both proportional to <span class="math inline">\(A^2\)</span>; a similar observation as in SHM (<a href="01_shm.html" class="quarto-xref"><span>Chapter 1</span></a>).</p>
 </section>
 </section>
 <section id="sec-ch7-dispersion" class="level2" data-number="8.5">
@@ -499,28 +551,28 @@ y = A \mathrm{e}^{\mathrm{i}(kx-\omega t)}
 <p>We have introduced a number of “velocities” in the context of waves, so it is helpful to briefly summarise each term.</p>
 <ul>
 <li>Phase velocity, <span class="math inline">\(v_p\)</span>: This is the velocity of a wave of specific frequency through a medium, and is the speed at which energy is propagated from one point to another.</li>
-<li>Particle velocity, <span class="math inline">\(v_{particle}\)</span>: This is the velocity of a particle of the medium during its oscillation as it propagates the wave. In a transverse wave, this is perpendicular to the direction of wave propagation. It is this velocity which is used to define the impedance (see <a href="08_reflection_transmission.html#sec-ch8-stringimpedeance"><span>Section&nbsp;9.3</span></a>)</li>
-<li>Group velocity, <span class="math inline">\(v_g\)</span>: A wave pulse of the type shown in <a href="06_simple_waves.html#fig-ch6-wavepulse1">Figure&nbsp;<span>7.3</span></a> is typically composed of a sum of harmonic waves of differing frequencies. The velocity of this “group” of waves is known as the “group velocity”, however is not necessarily the same as the phase velocities of the waves within the group. It is this difference which gives rise to the phenomenon of <strong>dispersion</strong>.</li>
+<li>Particle velocity, <span class="math inline">\(v_{particle}\)</span>: This is the velocity of a particle of the medium during its oscillation as it propagates the wave. In a transverse wave, this is perpendicular to the direction of wave propagation. It is this velocity which is used to define the impedance (see <a href="08_reflection_transmission.html#sec-ch8-stringimpedeance" class="quarto-xref"><span>Section 9.3</span></a>)</li>
+<li>Group velocity, <span class="math inline">\(v_g\)</span>: A wave pulse of the type shown in <a href="06_simple_waves.html#fig-ch6-wavepulse1" class="quarto-xref">Figure&nbsp;<span>7.3</span></a> is typically composed of a sum of harmonic waves of differing frequencies. The velocity of this “group” of waves is known as the “group velocity”, however is not necessarily the same as the phase velocities of the waves within the group. It is this difference which gives rise to the phenomenon of <strong>dispersion</strong>.</li>
 </ul>
-<p>Any wave pulse (example in <a href="06_simple_waves.html#fig-ch6-wavepulse1">Figure&nbsp;<span>7.3</span></a>) is comprised of an infinite sum of different frequencies<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. While the pulse itself will have a velocity associated with it (the “group frequency), the frequencies which make up the wave pulse will not always travel at the same phase velocity. Indeed it is far more common for them to have slightly different phase velocities in a given medium; a medium in which this occurs is known as a <strong>dispersive</strong> medium.</p>
+<p>Any wave pulse (example in <a href="06_simple_waves.html#fig-ch6-wavepulse1" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>) is comprised of an infinite sum of different frequencies<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. While the pulse itself will have a velocity associated with it (the “group frequency), the frequencies which make up the wave pulse will not always travel at the same phase velocity. Indeed it is far more common for them to have slightly different phase velocities in a given medium; a medium in which this occurs is known as a <strong>dispersive</strong> medium.</p>
 <p>In a <strong>dispersive</strong> medium, <span class="math inline">\(v_p\)</span> is different for every frequency component, and the group velocity is not equal to the initial phase velocity <span class="math inline">\(v_p\)</span>; <em>i.e.</em> <span class="math inline">\(v_g \neq v_p\)</span>. For any dispersive medium, we can write a relationship between <span class="math inline">\(\omega\)</span> and <span class="math inline">\(k\)</span> so that <span class="math inline">\(\omega\)</span> varies as a function of <span class="math inline">\(k\)</span>; <em>i.e.</em> <span class="math inline">\(\omega = \omega(k)\)</span>. This is called the <strong>dispersion relation</strong> and depends on the physics of the particular wave phenomena being observed.</p>
-<p>In the general case, the group velocity is given by the derivative of the dispersion relation (<a href="#eq-ch12-dispersion1">Equation&nbsp;<span>8.19</span></a>). The proof of this relation is available in some advanced textbooks, but it is not necessary for this course.</p>
+<p>In the general case, the group velocity is given by the derivative of the dispersion relation (<a href="#eq-ch12-dispersion1" class="quarto-xref">Equation&nbsp;<span>8.19</span></a>). The proof of this relation is available in some advanced textbooks, but it is not necessary for this course.</p>
 <p><span id="eq-ch12-dispersion1"><span class="math display">\[
 v_g \equiv \frac{\partial w(k)}{\partial k}
 \tag{8.19}\]</span></span></p>
-<p>For a non-dispersive medium, <span class="math inline">\(\omega\)</span> is directly proportional to <span class="math inline">\(k\)</span> (<a href="#eq-ch12-dispersion2">Equation&nbsp;<span>8.20</span></a>))</p>
+<p>For a non-dispersive medium, <span class="math inline">\(\omega\)</span> is directly proportional to <span class="math inline">\(k\)</span> (<a href="#eq-ch12-dispersion2" class="quarto-xref">Equation&nbsp;<span>8.20</span></a>))</p>
 <p><span id="eq-ch12-dispersion2"><span class="math display">\[
 w(k) = v_p k \quad \textsf{with} \quad v_p = \textsf{constant}
 \tag{8.20}\]</span></span></p>
-<p>The consequence of this is that, when the function is differentiated according to the principle in <a href="#eq-ch12-dispersion1">Equation&nbsp;<span>8.19</span></a>, we find that <span class="math inline">\(v_g = v_p\)</span> (<a href="#eq-ch12-dispersion2b">Equation&nbsp;<span>8.21</span></a>) as has been mentioned previously.</p>
+<p>The consequence of this is that, when the function is differentiated according to the principle in <a href="#eq-ch12-dispersion1" class="quarto-xref">Equation&nbsp;<span>8.19</span></a>, we find that <span class="math inline">\(v_g = v_p\)</span> (<a href="#eq-ch12-dispersion2b" class="quarto-xref">Equation&nbsp;<span>8.21</span></a>) as has been mentioned previously.</p>
 <p><span id="eq-ch12-dispersion2b"><span class="math display">\[
 v_g \equiv \frac{\partial w(k)}{\partial k} = \frac{\mathrm{d} (v_p k)}{\mathrm{d}k} = v_p
 \tag{8.21}\]</span></span></p>
-<p>For a dispersive medium however, <span class="math inline">\(v_p\)</span> becomes a function of <span class="math inline">\(k\)</span>. If we consider a simple case where <span class="math inline">\(\omega\)</span> has a linear dependence on k (<a href="#eq-ch12-dispersion3">Equation&nbsp;<span>8.22</span></a>) with constant terms <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
+<p>For a dispersive medium however, <span class="math inline">\(v_p\)</span> becomes a function of <span class="math inline">\(k\)</span>. If we consider a simple case where <span class="math inline">\(\omega\)</span> has a linear dependence on k (<a href="#eq-ch12-dispersion3" class="quarto-xref">Equation&nbsp;<span>8.22</span></a>) with constant terms <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
 <p><span id="eq-ch12-dispersion3"><span class="math display">\[
 \omega = ak + b
 \tag{8.22}\]</span></span></p>
-<p>As before, the phase velocity is still defined as <span class="math inline">\(v_p = \frac{\omega}{k} = a + \frac{b}{k}\)</span>, while the group velocity is found by differentiation (<a href="#eq-ch12-dispersion4">Equation&nbsp;<span>8.23</span></a>):</p>
+<p>As before, the phase velocity is still defined as <span class="math inline">\(v_p = \frac{\omega}{k} = a + \frac{b}{k}\)</span>, while the group velocity is found by differentiation (<a href="#eq-ch12-dispersion4" class="quarto-xref">Equation&nbsp;<span>8.23</span></a>):</p>
 <p><span id="eq-ch12-dispersion4"><span class="math display">\[
 v_g = \frac{\partial w(k)}{\partial k} = a
 \tag{8.23}\]</span></span></p>
@@ -616,6 +668,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -682,13 +761,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -723,18 +804,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -766,11 +836,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -780,8 +889,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -793,7 +911,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -837,6 +1078,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -862,6 +1104,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -923,17 +1191,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06_simple_waves.html" class="pagination-link">
+      <a href="./06_simple_waves.html" class="pagination-link" aria-label="Simple wave motion and the Wave Equation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple wave motion and the Wave Equation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08_reflection_transmission.html" class="pagination-link">
+      <a href="./08_reflection_transmission.html" class="pagination-link" aria-label="Reflection and Transmission at boundaries">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reflection and Transmission at boundaries</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oscillations and Waves - 3&nbsp; Forced oscillations</title>
+<title>3&nbsp; Forced oscillations – Oscillations and Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,14 +64,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -75,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02a_forced_oscillations.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02a_forced_oscillations.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Forced oscillations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -90,25 +124,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Oscillations and Waves</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/awmckinley1/oscandwaves" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
             </a>
           </li>
       </ul>
@@ -202,16 +242,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -252,24 +286,26 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
+
 <p><em>Textbook link: Tipler and Mosca 14.5</em></p>
-<p>In <a href="02_damped_oscillations.html"><span>Chapter&nbsp;2</span></a>) we explored the effect of damping on a system and we said that every system in the real world is, to a greater or lesser extent, a damped system in which energy is lost (dissipated) to the surroundings. In order to maintain the amplitude of any oscillation we must supply energy to the system at the same rate as it is lost to the surroundings; for example, pushing a child on a swing.</p>
-<p>The equation for forced SHM is given in <a href="#eq-ch5-forcedshm1">Equation&nbsp;<span>3.1</span></a>:</p>
+<p>In <a href="02_damped_oscillations.html" class="quarto-xref"><span>Chapter 2</span></a> we explored the effect of damping on a system and we said that every system in the real world is, to a greater or lesser extent, a damped system in which energy is lost (dissipated) to the surroundings. In order to maintain the amplitude of any oscillation we must supply energy to the system at the same rate as it is lost to the surroundings; for example, pushing a child on a swing.</p>
+<p>The equation for forced SHM is given in <a href="#eq-ch5-forcedshm1" class="quarto-xref">Equation&nbsp;<span>3.1</span></a>:</p>
 <p><span id="eq-ch5-forcedshm1"><span class="math display">\[
 m \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t}+ kx = F_0 \mathrm{e}^{\mathrm{i}\omega t}
 \tag{3.1}\]</span></span></p>
-<p>Compare this to <a href="02_damped_oscillations.html#eq-ch2-velocitydamp3">Equation&nbsp;<span>2.3</span></a> for damped SHM; we have now applied an oscillating force represented as <span class="math inline">\(F_0 \mathrm{e}^{\mathrm{i}\omega t}\)</span>, with an amplitude of <span class="math inline">\(F_0\)</span> and frequency <span class="math inline">\(\omega\)</span>. Note that this driving frequency <span class="math inline">\(\omega\)</span> is different to the natural <em>undamped</em> frequency of the oscillator, <span class="math inline">\(\omega_0 = \sqrt{\frac{k}{m}}\)</span> and different again to the frequency of the damped <em>unforced</em> oscillator, <span class="math inline">\(\omega^\prime = \sqrt{\omega_0^2 - \frac{b^2}{4m^2}}\)</span>.</p>
+<p>Compare this to <a href="02_damped_oscillations.html#eq-ch2-velocitydamp3" class="quarto-xref">Equation&nbsp;<span>2.3</span></a> for damped SHM; we have now applied an oscillating force represented as <span class="math inline">\(F_0 \mathrm{e}^{\mathrm{i}\omega t}\)</span>, with an amplitude of <span class="math inline">\(F_0\)</span> and frequency <span class="math inline">\(\omega\)</span>. Note that this driving frequency <span class="math inline">\(\omega\)</span> is different to the natural <em>undamped</em> frequency of the oscillator, <span class="math inline">\(\omega_0 = \sqrt{\frac{k}{m}}\)</span> and different again to the frequency of the damped <em>unforced</em> oscillator, <span class="math inline">\(\omega^\prime = \sqrt{\omega_0^2 - \frac{b^2}{4m^2}}\)</span>.</p>
 <p>Any forced oscillation consists of two distinct regimes:</p>
 <ol type="1">
 <li>An initial transient period during which the oscillations are established, and</li>
 <li>A steady state period during which the oscillations have constant amplitude and a frequency equal to the driving frequency, <span class="math inline">\(\omega\)</span>.</li>
 </ol>
-<p>The general solution of the equation for forced SHM shown in <a href="#eq-ch5-forcedshm1">Equation&nbsp;<span>3.1</span></a> is a combination of these two regimes.</p>
+<p>The general solution of the equation for forced SHM shown in <a href="#eq-ch5-forcedshm1" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> is a combination of these two regimes.</p>
 <section id="sec-ch5-transientsolution" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-ch5-transientsolution"><span class="header-section-number">3.1</span> The Transient Solution</h2>
-<p>The solution to the transient component of the forced oscillator is identical to the solution of damped SHM (<em>i.e.</em> <a href="#eq-ch5-forcedshm1">Equation&nbsp;<span>3.1</span></a> with the right-hand side set to zero; identical to <a href="02_damped_oscillations.html#eq-ch2-velocitydamp3">Equation&nbsp;<span>2.3</span></a>). Its solution is shown in <a href="#eq-ch5-forcedshm2">Equation&nbsp;<span>3.2</span></a>:</p>
+<p>The solution to the transient component of the forced oscillator is identical to the solution of damped SHM (<em>i.e.</em> <a href="#eq-ch5-forcedshm1" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> with the right-hand side set to zero; identical to <a href="02_damped_oscillations.html#eq-ch2-velocitydamp3" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>). Its solution is shown in <a href="#eq-ch5-forcedshm2" class="quarto-xref">Equation&nbsp;<span>3.2</span></a>:</p>
 <p><span id="eq-ch5-forcedshm2"><span class="math display">\[
 \begin{array}{lrcl}
 &amp; x &amp;=&amp; A_0 \mathrm{e}^{- \left(\frac{b}{2m}\right)t} \mathrm{e}^{\mathrm{i} \left( \omega^\prime t + \delta^\prime \right)} \\
@@ -281,11 +317,11 @@ m \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t}+ kx =
 <section id="sec-ch5-steadystatesolution" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-ch5-steadystatesolution"><span class="header-section-number">3.2</span> The Steady State solution</h2>
 <p>Once in the steady state, the energy which is put into the system during each cycle is equal to the energy dissipated per cycle due to the damping in the system. If there is no damping of the system, energy keeps being added to the system and the amplitude will increase indefinitely. This is <strong>not</strong> a steady state, and is an <strong>unphysical result</strong>. The frequency then of this ‘driven’ oscillator in the steady state is equal to the driving frequency.</p>
-<p>The amplitude (and hence the energy) of the system in the steady state depends on both the <strong>amplitude</strong> and the <strong>frequency</strong> of the driving force. For a steady state, the solution to <a href="#eq-ch5-forcedshm1">Equation&nbsp;<span>3.1</span></a> is in the form shown in <a href="#eq-ch5-forcedshm3">Equation&nbsp;<span>3.3</span></a>:</p>
+<p>The amplitude (and hence the energy) of the system in the steady state depends on both the <strong>amplitude</strong> and the <strong>frequency</strong> of the driving force. For a steady state, the solution to <a href="#eq-ch5-forcedshm1" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> is in the form shown in <a href="#eq-ch5-forcedshm3" class="quarto-xref">Equation&nbsp;<span>3.3</span></a>:</p>
 <p><span id="eq-ch5-forcedshm3"><span class="math display">\[
 x = A \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)}
 \tag{3.3}\]</span></span></p>
-<p>The terms <span class="math inline">\(A\)</span> and <span class="math inline">\(\delta\)</span> are defined in <a href="#eq-ch5-forcedshm4">Equation&nbsp;<span>3.4</span></a> and <a href="#eq-ch5-forcedshm5">Equation&nbsp;<span>3.5</span></a> below:</p>
+<p>The terms <span class="math inline">\(A\)</span> and <span class="math inline">\(\delta\)</span> are defined in <a href="#eq-ch5-forcedshm4" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> and <a href="#eq-ch5-forcedshm5" class="quarto-xref">Equation&nbsp;<span>3.5</span></a> below:</p>
 <p><span id="eq-ch5-forcedshm4"><span class="math display">\[
 A = \frac{F_0}{\sqrt{m^2 \left(\omega_0^2 - \omega^2 \right)^2 + b^2 \omega^2}}
 \tag{3.4}\]</span></span></p>
@@ -295,30 +331,38 @@ A = \frac{F_0}{\sqrt{m^2 \left(\omega_0^2 - \omega^2 \right)^2 + b^2 \omega^2}}
 </section>
 <section id="sec-ch5-steadystatebehaviour" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="sec-ch5-steadystatebehaviour"><span class="header-section-number">3.3</span> Steady state behaviour - Resonance</h2>
-<p>When we vary the frequency of the driving frequency we find that the response of the driven system varies. If we examine the power transferred to the system as we vary the driving frequency, we see that there is a peak around the natural frequency, <span class="math inline">\(\omega_0\)</span>, of the driven system (<a href="#fig-ch5-resonancepowerfrequency1">Figure&nbsp;<span>3.1</span></a>). This is a phenomenon known as <strong>resonance</strong>.</p>
+<p>When we vary the frequency of the driving frequency we find that the response of the driven system varies. If we examine the power transferred to the system as we vary the driving frequency, we see that there is a peak around the natural frequency, <span class="math inline">\(\omega_0\)</span>, of the driven system (<a href="#fig-ch5-resonancepowerfrequency1" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>). This is a phenomenon known as <strong>resonance</strong>.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-resonancepowerfrequency1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch5-forcedosc2.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.1: The power transferred to a system varies with the driving frequency. The power transferred to a system is proportional to <span class="math inline">\(\omega A^2\)</span>. The full-width at half-maximum value is designated <span class="math inline">\(\Delta \omega\)</span>. Note that as the damping coefficient <span class="math inline">\(b\)</span> increases, there is a shift in maximum power transmission away from the natural frequency <span class="math inline">\(\omega_0\)</span>.</figcaption>
+<div id="fig-ch5-resonancepowerfrequency1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-resonancepowerfrequency1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch5-forcedosc2.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-resonancepowerfrequency1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: The power transferred to a system varies with the driving frequency. The power transferred to a system is proportional to <span class="math inline">\(\omega A^2\)</span>. The full-width at half-maximum value is designated <span class="math inline">\(\Delta \omega\)</span>. Note that as the damping coefficient <span class="math inline">\(b\)</span> increases, there is a shift in maximum power transmission away from the natural frequency <span class="math inline">\(\omega_0\)</span>.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>If this system is damped, we also see a change in the “full-width at half-maximum” value.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This FWHM is designated by <span class="math inline">\(\Delta \omega\)</span> in <a href="#fig-ch5-resonancepowerfrequency1">Figure&nbsp;<span>3.1</span></a> and is related to the <span class="math inline">\(Q\)</span>-factor of the system via <a href="#eq-ch5-resonancequality1">Equation&nbsp;<span>3.6</span></a>:</p>
+<p>If this system is damped, we also see a change in the “full-width at half-maximum” value.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This FWHM is designated by <span class="math inline">\(\Delta \omega\)</span> in <a href="#fig-ch5-resonancepowerfrequency1" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> and is related to the <span class="math inline">\(Q\)</span>-factor of the system via <a href="#eq-ch5-resonancequality1" class="quarto-xref">Equation&nbsp;<span>3.6</span></a>:</p>
 <p><span id="eq-ch5-resonancequality1"><span class="math display">\[
 \frac{\Delta \omega}{\omega_0} = \frac{1}{Q}
 \tag{3.6}\]</span></span></p>
 <p>This allows us to determine the <span class="math inline">\(Q\)</span>-factor of a system through measurement of resonance of the system, as a lightly-damped system (high <span class="math inline">\(Q\)</span>) will give a sharp resonance with low <span class="math inline">\(\Delta \omega\)</span>, while a more heavily damped system will lead to a more broad resonance profile.</p>
 <p>This use of the <span class="math inline">\(Q\)</span>-factor is important as it give us a measure of the ‘sharpness’ (or quality) of the resonance. It may be applied to many systems including electronic circuits.</p>
-<p>We can also examine the phase of the oscillator’s displacement <span class="math inline">\(x\)</span> relative to that of the driving force, <span class="math inline">\(\delta\)</span>, shown in <a href="#fig-ch5-resonancephaseshift1">Figure&nbsp;<span>3.2</span></a>.</p>
+<p>We can also examine the phase of the oscillator’s displacement <span class="math inline">\(x\)</span> relative to that of the driving force, <span class="math inline">\(\delta\)</span>, shown in <a href="#fig-ch5-resonancephaseshift1" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-resonancephaseshift1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch5-forcedosc3.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.2: The phase shift <span class="math inline">\(\delta\)</span> of the observed oscillation varies relative to the driving frequency <span class="math inline">\(\omega\)</span>.</figcaption>
+<div id="fig-ch5-resonancephaseshift1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-resonancephaseshift1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch5-forcedosc3.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-resonancephaseshift1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: The phase shift <span class="math inline">\(\delta\)</span> of the observed oscillation varies relative to the driving frequency <span class="math inline">\(\omega\)</span>.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -327,36 +371,36 @@ A = \frac{F_0}{\sqrt{m^2 \left(\omega_0^2 - \omega^2 \right)^2 + b^2 \omega^2}}
 </section>
 <section id="sec-ch5-fullsolutionforcedoscillator" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="sec-ch5-fullsolutionforcedoscillator"><span class="header-section-number">3.4</span> Full solution of the forced oscillator</h2>
-<p>As with the damped oscillator explored in <a href="02_damped_oscillations.html"><span>Chapter&nbsp;2</span></a>, the full solution of the forced oscillator is found through the combination of the “transient state” (a free, damped system) and the “steady state” (fully forced oscillations). This is illustrated in <a href="#eq-ch5-forcedoscillfullsoln1">Equation&nbsp;<span>3.7</span></a>:</p>
+<p>As with the damped oscillator explored in <a href="02_damped_oscillations.html" class="quarto-xref"><span>Chapter 2</span></a>, the full solution of the forced oscillator is found through the combination of the “transient state” (a free, damped system) and the “steady state” (fully forced oscillations). This is illustrated in <a href="#eq-ch5-forcedoscillfullsoln1" class="quarto-xref">Equation&nbsp;<span>3.7</span></a>:</p>
 <p><span id="eq-ch5-forcedoscillfullsoln1"><span class="math display">\[
 \begin{array}{lrcccc}
 &amp; x &amp;=&amp; \textsf{transient} &amp;+&amp;\textsf{steady state} \\
 \textit{i.e.} &amp; x&amp;=&amp; A_0 \mathrm{e}^{- \left(\frac{b}{2m}\right)t} \mathrm{e}^{\mathrm{i} \left( \omega^\prime t + \delta^\prime \right)} &amp;+&amp;  A \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)} \\
 \end{array}
 \tag{3.7}\]</span></span></p>
-<p>The terms in <a href="#eq-ch5-forcedoscillfullsoln1">Equation&nbsp;<span>3.7</span></a> are as follows:</p>
+<p>The terms in <a href="#eq-ch5-forcedoscillfullsoln1" class="quarto-xref">Equation&nbsp;<span>3.7</span></a> are as follows:</p>
 <ul>
-<li><span class="math inline">\(\delta\)</span> is given by <a href="#eq-ch5-forcedshm5">Equation&nbsp;<span>3.5</span></a>;</li>
-<li><span class="math inline">\(A\)</span> given by <a href="#eq-ch5-forcedshm4">Equation&nbsp;<span>3.4</span></a>;</li>
+<li><span class="math inline">\(\delta\)</span> is given by <a href="#eq-ch5-forcedshm5" class="quarto-xref">Equation&nbsp;<span>3.5</span></a>;</li>
+<li><span class="math inline">\(A\)</span> given by <a href="#eq-ch5-forcedshm4" class="quarto-xref">Equation&nbsp;<span>3.4</span></a>;</li>
 <li><span class="math inline">\(A_0\)</span> and <span class="math inline">\(\delta^\prime\)</span> depend on the initial conditions;</li>
 <li><span class="math inline">\(\omega\)</span> is the driving frequency;</li>
 <li><span class="math inline">\(\omega^\prime\)</span> is the frequency of the damped (transient) oscillations.</li>
 </ul>
-<p>We can simplify our view of <a href="#eq-ch5-forcedoscillfullsoln1">Equation&nbsp;<span>3.7</span></a> by applying initial conditions whereby the displacement <span class="math inline">\(x = 0\)</span> at time <span class="math inline">\(t = 0\)</span>. Therefore:</p>
+<p>We can simplify our view of <a href="#eq-ch5-forcedoscillfullsoln1" class="quarto-xref">Equation&nbsp;<span>3.7</span></a> by applying initial conditions whereby the displacement <span class="math inline">\(x = 0\)</span> at time <span class="math inline">\(t = 0\)</span>. Therefore:</p>
 <p><span class="math display">\[
 0 = A_0 \mathrm{e}^{\mathrm{i} \left( \delta^\prime \right)} + A \mathrm{e}^{-\mathrm{i}\delta}
 \]</span></p>
-<p>…or, to rearrange, we obtain the form shown in <a href="#eq-ch5-forcedoscillfullsoln2">Equation&nbsp;<span>3.8</span></a>:</p>
+<p>…or, to rearrange, we obtain the form shown in <a href="#eq-ch5-forcedoscillfullsoln2" class="quarto-xref">Equation&nbsp;<span>3.8</span></a>:</p>
 <p><span id="eq-ch5-forcedoscillfullsoln2"><span class="math display">\[
 A_0 = -A \mathrm{e}^{-\mathrm{i}\left( \delta + \delta^\prime \right)}
 \tag{3.8}\]</span></span></p>
-<p>As with any complex representation, we now compare the <strong>real</strong> and <strong>imaginary</strong> parts of the solution. Remember that <a href="#eq-ch5-forcedoscillfullsoln2">Equation&nbsp;<span>3.8</span></a> expands <em>via</em> De Moivre’s theorem to:</p>
+<p>As with any complex representation, we now compare the <strong>real</strong> and <strong>imaginary</strong> parts of the solution. Remember that <a href="#eq-ch5-forcedoscillfullsoln2" class="quarto-xref">Equation&nbsp;<span>3.8</span></a> expands <em>via</em> De Moivre’s theorem to:</p>
 <p><span id="eq-ch5-forcedoscillfullsoln3"><span class="math display">\[
-A_0 = -A \left( \cos \left( \delta + \delta^\prime \right) + \mathrm{i} \sin \left( \delta + \delta^\prime \right)  \right)
+A_0 = -A \left( \cos \left( \delta + \delta^\prime \right) - \mathrm{i} \sin \left( \delta + \delta^\prime \right)  \right)
 \tag{3.9}\]</span></span></p>
-<p>The imaginary component of <a href="#eq-ch5-forcedoscillfullsoln3">Equation&nbsp;<span>3.9</span></a> reduces to zero (the solution, <span class="math inline">\(A_0\)</span> is fully real):</p>
+<p>The imaginary component of <a href="#eq-ch5-forcedoscillfullsoln3" class="quarto-xref">Equation&nbsp;<span>3.9</span></a> reduces to zero (the solution, <span class="math inline">\(A_0\)</span> is fully real):</p>
 <p><span class="math display">\[
-0 = -A \sin \left( \delta + \delta^\prime \right)
+0 = A \sin \left( \delta + \delta^\prime \right)
 \]</span></p>
 <p>We can therefore relate <span class="math inline">\(\delta\)</span> and <span class="math inline">\(\delta^\prime\)</span> as follows:</p>
 <p><span id="eq-ch5-forcedoscillationfullsoln4"><span class="math display">\[
@@ -364,7 +408,7 @@ A_0 = -A \left( \cos \left( \delta + \delta^\prime \right) + \mathrm{i} \sin \le
 \delta + \delta^\prime = \pi &amp; \textit{i.e.} &amp; \delta^\prime = \pi - \delta
 \end{array}
 \tag{3.10}\]</span></span></p>
-<p>We now examine the ‘real’ component of <a href="#eq-ch5-forcedoscillfullsoln3">Equation&nbsp;<span>3.9</span></a>, equal to <span class="math inline">\(A_0\)</span>:</p>
+<p>We now examine the ‘real’ component of <a href="#eq-ch5-forcedoscillfullsoln3" class="quarto-xref">Equation&nbsp;<span>3.9</span></a>, equal to <span class="math inline">\(A_0\)</span>:</p>
 <p><span class="math display">\[
 A_0 = - A \cos \left( \delta + \delta^\prime \right)
 \]</span></p>
@@ -374,7 +418,7 @@ A_0 = - A \cos \left( \delta + \delta^\prime \right)
 A_0 = -A \cos \pi &amp; \textit{i.e.} &amp; A_0 = A
 \end{array}
 \tag{3.11}\]</span></span></p>
-<p>We can now revisit <a href="#eq-ch5-forcedoscillfullsoln1">Equation&nbsp;<span>3.7</span></a>, now that we have values for <span class="math inline">\(\delta\)</span>, <span class="math inline">\(\delta^\prime\)</span> and <span class="math inline">\(A_0\)</span> under our starting conditions ( <span class="math inline">\(x = 0\)</span> when <span class="math inline">\(t = 0\)</span>):</p>
+<p>We can now revisit <a href="#eq-ch5-forcedoscillfullsoln1" class="quarto-xref">Equation&nbsp;<span>3.7</span></a>, now that we have values for <span class="math inline">\(\delta\)</span>, <span class="math inline">\(\delta^\prime\)</span> and <span class="math inline">\(A_0\)</span> under our starting conditions ( <span class="math inline">\(x = 0\)</span> when <span class="math inline">\(t = 0\)</span>):</p>
 <p><span id="eq-ch5-forcedoscillationfullsoln6"><span class="math display">\[
 \begin{array}{rcl}
 x &amp;= &amp; A \left[ \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)}  + \mathrm{e}^{- \left(\frac{b}{2m}\right)t} \mathrm{e}^{\mathrm{i} \left( \omega^\prime t + \delta^\prime \right)} \right]\\
@@ -383,17 +427,21 @@ x &amp;= &amp; A \left[ \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)}  
 &amp;= &amp; A \left[ \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)}  - \mathrm{e}^{- \left(\frac{b}{2m}\right)t} \mathrm{e}^{\mathrm{i} \left( \omega^\prime t - \delta \right)}  \right]\\
 \end{array}
 \tag{3.12}\]</span></span></p>
-<p>Finally, we can find the actual displacement of the oscillator by examining the real component of <a href="#eq-ch5-forcedoscillationfullsoln6">Equation&nbsp;<span>3.12</span></a>, summarised in <a href="#eq-ch5-forcedoscillationfullsoln7">Equation&nbsp;<span>3.13</span></a>):</p>
+<p>Finally, we can find the actual displacement of the oscillator by examining the real component of <a href="#eq-ch5-forcedoscillationfullsoln6" class="quarto-xref">Equation&nbsp;<span>3.12</span></a>, summarised in <a href="#eq-ch5-forcedoscillationfullsoln7" class="quarto-xref">Equation&nbsp;<span>3.13</span></a>):</p>
 <p><span id="eq-ch5-forcedoscillationfullsoln7"><span class="math display">\[
 \mathrm{Re}(x) = A \left[ \cos (\omega t - \delta) - \mathrm{e}^{- \left(\frac{b}{2m}\right)t} \cos (\omega^\prime t - \delta) \right]
 \tag{3.13}\]</span></span></p>
-<p>We can visualise the amplitude of a forced oscillator, as shown in <a href="#fig-ch5-forcedoscilfull1">Figure&nbsp;<span>3.3</span></a>. At very low frequencies, the oscillation has the same amplitude as the driving oscillation. This rapidly increases under resonance to a peak, but then drops rapidly to a value towards zero.</p>
+<p>We can visualise the amplitude of a forced oscillator, as shown in <a href="#fig-ch5-forcedoscilfull1" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>. At very low frequencies, the oscillation has the same amplitude as the driving oscillation. This rapidly increases under resonance to a peak, but then drops rapidly to a value towards zero.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-forcedoscilfull1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch5-forcedosc1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.3: The amplitude of a forced oscillation varies with driving frequency; close to the driving amplitude at very low frequencies, close to zero at very high frequencies, with a peak occurring under resonant conditions. Note that the position of this peak varies with the damping coefficient <span class="math inline">\(b\)</span>.</figcaption>
+<div id="fig-ch5-forcedoscilfull1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-forcedoscilfull1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch5-forcedosc1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-forcedoscilfull1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: The amplitude of a forced oscillation varies with driving frequency; close to the driving amplitude at very low frequencies, close to zero at very high frequencies, with a peak occurring under resonant conditions. Note that the position of this peak varies with the damping coefficient <span class="math inline">\(b\)</span>.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -409,25 +457,33 @@ x &amp;= &amp; A \left[ \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)}  
 </ol>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-forcedosc4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch5-forcedosc4.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.4: When the frequency of the driving oscillation <span class="math inline">\(\omega\)</span> is very different to the natural frequency of the system we see two regimes; firstly, where <span class="math inline">\(\omega \ll \omega_0\)</span> (blue), the natural frequency decays and we are left to observe the driving frequency at a large amplitude; when <span class="math inline">\(\omega \gg \omega_0\)</span> (orange), we see a much smaller amplitude oscillation at close to the driving frequency.</figcaption>
+<div id="fig-ch5-forcedosc4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-forcedosc4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch5-forcedosc4.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-forcedosc4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: When the frequency of the driving oscillation <span class="math inline">\(\omega\)</span> is very different to the natural frequency of the system we see two regimes; firstly, where <span class="math inline">\(\omega \ll \omega_0\)</span> (blue), the natural frequency decays and we are left to observe the driving frequency at a large amplitude; when <span class="math inline">\(\omega \gg \omega_0\)</span> (orange), we see a much smaller amplitude oscillation at close to the driving frequency.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In the special case when <span class="math inline">\(\omega = \omega_0\)</span> and the damping coefficient <span class="math inline">\(b\)</span> is small (allowing the damped frequency <span class="math inline">\(\omega^\prime\)</span> to be approximately equal to the driving frequency <span class="math inline">\(\omega\)</span>), we can rewrite the expression of the displacement (<a href="#eq-ch5-forcedoscillationfullsoln7">Equation&nbsp;<span>3.13</span></a>) as shown in <a href="#eq-ch5-forcedoscillationfullsoln8">Equation&nbsp;<span>3.14</span></a>:</p>
+<p>In the special case when <span class="math inline">\(\omega = \omega_0\)</span> and the damping coefficient <span class="math inline">\(b\)</span> is small (allowing the damped frequency <span class="math inline">\(\omega^\prime\)</span> to be approximately equal to the driving frequency <span class="math inline">\(\omega\)</span>), we can rewrite the expression of the displacement (<a href="#eq-ch5-forcedoscillationfullsoln7" class="quarto-xref">Equation&nbsp;<span>3.13</span></a>) as shown in <a href="#eq-ch5-forcedoscillationfullsoln8" class="quarto-xref">Equation&nbsp;<span>3.14</span></a>:</p>
 <p><span id="eq-ch5-forcedoscillationfullsoln8"><span class="math display">\[
 \mathrm{Re}(x) = A  \cos (\omega_0 t - \delta) \left[ 1 - \mathrm{e}^{- \left(\frac{b}{2m}\right)t}  \right]
 \tag{3.14}\]</span></span></p>
-<p>We can see that the oscillation will converge to a maximum value, at which point the energy put into the system becomes equal to the energy dissipated by the system through damping, as shown in <a href="#fig-ch5-resonancedisplacement1">Figure&nbsp;<span>3.5</span></a>:</p>
+<p>We can see that the oscillation will converge to a maximum value, at which point the energy put into the system becomes equal to the energy dissipated by the system through damping, as shown in <a href="#fig-ch5-resonancedisplacement1" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>:</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch5-resonancedisplacement1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/ch5-forcedosc5.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.5: When the frequency of the driving oscillation <span class="math inline">\(\omega = \omega_0\)</span> (blue), we see the amplitude grow to a plateau at which point the energy put into the system is equal to the energy losses from the system.</figcaption>
+<div id="fig-ch5-resonancedisplacement1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-resonancedisplacement1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/ch5-forcedosc5.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-resonancedisplacement1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5: When the frequency of the driving oscillation <span class="math inline">\(\omega = \omega_0\)</span> (blue), we see the amplitude grow to a plateau at which point the energy put into the system is equal to the energy losses from the system.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -438,11 +494,11 @@ x &amp;= &amp; A \left[ \mathrm{e}^{\mathrm{i}\left(\omega t - \delta \right)}  
 <h2 data-number="3.5" class="anchored" data-anchor-id="sec-ch5-energydrivenoscillators"><span class="header-section-number">3.5</span> Energy in driven oscillators</h2>
 <p>In a driven oscillator, energy is continually added to the system. When it reaches its steady state, the rate of loss of energy in each cycle due to damping of the system is equal to the work done by the driving force.</p>
 <p>We can demonstrate this through integration; remember that (simplistically!) work done is “force <span class="math inline">\(\times\)</span> distance”, so under varying force (as we have here), we can integrate the force with respect to displacement <span class="math inline">\(x\)</span> to find an expression for the work done.</p>
-<p>For the sake of convenience, we will consider the “real” component of the equation for forced SHM shown in <a href="#eq-ch5-forcedshm1">Equation&nbsp;<span>3.1</span></a> (the left-hand-side is entirely “real”, so the “imaginary” component reduces to zero anyway):</p>
+<p>For the sake of convenience, we will consider the “real” component of the equation for forced SHM shown in <a href="#eq-ch5-forcedshm1" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> (the left-hand-side is entirely “real”, so the “imaginary” component reduces to zero anyway):</p>
 <p><span id="eq-ch5-oscillatorenergy1"><span class="math display">\[
 m \frac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t}+ kx = F_0 \cos \omega t
 \tag{3.15}\]</span></span></p>
-<p>We also know that the steady state solution for the displacement <span class="math inline">\(x\)</span> in SHM is as given in <a href="01_shm.html#eq-shm-general-positionx1">Equation&nbsp;<span>1.5</span></a>. We can then find an expression for the velocity <span class="math inline">\(v\)</span> by finding the first derivative of this expression (<a href="#eq-ch5-oscillatorenergy2">Equation&nbsp;<span>3.16</span></a>):</p>
+<p>We also know that the steady state solution for the displacement <span class="math inline">\(x\)</span> in SHM is as given in <a href="01_shm.html#eq-shm-general-positionx1" class="quarto-xref">Equation&nbsp;<span>1.5</span></a>. We can then find an expression for the velocity <span class="math inline">\(v\)</span> by finding the first derivative of this expression (<a href="#eq-ch5-oscillatorenergy2" class="quarto-xref">Equation&nbsp;<span>3.16</span></a>):</p>
 <p><span id="eq-ch5-oscillatorenergy2"><span class="math display">\[
 \begin{array}{rcl}
 x&amp; =&amp; A \cos (\omega t - \delta)\\
@@ -451,7 +507,7 @@ v = \dfrac{\mathrm{d}x}{\mathrm{d}t} &amp;=&amp; -\omega A \sin (\omega t - \del
 \tag{3.16}\]</span></span></p>
 <section id="sec-ch5-energyinputdrivenosc" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="sec-ch5-energyinputdrivenosc"><span class="header-section-number">3.5.1</span> Energy input for driven oscillators</h3>
-<p>To find the energy which is put into the system over one cycle, we therefore need to find the integral of the force acting over one cycle of the oscillation, from <span class="math inline">\(t = 0\)</span> to <span class="math inline">\(t = T\)</span> (remember that <span class="math inline">\(T\)</span> is the period of the oscillation). We do this integration by substituting our variable <span class="math inline">\(\mathrm{d}x\)</span> for <span class="math inline">\(v\mathrm{d}t\)</span> (as defined in <a href="#eq-ch5-oscillatorenergy2">Equation&nbsp;<span>3.16</span></a>):</p>
+<p>To find the energy which is put into the system over one cycle, we therefore need to find the integral of the force acting over one cycle of the oscillation, from <span class="math inline">\(t = 0\)</span> to <span class="math inline">\(t = T\)</span> (remember that <span class="math inline">\(T\)</span> is the period of the oscillation). We do this integration by substituting our variable <span class="math inline">\(\mathrm{d}x\)</span> for <span class="math inline">\(v\mathrm{d}t\)</span> (as defined in <a href="#eq-ch5-oscillatorenergy2" class="quarto-xref">Equation&nbsp;<span>3.16</span></a>):</p>
 <p><span class="math display">\[
 \begin{array}{rcl}
 E_\mathrm{in} = \displaystyle{\int_0^T} F \cdot \mathrm{d}x &amp;\equiv&amp; \displaystyle{\int_0^T} F \cdot v \mathrm{d}t \\
@@ -464,19 +520,19 @@ E_\mathrm{in} = \displaystyle{\int_0^T} F \cdot \mathrm{d}x &amp;\equiv&amp; \di
 &amp;=&amp; -\omega A F_0 \left( \left[ -\tfrac{1}{4\omega} \cos 2\omega T \cos \delta  + \left( \tfrac{1}{4\omega}\sin 2\omega T + \tfrac{T}{2} \right)\sin \delta \right] - \left[ -\tfrac{1}{4\omega} \cos 0 \cos \delta  + \left( \tfrac{1}{4\omega}\sin 0 + \tfrac{0}{2} \right)\sin \delta \right] \right)  \\
 \end{array}
 \]</span></p>
-<p>Evaluation of this integral gives us the end result shown in <a href="#eq-ch5-oscillatorenergy4">Equation&nbsp;<span>3.17</span></a>:</p>
+<p>Evaluation of this integral gives us the end result shown in <a href="#eq-ch5-oscillatorenergy4" class="quarto-xref">Equation&nbsp;<span>3.17</span></a>:</p>
 <p><span id="eq-ch5-oscillatorenergy4"><span class="math display">\[
 E_{\mathrm{in}} = \frac{1}{2}\omega A F_0 T \sin \delta
 \tag{3.17}\]</span></span></p>
-<p>If we recall that <span class="math inline">\(\delta = \frac{\pi}{2}\)</span> at resonance, substitution of this value into <a href="#eq-ch5-oscillatorenergy4">Equation&nbsp;<span>3.17</span></a> tells us that the maximum energy is transferred to the oscillator when driven at a resonant frequency - in line with our expectations.</p>
-<p>If we now use the definition of <span class="math inline">\(\delta\)</span> in <a href="#eq-ch5-forcedshm5">Equation&nbsp;<span>3.5</span></a>, we can use trigonometry and the expression for <span class="math inline">\(A\)</span> in <a href="#eq-ch5-forcedshm4">Equation&nbsp;<span>3.4</span></a> to give the expression <span class="math inline">\(\sin \delta = \frac{Ab\omega}{F_0}\)</span>; we can also use the fact that the period of oscillation <span class="math inline">\(T\)</span> and the angular frequency <span class="math inline">\(\omega\)</span> are related by <a href="01_shm.html#eq-ch1-definingomega1">Equation&nbsp;<span>1.12</span></a> (<span class="math inline">\(T = \frac{2\pi}{\omega}\)</span>), and simplify the expression for the energy input for the forced oscillator as shown in <a href="#eq-ch5-oscillatorenergy5">Equation&nbsp;<span>3.18</span></a>:</p>
+<p>If we recall that <span class="math inline">\(\delta = \frac{\pi}{2}\)</span> at resonance, substitution of this value into <a href="#eq-ch5-oscillatorenergy4" class="quarto-xref">Equation&nbsp;<span>3.17</span></a> tells us that the maximum energy is transferred to the oscillator when driven at a resonant frequency - in line with our expectations.</p>
+<p>If we now use the definition of <span class="math inline">\(\delta\)</span> in <a href="#eq-ch5-forcedshm5" class="quarto-xref">Equation&nbsp;<span>3.5</span></a>, we can use trigonometry and the expression for <span class="math inline">\(A\)</span> in <a href="#eq-ch5-forcedshm4" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> to give the expression <span class="math inline">\(\sin \delta = \frac{Ab\omega}{F_0}\)</span>; we can also use the fact that the period of oscillation <span class="math inline">\(T\)</span> and the angular frequency <span class="math inline">\(\omega\)</span> are related by <a href="01_shm.html#eq-ch1-definingomega1" class="quarto-xref">Equation&nbsp;<span>1.12</span></a> (<span class="math inline">\(T = \frac{2\pi}{\omega}\)</span>), and simplify the expression for the energy input for the forced oscillator as shown in <a href="#eq-ch5-oscillatorenergy5" class="quarto-xref">Equation&nbsp;<span>3.18</span></a>:</p>
 <p><span id="eq-ch5-oscillatorenergy5"><span class="math display">\[
 E_{\mathrm{in}} = \pi b \omega A^2
 \tag{3.18}\]</span></span></p>
 </section>
 <section id="sec-ch5-energylostdrivenosc" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="sec-ch5-energylostdrivenosc"><span class="header-section-number">3.5.2</span> Energy lost in driving oscillators</h3>
-<p>To now determine the amount of energy, we follow a similar process as followed in <a href="#sec-ch5-energyinputdrivenosc"><span>Section&nbsp;3.5.1</span></a>. This time however we need to determine the work done by the oscillator on the damping force during one cycle. This integral is set up as follows:</p>
+<p>To now determine the amount of energy, we follow a similar process as followed in <a href="#sec-ch5-energyinputdrivenosc" class="quarto-xref"><span>Section 3.5.1</span></a>. This time however we need to determine the work done by the oscillator on the damping force during one cycle. This integral is set up as follows:</p>
 <p><span class="math display">\[
 E_{\mathrm{lost}} = \int_0^T F v \mathrm{d}t
 \]</span></p>
@@ -484,7 +540,7 @@ E_{\mathrm{lost}} = \int_0^T F v \mathrm{d}t
 <p><span class="math display">\[
 E_{\mathrm{lost}} = \int_0^T b v^2 \mathrm{d}t
 \]</span></p>
-<p>As before, we have the result that <span class="math inline">\(v = -\omega A \sin(\omega t - \delta)\)</span> (<a href="#eq-ch5-oscillatorenergy2">Equation&nbsp;<span>3.16</span></a>), and following through the integration in a similar manner as in the previous section we are led to the result in <a href="#eq-ch5-oscillatorenergy6">Equation&nbsp;<span>3.19</span></a> for a <strong>driven damped oscillator</strong> at <strong>steady state</strong>.</p>
+<p>As before, we have the result that <span class="math inline">\(v = -\omega A \sin(\omega t - \delta)\)</span> (<a href="#eq-ch5-oscillatorenergy2" class="quarto-xref">Equation&nbsp;<span>3.16</span></a>), and following through the integration in a similar manner as in the previous section we are led to the result in <a href="#eq-ch5-oscillatorenergy6" class="quarto-xref">Equation&nbsp;<span>3.19</span></a> for a <strong>driven damped oscillator</strong> at <strong>steady state</strong>.</p>
 <p><span id="eq-ch5-oscillatorenergy6"><span class="math display">\[
 E_{\mathrm{lost}}  = \pi b \omega A^2= E_{\mathrm{in}}
 \tag{3.19}\]</span></span></p>
@@ -554,6 +610,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -620,13 +703,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -661,18 +746,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -704,11 +778,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -718,8 +831,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -731,7 +853,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -775,6 +1020,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -800,6 +1046,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -861,17 +1133,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02_damped_oscillations.html" class="pagination-link">
+      <a href="./02_damped_oscillations.html" class="pagination-link" aria-label="Damped oscillations">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Damped oscillations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03_coupled_oscillators.html" class="pagination-link">
+      <a href="./03_coupled_oscillators.html" class="pagination-link" aria-label="Coupled Oscillators">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

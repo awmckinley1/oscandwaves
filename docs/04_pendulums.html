@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oscillations and Waves - 5&nbsp; Pendulums</title>
+<title>5&nbsp; Pendulums – Oscillations and Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,14 +64,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -75,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_pendulums.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_pendulums.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pendulums</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -90,25 +124,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Oscillations and Waves</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/awmckinley1/oscandwaves" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/awmckinley1/oscandwaves" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Oscillations-and-Waves.docx">
+              <i class="bi bi-file-word pe-1"></i>
+            Download Docx
             </a>
           </li>
       </ul>
@@ -202,16 +242,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mathematical Toolkit</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -242,16 +276,22 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>A pendulum is a mechanically simple oscillating system; its oscillation can be considered SHM for small displacements. A simple pendulum is shown in <a href="#fig-ch4-simplependulum1">Figure&nbsp;<span>5.1</span></a>, and it is worth quickly revisiting this example as we will extend this in our further examples.</p>
+
+<p>A pendulum is a mechanically simple oscillating system; its oscillation can be considered SHM for small displacements. A simple pendulum is shown in <a href="#fig-ch4-simplependulum1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>, and it is worth quickly revisiting this example as we will extend this in our further examples.</p>
 <p>At its core, a pendulum is an oscillator whose oscillation is based on a rotational, rather than a linear displacement. Consequently the dynamics governing pendulums is slightly different to a linear oscillator, however they are a good example to show that we can approximate small displacements as “simple harmonic oscillations”.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch4-simplependulum1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/LaTeX/ch4-simplependulum1.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;5.1: A simple pendulum, consisting of a mass <span class="math inline">\(m\)</span> swinging on a string of length <span class="math inline">\(L\)</span>. At angle <span class="math inline">\(\phi\)</span>, the weight of the mass <span class="math inline">\(mg\)</span> can be resolved into components to determine the mechanics of the system.</figcaption>
+<div id="fig-ch4-simplependulum1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch4-simplependulum1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/LaTeX/ch4-simplependulum1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4-simplependulum1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: A simple pendulum, consisting of a mass <span class="math inline">\(m\)</span> swinging on a string of length <span class="math inline">\(L\)</span>. At angle <span class="math inline">\(\phi\)</span>, the weight of the mass <span class="math inline">\(mg\)</span> can be resolved into components to determine the mechanics of the system.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -266,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
 <p>We will examine the case of the simple pendulum, the physical pendulum, and will take a brief look at the double pendulum.</p>
 <section id="the-simple-pendulum" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="the-simple-pendulum"><span class="header-section-number">5.1</span> The simple pendulum</h2>
-<p>The mass of the pendulum can be considered to oscillate along the arc <span class="math inline">\(s\)</span> (<a href="#fig-ch4-simplependulum1">Figure&nbsp;<span>5.1</span></a>), where the restoring force becomes <span class="math inline">\(mg \sin \phi\)</span>. This force then causes an acceleration along the arc, <span class="math inline">\(\frac{\mathrm{d}^2 s}{\mathrm{d} t^2}\)</span>, with the equation of motion becoming:</p>
+<p>The mass of the pendulum can be considered to oscillate along the arc <span class="math inline">\(s\)</span> (<a href="#fig-ch4-simplependulum1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>), where the restoring force becomes <span class="math inline">\(mg \sin \phi\)</span>. This force then causes an acceleration along the arc, <span class="math inline">\(\frac{\mathrm{d}^2 s}{\mathrm{d} t^2}\)</span>, with the equation of motion becoming:</p>
 <p><span id="eq-ch4-simplependulum-a1"><span class="math display">\[
 mg \sin \phi = - m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2}
 \tag{5.1}\]</span></span></p>
@@ -278,7 +318,7 @@ mg \sin \phi = - m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2}
 <p><span id="eq-ch4-simplependulum-a2"><span class="math display">\[
 \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = L \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2}
 \tag{5.2}\]</span></span></p>
-<p>We can then substitute this into <a href="#eq-ch4-simplependulum-a1">Equation&nbsp;<span>5.1</span></a>:</p>
+<p>We can then substitute this into <a href="#eq-ch4-simplependulum-a1" class="quarto-xref">Equation&nbsp;<span>5.1</span></a>:</p>
 <p><span id="eq-ch4-simplependulum-a3"><span class="math display">\[
 m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = m L \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} =  -mg \sin \phi
 \tag{5.3}\]</span></span></p>
@@ -286,34 +326,38 @@ m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = m L \frac{\mathrm{d}^2 \phi}{\mathrm{d
 <p><span id="eq-ch4-simplependulum-a3"><span class="math display">\[
 \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} =  -\frac{g}{L} \sin \phi
 \tag{5.4}\]</span></span></p>
-<p>For small displacements (small <span class="math inline">\(\phi\)</span>), the equation of motion can be considered as in <a href="#eq-ch4-simplependulum1">Equation&nbsp;<span>5.5</span></a>:</p>
+<p>For small displacements (small <span class="math inline">\(\phi\)</span>), the equation of motion can be considered as in <a href="#eq-ch4-simplependulum1" class="quarto-xref">Equation&nbsp;<span>5.5</span></a>:</p>
 <p><span id="eq-ch4-simplependulum1"><span class="math display">\[
 \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} = -\frac{g}{L}\sin \phi \approx -\frac{g \phi}{L} \textrm{ for small } \phi
 \tag{5.5}\]</span></span></p>
-<p>This is SHM, with angular frequency <span class="math inline">\(\omega\)</span> and period <span class="math inline">\(T\)</span> found as in <a href="#eq-ch4-simplependulum2">Equation&nbsp;<span>5.6</span></a>:</p>
+<p>This is SHM, with angular frequency <span class="math inline">\(\omega\)</span> and period <span class="math inline">\(T\)</span> found as in <a href="#eq-ch4-simplependulum2" class="quarto-xref">Equation&nbsp;<span>5.6</span></a>:</p>
 <p><span id="eq-ch4-simplependulum2"><span class="math display">\[
 \omega^2 = \frac{g}{L} \hspace{15pt} and \hspace{15pt} T = 2\pi \sqrt{\frac{L}{g}}
 \tag{5.6}\]</span></span></p>
-<p>The solution for the equation of motion of this system then becomes <a href="#eq-ch4-simplependulum3">Equation&nbsp;<span>5.7</span></a>:</p>
+<p>The solution for the equation of motion of this system then becomes <a href="#eq-ch4-simplependulum3" class="quarto-xref">Equation&nbsp;<span>5.7</span></a>:</p>
 <p><span id="eq-ch4-simplependulum3"><span class="math display">\[
 \phi = \phi_0 \cos (\omega t + \delta)
 \tag{5.7}\]</span></span></p>
-<p>…where <span class="math inline">\(\phi_0\)</span> is the amplitude of the system and <span class="math inline">\(\delta\)</span> is the phase constant. Notice that, for the pendulum we express the amplitude in terms of the angle of the string rather than an absolute distance (shown as <span class="math inline">\(s\)</span> in <a href="#fig-ch4-simplependulum1">Figure&nbsp;<span>5.1</span></a>).</p>
+<p>…where <span class="math inline">\(\phi_0\)</span> is the amplitude of the system and <span class="math inline">\(\delta\)</span> is the phase constant. Notice that, for the pendulum we express the amplitude in terms of the angle of the string rather than an absolute distance (shown as <span class="math inline">\(s\)</span> in <a href="#fig-ch4-simplependulum1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>).</p>
 </section>
 <section id="sec-ch4-physicalpendulum" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-ch4-physicalpendulum"><span class="header-section-number">5.2</span> The Physical Pendulum</h2>
-<p>Many oscillating systems demonstrate rotational oscillations under gravity akin to the simple pendulum. In this case, the system rotates around a pivot, <span class="math inline">\(P\)</span>, and this can then be considered as a pendulum with the centre of mass acting as the ‘bob’. An example of a general system is shown in <a href="#fig-ch4-physicalpendulum1">Figure&nbsp;<span>5.2</span></a>.</p>
+<p>Many oscillating systems demonstrate rotational oscillations under gravity akin to the simple pendulum. In this case, the system rotates around a pivot, <span class="math inline">\(P\)</span>, and this can then be considered as a pendulum with the centre of mass acting as the ‘bob’. An example of a general system is shown in <a href="#fig-ch4-physicalpendulum1" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
-<div id="fig-ch4-physicalpendulum1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualisations/LaTeX/ch4-physicalpendulum1.svg" class="img-fluid figure-img" style="width:40.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;5.2: A physical pendulum, consisting of a physical object of mass <span class="math inline">\(M\)</span> swinging on a pivot through point <span class="math inline">\(P\)</span> of length <span class="math inline">\(L\)</span>. At angle <span class="math inline">\(\phi\)</span>, the weight of the mass <span class="math inline">\(Mg\)</span> can again be resolved into components to determine the mechanics of the system.</figcaption>
+<div id="fig-ch4-physicalpendulum1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch4-physicalpendulum1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualisations/LaTeX/ch4-physicalpendulum1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4-physicalpendulum1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: A physical pendulum, consisting of a physical object of mass <span class="math inline">\(M\)</span> swinging on a pivot through point <span class="math inline">\(P\)</span> of length <span class="math inline">\(L\)</span>. At angle <span class="math inline">\(\phi\)</span>, the weight of the mass <span class="math inline">\(Mg\)</span> can again be resolved into components to determine the mechanics of the system.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Now, as a restoring force, we consider the <strong>torque</strong> of the centre of mass around the pivot. Remember that the torque is defined as the product of the force and the <strong>perpendicular distance of the force’s line of action from the pivot</strong>. If using vectors, this is considered as the <strong>cross product</strong> of the force vector <span class="math inline">\(\mathbf{F}\)</span> with the position vector of the centre of mass from the pivot, <span class="math inline">\(\mathbf{D}\)</span> (<a href="#eq-ch4-physicalpendulum1">Equation&nbsp;<span>5.8</span></a>):</p>
+<p>Now, as a restoring force, we consider the <strong>torque</strong> of the centre of mass around the pivot. Remember that the torque is defined as the product of the force and the <strong>perpendicular distance of the force’s line of action from the pivot</strong>. If using vectors, this is considered as the <strong>cross product</strong> of the force vector <span class="math inline">\(\mathbf{F}\)</span> with the position vector of the centre of mass from the pivot, <span class="math inline">\(\mathbf{D}\)</span> (<a href="#eq-ch4-physicalpendulum1" class="quarto-xref">Equation&nbsp;<span>5.8</span></a>):</p>
 <p><span id="eq-ch4-physicalpendulum1"><span class="math display">\[
 \begin{array}{rcl}
 \textrm{Torque about pivot $P$} &amp;=&amp; \mathbf{D} \times \mathbf{F} \\
@@ -322,7 +366,7 @@ m \frac{\mathrm{d}^2 s}{\mathrm{d} t^2} = m L \frac{\mathrm{d}^2 \phi}{\mathrm{d
 \end{array}
 \tag{5.8}\]</span></span></p>
 <p>In this case, the unit vector <span class="math inline">\(\mathbf{\hat{n}}\)</span> is perpendicular to the plane of rotation and is included for completeness’ sake. What we are interested in is the magnitude of this torque vector, <span class="math inline">\(\tau\)</span>.</p>
-<p>Recall from rotational motion that the angular acceleration <span class="math inline">\(\alpha\)</span> and the torque <span class="math inline">\(\tau\)</span> are connected via the moment of inertia <span class="math inline">\(I\)</span> (<a href="#eq-ch4-physicalpendulum2">Equation&nbsp;<span>5.9</span></a>):<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Recall from rotational motion that the angular acceleration <span class="math inline">\(\alpha\)</span> and the torque <span class="math inline">\(\tau\)</span> are connected via the moment of inertia <span class="math inline">\(I\)</span> (<a href="#eq-ch4-physicalpendulum2" class="quarto-xref">Equation&nbsp;<span>5.9</span></a>):<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p><span id="eq-ch4-physicalpendulum2"><span class="math display">\[
 \begin{array}{rcl}
 I \dfrac{\mathrm{d}^2 \phi}{\mathrm{d} t^2}  &amp;=&amp; I\alpha =\tau \\
@@ -333,11 +377,11 @@ I \dfrac{\mathrm{d}^2 \phi}{\mathrm{d} t^2}  &amp;=&amp; I\alpha =\tau \\
 <p><span class="math display">\[
 \frac{\mathrm{d}^2 \phi}{\mathrm{d} t^2} = -\frac{mgD\phi}{I} = -\omega^2 \phi
 \]</span></p>
-<p>This allows us to identify expressions again for the angular frequency, <span class="math inline">\(\omega\)</span>, and the period <span class="math inline">\(T\)</span> (<a href="#eq-ch4-physicalpendulum3">Equation&nbsp;<span>5.10</span></a>):</p>
+<p>This allows us to identify expressions again for the angular frequency, <span class="math inline">\(\omega\)</span>, and the period <span class="math inline">\(T\)</span> (<a href="#eq-ch4-physicalpendulum3" class="quarto-xref">Equation&nbsp;<span>5.10</span></a>):</p>
 <p><span id="eq-ch4-physicalpendulum3"><span class="math display">\[
 \omega^2 = \frac{mgD}{I} \hspace{15pt} and \hspace{15pt} T = 2\pi \sqrt{\frac{I}{mgD}}
 \tag{5.10}\]</span></span></p>
-<p>We can compare this result with that for the simple pendulum shown in <a href="#eq-ch4-simplependulum2">Equation&nbsp;<span>5.6</span></a>; if we remember that the moment of inertia <span class="math inline">\(I\)</span> is defined as <span class="math inline">\(I = mD^2\)</span>, we can substitute this into <a href="#eq-ch4-physicalpendulum3">Equation&nbsp;<span>5.10</span></a> and see that this is a general case for any rotating body:</p>
+<p>We can compare this result with that for the simple pendulum shown in <a href="#eq-ch4-simplependulum2" class="quarto-xref">Equation&nbsp;<span>5.6</span></a>; if we remember that the moment of inertia <span class="math inline">\(I\)</span> is defined as <span class="math inline">\(I = mD^2\)</span>, we can substitute this into <a href="#eq-ch4-physicalpendulum3" class="quarto-xref">Equation&nbsp;<span>5.10</span></a> and see that this is a general case for any rotating body:</p>
 <p><span class="math display">\[
 T_\textrm{simple pendulum} = 2\pi \sqrt{\frac{I_\textrm{simple pendulum}}{mgD}} = 2\pi \sqrt{\frac{mD^2}{mgD}} = 2\pi \sqrt{\frac{D}{g}}
 \]</span></p>
@@ -402,6 +446,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -470,13 +541,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -511,18 +584,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -554,11 +616,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -568,8 +669,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -581,7 +691,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -625,6 +858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -650,6 +884,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -711,17 +971,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03_coupled_oscillators.html" class="pagination-link">
+      <a href="./03_coupled_oscillators.html" class="pagination-link" aria-label="Coupled Oscillators">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coupled Oscillators</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05_oscillators_to_wave_motion.html" class="pagination-link">
+      <a href="./05_oscillators_to_wave_motion.html" class="pagination-link" aria-label="From Coupled Oscillators to Wave Motion">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Coupled Oscillators to Wave Motion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
