@@ -467,7 +467,7 @@ $$
 $$ The gravitational potential energy (relative to the starting position $y_0$) is given by:
 
 $$
-\textrm{gravitational potential energy} = mg(y-y_0)
+\textrm{gravitational potential energy} = - mg(y-y_0)
 $$ The total potential energy is therefore given by @eq-ch1-massverticalspring5:
 
 $$
