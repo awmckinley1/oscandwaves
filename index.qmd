@@ -28,6 +28,8 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
+2025-02-21 Added a page of formulae for the course.
+
 2025-01-15 Fixed an inconsistency in @sec-ch1-massverticalspring relating to the direction of gravitational potential energy (MF)
 
 2025-01-08 Added textbook link to @sec-ch2-dampedoscillations (MJ)

@@ -241,3 +241,4 @@ $$
 The main advantage of working with complex exponentials is that they are considerably easier to manipulate than the trigonometric functions sine and cosine.  In general it is far easier to use this exponential notation when multiplying oscillations (such as you will explore in electrical circuits later).  However, when adding oscillations or waves you may find it easier using a trigonometric identity.
 
 You should be comfortable using either approach to represent an oscillation.
+

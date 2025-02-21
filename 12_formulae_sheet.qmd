@@ -1,0 +1,177 @@
+# Formulae for Oscillations and Waves
+
+The list of formulae below is the standard set of formulae made available for assessment.
+
+## Physical Constants
+
+| Constant | Value                          |
+|-----------------------------|-----------------------------------------------------------------------|
+| Acceleration due to gravity | $g = 9.81 \mathrm{\,m\,s}^{-2}$                           |
+| Speed of light              | $c = 2.99 \times 10^8 \mathrm{\,m\,s}^{-2}$                                 |
+| Ideal gas constant          | $R = 8.31 \mathrm{\,J\,K}^{-1}\mathrm{\,mol}^{-1}$                         |
+| Boltzmann constant          | $k_B = 1.38 \times 10^{-23} \mathrm{\,J\,K}^{-1}$                             |
+| Avogadro constant           | $N_A = 6.02 \times10^{23} \mathrm{\,mol}^{-1}$                                       |
+| Stefan-Boltzmann constant   | $\sigma = 5.67 \times10^{-8} \mathrm{\,W\,m}^{-2}\mathrm{\,K}^{-4}$ |
+| Wien displacement constant  | $b = 2.897 \times 10^{-3} \mathrm{\,m\,K}$                                    |
+| Reduced Planck constant     | $\hbar = 1.05 \times 10^{-34} \mathrm{\,m}^2 \mathrm{\,kg\,s}^{-1}$         |
+| Planck constant             | $h = 6.63\times 10^{-34} \mathrm{\,m}^2 \mathrm{\,kg\,s}^{-1}$             |
+| Electron volt               | $1\,eV = 1.60 \times 10^{-19} \mathrm{\,J}$                                                |
+| Atomic mass unit (Dalton)   | $1\,u = 1.66\times 10^{-27} \mathrm{\,kg}$                                                 |
+
+## Trigonometric Relationships
+
+$\sin (A \pm B) = \sin A \cos B \pm \cos A \sin B$  
+
+$\tan(A \pm B) = \dfrac{\tan A \pm \tan B}{1\mp \tan A \tan B}$
+
+$\cos (A \pm B)=\cos A \cos B \mp \sin A \sin B$ 
+
+$\cos^2 A + \sin^2 A = 1$ 
+
+$\sin 2A = 2 \sin A \cos A$
+
+$\cos A \cos B = \frac{1}{2} \left[ \cos(A+B) + \cos (A - B) \right]$ 
+
+$\cos 2A =  \cos^2 A - \sin^2 A$ 
+
+$\sin A \cos B = \frac{1}{2} \left[ \sin(A+B) + \sin(A-B) \right]$ 
+
+$\tan 2A = \dfrac{2 \tan A}{1 - \tan^2 A}$
+
+$\sin A + \sin B = 2 \sin \dfrac{A+B}{2} \cos \dfrac{A-B}{2}$ 
+
+$\cos A + \cos B = 2 \cos \dfrac{A+B}{2} \cos \dfrac{A-B}{2}$
+
+$\sin A - \sin B = 2 \cos \dfrac{A+B}{2} \sin \dfrac{A-B}{2}$ 
+
+$\cos A - \cos B = 2 \sin \dfrac{A+B}{2} \sin \dfrac{B-A}{2}$
+
+$\cos^2 A = \frac{1}{2} (1+\cos 2A)$ 
+
+$\sin^2 A = \frac{1}{2} (1-\cos 2A)$
+
+## Oscillations
+
+Undamped SHM:  $\dfrac{\textrm{d}^2 x}{\textrm{d} t^2} = -\omega^2 x$
+
+Solution: $x = A_0 \cos (\omega t + \delta)$
+
+Energy:  $E_{\mathrm{total}} = \frac{1}{2} k A_0^2$ 
+
+Simple Pendulum     $T = 2\pi \sqrt{\frac{l}{g}}$
+
+Damped SHM:   $m \dfrac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \dfrac{\mathrm{d}x}{\mathrm{d}t}+ kx =0$
+
+Damped SHM Solution:
+
+* Position  $x = A_0 e^{-\frac{t}{2\tau}} e^{i(\omega' t + \delta)}$
+* Characteristic decay constant $\tau = \frac{m}{b}$ 
+* Damped frequency $\omega' = \sqrt{\omega_0^2 - (b/2m)^2}$
+
+Critical damping:    $b = 2m\omega_0$ 
+
+Quality factor:    $Q = \omega_0 \tau = \dfrac{2\pi}{ \left( |\Delta E | / E \right)}$ 
+
+Forced SHM:  $m \dfrac{\mathrm{d}^2 x}{\mathrm{d}t^2} + b \dfrac{\mathrm{d}x}{\mathrm{d}t}+ kx = F_0 \mathrm{e}^{\mathrm{i}\omega t}$
+
+Solution: 
+
+*  Position $x = A_0 \mathrm{e}^{- \left(\frac{b}{2m}\right)t} \mathrm{e}^{\mathrm{i} \left( \omega^\prime t + \delta^\prime \right)} + A e^{i(\omega t - \delta)}$
+
+* where $\delta = \arctan \left( \dfrac{b\omega}{m(\omega_0^2 - \omega^2)}\right)$
+ 
+Steady-state amplitude: $A = \dfrac{F_0}{\sqrt{m^2 \left(\omega_0^2 - \omega^2 \right)^2 + b^2 \omega^2}}$
+
+Width (at half height) of resonance peak ($\Delta \omega$): 	$\dfrac{\Delta \omega}{\omega_0} = \dfrac{1}{Q}$
+
+Coupled oscillator ($n = 2$): 
+
+$$
+\begin{cases}
+\begin{array}{l}
+m_A \dfrac{\mathrm{d}^2 x_A}{\mathrm{d}t^2} = -(k_A + k_{AB}) x_A + k_{AB}x_B \\
+m_B \dfrac{\mathrm{d}^2 x_B}{\mathrm{d}t^2} = -(k_B + k_{AB}) x_B + k_{AB}x_A
+\end{array}
+\end{cases}
+$$
+
+Coupled Oscillator Solutions:
+
+$$\begin{cases}
+x_1 = \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_2 = \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+\end{cases}$$
+
+For $m_A = m_B = m$  and $k_A = k_B = k$:
+
+$\omega_1 = \sqrt{\dfrac{k}{m}}$  and $\omega_2 = \sqrt{\dfrac{k + 2 k_{AB}}{m}}$ 
+
+Matrix representation:
+
+$$
+\left(
+\begin{array}{cc}
+m_A & 0 \\
+0 & m_B
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+\frac{\mathrm{d}^2 x_A}{\mathrm{d}t^2} \\
+\frac{\mathrm{d}^2 x_B}{\mathrm{d}t^2}
+\end{array}
+\right)
+=
+-
+\left(
+\begin{array}{cc}
+(k_A + k_{AB}) & -k_{AB} \\
+-k_{AB} & (k_B + k_{AB})
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_A \\
+x_B
+\end{array}
+\right)
+$$
+
+## Waves
+
+Wave Equation: $\dfrac{\partial^2 y}{\partial x^2} = \dfrac{\mu}{F} \dfrac{\partial^2 y}{\partial t^2}$	
+
+Harmonic wave:
+
+* Sinusoidal representation: $y = A \sin (kx - \omega t)$
+* Complex representation $y = Ae^{i(kx - \omega t)}$
+* De Moivres representation $Ae^{i\omega t} = A(\cos \omega t + i \sin \omega t)$
+
+
+Phase Velocity:  $v_p = \dfrac{\omega}{k}$	
+
+Group velocity:	 $v_g = \dfrac{\partial \omega(k)}{\partial k}$
+
+For wave on a string:
+
+* Phase velocity:  $v_p = \frac{\omega}{k} = \sqrt{F/\mu}$	
+* Energy density:	  $\epsilon = \frac{1}{2} \mu \omega^2 A^2$	
+* Average power transmitted:  $P_{\mathrm{av}} = \frac{1}{2}\mu \omega^2 A^2 v$
+* Impedance:	 $Z = \frac{Fk}{\omega}$
+
+Reflection and Transmission at Boundaries:
+
+* $\dfrac{\mathrm{Reflected\,power}}{\mathrm{Incident\,power}} = \left( \dfrac{Z_1 - Z_2}{Z_1 + Z_2} \right)^2$
+
+* $\dfrac{\mathrm{Transmitted\,power}}{\mathrm{Incident\,power}} = \dfrac{4 Z_1 Z_2}{(Z_1 + Z_2)^2}$
+
+Intensity level:   $\beta = 10 \log_{10} \left( \dfrac{I}{I_0}\right)$	
+
+* ...where  $I_0 = 10^{-12} \mathrm{\,W\,m}^{-2}$
+
+
+Doppler shift:    $f^\prime = \left(\dfrac{v\pm u_r}{v \pm u_s} \right) f_0$	
+
+Beats:   $y = 2y_0 \cos \left( \dfrac{\Delta kx - \Delta \omega t}{2} \right) \sin (k_{\mathrm{av}} x - \omega_{\mathrm{av}} t)$
+
+

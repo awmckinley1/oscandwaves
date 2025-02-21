@@ -44,7 +44,7 @@
     "href": "index.html#sec-changelog",
     "title": "Oscillations and Waves",
     "section": "Changelog",
-    "text": "Changelog\n2025-01-15 Fixed an inconsistency in 1.10.3 Example: Mass on a vertical spring relating to the direction of gravitational potential energy (MF)\n2025-01-08 Added textbook link to 2  Damped oscillations (MJ)\n2025-01-06 Fixed error in applying De Moivre’s theorem in Equation 3.9. This does not affect further workings. (ZZ)\n2024-05-13 Fixed missing “squared” term in 6.2.6.2 The frequencies of normal modes of oscillation (RG) ; Updated 4.8.1 A trial solution to resolve errant ‘minus’ sign in Equation 4.35 and Equation 4.35 (GP); Updated 7.2 Deriving the wave equation to fix “slope” terminology (AR)\n2024-02-20 Updated 8.5 Dispersion (Dispersion) and 11.3 Two waves, same amplitude, different frequency (Beats) (Superposition and Beats) ; verifying and fixing problem with Figure 8.4 (RA)\n2024-02-19 Updated 11  Superposition and Standing Waves to include further detail on using phasors (11.2.1 Phasors)\n2024-02-14 Fixing bug with Figure 8.4\n2024-02-12 Fixing equation number error on Equation 7.15\n2024-02-09 Fixing subscript typos in matrices in 4.8.2 The general case\n2024-02-07 Fixing subscript typo in 6.3.2 Reducing the spacing between elements\n2024-02-07 Fixing: Errors in Equation 1.2 (OD), 1.7 Frequency and angular frequency (OD); 3.3 Steady state behaviour - Resonance (LK); Homogenising nomenclature in 6.1 Coupled masses on a string under tension.\n2024-01-26 Removing blank section \n2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)\n2024-01-11 Initial creation of the Oscillations and Waves content for PHYS10012.",
+    "text": "Changelog\n2025-02-21 Added a page of formulae for the course.\n2025-01-15 Fixed an inconsistency in 1.10.3 Example: Mass on a vertical spring relating to the direction of gravitational potential energy (MF)\n2025-01-08 Added textbook link to 2  Damped oscillations (MJ)\n2025-01-06 Fixed error in applying De Moivre’s theorem in Equation 3.9. This does not affect further workings. (ZZ)\n2024-05-13 Fixed missing “squared” term in 6.2.6.2 The frequencies of normal modes of oscillation (RG) ; Updated 4.8.1 A trial solution to resolve errant ‘minus’ sign in Equation 4.35 and Equation 4.35 (GP); Updated 7.2 Deriving the wave equation to fix “slope” terminology (AR)\n2024-02-20 Updated 8.5 Dispersion (Dispersion) and 11.3 Two waves, same amplitude, different frequency (Beats) (Superposition and Beats) ; verifying and fixing problem with Figure 8.4 (RA)\n2024-02-19 Updated 11  Superposition and Standing Waves to include further detail on using phasors (11.2.1 Phasors)\n2024-02-14 Fixing bug with Figure 8.4\n2024-02-12 Fixing equation number error on Equation 7.15\n2024-02-09 Fixing subscript typos in matrices in 4.8.2 The general case\n2024-02-07 Fixing subscript typo in 6.3.2 Reducing the spacing between elements\n2024-02-07 Fixing: Errors in Equation 1.2 (OD), 1.7 Frequency and angular frequency (OD); 3.3 Steady state behaviour - Resonance (LK); Homogenising nomenclature in 6.1 Coupled masses on a string under tension.\n2024-01-26 Removing blank section \n2024-01-24 Fixing PDF and image 1.7 (this has been particularly difficult!) (DBW)\n2024-01-11 Initial creation of the Oscillations and Waves content for PHYS10012.",
     "crumbs": [
       "Preface"
     ]
@@ -867,6 +867,56 @@
     "text": "Remember that negative numbers were once seen as ‘pretend numbers’, as you could not have negative eight apples. They have since become indispensable in many applications, not least financial transactions!↩︎",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mathematical Toolkit</span>"
+    ]
+  },
+  {
+    "objectID": "12_formulae_sheet.html",
+    "href": "12_formulae_sheet.html",
+    "title": "13  Formulae for Oscillations and Waves",
+    "section": "",
+    "text": "13.1 Physical Constants",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Formulae for Oscillations and Waves</span>"
+    ]
+  },
+  {
+    "objectID": "12_formulae_sheet.html#physical-constants",
+    "href": "12_formulae_sheet.html#physical-constants",
+    "title": "13  Formulae for Oscillations and Waves",
+    "section": "",
+    "text": "Constant\nValue\n\n\n\n\nAcceleration due to gravity\n\\(g = 9.81 \\mathrm{\\,m\\,s}^{-2}\\)\n\n\nSpeed of light\n\\(c = 2.99 \\times 10^8 \\mathrm{\\,m\\,s}^{-2}\\)\n\n\nIdeal gas constant\n\\(R = 8.31 \\mathrm{\\,J\\,K}^{-1}\\mathrm{\\,mol}^{-1}\\)\n\n\nBoltzmann constant\n\\(k_B = 1.38 \\times 10^{-23} \\mathrm{\\,J\\,K}^{-1}\\)\n\n\nAvogadro constant\n\\(N_A = 6.02 \\times10^{23} \\mathrm{\\,mol}^{-1}\\)\n\n\nStefan-Boltzmann constant\n\\(\\sigma = 5.67 \\times10^{-8} \\mathrm{\\,W\\,m}^{-2}\\mathrm{\\,K}^{-4}\\)\n\n\nWien displacement constant\n\\(b = 2.897 \\times 10^{-3} \\mathrm{\\,m\\,K}\\)\n\n\nReduced Planck constant\n\\(\\hbar = 1.05 \\times 10^{-34} \\mathrm{\\,m}^2 \\mathrm{\\,kg\\,s}^{-1}\\)\n\n\nPlanck constant\n\\(h = 6.63\\times 10^{-34} \\mathrm{\\,m}^2 \\mathrm{\\,kg\\,s}^{-1}\\)\n\n\nElectron volt\n\\(1\\,eV = 1.60 \\times 10^{-19} \\mathrm{\\,J}\\)\n\n\nAtomic mass unit (Dalton)\n\\(1\\,u = 1.66\\times 10^{-27} \\mathrm{\\,kg}\\)",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Formulae for Oscillations and Waves</span>"
+    ]
+  },
+  {
+    "objectID": "12_formulae_sheet.html#trigonometric-relationships",
+    "href": "12_formulae_sheet.html#trigonometric-relationships",
+    "title": "13  Formulae for Oscillations and Waves",
+    "section": "13.2 Trigonometric Relationships",
+    "text": "13.2 Trigonometric Relationships\n\\(\\sin (A \\pm B) = \\sin A \\cos B \\pm \\cos A \\sin B\\)\n\\(\\tan(A \\pm B) = \\dfrac{\\tan A \\pm \\tan B}{1\\mp \\tan A \\tan B}\\)\n\\(\\cos (A \\pm B)=\\cos A \\cos B \\mp \\sin A \\sin B\\)\n\\(\\cos^2 A + \\sin^2 A = 1\\)\n\\(\\sin 2A = 2 \\sin A \\cos A\\)\n\\(\\cos A \\cos B = \\frac{1}{2} \\left[ \\cos(A+B) + \\cos (A - B) \\right]\\)\n\\(\\cos 2A =  \\cos^2 A - \\sin^2 A\\)\n\\(\\sin A \\cos B = \\frac{1}{2} \\left[ \\sin(A+B) + \\sin(A-B) \\right]\\)\n\\(\\tan 2A = \\dfrac{2 \\tan A}{1 - \\tan^2 A}\\)\n\\(\\sin A + \\sin B = 2 \\sin \\dfrac{A+B}{2} \\cos \\dfrac{A-B}{2}\\)\n\\(\\cos A + \\cos B = 2 \\cos \\dfrac{A+B}{2} \\cos \\dfrac{A-B}{2}\\)\n\\(\\sin A - \\sin B = 2 \\cos \\dfrac{A+B}{2} \\sin \\dfrac{A-B}{2}\\)\n\\(\\cos A - \\cos B = 2 \\sin \\dfrac{A+B}{2} \\sin \\dfrac{B-A}{2}\\)\n\\(\\cos^2 A = \\frac{1}{2} (1+\\cos 2A)\\)\n\\(\\sin^2 A = \\frac{1}{2} (1-\\cos 2A)\\)",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Formulae for Oscillations and Waves</span>"
+    ]
+  },
+  {
+    "objectID": "12_formulae_sheet.html#oscillations",
+    "href": "12_formulae_sheet.html#oscillations",
+    "title": "13  Formulae for Oscillations and Waves",
+    "section": "13.3 Oscillations",
+    "text": "13.3 Oscillations\nUndamped SHM: \\(\\dfrac{\\textrm{d}^2 x}{\\textrm{d} t^2} = -\\omega^2 x\\)\nSolution: \\(x = A_0 \\cos (\\omega t + \\delta)\\)\nEnergy: \\(E_{\\mathrm{total}} = \\frac{1}{2} k A_0^2\\)\nSimple Pendulum \\(T = 2\\pi \\sqrt{\\frac{l}{g}}\\)\nDamped SHM: \\(m \\dfrac{\\mathrm{d}^2 x}{\\mathrm{d}t^2} + b \\dfrac{\\mathrm{d}x}{\\mathrm{d}t}+ kx =0\\)\nDamped SHM Solution:\n\nPosition \\(x = A_0 e^{-\\frac{t}{2\\tau}} e^{i(\\omega' t + \\delta)}\\)\nCharacteristic decay constant \\(\\tau = \\frac{m}{b}\\)\nDamped frequency \\(\\omega' = \\sqrt{\\omega_0^2 - (b/2m)^2}\\)\n\nCritical damping: \\(b = 2m\\omega_0\\)\nQuality factor: \\(Q = \\omega_0 \\tau = \\dfrac{2\\pi}{ \\left( |\\Delta E | / E \\right)}\\)\nForced SHM: \\(m \\dfrac{\\mathrm{d}^2 x}{\\mathrm{d}t^2} + b \\dfrac{\\mathrm{d}x}{\\mathrm{d}t}+ kx = F_0 \\mathrm{e}^{\\mathrm{i}\\omega t}\\)\nSolution:\n\nPosition \\(x = A_0 \\mathrm{e}^{- \\left(\\frac{b}{2m}\\right)t} \\mathrm{e}^{\\mathrm{i} \\left( \\omega^\\prime t + \\delta^\\prime \\right)} + A e^{i(\\omega t - \\delta)}\\)\nwhere \\(\\delta = \\arctan \\left( \\dfrac{b\\omega}{m(\\omega_0^2 - \\omega^2)}\\right)\\)\n\nSteady-state amplitude: \\(A = \\dfrac{F_0}{\\sqrt{m^2 \\left(\\omega_0^2 - \\omega^2 \\right)^2 + b^2 \\omega^2}}\\)\nWidth (at half height) of resonance peak (\\(\\Delta \\omega\\)): \\(\\dfrac{\\Delta \\omega}{\\omega_0} = \\dfrac{1}{Q}\\)\nCoupled oscillator (\\(n = 2\\)):\n\\[\n\\begin{cases}\n\\begin{array}{l}\nm_A \\dfrac{\\mathrm{d}^2 x_A}{\\mathrm{d}t^2} = -(k_A + k_{AB}) x_A + k_{AB}x_B \\\\\nm_B \\dfrac{\\mathrm{d}^2 x_B}{\\mathrm{d}t^2} = -(k_B + k_{AB}) x_B + k_{AB}x_A\n\\end{array}\n\\end{cases}\n\\]\nCoupled Oscillator Solutions:\n\\[\\begin{cases}\nx_1 = \\frac{1}{2} B_1 \\cos(\\omega_1 t + \\phi_1) + \\frac{1}{2}B_2 \\cos (\\omega_2 t + \\phi_2)\\\\\nx_2 = \\frac{1}{2} B_1 \\cos(\\omega_1 t + \\phi_1) - \\frac{1}{2}B_2 \\cos (\\omega_2 t + \\phi_2)\\\\\n\\end{cases}\\]\nFor \\(m_A = m_B = m\\) and \\(k_A = k_B = k\\):\n\\(\\omega_1 = \\sqrt{\\dfrac{k}{m}}\\) and \\(\\omega_2 = \\sqrt{\\dfrac{k + 2 k_{AB}}{m}}\\)\nMatrix representation:\n\\[\n\\left(\n\\begin{array}{cc}\nm_A & 0 \\\\\n0 & m_B\n\\end{array}\n\\right)\n\\left(\n\\begin{array}{c}\n\\frac{\\mathrm{d}^2 x_A}{\\mathrm{d}t^2} \\\\\n\\frac{\\mathrm{d}^2 x_B}{\\mathrm{d}t^2}\n\\end{array}\n\\right)\n=\n-\n\\left(\n\\begin{array}{cc}\n(k_A + k_{AB}) & -k_{AB} \\\\\n-k_{AB} & (k_B + k_{AB})\n\\end{array}\n\\right)\n\\left(\n\\begin{array}{c}\nx_A \\\\\nx_B\n\\end{array}\n\\right)\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Formulae for Oscillations and Waves</span>"
+    ]
+  },
+  {
+    "objectID": "12_formulae_sheet.html#waves",
+    "href": "12_formulae_sheet.html#waves",
+    "title": "13  Formulae for Oscillations and Waves",
+    "section": "13.4 Waves",
+    "text": "13.4 Waves\nWave Equation: \\(\\dfrac{\\partial^2 y}{\\partial x^2} = \\dfrac{\\mu}{F} \\dfrac{\\partial^2 y}{\\partial t^2}\\)\nHarmonic wave:\n\nSinusoidal representation: \\(y = A \\sin (kx - \\omega t)\\)\nComplex representation \\(y = Ae^{i(kx - \\omega t)}\\)\nDe Moivres representation \\(Ae^{i\\omega t} = A(\\cos \\omega t + i \\sin \\omega t)\\)\n\nPhase Velocity: \\(v_p = \\dfrac{\\omega}{k}\\)\nGroup velocity: \\(v_g = \\dfrac{\\partial \\omega(k)}{\\partial k}\\)\nFor wave on a string:\n\nPhase velocity: \\(v_p = \\frac{\\omega}{k} = \\sqrt{F/\\mu}\\)\n\nEnergy density: \\(\\epsilon = \\frac{1}{2} \\mu \\omega^2 A^2\\)\nAverage power transmitted: \\(P_{\\mathrm{av}} = \\frac{1}{2}\\mu \\omega^2 A^2 v\\)\nImpedance: \\(Z = \\frac{Fk}{\\omega}\\)\n\nReflection and Transmission at Boundaries:\n\n\\(\\dfrac{\\mathrm{Reflected\\,power}}{\\mathrm{Incident\\,power}} = \\left( \\dfrac{Z_1 - Z_2}{Z_1 + Z_2} \\right)^2\\)\n\\(\\dfrac{\\mathrm{Transmitted\\,power}}{\\mathrm{Incident\\,power}} = \\dfrac{4 Z_1 Z_2}{(Z_1 + Z_2)^2}\\)\n\nIntensity level: \\(\\beta = 10 \\log_{10} \\left( \\dfrac{I}{I_0}\\right)\\)\n\n…where \\(I_0 = 10^{-12} \\mathrm{\\,W\\,m}^{-2}\\)\n\nDoppler shift: \\(f^\\prime = \\left(\\dfrac{v\\pm u_r}{v \\pm u_s} \\right) f_0\\)\nBeats: \\(y = 2y_0 \\cos \\left( \\dfrac{\\Delta kx - \\Delta \\omega t}{2} \\right) \\sin (k_{\\mathrm{av}} x - \\omega_{\\mathrm{av}} t)\\)",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Formulae for Oscillations and Waves</span>"
     ]
   }
 ]
