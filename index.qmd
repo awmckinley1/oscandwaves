@@ -28,7 +28,11 @@ This iteration of the course has been written by Andrew McKinley for 2024; this 
 
 ## Changelog {#sec-changelog}
 
-2025-02-21 Added a page of formulae for the course.
+2025-02-24 Amending the notation convention in @sec-ch3-coupled-oscillator; previously I had represented the positions of the masses as $x_1$ and $x_2$; in the convention used widely in the notes, I use $A$ and $B$ to refer to parameters relating to physical masses, and the digits $1$ and $2$ to refer to system-wide phenomena (frequencies, normal coordinates etc.). Therefore my use of $x_1$ and $x_2$ is not consistent; this has now been changed to $x_A$ and $x_B$.  Thank you for spotting this - not a trivial typo, and helps improve clarity of the explanation! (EW)
+
+2025-02-24 Fixing reported typographical errors. (@sec-ch7-summary, TM)
+
+2025-02-21 Added a page of formulae for the course (@sec-formulasheet).
 
 2025-01-15 Fixed an inconsistency in @sec-ch1-massverticalspring relating to the direction of gravitational potential energy (MF)
 

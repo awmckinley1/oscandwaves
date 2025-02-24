@@ -234,8 +234,8 @@ We can now use the general results from @eq-ch3-coupledsolution-1 to give the co
 $$
 \begin{cases}
 \begin{array}{rcl}
-x_1 &= & \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
-x_2 &=& \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_A &= & \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_B &=& \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
 \end{array}
 \end{cases}
 $$ {#eq-ch3-coupledsolution-3}
@@ -245,13 +245,13 @@ Recalling our angle formulae, we know that we can express the term $B \cos (\ome
 $$ 
 \begin{cases}
 \begin{array}{l}
-x_1 = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) + C_2 \cos(\omega_2 t) + D_2 \sin(\omega_2 t) \\
-x_2 = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) - C_2 \cos(\omega_2 t) - D_2 \sin(\omega_2 t)
+x_A = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) + C_2 \cos(\omega_2 t) + D_2 \sin(\omega_2 t) \\
+x_B = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) - C_2 \cos(\omega_2 t) - D_2 \sin(\omega_2 t)
 \end{array}
 \end{cases}
 $$ {#eq-ch3-coupledsolution-4}
 
-This full solution is more helpful to us if we wish to consider initial conditions of the system (e.g. $x_1 (0)$, $v_1 (0)$ etc.). 
+This full solution is more helpful to us if we wish to consider initial conditions of the system (e.g. $x_A (0)$, $v_1 (0)$ etc.). 
 
 ## Normal coordinates
 
@@ -282,8 +282,8 @@ In this situation, $y_1 = 2x$, and $y_2 = 0$. From equation @eq-ch3-coupledsolut
 $$
 \begin{cases}
 \begin{array}{rcl}
-x_1 &= & \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
-x_2 &=& \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
+x_A &= & \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
+x_B &=& \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
 \end{array}
 \end{cases}
 $$ {#eq-ch3-extremesolution-1}
@@ -307,8 +307,8 @@ This is the exact opposite situation to that discussed above. In this situation,
 $$
 \begin{cases}
 \begin{array}{rcl}
-x_1 &= & \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
-x_2 &=& - \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
+x_A &= & \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
+x_B &=& - \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
 \end{array}
 \end{cases}
 $$ {#eq-ch3-extremesolution-2}
@@ -365,8 +365,8 @@ We can solve this example algebraically.  Let's re-exmine to the general solutio
 $$
 \begin{cases}
 \begin{array}{rcl}
-x_1 &= & \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
-x_2 &=& \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_A &= & \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_B &=& \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
 \end{array}
 \end{cases}
 $$ {#eq-ch3-coupledsolution-3a}
@@ -375,8 +375,8 @@ We said that at the start, our initial conditions would be that one oscillator i
 
 $$
 \begin{array}{rclrcl}
-x_1 (0) &=& A & \dot{x}_1 (0) &=& 0 \\
-x_2 (0) &=& 0 & \dot{x}_2 (0) &=& 0
+x_A (0) &=& A & \dot{x}_1 (0) &=& 0 \\
+x_B (0) &=& 0 & \dot{x}_2 (0) &=& 0
 \end{array}
 $$
 The result of this is that our phase constant $\phi$ evaluates to zero, while the amplitude component $B_1 = B_2 = A$.  We can apply these to @eq-ch3-coupledsolution-3a to obtain a particular solution:
@@ -384,8 +384,8 @@ The result of this is that our phase constant $\phi$ evaluates to zero, while th
 $$
 \begin{cases}
 \begin{array}{rcl}
-x_1 &= & \frac{1}{2} A \cos(\omega_1 t) + \frac{1}{2}A \cos (\omega_2 t)\\
-x_2 &=& \frac{1}{2} A \cos(\omega_1 t) - \frac{1}{2}A \cos (\omega_2 t )\\
+x_A &= & \frac{1}{2} A \cos(\omega_1 t) + \frac{1}{2}A \cos (\omega_2 t)\\
+x_B &=& \frac{1}{2} A \cos(\omega_1 t) - \frac{1}{2}A \cos (\omega_2 t )\\
 \end{array}
 \end{cases}
 $$ {#eq-ch3-coupledsolution-4a}
@@ -395,9 +395,9 @@ This can then be rewritten using the appropriate trigonometric identity as:
 $$
 \begin{cases}
 \begin{array}{rcl}
-x_1 &= & A \cos \left(\frac{\omega_2 -\omega_1}{2} t \right) 
+x_A &= & A \cos \left(\frac{\omega_2 -\omega_1}{2} t \right) 
 \cos \left(\frac{\omega_2 +\omega_1}{2} t \right)\\
-x_2 &=& A \sin \left(\frac{\omega_2 -\omega_1}{2} t \right) \sin \left(\frac{\omega_2 +\omega_1}{2} t \right)\\
+x_B &=& A \sin \left(\frac{\omega_2 -\omega_1}{2} t \right) \sin \left(\frac{\omega_2 +\omega_1}{2} t \right)\\
 \end{array}
 \end{cases}
 $$ {#eq-ch3-coupledsolution-4b}
@@ -406,12 +406,12 @@ We said that this resonance transfer was particularly great when there is an app
 
 When the spring constant of the coupling spring $k_AB$ is much greater than $k$, this will affect the frequencies $\omega_1$ and $\omega_2$. From @eq-ch3-coupledsolution-2, when $k_AB << k$, then the values of $\omega_1$ and $\omega_2$ will be similar in magnitude, with $\omega_2$ only slightly larger.  This means that the value of $\omega_2 - \omega_1$ will be very small, while $\omega_2 + \omega_1$ will be considerably larger.
 
-We therefore have two cosine terms governing $x_1$:
+We therefore have two cosine terms governing $x_A$:
 
 * $\cos \left( \frac{\omega_2 - \omega_1}{2} t \right)$ will oscillate much slower than $\cos \left( \frac{\omega_2 + \omega_1}{2} t \right)$
 * We view this as an oscillator of frequency $\left( \frac{\omega_2 + \omega_1}{2} \right)$, whose amplitude varies slowly with frequency $\left( \frac{\omega_2 - \omega_1}{2} \right)$
 
-A very similar situation exists for for $x_2$, however the terms are governed by sine functions - which are $\pi/2$ out of phase with the oscillations of the first.
+A very similar situation exists for for $x_B$, however the terms are governed by sine functions - which are $\pi/2$ out of phase with the oscillations of the first.
 
 ```{r echo=FALSE, ch3-coupled-osc-chart1, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Comparing the changes of position of coupled oscillators A and B as a function of time; note that the energy transfers back and forward between A and B such that each is contained within envelopes with a $\\pi / 2$ phase difference, although it appears as though it is a $\\pi$ phase offset."}
 #| label: fig-ch3-coupled-osc-chart1

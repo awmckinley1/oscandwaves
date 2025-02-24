@@ -525,8 +525,8 @@ x_B &amp;=&amp; y_1 - x_A \\
 <p><span id="eq-ch3-coupledsolution-3"><span class="math display">\[
 \begin{cases}
 \begin{array}{rcl}
-x_1 &amp;= &amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
-x_2 &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_A &amp;= &amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_B &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
 \end{array}
 \end{cases}
 \tag{4.18}\]</span></span></p>
@@ -534,12 +534,12 @@ x_2 &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos 
 <p><span id="eq-ch3-coupledsolution-4"><span class="math display">\[
 \begin{cases}
 \begin{array}{l}
-x_1 = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) + C_2 \cos(\omega_2 t) + D_2 \sin(\omega_2 t) \\
-x_2 = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) - C_2 \cos(\omega_2 t) - D_2 \sin(\omega_2 t)
+x_A = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) + C_2 \cos(\omega_2 t) + D_2 \sin(\omega_2 t) \\
+x_B = C_1 \cos(\omega_1 t) + D_1 \sin(\omega_1 t) - C_2 \cos(\omega_2 t) - D_2 \sin(\omega_2 t)
 \end{array}
 \end{cases}
 \tag{4.19}\]</span></span></p>
-<p>This full solution is more helpful to us if we wish to consider initial conditions of the system (e.g.&nbsp;<span class="math inline">\(x_1 (0)\)</span>, <span class="math inline">\(v_1 (0)\)</span> etc.).</p>
+<p>This full solution is more helpful to us if we wish to consider initial conditions of the system (e.g.&nbsp;<span class="math inline">\(x_A (0)\)</span>, <span class="math inline">\(v_1 (0)\)</span> etc.).</p>
 </section>
 <section id="normal-coordinates" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="normal-coordinates"><span class="header-section-number">4.6</span> Normal coordinates</h2>
@@ -564,8 +564,8 @@ y_2 &amp;=&amp; x_A - x_B
 <p><span id="eq-ch3-extremesolution-1"><span class="math display">\[
 \begin{cases}
 \begin{array}{rcl}
-x_1 &amp;= &amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
-x_2 &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
+x_A &amp;= &amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
+x_B &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) \\
 \end{array}
 \end{cases}
 \tag{4.21}\]</span></span></p>
@@ -592,8 +592,8 @@ Figure&nbsp;4.4: When the initial displacement of each oscillator is identical, 
 <p><span id="eq-ch3-extremesolution-2"><span class="math display">\[
 \begin{cases}
 \begin{array}{rcl}
-x_1 &amp;= &amp; \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
-x_2 &amp;=&amp; - \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
+x_A &amp;= &amp; \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
+x_B &amp;=&amp; - \frac{1}{2} B_2 \cos(\omega_2 t + \phi_2) \\
 \end{array}
 \end{cases}
 \tag{4.22}\]</span></span></p>
@@ -672,23 +672,23 @@ Figure&nbsp;4.6: If one mass is held stationary at its equilibrium position whil
 <p><span id="eq-ch3-coupledsolution-3a"><span class="math display">\[
 \begin{cases}
 \begin{array}{rcl}
-x_1 &amp;= &amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
-x_2 &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_A &amp;= &amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) + \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
+x_B &amp;=&amp; \frac{1}{2} B_1 \cos(\omega_1 t + \phi_1) - \frac{1}{2}B_2 \cos (\omega_2 t + \phi_2)\\
 \end{array}
 \end{cases}
 \tag{4.23}\]</span></span></p>
 <p>We said that at the start, our initial conditions would be that one oscillator is displaced to amplitude <span class="math inline">\(A\)</span> while the other is held at its equilibrium. Therefore our starting conditions become:</p>
 <p><span class="math display">\[
 \begin{array}{rclrcl}
-x_1 (0) &amp;=&amp; A &amp; \dot{x}_1 (0) &amp;=&amp; 0 \\
-x_2 (0) &amp;=&amp; 0 &amp; \dot{x}_2 (0) &amp;=&amp; 0
+x_A (0) &amp;=&amp; A &amp; \dot{x}_1 (0) &amp;=&amp; 0 \\
+x_B (0) &amp;=&amp; 0 &amp; \dot{x}_2 (0) &amp;=&amp; 0
 \end{array}
 \]</span> The result of this is that our phase constant <span class="math inline">\(\phi\)</span> evaluates to zero, while the amplitude component <span class="math inline">\(B_1 = B_2 = A\)</span>. We can apply these to <a href="#eq-ch3-coupledsolution-3a" class="quarto-xref">Equation&nbsp;<span>4.23</span></a> to obtain a particular solution:</p>
 <p><span id="eq-ch3-coupledsolution-4a"><span class="math display">\[
 \begin{cases}
 \begin{array}{rcl}
-x_1 &amp;= &amp; \frac{1}{2} A \cos(\omega_1 t) + \frac{1}{2}A \cos (\omega_2 t)\\
-x_2 &amp;=&amp; \frac{1}{2} A \cos(\omega_1 t) - \frac{1}{2}A \cos (\omega_2 t )\\
+x_A &amp;= &amp; \frac{1}{2} A \cos(\omega_1 t) + \frac{1}{2}A \cos (\omega_2 t)\\
+x_B &amp;=&amp; \frac{1}{2} A \cos(\omega_1 t) - \frac{1}{2}A \cos (\omega_2 t )\\
 \end{array}
 \end{cases}
 \tag{4.24}\]</span></span></p>
@@ -696,20 +696,20 @@ x_2 &amp;=&amp; \frac{1}{2} A \cos(\omega_1 t) - \frac{1}{2}A \cos (\omega_2 t )
 <p><span id="eq-ch3-coupledsolution-4b"><span class="math display">\[
 \begin{cases}
 \begin{array}{rcl}
-x_1 &amp;= &amp; A \cos \left(\frac{\omega_2 -\omega_1}{2} t \right)
+x_A &amp;= &amp; A \cos \left(\frac{\omega_2 -\omega_1}{2} t \right)
 \cos \left(\frac{\omega_2 +\omega_1}{2} t \right)\\
-x_2 &amp;=&amp; A \sin \left(\frac{\omega_2 -\omega_1}{2} t \right) \sin \left(\frac{\omega_2 +\omega_1}{2} t \right)\\
+x_B &amp;=&amp; A \sin \left(\frac{\omega_2 -\omega_1}{2} t \right) \sin \left(\frac{\omega_2 +\omega_1}{2} t \right)\\
 \end{array}
 \end{cases}
 \tag{4.25}\]</span></span></p>
 <p>We said that this resonance transfer was particularly great when there is an appreciable difference between the spring constants of the coupling spring and the local springs; let’s therefore consider what is going on.</p>
 <p>When the spring constant of the coupling spring <span class="math inline">\(k_AB\)</span> is much greater than <span class="math inline">\(k\)</span>, this will affect the frequencies <span class="math inline">\(\omega_1\)</span> and <span class="math inline">\(\omega_2\)</span>. From <a href="#eq-ch3-coupledsolution-2" class="quarto-xref">Equation&nbsp;<span>4.16</span></a>, when <span class="math inline">\(k_AB &lt;&lt; k\)</span>, then the values of <span class="math inline">\(\omega_1\)</span> and <span class="math inline">\(\omega_2\)</span> will be similar in magnitude, with <span class="math inline">\(\omega_2\)</span> only slightly larger. This means that the value of <span class="math inline">\(\omega_2 - \omega_1\)</span> will be very small, while <span class="math inline">\(\omega_2 + \omega_1\)</span> will be considerably larger.</p>
-<p>We therefore have two cosine terms governing <span class="math inline">\(x_1\)</span>:</p>
+<p>We therefore have two cosine terms governing <span class="math inline">\(x_A\)</span>:</p>
 <ul>
 <li><span class="math inline">\(\cos \left( \frac{\omega_2 - \omega_1}{2} t \right)\)</span> will oscillate much slower than <span class="math inline">\(\cos \left( \frac{\omega_2 + \omega_1}{2} t \right)\)</span></li>
 <li>We view this as an oscillator of frequency <span class="math inline">\(\left( \frac{\omega_2 + \omega_1}{2} \right)\)</span>, whose amplitude varies slowly with frequency <span class="math inline">\(\left( \frac{\omega_2 - \omega_1}{2} \right)\)</span></li>
 </ul>
-<p>A very similar situation exists for for <span class="math inline">\(x_2\)</span>, however the terms are governed by sine functions - which are <span class="math inline">\(\pi/2\)</span> out of phase with the oscillations of the first.</p>
+<p>A very similar situation exists for for <span class="math inline">\(x_B\)</span>, however the terms are governed by sine functions - which are <span class="math inline">\(\pi/2\)</span> out of phase with the oscillations of the first.</p>
 <div class="cell" data-layout-align="center" data-auto_pdf="true">
 <div class="cell-output-display">
 <div id="fig-ch3-coupled-osc-chart1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">

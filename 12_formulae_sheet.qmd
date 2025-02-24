@@ -1,4 +1,4 @@
-# Formulae for Oscillations and Waves
+# Formulae for Oscillations and Waves {#sec-formulasheet}
 
 The list of formulae below is the standard set of formulae made available for assessment.
 

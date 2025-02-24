@@ -72,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -298,7 +327,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sec-changelog" class="level2">
 <h2 class="anchored" data-anchor-id="sec-changelog">Changelog</h2>
-<p>2025-02-21 Added a page of formulae for the course.</p>
+<p>2025-02-24 Amending the notation convention in <a href="03_coupled_oscillators.html" class="quarto-xref"><span>4&nbsp; Coupled Oscillators</span></a>; previously I had represented the positions of the masses as <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>; in the convention used widely in the notes, I use <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> to refer to parameters relating to physical masses, and the digits <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> to refer to system-wide phenomena (frequencies, normal coordinates etc.). Therefore my use of <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> is not consistent; this has now been changed to <span class="math inline">\(x_A\)</span> and <span class="math inline">\(x_B\)</span>. Thank you for spotting this - not a trivial typo, and helps improve clarity of the explanation! (EW)</p>
+<p>2025-02-24 Fixing reported typographical errors. (<a href="07_harmonic_waves.html#sec-ch7-summary" class="quarto-xref"><span>8.6 Summary</span></a>, TM)</p>
+<p>2025-02-21 Added a page of formulae for the course (<a href="12_formulae_sheet.html" class="quarto-xref"><span>13&nbsp; Formulae for Oscillations and Waves</span></a>).</p>
 <p>2025-01-15 Fixed an inconsistency in <a href="01_shm.html#sec-ch1-massverticalspring" class="quarto-xref"><span>1.10.3 Example: Mass on a vertical spring</span></a> relating to the direction of gravitational potential energy (MF)</p>
 <p>2025-01-08 Added textbook link to <a href="02_damped_oscillations.html" class="quarto-xref"><span>2&nbsp; Damped oscillations</span></a> (MJ)</p>
 <p>2025-01-06 Fixed error in applying De Moivre’s theorem in <a href="02a_forced_oscillations.html#eq-ch5-forcedoscillfullsoln3" class="quarto-xref">Equation&nbsp;<span>3.9</span></a>. This does not affect further workings. (ZZ)</p>

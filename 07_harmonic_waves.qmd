@@ -362,7 +362,7 @@ When describing sine waves travelling through a medium, the following statements
 
 * $k$ = wavenumber = $\frac{2\pi}{\lambda}$
 * $\lambda$ = wavelength /m
-* $\omega$ = angular frequency = $2\pi f$ /rad m^-1^
+* $\omega$ = angular frequency = $2\pi f$ /rad s^-1^
 * $f$ = frequency /Hz = $\frac{1}{T}$
 * $T$ = period /s
 * $A$ = amplitude /m
